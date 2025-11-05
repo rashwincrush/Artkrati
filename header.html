@@ -1,0 +1,256 @@
+<!-- ===== HEADER (Drop-in) ===== -->
+<header class="site-header">
+  <div class="site-header-inner">
+    <!-- Left: Logo -->
+    <a href="/index.html" class="site-header-brand" aria-label="Aakrati Home">
+      <img src="/images/logovisitingcardfront.png" alt="Aakrati Interior Design" width="108" height="auto">
+    </a>
+
+    <!-- Center: Navigation (Desktop Only) -->
+    <nav class="site-header-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="/index.html" class="nav-link">Home</a></li>
+        <li><a href="/about.html" class="nav-link">About</a></li>
+        <li><a href="/portfolio.html" class="nav-link">Portfolio</a></li>
+
+        <li class="services-nav">
+          <a href="/services/index.html" class="sd-trigger nav-link">
+            Services
+            <svg class="sd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 9l-7 7-7-7"/>
+            </svg>
+          </a>
+
+          <div class="sd-menu">
+            <div class="sd-header">
+              <h3>Our Services</h3>
+              <p>Comprehensive interior design solutions</p>
+            </div>
+
+            <div class="sd-grid">
+              <a href="/services/turnkey.html" class="sd-item">
+                <span class="sd-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <path d="M9 3v18M3 9h18M3 15h18"/>
+                  </svg>
+                </span>
+                <span>
+                  <div class="sd-title">Turnkey Interiors</div>
+                  <div class="sd-desc">Complete end-to-end solutions</div>
+                </span>
+              </a>
+
+              <a href="/services/design-consultation.html" class="sd-item">
+                <span class="sd-icon">
+                  <img src="/images/services/ServiceCard/designconsultation.png" alt="">
+                </span>
+                <span>
+                  <div class="sd-title">Design Consultation</div>
+                  <div class="sd-desc">Expert guidance for your vision</div>
+                </span>
+              </a>
+
+              <a href="/services/colour-consultation.html" class="sd-item">
+                <span class="sd-icon">
+                  <img src="/images/services/ServiceCard/colourconsultation.png" alt="">
+                </span>
+                <span>
+                  <div class="sd-title">Colour Consultation</div>
+                  <div class="sd-desc">Perfect palettes for spaces</div>
+                </span>
+              </a>
+
+              <a href="/services/space-planning.html" class="sd-item">
+                <span class="sd-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <path d="M9 22V12h6v10"/>
+                  </svg>
+                </span>
+                <span>
+                  <div class="sd-title">Space Planning</div>
+                  <div class="sd-desc">Optimize layout and flow</div>
+                </span>
+              </a>
+
+              <a href="/services/custom-furniture.html" class="sd-item">
+                <span class="sd-icon">
+                  <img src="/images/services/ServiceCard/customfurniture.png" alt="">
+                </span>
+                <span>
+                  <div class="sd-title">Custom Furniture</div>
+                  <div class="sd-desc">Bespoke pieces for your home</div>
+                </span>
+              </a>
+
+              <a href="/services/art-murals.html" class="sd-item">
+                <span class="sd-icon">
+                  <img src="/images/services/ServiceCard/artmurals.png" alt="">
+                </span>
+                <span>
+                  <div class="sd-title">Art &amp; Murals</div>
+                  <div class="sd-desc">Transform walls to masterpieces</div>
+                </span>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <li><a href="/contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Right: CTA + Hamburger -->
+    <div class="site-header-actions">
+      <a href="mailto:hello@aakrati.com" class="enquire-pill" aria-label="Contact us for enquiries">Enquire Now</a>
+      <button class="hamburger-btn" 
+              id="mobile-menu-btn"
+              aria-label="Open navigation menu"
+              aria-expanded="false"
+              aria-controls="mobile-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay" id="mobile-menu-overlay" aria-hidden="true"></div>
+
+<!-- Mobile Menu Sheet -->
+<aside class="mobile-menu-sheet" 
+       id="mobile-menu" 
+       role="dialog" 
+       aria-modal="true" 
+       aria-label="Mobile navigation menu">
+  
+  <div class="mobile-menu-header">
+    <span class="logo-text">Aakrati</span>
+    <button class="mobile-menu-close" 
+            id="mobile-menu-close"
+            aria-label="Close navigation menu">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav class="mobile-menu-links" aria-label="Mobile navigation">
+    <a href="/index.html" class="mobile-menu-link">Home</a>
+    <a href="/about.html" class="mobile-menu-link">About</a>
+    <a href="/portfolio.html" class="mobile-menu-link">Portfolio</a>
+    
+    <div>
+      <button class="mobile-services-toggle" id="services-toggle" aria-expanded="false">
+        <span>Services</span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div class="mobile-services-list" id="services-list">
+        <a href="/services/turnkey.html">Turnkey Interiors</a>
+        <a href="/services/design-consultation.html">Design Consultation</a>
+        <a href="/services/colour-consultation.html">Colour Consultation</a>
+        <a href="/services/space-planning.html">Space Planning</a>
+        <a href="/services/custom-furniture.html">Custom Furniture</a>
+        <a href="/services/art-murals.html">Art &amp; Murals</a>
+      </div>
+    </div>
+    
+    <a href="/contact.html" class="mobile-menu-link">Contact</a>
+  </nav>
+
+  <a href="mailto:hello@aakrati.com" class="mobile-menu-cta">Enquire Now</a>
+</aside>
+
+<style>
+  :root {
+    --page-bg: #F8F5F1;
+    --ink: #1A1D29;
+  }
+
+  .site-header { position: sticky; top: 0; z-index: 1000; background: #F8F5F1; border-bottom: 1px solid rgba(0,0,0,.06); backdrop-filter: saturate(120%) blur(6px); }
+  .site-header-inner { height: 80px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; max-width: 1400px; margin: 0 auto; gap: 16px; }
+  .site-header-brand { display: inline-flex; align-items: center; line-height: 0; flex-shrink: 0; }
+  .site-header-brand img { display: block; height: auto; width: auto; max-height: 104px; object-fit: contain; opacity: .96; filter: drop-shadow(0 1px 2px rgba(0,0,0,.06)); }
+
+  .site-header-nav { display: flex; justify-content: center; flex: 1; }
+  .site-header-nav ul { display: flex; align-items: center; gap: 40px; list-style: none; margin: 0; padding: 0; }
+  .nav-link { position: relative; color: var(--ink); text-decoration: none; font-weight: 600; font-size: 15px; padding: 0.5rem 0.75rem; transition: color 0.3s ease; display: inline-block; white-space: nowrap; }
+  .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%; background-color: #98715d; transition: width 0.3s ease, left 0.3s ease; transform: translateX(-50%); }
+  .nav-link:hover::after, .nav-link:focus::after, .nav-link.active::after { width: 100%; left: 0; transform: none; }
+
+  .site-header-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+  .enquire-pill { display: inline-block; padding: 10px 18px; border-radius: 9999px; background: #98715d; color: #fff !important; text-decoration: none !important; font-size: 14px; font-weight: 700; transition: transform .2s ease, background-color .2s ease; white-space: nowrap; }
+  .enquire-pill:hover { transform: translateY(-1px); background: #7a5a4a; }
+
+  /* Hamburger */
+  .hamburger-btn { display: none; align-items: center; justify-content: center; padding: 10px; border-radius: 10px; border: 1px solid rgba(0,0,0,.08); background: #fff; color: var(--ink); cursor: pointer; transition: all .2s ease; min-width: 48px; min-height: 48px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); position: relative; z-index: 1001; }
+  .hamburger-btn:hover { background: #f9fafb; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+  .hamburger-btn:active { transform: scale(0.95); }
+  .hamburger-btn svg { width: 22px; height: 22px; stroke-width: 2.5; }
+
+  /* Services dropdown (desktop) */
+  .services-nav { position: relative; }
+  .services-nav .sd-trigger { display: flex; align-items: center; gap: 0.25rem; }
+  .services-nav .sd-caret { width: 1rem; height: 1rem; transition: transform 0.2s ease; }
+  .services-nav:hover .sd-caret { transform: rotate(180deg); }
+  .services-nav .sd-menu { position: absolute; top: calc(100% + 1rem); left: 50%; transform: translateX(-50%); min-width: 520px; background: #fff; border-radius: 16px; overflow: hidden; z-index: 1100; box-shadow: 0 20px 60px rgba(0,0,0,.12), 0 0 0 1px rgba(0,0,0,.04); opacity: 0; visibility: hidden; transform: translateX(-50%) translateY(-10px); transition: all .4s cubic-bezier(.4,0,.2,1); backdrop-filter: blur(10px); }
+  .services-nav:hover .sd-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+  .sd-header { padding: 1.25rem; background: #fff; border-bottom: 1px solid rgba(0,0,0,.06); }
+  .sd-header h3 { font-size: 1.1rem; font-weight: 800; color: #111827; margin: 0 0 0.25rem 0; }
+  .sd-header p { font-size: 0.9rem; color: #6b7280; margin: 0; }
+  .sd-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; padding: 1rem; }
+  .sd-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem; border-radius: 12px; text-decoration: none; color: #222; transition: all .3s ease; position: relative; overflow: hidden; }
+  .sd-item:hover { background: #F8FAFC; transform: translateX(4px); }
+  .sd-icon { flex-shrink: 0; width: 48px; height: 48px; border-radius: 12px; background: #F3F4F6; display: flex; align-items: center; justify-content: center; transition: all .3s ease; }
+  .sd-icon svg { width: 24px; height: 24px; color: #334155; }
+  .sd-icon img { width: 22px; height: 22px; object-fit: contain; }
+  .sd-title { font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.25rem; }
+  .sd-desc { font-size: 0.9rem; color: #6b7280; line-height: 1.45; }
+
+  /* Mobile menu */
+  .mobile-menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.5); backdrop-filter: blur(4px); z-index: 1050; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+  .mobile-menu-overlay.show { opacity: 1; visibility: visible; }
+  .mobile-menu-sheet { position: fixed; top: 0; right: 0; bottom: 0; width: min(85vw, 380px); background: #fff; box-shadow: -8px 0 40px rgba(0,0,0,.15); z-index: 1060; overflow-y: auto; transform: translateX(100%); transition: transform 0.35s cubic-bezier(.4,0,.2,1); }
+  .mobile-menu-sheet.open { transform: translateX(0); }
+  .mobile-menu-header { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; background: #fff; z-index: 10; }
+  .mobile-menu-header .logo-text { font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif; font-size: 22px; font-weight: 700; color: var(--ink); letter-spacing: 0.02em; }
+  .mobile-menu-close { padding: 10px; border-radius: 10px; background: #f3f4f6; border: none; cursor: pointer; transition: all .2s ease; min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+  .mobile-menu-close:hover { background: #e5e7eb; transform: scale(1.05); }
+  .mobile-menu-close svg { width: 24px; height: 24px; }
+  .mobile-menu-links { padding: 16px 20px 24px; }
+  .mobile-menu-link { display: flex; align-items: center; padding: 16px 0; color: var(--ink); font-size: 16px; font-weight: 600; text-decoration: none; border-bottom: 1px solid #f3f4f6; min-height: 52px; }
+  .mobile-services-toggle { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 16px 0; background: none; border: none; border-bottom: 1px solid #f3f4f6; color: var(--ink); font-size: 16px; font-weight: 700; text-align: left; cursor: pointer; min-height: 52px; }
+  .mobile-services-toggle svg { width: 20px; height: 20px; transition: transform 0.3s ease; }
+  .mobile-services-toggle svg.rotate { transform: rotate(180deg); }
+  .mobile-services-list { padding-left: 20px; margin-top: 8px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .mobile-services-list.show { max-height: 500px; }
+  .mobile-services-list a { display: flex; align-items: center; padding: 14px 0; color: #6b7280; font-size: 15px; text-decoration: none; min-height: 48px; }
+  .mobile-menu-cta { margin: 20px 20px 24px; padding: 16px 20px; background: #98715d; color: #fff !important; text-align: center; border-radius: 12px; font-weight: 700; font-size: 16px; text-decoration: none !important; display: flex; align-items: center; justify-content: center; min-height: 52px; transition: all .2s ease; }
+  .mobile-menu-cta:hover { background: #7a5a4a; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(152, 113, 93, 0.3); }
+
+  /* Responsive breakpoints */
+  @media (min-width: 768px) {
+    .hamburger-btn { display: none !important; }
+    .mobile-menu-overlay, .mobile-menu-sheet { display: none !important; }
+  }
+  @media (max-width: 767px) {
+    .site-header-inner { height: 64px; padding: 0 16px; }
+    .site-header-brand img { max-height: 64px; }
+    .site-header-nav { display: none !important; }
+    .site-header-actions .enquire-pill { display: none !important; }
+    .hamburger-btn { display: flex !important; }
+  }
+  @media (max-width: 480px) {
+    .site-header-inner { padding: 0 12px; }
+    .mobile-menu-sheet { width: 100vw; }
+    .hamburger-btn { min-width: 44px; min-height: 44px; padding: 8px; }
+  }
+
+  /* Prevent body scroll when mobile menu is open */
+  body.menu-open { overflow: hidden; position: fixed; width: 100%; }
+</style>

@@ -1,0 +1,131 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Services – Aakrati</title><link rel="stylesheet" href="../assets/css/site.css"></head><body>
+<header class="site-header"><div class="container header-inner"><a class="brand" href="/index.html"><img src="../images/logovisitingcardfront.png" alt="">Aakrati</a><nav class="nav"><a href="/index.html">Home</a><a href="/about.html">About</a><a href="/portfolio.html">Portfolio</a><a href="/services/index.html">Services</a><a href="/contact.html">Contact</a><a class="btn btn-primary enquire" href="mailto:hello@aakrati.com">Enquire Now</a></nav><button class="btn hamburger" data-menu-open>☰</button></div></header><div class="mobile-overlay"></div><aside class="mobile-sheet"><button class="btn" data-menu-close>Close</button><nav class="mobile-nav"><a href="/index.html">Home</a><a href="/about.html">About</a><a href="/portfolio.html">Portfolio</a><a href="/services/index.html">Services</a><a href="/contact.html">Contact</a><a class="btn btn-primary" href="mailto:hello@aakrati.com">Enquire Now</a></nav></aside>
+<main>
+  <style>
+    :root{--primary-gold:#C9A96E;--deep-navy:#1A1D29;--soft-ivory:#F8F5F0;--aakrati-peach:#D9A082;--charcoal:#2C2C2C}
+    .hero{position:relative;min-height:55vh;max-height:780px}
+    .hero-img{position:absolute;inset:0}
+    .hero-img img{width:100%;height:100%;object-fit:cover}
+    .hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,.25)}
+    .hero-panel{position:relative;z-index:2;max-width:720px;background:rgba(255,255,255,.85);border:1px solid rgba(0,0,0,.06);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.08);padding:clamp(1rem,3vw,2.5rem)}
+    .eyebrow{font-family:Inter,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:var(--primary-gold);font-weight:600;font-size:.875rem}
+    .service-title{font-family:"Playfair Display",serif;font-weight:600;color:var(--deep-navy);line-height:1.15;font-size:clamp(1.75rem,3vw,2.75rem)}
+    .section{padding:4rem 0}
+    .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    @media(max-width:640px){.svc-grid{grid-template-columns:1fr}}
+    .svc-item{display:flex;align-items:flex-start;gap:1.25rem;position:relative;padding:1.5rem;border-radius:16px;text-decoration:none;color:#222;transition:.5s;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.04),0 0 0 1px rgba(0,0,0,.02)}
+    .svc-item::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,169,110,.03) 0%, rgba(217,163,130,.05) 100%);opacity:0;transition:opacity .5s}
+    .svc-item::after{content:"";position:absolute;top:-2px;left:-2px;right:-2px;bottom:-2px;background:linear-gradient(135deg,var(--primary-gold),var(--aakrati-peach));border-radius:16px;opacity:0;z-index:-1;transition:opacity .5s}
+    .svc-item:hover::before{opacity:1}
+    .svc-item:hover::after{opacity:.15}
+    .svc-item:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(201,169,110,.15),0 0 0 1px rgba(201,169,110,.1)}
+    .svc-icon{flex-shrink:0;width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,#F8F5F0 0%,#F3F0EA 100%);display:flex;align-items:center;justify-content:center;transition:.5s;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+    .svc-icon img{width:24px;height:24px;object-fit:contain;transition:.5s}
+    .svc-item:hover .svc-icon{background:linear-gradient(135deg,var(--primary-gold),var(--aakrati-peach));transform:scale(1.1) rotate(-5deg);box-shadow:0 8px 20px rgba(201,169,110,.25)}
+    .svc-item:hover .svc-icon img{filter:brightness(0) invert(1);transform:scale(1.05)}
+    .svc-title{font-size:1.125rem;font-weight:700;color:#0f172a;margin-bottom:.5rem;font-family:"Playfair Display",serif}
+    .svc-desc{font-size:.9375rem;color:#6b7280;line-height:1.6;font-family:Inter,sans-serif}
+    .section-head{margin-bottom:1.25rem}
+    .section-sub{color:#6b7280}
+    .process{background:linear-gradient(to bottom,#fff,var(--soft-ivory))}
+    .process-line{height:4px;width:80px;background:linear-gradient(to right,var(--primary-gold),var(--aakrati-peach));margin:0 auto 12px}
+    .process-step{position:relative;margin-bottom:2rem;padding-left:1rem}
+    .process-number{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:8px;background:linear-gradient(135deg,var(--primary-gold),var(--aakrati-peach));color:#fff;font-weight:700;font-size:.875rem;margin-bottom:.75rem;box-shadow:0 4px 12px rgba(201,169,110,.2)}
+    .locations-hero h2{font-family:"Playfair Display",serif}
+    .loc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    @media(max-width:1024px){.loc-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){.loc-grid{grid-template-columns:1fr}}
+    .location-card{background:#fff;border:1px solid rgba(0,0,0,.04);padding:1.5rem;border-radius:16px;transition:.5s;position:relative;overflow:hidden}
+    .location-card::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,169,110,.03),rgba(217,163,130,.05));opacity:0;transition:opacity .5s}
+    .location-card:hover{transform:translateY(-8px);box-shadow:0 16px 40px rgba(201,169,110,.12);border-color:rgba(201,169,110,.2)}
+    .location-card:hover::before{opacity:1}
+    .location-icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#F8F5F0,#F3F0EA);display:flex;align-items:center;justify-content:center;color:var(--primary-gold);transition:.5s}
+    .location-card:hover .location-icon{background:linear-gradient(135deg,var(--primary-gold),var(--aakrati-peach));color:#fff;transform:scale(1.1) rotate(-5deg)}
+  </style>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-img"><img src="../images/services/aakratialle.webp" alt="Interior design services"></div>
+    <div class="hero-overlay"></div>
+    <div class="container" style="position:relative;z-index:1;display:flex;align-items:end;min-height:55vh;padding-bottom:2rem">
+      <div class="hero-panel">
+        <div class="eyebrow">Services & Locations</div>
+        <h1 class="service-title">Interior Design Services</h1>
+        <p style="color:var(--charcoal)">From turnkey interiors to bespoke furniture and art—thoughtful, tech-smart execution across Bengaluru.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="section" style="background:var(--soft-ivory)">
+    <div class="container">
+      <div class="section-head">
+        <h2 style="font-family:'Playfair Display',serif;font-weight:700;color:var(--deep-navy);font-size:1.75rem">Our Services</h2>
+        <p class="section-sub">Discover our comprehensive interior design solutions</p>
+        <div class="process-line" style="margin-left:0"></div>
+      </div>
+      <div class="svc-grid">
+        <a href="/services/turnkey.html" class="svc-item"><span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M3 15h18"/></svg></span><span class="svc-content"><div class="svc-title">Turnkey Interiors</div><div class="svc-desc">Complete end-to-end interior solutions</div></span></a>
+        <a href="/services/design-consultation.html" class="svc-item"><span class="svc-icon"><img src="../images/services/ServiceCard/designconsultation.png" alt=""></span><span class="svc-content"><div class="svc-title">Design Consultation</div><div class="svc-desc">Expert guidance for your vision</div></span></a>
+        <a href="/services/colour-consultation.html" class="svc-item"><span class="svc-icon"><img src="../images/services/ServiceCard/colourconsultation.png" alt=""></span><span class="svc-content"><div class="svc-title">Colour Consultation</div><div class="svc-desc">Perfect palettes for your space</div></span></a>
+        <a href="/services/space-planning.html" class="svc-item"><span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span><span class="svc-content"><div class="svc-title">Space Planning</div><div class="svc-desc">Optimize your layout and flow</div></span></a>
+        <a href="/services/custom-furniture.html" class="svc-item"><span class="svc-icon"><img src="../images/services/ServiceCard/customfurniture.png" alt=""></span><span class="svc-content"><div class="svc-title">Custom Furniture</div><div class="svc-desc">Bespoke pieces for your home</div></span></a>
+        <a href="/services/art-murals.html" class="svc-item"><span class="svc-icon"><img src="../images/services/ServiceCard/artmurals.png" alt=""></span><span class="svc-content"><div class="svc-title">Art &amp; Murals</div><div class="svc-desc">Transform walls into masterpieces</div></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Work -->
+  <section class="section process">
+    <div class="container" style="text-align:center">
+      <div class="process-line"></div>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:700;color:var(--deep-navy);font-size:2rem;margin-bottom:.5rem">How We Work</h2>
+      <p style="color:var(--charcoal);max-width:780px;margin:0 auto 24px">Human warmth, machine clarity. We start with your routines, lock accuracy in 2D, then visualize in 3D—so what you see is what gets built.</p>
+      <div style="max-width:720px;margin:0 auto;text-align:left">
+        <div class="process-step"><div class="process-number">1</div><h4 style="margin:.25rem 0">Discover & Map</h4><p style="color:#6b7280">Client interviews, site inventory, services audit.</p></div>
+        <div class="process-step"><div class="process-number">2</div><h4 style="margin:.25rem 0">Plan (2D First)</h4><p style="color:#6b7280">Zoning, storage logic, clearances, services routing.</p></div>
+        <div class="process-step"><div class="process-number">3</div><h4 style="margin:.25rem 0">Visualize (3D)</h4><p style="color:#6b7280">Materials, modeling, lighting simulation.</p></div>
+        <div class="process-step"><div class="process-number">4</div><h4 style="margin:.25rem 0">Execute</h4><p style="color:#6b7280">Factory modules + on-site finesse. Clean handover.</p></div>
+        <div class="process-step"><div class="process-number">5</div><h4 style="margin:.25rem 0">Stay in Control</h4><p style="color:#6b7280">Room-wise BOQ, live Gantt, payment logs, daily updates.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Locations -->
+  <section class="section locations-hero">
+    <div class="container">
+      <h2 style="font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:12px">Interior Design Across Bengaluru</h2>
+      <p class="section-sub">From modern apartments in Indiranagar to spacious villas in Whitefield, we deliver thoughtful, tech-smart design across Bengaluru's neighborhoods.</p>
+      <div class="loc-grid" style="margin-top:24px">
+        <div class="location-card"><div class="location-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><h4 class="svc-title" style="margin-top:10px">Whitefield</h4><p class="svc-desc">Tech hub residences, modern apartments, and luxury villas with contemporary design solutions.</p></div>
+        <div class="location-card"><div class="location-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><h4 class="svc-title" style="margin-top:10px">Indiranagar</h4><p class="svc-desc">Trendy apartments and commercial spaces with vibrant, personality-driven designs.</p></div>
+        <div class="location-card"><div class="location-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><h4 class="svc-title" style="margin-top:10px">Koramangala</h4><p class="svc-desc">Startup culture homes and creative spaces with innovative design solutions.</p></div>
+        <div class="location-card"><div class="location-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><h4 class="svc-title" style="margin-top:10px">HSR Layout</h4><p class="svc-desc">Modern residential projects and family-friendly interior solutions.</p></div>
+        <div class="location-card"><div class="location-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><h4 class="svc-title" style="margin-top:10px">JP Nagar</h4><p class="svc-desc">Traditional-meets-contemporary designs for families.</p></div>
+        <div class="location-card"><div class="location-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><h4 class="svc-title" style="margin-top:10px">BTM Layout</h4><p class="svc-desc">Vibrant neighborhood with modern apartment complexes and budget-friendly solutions.</p></div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section" style="background:#F9F6F1">
+    <div class="container" style="text-align:center">
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:1rem">We Also Serve Across Bengaluru</h3>
+      <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:18px">
+        <div><h5 class="svc-title">North Bengaluru</h5><p class="svc-desc">Hebbal, Yelahanka, Thanisandra, Hennur</p></div>
+        <div><h5 class="svc-title">East Bengaluru</h5><p class="svc-desc">Marathahalli, Sarjapur Road, Bellandur</p></div>
+        <div><h5 class="svc-title">South Bengaluru</h5><p class="svc-desc">Jayanagar, Basavanagudi, Rajarajeshwari Nagar</p></div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // simple reveal
+    (function(){
+      const els=[...document.querySelectorAll('.svc-item,.location-card')];
+      const io=new IntersectionObserver(ents=>{ents.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15});
+      els.forEach(el=>io.observe(el));
+    })();
+  </script>
+ </main>
+<footer class="site-footer"><div class="container footer-inner">© Aakrati Interior Studio</div><div class="ribbon">Fine Interiors</div></footer>
+<script src="../assets/js/site.js"></script></body></html>

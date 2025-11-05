@@ -1,0 +1,424 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Portfolio – Aakrati</title><link rel="stylesheet" href="assets/css/site.css"></head><body>
+<header class="site-header"><div class="container header-inner"><a class="brand" href="/index.html"><img src="images/logovisitingcardfront.png" alt="">Aakrati</a><nav class="nav"><a href="/index.html">Home</a><a href="/about.html">About</a><a href="/portfolio.html">Portfolio</a><a href="/services/index.html">Services</a><a href="/contact.html">Contact</a><a class="btn btn-primary enquire" href="mailto:hello@aakrati.com">Enquire Now</a></nav><button class="btn hamburger" data-menu-open>☰</button></div></header><div class="mobile-overlay"></div><aside class="mobile-sheet"><button class="btn" data-menu-close>Close</button><nav class="mobile-nav"><a href="/index.html">Home</a><a href="/about.html">About</a><a href="/portfolio.html">Portfolio</a><a href="/services/index.html">Services</a><a href="/contact.html">Contact</a></nav></aside>
+<main>
+  <style>
+    :root{--gold:#C9A35C;--dark:#1A1D29;--cream:#F8F5F0;--ink:#2C2C2C;--g600:#6b7280;--g300:#d1d5db}
+    .portfolio-hero{position:relative;height:60vh;min-height:400px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--dark);margin-bottom:48px}
+    .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+    .video-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.5),rgba(0,0,0,.3));z-index:2}
+    .hero-content{position:relative;z-index:3;max-width:800px;padding:0 24px;text-align:center;color:#fff}
+    .hero-content h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,3.5rem);font-weight:400;margin:0 0 12px;line-height:1.2;letter-spacing:.5px;color:#fff;text-shadow:2px 2px 4px rgba(0,0,0,.5)}
+    .hero-content p{font-size:clamp(1rem,2.2vw,1.125rem);color:#fff;max-width:600px;margin:0 auto;line-height:1.7;font-weight:300;text-shadow:1px 1px 2px rgba(0,0,0,.4)}
+    .section{padding:48px 0}
+    .section-header{text-align:center;max-width:700px;margin:0 auto 32px}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,2.5rem);font-weight:500;color:var(--dark);margin:0 0 12px;letter-spacing:.5px;position:relative;display:inline-block}
+    .section-title::after{content:'';position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);width:60px;height:2px;background:var(--gold)}
+    .section-subtitle{font-size:1rem;color:var(--g600);line-height:1.6;margin:20px 0 0}
+    .nav-tabs{display:flex;justify-content:center;gap:12px;margin-bottom:32px;border-bottom:2px solid var(--g300)}
+    .nav-tab{padding:16px 24px;background:none;border:none;font-size:1rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--g600);cursor:pointer;transition:.3s;border-bottom:3px solid transparent;margin-bottom:-2px}
+    .nav-tab:hover{color:var(--gold)}
+    .nav-tab.active{color:var(--dark);border-bottom-color:var(--gold)}
+    .filter-bar{display:flex;justify-content:center;gap:12px;margin-bottom:32px;flex-wrap:wrap}
+    .filter-btn{padding:10px 18px;border-radius:50px;font-size:.875rem;font-weight:500;letter-spacing:.05em;background:#fff;color:var(--g600);border:1px solid var(--g300);text-transform:uppercase;transition:.3s;cursor:pointer}
+    .filter-btn:hover{border-color:var(--gold);transform:translateY(-1px)}
+    .filter-btn.active{background:var(--gold);color:#fff;border-color:var(--gold);box-shadow:0 2px 8px rgba(201,163,92,.3)}
+    .grid{display:grid;gap:32px}
+    @media(min-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1024px){.grid{grid-template-columns:repeat(3,1fr)}}
+    .project-card,.album-card{position:relative;border-radius:12px;overflow:hidden;background:#fff;text-decoration:none;color:inherit;display:block;transition:.4s;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+    .project-card:hover,.album-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.12)}
+    .image-wrap{position:relative;overflow:hidden;aspect-ratio:4/3;background:#f0f0f0}
+    .image-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+    .project-card:hover .image-wrap img,.album-card:hover .image-wrap img{transform:scale(1.05)}
+    .project-card .badge{position:absolute;top:12px;right:12px;padding:6px 12px;background:rgba(201,163,92,.95);color:#fff;border-radius:999px;font-size:.75rem;font-weight:700;letter-spacing:.05em;backdrop-filter:blur(10px);box-shadow:0 2px 8px rgba(0,0,0,.1)}
+    .card-body{padding:18px}
+    .card-title{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:600;color:var(--dark);margin:0 0 6px}
+    .card-meta{display:flex;align-items:center;gap:8px;font-size:.875rem;color:var(--g600)}
+    .detail{display:none}
+    .masonry{column-gap:24px}
+    @media(min-width:640px){.masonry{column-count:2}}
+    @media(min-width:1024px){.masonry{column-count:3}}
+    .masonry-item{break-inside:avoid;margin-bottom:24px}
+    .masonry-item img{width:100%;height:auto;display:block;border-radius:8px;cursor:zoom-in;transition:transform .3s,box-shadow .3s;background:#f0f0f0}
+    .masonry-item img:hover{transform:scale(1.02);box-shadow:0 8px 24px rgba(0,0,0,.12)}
+    .lightbox{position:fixed;inset:0;z-index:9999;background:rgba(26,31,46,.98);display:none;backdrop-filter:blur(20px)}
+    .lightbox-controls{position:fixed;top:1.5rem;right:1.5rem;display:flex;gap:.75rem;z-index:10000}
+    .lightbox-btn,.lightbox-nav{display:grid;place-items:center;border-radius:50%;border:2px solid rgba(255,255,255,.3);background:rgba(0,0,0,.5);color:#fff;backdrop-filter:blur(10px);transition:.3s;cursor:pointer}
+    .lightbox-btn{width:44px;height:44px;font-size:20px;font-weight:600}
+    .lightbox-btn:hover{background:var(--gold);border-color:var(--gold);transform:scale(1.05)}
+    .lightbox-stage{position:absolute;inset:0;display:grid;place-items:center}
+    .lightbox-image{max-width:90vw;max-height:90vh;object-fit:contain;opacity:0;transition:opacity .4s}
+    .lightbox-image.active{opacity:1}
+    .lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);width:56px;height:56px;font-size:28px;z-index:10000}
+    .lightbox-nav:hover{background:rgba(255,255,255,.2);border-color:var(--gold)}
+    .lightbox-nav-prev{left:1.5rem}.lightbox-nav-next{right:1.5rem}
+    .hidden{display:none!important}
+  </style>
+
+  <!-- Hero -->
+  <section class="portfolio-hero">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="images/Portfolio/AI-2.jpg">
+      <source src="images/Portfolio/portfoliomovie.mov" type="video/mp4">
+      <img src="images/Portfolio/AI-2.jpg" alt="Aakrati Interiors Portfolio">
+    </video>
+    <div class="video-overlay"></div>
+    <div class="hero-content">
+      <h1>Our Portfolio</h1>
+      <p>Discover our curated collection of transformative interior spaces</p>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <div class="container">
+    <nav class="nav-tabs" role="tablist">
+      <button id="tab-projects" class="nav-tab active" role="tab" aria-selected="true" aria-controls="projects-panel">Projects</button>
+      <button id="tab-albums" class="nav-tab" role="tab" aria-selected="false" aria-controls="albums-panel">Albums</button>
+    </nav>
+  </div>
+
+  <!-- Projects Panel -->
+  <div id="projects-panel" role="tabpanel" aria-labelledby="tab-projects">
+    <section class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Our Projects</h2>
+          <p class="section-subtitle">Complete interior design transformations from concept to completion</p>
+        </header>
+        <div class="filter-bar"><button class="filter-btn active" data-filter="all">All Projects</button><button class="filter-btn" data-filter="residential">Residential</button><button class="filter-btn" data-filter="commercial">Commercial</button></div>
+        <div class="grid" id="projects-grid"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Albums Panel -->
+  <div id="albums-panel" role="tabpanel" aria-labelledby="tab-albums" class="hidden">
+    <section class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Browse by Room</h2>
+          <p class="section-subtitle">Explore our work organized by room type across all projects</p>
+        </header>
+        <div class="grid" id="albums-grid"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Project Detail -->
+  <div id="project-detail" class="detail">
+    <section class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title"><span id="project-detail-title"></span> <span id="project-detail-year" style="font-size:.9rem;border:1px solid var(--g300);padding:4px 10px;border-radius:999px;color:var(--g600);font-weight:500"></span></h2>
+          <p id="project-detail-location" class="section-subtitle"></p>
+        </header>
+        <div id="room-filters" class="filter-bar" style="display:none"></div>
+        <div class="masonry" id="project-detail-gallery"></div>
+        <div style="text-align:center;margin-top:24px"><button id="back-to-projects" class="filter-btn">← Back to Projects</button></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Album Detail -->
+  <div id="album-detail" class="detail">
+    <section class="section">
+      <div class="container">
+        <header class="section-header"><h2 class="section-title"><span id="album-detail-title"></span></h2><p id="album-detail-subtitle" class="section-subtitle"></p></header>
+        <div class="masonry" id="album-detail-gallery"></div>
+        <div style="text-align:center;margin-top:24px"><button id="back-to-albums" class="filter-btn">← Back to Albums</button></div>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" aria-hidden="true">
+  <div class="lightbox-controls"><button id="lightbox-close" class="lightbox-btn" aria-label="Close">×</button></div>
+  <div class="lightbox-stage"><img id="lightbox-image" class="lightbox-image" alt=""></div>
+  <button id="lightbox-prev" class="lightbox-nav lightbox-nav-prev" aria-label="Previous">‹</button>
+  <button id="lightbox-next" class="lightbox-nav lightbox-nav-next" aria-label="Next">›</button>
+</div>
+
+<footer class="site-footer"><div class="container footer-inner">© Aakrati Interior Studio</div><div class="ribbon">Fine Interiors</div></footer>
+
+<script id="portfolio-data" type="application/json">{
+  "projects": [
+    {
+      "slug": "ram-sridhar-apartment-btm",
+      "title": "Ram Sridhar Apartment BTM",
+      "type": "residential",
+      "location": "",
+      "year": "",
+      "cover": "images/Portfolio/Projects/Ram Sridhar Apartment BTM/AID-71.jpg",
+      "images": [
+        {"src":"images/Portfolio/Projects/Ram Sridhar Apartment BTM/58402535-3fb9-4710-b3d6-cc419fed29be.JPG","alt":"58402535 3fb9 4710 b3d6 cc419fed29be","room":null},
+        {"src":"images/Portfolio/Projects/Ram Sridhar Apartment BTM/AID-71.jpg","alt":"Aid 71","room":null},
+        {"src":"images/Portfolio/Projects/Ram Sridhar Apartment BTM/AID-73.jpg","alt":"Aid 73","room":null},
+        {"src":"images/Portfolio/Projects/Ram Sridhar Apartment BTM/AID-76.jpg","alt":"Aid 76","room":null},
+        {"src":"images/Portfolio/Projects/Ram Sridhar Apartment BTM/AID-77.jpg","alt":"Aid 77","room":null},
+        {"src":"images/Portfolio/Projects/Ram Sridhar Apartment BTM/AID-81.jpg","alt":"Aid 81","room":null},
+        {"src":"images/Portfolio/Projects/Ram Sridhar Apartment BTM/AID-93.jpg","alt":"Aid 93","room":null},
+        {"src":"images/Portfolio/Projects/Ram Sridhar Apartment BTM/AID-94.jpg","alt":"Aid 94","room":null},
+        {"src":"images/Portfolio/Projects/Ram Sridhar Apartment BTM/AID-95.jpg","alt":"Aid 95","room":null},
+        {"src":"images/Portfolio/Projects/Ram Sridhar Apartment BTM/AID-97.jpg","alt":"Aid 97","room":null},
+        {"src":"images/Portfolio/Projects/Ram Sridhar Apartment BTM/AID-102.jpg","alt":"Aid 102","room":null}
+      ]
+    },
+    {
+      "slug": "gabbar-chai-kiosk-whitefiled-forum",
+      "title": "Gabbar Chai Kiosk Whitefiled Forum",
+      "type": "commercial",
+      "location": "",
+      "year": "",
+      "cover": "images/Portfolio/Commercial /gabbar chai kiosk whitefiled forum/1.jpg",
+      "images": [
+        {"src":"images/Portfolio/Commercial /gabbar chai kiosk whitefiled forum/1.jpg","alt":"1","room":null},
+        {"src":"images/Portfolio/Commercial /gabbar chai kiosk whitefiled forum/2.jpg","alt":"2","room":null},
+        {"src":"images/Portfolio/Commercial /gabbar chai kiosk whitefiled forum/3.jpg","alt":"3","room":null},
+        {"src":"images/Portfolio/Commercial /gabbar chai kiosk whitefiled forum/4.jpg","alt":"4","room":null},
+        {"src":"images/Portfolio/Commercial /gabbar chai kiosk whitefiled forum/5.jpg","alt":"5","room":null},
+        {"src":"images/Portfolio/Commercial /gabbar chai kiosk whitefiled forum/6.jpg","alt":"6","room":null},
+        {"src":"images/Portfolio/Commercial /gabbar chai kiosk whitefiled forum/7.jpg","alt":"7","room":null},
+        {"src":"images/Portfolio/Commercial /gabbar chai kiosk whitefiled forum/WhatsApp Image 2022-04-08 at 13.25.23.jpeg","alt":"WhatsApp Image 2022 04 08 At 13 25 23","room":null},
+        {"src":"images/Portfolio/Commercial /gabbar chai kiosk whitefiled forum/WhatsApp Image 2022-04-08 at 13.30.26.jpeg","alt":"WhatsApp Image 2022 04 08 At 13 30 26","room":null}
+      ]
+    },
+    {
+      "slug": "gramener",
+      "title": "Gramener",
+      "type": "commercial",
+      "location": "",
+      "year": "",
+      "cover": "images/Portfolio/Commercial /gramener/ABZQ2988.JPG",
+      "images": [
+        {"src":"images/Portfolio/Commercial /gramener/ABZQ2988.JPG","alt":"Abzq2988","room":null},
+        {"src":"images/Portfolio/Commercial /gramener/BIMA6410.JPG","alt":"Bima6410","room":null},
+        {"src":"images/Portfolio/Commercial /gramener/DIHG5606.JPG","alt":"Dihg5606","room":null},
+        {"src":"images/Portfolio/Commercial /gramener/DPVZ2557.JPG","alt":"Dpvz2557","room":null},
+        {"src":"images/Portfolio/Commercial /gramener/IMG_5502.JPG","alt":"Img 5502","room":null},
+        {"src":"images/Portfolio/Commercial /gramener/XDNU1488.JPG","alt":"Xdnu1488","room":null}
+      ]
+    }
+  ],
+  "albums": [
+    {
+      "slug": "bed-chambers",
+      "title": "Bed Chambers",
+      "cover": "images/Portfolio/Albums/Bed chambers/1.jpg",
+      "images": [
+        {"src":"images/Portfolio/Albums/Bed chambers/1.jpg","alt":"1"},
+        {"src":"images/Portfolio/Albums/Bed chambers/4.jpg","alt":"4"},
+        {"src":"images/Portfolio/Albums/Bed chambers/5.jpg","alt":"5"},
+        {"src":"images/Portfolio/Albums/Bed chambers/AID-10.jpg","alt":"Aid 10"},
+        {"src":"images/Portfolio/Albums/Bed chambers/AID-13.jpg","alt":"Aid 13"},
+        {"src":"images/Portfolio/Albums/Bed chambers/AID-14.jpg","alt":"Aid 14"},
+        {"src":"images/Portfolio/Albums/Bed chambers/BENEKA RESIDENCY DBR1 .jpg","alt":"Beneka Residency Dbr1"},
+        {"src":"images/Portfolio/Albums/Bed chambers/Guest Bedroom 1.jpg","alt":"Guest Bedroom 1"},
+        {"src":"images/Portfolio/Albums/Bed chambers/Guest bedroom 2.jpg","alt":"Guest Bedroom 2"},
+        {"src":"images/Portfolio/Albums/Bed chambers/L&T South city gbr 1.png","alt":"L T South City Gbr 1"},
+        {"src":"images/Portfolio/Albums/Bed chambers/L&T South city gbr 2.png","alt":"L T South City Gbr 2"},
+        {"src":"images/Portfolio/Albums/Bed chambers/L&T South city mbr 1.png","alt":"L T South City Mbr 1"},
+        {"src":"images/Portfolio/Albums/Bed chambers/L&T South city mbr 2.png","alt":"L T South City Mbr 2"},
+        {"src":"images/Portfolio/Albums/Bed chambers/Master Bedroom 1.jpg","alt":"Master Bedroom 1"},
+        {"src":"images/Portfolio/Albums/Bed chambers/Master Bedroom 2.jpg","alt":"Master Bedroom 2"},
+        {"src":"images/Portfolio/Albums/Bed chambers/ff_bed side.png","alt":"Ff Bed Side"},
+        {"src":"images/Portfolio/Albums/Bed chambers/ff_tv reading zone side.png","alt":"Ff Tv Reading Zone Side"},
+        {"src":"images/Portfolio/Albums/Bed chambers/purva midtown bedroom 2.jpg","alt":"Purva Midtown Bedroom 2"},
+        {"src":"images/Portfolio/Albums/Bed chambers/sf_bed side.jpg","alt":"Sf Bed Side"},
+        {"src":"images/Portfolio/Albums/Bed chambers/unishire terraza mbr 1.jpg","alt":"Unishire Terraza Mbr 1"},
+        {"src":"images/Portfolio/Albums/Bed chambers/unishire terraza mbr 2.jpg","alt":"Unishire Terraza Mbr 2"}
+      ]
+    },
+    {
+      "slug": "kids-den",
+      "title": "Kids DEN",
+      "cover": "images/Portfolio/Albums/Kids DEN/AID-4.jpg",
+      "images": [
+        {"src":"images/Portfolio/Albums/Kids DEN/AID-4.jpg","alt":"Aid 4"},
+        {"src":"images/Portfolio/Albums/Kids DEN/AID-7.jpg","alt":"Aid 7"},
+        {"src":"images/Portfolio/Albums/Kids DEN/AID-144.jpg","alt":"Aid 144"},
+        {"src":"images/Portfolio/Albums/Kids DEN/AID-147.jpg","alt":"Aid 147"},
+        {"src":"images/Portfolio/Albums/Kids DEN/AID-157.jpg","alt":"Aid 157"},
+        {"src":"images/Portfolio/Albums/Kids DEN/Copy of AID-193.jpg","alt":"Copy Of Aid 193"},
+        {"src":"images/Portfolio/Albums/Kids DEN/Copy of AID-194.jpg","alt":"Copy Of Aid 194"},
+        {"src":"images/Portfolio/Albums/Kids DEN/I_wardrobe side.jpg","alt":"I Wardrobe Side"}
+      ]
+    },
+    {
+      "slug": "kitchen-heart-of-home",
+      "title": "Kitchen - HEART OF HOME",
+      "cover": "images/Portfolio/Albums/kitchen -HEART OF HOME/4.jpg",
+      "images": [
+        {"src":"images/Portfolio/Albums/kitchen -HEART OF HOME/4.jpg","alt":"4"},
+        {"src":"images/Portfolio/Albums/kitchen -HEART OF HOME/8.jpg","alt":"8"},
+        {"src":"images/Portfolio/Albums/kitchen -HEART OF HOME/27.jpg","alt":"27"},
+        {"src":"images/Portfolio/Albums/kitchen -HEART OF HOME/AID-236.jpg","alt":"Aid 236"},
+        {"src":"images/Portfolio/Albums/kitchen -HEART OF HOME/AID-239.jpg","alt":"Aid 239"},
+        {"src":"images/Portfolio/Albums/kitchen -HEART OF HOME/AID-259.jpg","alt":"Aid 259"},
+        {"src":"images/Portfolio/Albums/kitchen -HEART OF HOME/AID-260.jpg","alt":"Aid 260"},
+        {"src":"images/Portfolio/Albums/kitchen -HEART OF HOME/IMG_0959.JPG","alt":"Img 0959"},
+        {"src":"images/Portfolio/Albums/kitchen -HEART OF HOME/IMG_2897.jpg","alt":"Img 2897"},
+        {"src":"images/Portfolio/Albums/kitchen -HEART OF HOME/PASH 2.JPG","alt":"Pash 2"},
+        {"src":"images/Portfolio/Albums/kitchen -HEART OF HOME/PASH1.JPG","alt":"Pash1"},
+        {"src":"images/Portfolio/Albums/kitchen -HEART OF HOME/KITCHEN  1.png","alt":"Kitchen 1"},
+        {"src":"images/Portfolio/Albums/kitchen -HEART OF HOME/kit 1.png","alt":"Kit 1"},
+        {"src":"images/Portfolio/Albums/kitchen -HEART OF HOME/kit 2.png","alt":"Kit 2"},
+        {"src":"images/Portfolio/Albums/kitchen -HEART OF HOME/kitchen 5.png","alt":"Kitchen 5"}
+      ]
+    },
+    {
+      "slug": "living-dining",
+      "title": "Living- DINING",
+      "cover": "images/Portfolio/Albums/living- DINING/3.png",
+      "images": [
+        {"src":"images/Portfolio/Albums/living- DINING/3.png","alt":"3"},
+        {"src":"images/Portfolio/Albums/living- DINING/6.png","alt":"6"},
+        {"src":"images/Portfolio/Albums/living- DINING/11.png","alt":"11"},
+        {"src":"images/Portfolio/Albums/living- DINING/14.png","alt":"14"},
+        {"src":"images/Portfolio/Albums/living- DINING/AID-1.jpg","alt":"Aid 1"},
+        {"src":"images/Portfolio/Albums/living- DINING/AID-56.jpg","alt":"Aid 56"},
+        {"src":"images/Portfolio/Albums/living- DINING/AID-140.jpg","alt":"Aid 140"},
+        {"src":"images/Portfolio/Albums/living- DINING/AID-175.jpg","alt":"Aid 175"},
+        {"src":"images/Portfolio/Albums/living- DINING/AID-211.jpg","alt":"Aid 211"},
+        {"src":"images/Portfolio/Albums/living- DINING/AID-215.jpg","alt":"Aid 215"},
+        {"src":"images/Portfolio/Albums/living- DINING/AID-218.jpg","alt":"Aid 218"},
+        {"src":"images/Portfolio/Albums/living- DINING/AID-245.jpg","alt":"Aid 245"},
+        {"src":"images/Portfolio/Albums/living- DINING/BRIGADE METEROPOLIS.JPG","alt":"Brigade Meteropolis"},
+        {"src":"images/Portfolio/Albums/living- DINING/KAMA 2.png","alt":"Kama 2"},
+        {"src":"images/Portfolio/Albums/living- DINING/KAMA 3.png","alt":"Kama 3"},
+        {"src":"images/Portfolio/Albums/living- DINING/KAMA1.png","alt":"Kama1"},
+        {"src":"images/Portfolio/Albums/living- DINING/a13.png","alt":"A13"},
+        {"src":"images/Portfolio/Albums/living- DINING/a4.png","alt":"A4"},
+        {"src":"images/Portfolio/Albums/living- DINING/sat 1.jpg","alt":"Sat 1"},
+        {"src":"images/Portfolio/Albums/living- DINING/sat 2.jpg","alt":"Sat 2"},
+        {"src":"images/Portfolio/Albums/living- DINING/sat 3.jpg","alt":"Sat 3"},
+        {"src":"images/Portfolio/Albums/living- DINING/sat 9.jpg","alt":"Sat 9"}
+      ]
+    }
+  ]
+}</script>
+
+<script>
+(function(){
+  'use strict';
+  const E = (s)=> typeof s === 'string' ? encodeURI(s) : s;
+  const dataEl=document.getElementById('portfolio-data');
+  let data={projects:[],albums:[]};
+  function loadData(){
+    return fetch('assets/data/portfolio-data.json',{cache:'no-store'})
+      .then(r=>r.ok?r.json():Promise.reject())
+      .then(json=>{data=json})
+      .catch(()=>{ try{ data = dataEl?JSON.parse(dataEl.textContent):{projects:[],albums:[]}; }catch(_){ data={projects:[],albums:[]}; } });
+  }
+  const tabProjects=document.getElementById('tab-projects');
+  const tabAlbums=document.getElementById('tab-albums');
+  const projectsPanel=document.getElementById('projects-panel');
+  const albumsPanel=document.getElementById('albums-panel');
+  const projectDetail=document.getElementById('project-detail');
+  const albumDetail=document.getElementById('album-detail');
+  const projectsGrid=document.getElementById('projects-grid');
+  const albumsGrid=document.getElementById('albums-grid');
+  const roomFilters=document.getElementById('room-filters');
+  const galleryProject=document.getElementById('project-detail-gallery');
+  const galleryAlbum=document.getElementById('album-detail-gallery');
+  const backToProjects=document.getElementById('back-to-projects');
+  const backToAlbums=document.getElementById('back-to-albums');
+  const lb=document.getElementById('lightbox');
+  const lbImg=document.getElementById('lightbox-image');
+  const lbClose=document.getElementById('lightbox-close');
+  const lbPrev=document.getElementById('lightbox-prev');
+  const lbNext=document.getElementById('lightbox-next');
+  const heroVideo=document.querySelector('.hero-video');
+  heroVideo?.play().catch(()=>{});
+  document.addEventListener('click',()=>heroVideo?.play().catch(()=>{}),{once:true});
+
+  let currentFilter='all';
+  let currentProject=null; let currentAlbum=null;
+  let lightboxImages=[]; let lightboxIndex=0;
+
+  function switchTab(tab){
+    [tabProjects,tabAlbums].forEach(t=>{t.classList.toggle('active',t.id===`tab-${tab}`);t.setAttribute('aria-selected',t.id===`tab-${tab}`)});
+    projectsPanel.classList.toggle('hidden',tab!=='projects');
+    albumsPanel.classList.toggle('hidden',tab!=='albums');
+    projectDetail.style.display='none'; albumDetail.style.display='none';
+  }
+  tabProjects?.addEventListener('click',()=>switchTab('projects'));
+  tabAlbums?.addEventListener('click',()=>switchTab('albums'));
+
+  function renderProjects(){
+    projectsGrid.innerHTML='';
+    data.projects.forEach(p=>{
+      const card=document.createElement('a'); card.href='#'; card.className='project-card'; card.dataset.type=p.type||'residential'; card.dataset.slug=p.slug;
+      card.innerHTML=`<div class="image-wrap"><img src="${E(p.cover)}" alt="${p.title}"><span class="badge">${(p.type||'Residential')[0].toUpperCase()+ (p.type||'Residential').slice(1)}</span></div><div class="card-body"><h3 class="card-title">${p.title}</h3><div class="card-meta">${p.location?`<span>${p.location}</span>`:''}${p.location&&p.year?'<span style=\"width:4px;height:4px;background:#d1d5db;border-radius:50%\"></span>':''}${p.year?`<span>${p.year}</span>`:''}</div></div>`;
+      card.addEventListener('click',e=>{e.preventDefault();openProject(p.slug)});
+      projectsGrid.appendChild(card);
+    });
+    applyProjectFilter(currentFilter);
+  }
+  function applyProjectFilter(filter){
+    document.querySelectorAll('.filter-btn[data-filter]')?.forEach(b=>b.classList.toggle('active',b.dataset.filter===filter));
+    projectsGrid.querySelectorAll('.project-card').forEach(card=>{
+      const type=card.dataset.type; const show=filter==='all'||type===filter; card.style.display=show?'':'none';
+    });
+  }
+  document.querySelectorAll('.filter-btn[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{currentFilter=btn.dataset.filter;applyProjectFilter(currentFilter);}));
+
+  function renderAlbums(){
+    albumsGrid.innerHTML='';
+    data.albums.forEach(a=>{
+      const card=document.createElement('a'); card.href='#'; card.className='album-card'; card.dataset.slug=a.slug;
+      card.innerHTML=`<div class="image-wrap"><img src="${E(a.cover)}" alt="${a.title}"></div><div class="card-body"><h3 class="card-title">${a.title}</h3></div>`;
+      card.addEventListener('click',e=>{e.preventDefault();openAlbum(a.slug)});
+      albumsGrid.appendChild(card);
+    });
+  }
+
+  function openProject(slug){
+    const p=data.projects.find(x=>x.slug===slug); if(!p) return; currentProject=p;
+    projectsPanel.classList.add('hidden'); albumsPanel.classList.add('hidden'); albumDetail.style.display='none'; projectDetail.style.display='block';
+    document.getElementById('project-detail-title').textContent=p.title;
+    document.getElementById('project-detail-year').textContent=p.year||'';
+    document.getElementById('project-detail-location').textContent=p.location||'';
+    const rooms=[...new Set((p.images||[]).map(i=>i.room).filter(Boolean))];
+    if(rooms.length){ roomFilters.style.display='flex'; roomFilters.innerHTML=rooms.map(r=>`<button class="filter-btn" data-room="${r}">${r.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}</button>`).join('');
+      roomFilters.querySelectorAll('[data-room]').forEach(chip=>chip.addEventListener('click',()=>filterProjectByRoom(chip.dataset.room)));
+    } else { roomFilters.style.display='none'; }
+    renderProjectGallery(p.images||[]);
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function filterProjectByRoom(room){ if(!currentProject) return; const imgs=currentProject.images.filter(i=>i.room===room); renderProjectGallery(imgs); }
+  function renderProjectGallery(images){
+    galleryProject.innerHTML=images.map((img,idx)=>`<figure class="masonry-item"><img data-index="${idx}" src="${E(img.src)}" alt="${img.alt||''}"></figure>`).join('');
+    lightboxImages=images.map(i=>i.src); lightboxIndex=0;
+  }
+
+  function openAlbum(slug){
+    const a=data.albums.find(x=>x.slug===slug); if(!a) return; currentAlbum=a;
+    projectsPanel.classList.add('hidden'); albumsPanel.classList.add('hidden'); projectDetail.style.display='none'; albumDetail.style.display='block';
+    document.getElementById('album-detail-title').textContent=a.title; document.getElementById('album-detail-subtitle').textContent='';
+    galleryAlbum.innerHTML=(a.images||[]).map((img,idx)=>`<figure class=\"masonry-item\"><img data-index=\"${idx}\" src=\"${E(img.src)}\" alt=\"${img.alt||''}\"></figure>`).join('');
+    lightboxImages=(a.images||[]).map(i=>i.src); lightboxIndex=0;
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  backToProjects?.addEventListener('click',()=>{projectDetail.style.display='none'; switchTab('projects')});
+  backToAlbums?.addEventListener('click',()=>{albumDetail.style.display='none'; switchTab('albums')});
+
+  function openLightbox(index){ if(!lightboxImages.length) return; lightboxIndex=index; lbImg.src=E(lightboxImages[lightboxIndex]); lb.style.display='block'; lb.setAttribute('aria-hidden','false'); setTimeout(()=>lbImg.classList.add('active'),10) }
+  function closeLightbox(){ lbImg.classList.remove('active'); lb.setAttribute('aria-hidden','true'); setTimeout(()=>{lb.style.display='none'; lbImg.src=''},200) }
+  function prev(){ lightboxIndex=(lightboxIndex-1+lightboxImages.length)%lightboxImages.length; lbImg.src=E(lightboxImages[lightboxIndex]) }
+  function next(){ lightboxIndex=(lightboxIndex+1)%lightboxImages.length; lbImg.src=E(lightboxImages[lightboxIndex]) }
+  lbClose?.addEventListener('click',closeLightbox); lb.addEventListener('click',e=>{if(e.target===lb) closeLightbox()});
+  document.addEventListener('keydown',e=>{if(lb.getAttribute('aria-hidden')==='false'){ if(e.key==='Escape') closeLightbox(); if(e.key==='ArrowLeft') prev(); if(e.key==='ArrowRight') next(); }});
+  lbPrev?.addEventListener('click',prev); lbNext?.addEventListener('click',next);
+
+  projectsGrid.addEventListener('click',e=>{const img=e.target.closest('.project-card .image-wrap img'); if(img){e.preventDefault(); openLightbox(Number(img.dataset.index)||0)}});
+  albumsGrid.addEventListener('click',e=>{const img=e.target.closest('.album-card .image-wrap img'); if(img){e.preventDefault(); openLightbox(Number(img.dataset.index)||0)}});
+  galleryProject.addEventListener('click',e=>{const img=e.target.closest('img'); if(img){openLightbox(Number(img.dataset.index)||0)}});
+  galleryAlbum.addEventListener('click',e=>{const img=e.target.closest('img'); if(img){openLightbox(Number(img.dataset.index)||0)}});
+
+  loadData().then(()=>{ renderProjects(); renderAlbums(); });
+})();
+</script>
+<script src="assets/js/site.js"></script>
+</body></html>

@@ -1,0 +1,76 @@
+html,body{margin:0;padding:0}
+*{box-sizing:border-box}
+:root{
+  --page-bg:#F8F5F1;--ink:#1A3B4E;--brand-primary:#1A1D29;--brand-accent:#D9C38B;--brand-cream:#F8F5F0;--soft-ivory:#F8F5F0;--brand-mist:#E8ECEB;
+  --primary-gold:#C9A35C;--light-gold:#E8D9B5;--deep-navy:#1A1D29;--charcoal:#2C2C2C;--aakrati-peach:#D9A082;
+  --header-h-desktop:80px;--header-h-mobile:64px;--logo-max-desktop:120px;--logo-max-mobile:70px;
+}
+body{background:var(--page-bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;color:var(--deep-navy)}
+a{color:var(--brand-primary);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:.2s ease}
+.btn-primary{background:#98715d;color:#fff}
+.btn-outline{border-color:#98715d;color:#98715d;background:transparent}
+.btn:hover{transform:translateY(-1px)}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--brand-cream);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid rgba(0,0,0,.06)}
+.header-inner{display:flex;align-items:center;justify-content:flex-start;height:var(--header-h-desktop);position:relative}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:48px;width:auto;max-height:var(--logo-max-desktop)}
+.nav{display:flex;gap:22px;align-items:center;position:absolute;left:50%;transform:translateX(-50%)}
+.nav a{color:#222;padding:8px 6px;border-radius:8px}
+.nav a:hover{background:rgba(0,0,0,.04)}
+.enquire{margin-left:8px;position:absolute;right:20px;top:50%;transform:translateY(-50%)}
+.hamburger{display:none}
+
+/* Mobile menu */
+.mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:.2s}
+.mobile-sheet{position:fixed;top:0;right:0;height:100vh;width:82vw;max-width:360px;background:#fff;box-shadow:-8px 0 24px rgba(0,0,0,.12);transform:translateX(100%);transition:.25s;padding:20px}
+.mobile-open .mobile-overlay{opacity:1;pointer-events:auto}
+.mobile-open .mobile-sheet{transform:translateX(0)}
+.mobile-nav a{display:block;padding:14px 10px;color:#222;border-radius:10px}
+.mobile-nav a:hover{background:rgba(0,0,0,.05)}
+
+/* Footer */
+.site-footer{margin-top:64px;border-top:1px solid rgba(0,0,0,.08);background:var(--brand-cream)}
+.footer-inner{padding:32px 0}
+.ribbon{background:#8B5A2B;color:#fff;text-align:center;padding:10px 0}
+
+/* Sections */
+.section{padding:64px 0}
+.section-hero{padding:80px 0}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero-title{font-size:44px;line-height:1.1;margin:0 0 16px}
+.gold-grad{background:linear-gradient(90deg,#D9A082,#9C6B34);-webkit-background-clip:text;background-clip:text;color:transparent}
+.card{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.grid{display:grid;gap:22px}
+
+/* Reveal */
+.animate-on-scroll{opacity:0;transform:translateY(14px);transition:.5s}
+.animate-on-scroll.revealed{opacity:1;transform:none}
+
+/* Simple masonry columns (portfolio) */
+.columns-3{column-count:3;column-gap:16px}
+.columns-2{column-count:2;column-gap:14px}
+.columns-1{column-count:1}
+
+/* Lightbox basics */
+.lightbox{position:fixed;inset:0;background:#1A1D29;display:none;align-items:center;justify-content:center}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:86vh;border-radius:10px}
+.lb-btn{position:absolute;top:16px;right:16px;background:rgba(255,255,255,.85);border:1px solid rgba(0,0,0,.15);border-radius:999px;padding:10px}
+
+@media (max-width:960px){
+  .header-inner{height:var(--header-h-mobile)}
+  .brand img{max-height:var(--logo-max-mobile)}
+  .nav{display:none}
+  .hamburger{display:inline-flex}
+  .hero-grid{grid-template-columns:1fr}
+  .columns-3{column-count:2}
+}
+@media (max-width:640px){
+  .columns-3,.columns-2{column-count:1}
+}

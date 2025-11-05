@@ -1,0 +1,457 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aakrati Interior Studio – Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="assets/css/site.css">
+<!-- Home inline styles (from Blade, trimmed to hero + services) -->
+<style>
+  :root { --primary-gold:#C9A96E; --deep-navy:#1A1D29; --soft-ivory:#F8F5F0; --warm-taupe:#D8CFC4; --charcoal:#2C2C2C; --accent-burgundy:#8B4513; --light-gold:#E8D9B5; }
+  .container{max-width:1400px;margin:0 auto;padding:0 2rem}
+  /* Font used in intro logo */
+  @font-face { font-family:'Brother-Home'; src:url('/fonts/Brother-Home.otf') format('opentype'); font-weight:normal; font-style:normal; font-display:swap; }
+  /* Utility container parity with Blade */
+  .container-site{max-width:1280px;margin-left:auto;margin-right:auto;padding-left:1.5rem;padding-right:1.5rem}
+  @media(min-width:1024px){.container-site{padding-left:2.5rem;padding-right:2.5rem}}
+  /* Hero actions alignment */
+  .hero-actions{display:flex;justify-content:center;gap:1rem;margin-bottom:2rem}
+  /* Reveal animation parity */
+  .reveal{opacity:0;transform:translateY(30px);transition:all .8s ease}
+  .reveal.active{opacity:1;transform:translateY(0)}
+  /* Intro Overlay */
+  #introOverlay{position:fixed;inset:0;background:linear-gradient(135deg,rgba(247,239,234,.65) 0%, rgba(255,255,255,.80) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .8s ease-out;backdrop-filter:blur(10px) saturate(110%)}
+  .intro-logo{font-size:clamp(3rem,8vw,6rem);opacity:0;transform:scale(.9);color:#000;text-shadow:0 6px 30px rgba(0,0,0,.15);margin-bottom:clamp(1.5rem,3vw,2.2rem);font-weight:400;letter-spacing:.05em;font-family:'Brother-Home',serif}
+  .intro-tagline{color:var(--deep-navy);position:relative;font-size:clamp(1rem,3vw,1.8rem);font-weight:300;letter-spacing:.2em;text-transform:uppercase;opacity:0;margin:clamp(25px,5vw,38px) 0 0 0}
+  .intro-tagline::after{content:attr(data-sparkle);position:absolute;inset:0;background-image:linear-gradient(90deg, rgba(201,169,110,0) 0%, rgba(201,169,110,.25) 35%, var(--light-gold) 50%, rgba(201,169,110,.25) 65%, rgba(201,169,110,0) 100%);background-size:200% 100%;background-position:-100% 0;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;opacity:0}
+  @keyframes goldSweep { to { background-position:200% 0; } }
+  .intro-tagline.run-gold-sweep::after{opacity:1;animation:goldSweep 1.8s cubic-bezier(.19,1,.22,1) 0s forwards}
+  /* Hero */
+  .hero{position:relative;background:linear-gradient(135deg,var(--soft-ivory) 0%, #fff 100%);overflow:hidden}
+  .hero .container{padding-top:clamp(2rem,3.5vw,3.25rem);padding-bottom:clamp(3rem,5vw,4.5rem)}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem);align-items:start}
+  .award-badges{display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem}
+  .award-pill{display:inline-flex;align-items:center;gap:.6rem;padding:.7rem 1.2rem;background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:9999px;box-shadow:0 8px 22px rgba(0,0,0,.07);color:var(--deep-navy);font-size:.95rem;font-weight:500}
+  .award-pill .dot{width:.55rem;height:.55rem;border-radius:9999px;background:var(--primary-gold);box-shadow:0 0 0 4px rgba(201,169,110,.18)}
+  .hero-headline{font-weight:600;font-size:clamp(2.6rem,5.2vw,5.25rem);line-height:1.1;letter-spacing:-.01em;margin:0 0 1.1rem}
+  .hero-headline .line-1{color:var(--deep-navy);display:block}
+  .hero-headline .line-2{display:block;background:linear-gradient(90deg,#D9A082 0%, #9C6B34 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-summary{font-size:1.05rem;color:#3c3c3c;max-width:48ch;margin:0 0 1.6rem}
+  .hover-underline{font-size:1.125rem;color:#fff;position:relative;display:inline-block;font-weight:600;text-decoration:none;background:#98715d;padding:1rem 2rem;border-radius:8px;box-shadow:0 10px 30px rgba(201,169,110,.3);transition:background-color .3s ease}
+  .hover-underline::after,.hover-underline::before{content:'';position:absolute;width:100%;height:2px;background:linear-gradient(to right,#D9A082,#9C6B34);bottom:-5px;left:0;transform:scaleX(0);transform-origin:right;transition:transform .4s ease-out}
+  .hover-underline::before{top:-5px;transform-origin:left}
+  .hover-underline:hover::after,.hover-underline:hover::before{transform:scaleX(1)}
+  .hover-underline:hover{background:#7a5a4a;color:#fff}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .stat-card{background:rgba(248,245,241,.7);backdrop-filter:blur(10px);border:1px solid rgba(201,169,110,.1);padding:1.5rem;border-radius:4px;text-align:center;transition:.3s}
+  .stat-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,.08)}
+  .stat-number{font-size:2.25rem;font-weight:600;margin-bottom:.5rem;color:var(--deep-navy)}
+  .stat-label{font-size:.875rem;color:var(--charcoal)}
+  .image-container{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.15)}
+  .hero-image{width:100%;height:auto;display:block;transition:transform .8s cubic-bezier(.4,0,.2,1)}
+  .image-container:hover .hero-image{transform:scale(1.05)}
+  .floating-badge{position:absolute;bottom:30px;left:30px;background:#fff;padding:1rem 1.5rem;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.15);z-index:3;animation:floatBadge 3s ease-in-out infinite}
+  @keyframes floatBadge{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .badge-label{font-size:.75rem;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:.25rem}
+  .badge-value{font-size:1.5rem;font-weight:700;color:var(--deep-navy)}
+  .badge-value span{color:var(--primary-gold)}
+  /* Services */
+  .section{padding:6rem 0}
+  .services-section{padding:5rem 0 3rem 0 !important}
+  .section-header{text-align:center;max-width:700px;margin:0 auto 4rem}
+  .section-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1rem;background:linear-gradient(135deg,rgba(201,169,110,.1),rgba(201,169,110,.05));border-radius:50px;margin-bottom:1rem;font-size:.875rem;font-weight:500;color:var(--primary-gold);border:1px solid rgba(201,169,110,.2)}
+  .section-title{font-size:2.5rem;margin-bottom:1rem;color:var(--deep-navy);font-weight:600}
+  .section-subtitle{font-size:1.125rem;color:var(--charcoal);font-weight:300}
+  .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+  .service-card{background:#fff;padding:2.5rem;border-radius:16px;transition:.4s;position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid rgba(201,169,110,.1)}
+  .service-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,.12)}
+  .service-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:0;background:linear-gradient(to bottom,var(--primary-gold),#E8D9B5);transition:height .4s}
+  .service-card:hover::before{height:100%}
+  .service-icon{width:70px;height:70px;background:linear-gradient(135deg,rgba(201,169,110,.1),rgba(201,169,110,.05));border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;transition:.3s}
+  .service-card:hover .service-icon{background:linear-gradient(135deg,rgba(201,169,110,.15),rgba(201,169,110,.08));transform:scale(1.05)}
+  .service-title{font-size:1.5rem;margin-bottom:1rem;color:var(--deep-navy);font-weight:600;line-height:1.2}
+  .service-description{color:var(--charcoal);margin-bottom:1.5rem;line-height:1.6;font-size:.9375rem}
+  .service-link{display:inline-flex;align-items:center;gap:.5rem;color:var(--primary-gold);font-weight:500;text-decoration:none;transition:.3s;font-size:.875rem}
+  .service-link:hover{gap:.75rem;color:#B8941F}
+  .services-note{ text-align:center; }
+  @media(max-width:1024px){.hero-grid{grid-template-columns:1fr;gap:3rem}.hero-visual{order:-1}.hero-stats{grid-template-columns:1fr;gap:1rem}.services-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem}.section-title{font-size:2.25rem}.section-subtitle{font-size:1rem}.services-section{padding:4rem 0 2.5rem 0 !important}}
+  @media(max-width:768px){.container{padding:0 1.5rem}.hero-headline{font-size:2.5rem}.hero-stats{grid-template-columns:1fr;gap:1rem}.hero-actions{flex-direction:column;align-items:flex-start}.image-container{border-radius:15px}.floating-badge{bottom:20px;left:20px;padding:.75rem 1rem}.badge-value{font-size:1.25rem}.services-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem}.service-card{padding:2rem 1.5rem}.service-title{font-size:1.25rem}.service-description{font-size:.9rem}.section-title{font-size:2rem}.section-subtitle{font-size:1rem}.services-section{padding:3.5rem 0 2rem 0 !important}.section-header{margin-bottom:3rem !important}}
+  @media(max-width:640px){.services-grid{grid-template-columns:1fr;gap:1.25rem}.service-card{padding:1.75rem 1.25rem;text-align:center}.service-icon{margin:0 auto 1.25rem auto;width:60px;height:60px}.service-icon img,.service-icon svg{width:28px;height:28px}.service-title{font-size:1.125rem;margin-bottom:.875rem}.service-description{font-size:.875rem;margin-bottom:1.25rem}.service-link{justify-content:center}.services-note{font-size:.875rem;text-align:center;padding:0 1rem}}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+</head><body>
+<!-- ===== HEADER (Parity with Blade, static routes) ===== -->
+<header class="site-header">
+  <div class="site-header-inner">
+    <!-- Left: Logo -->
+    <a href="/index.html" class="site-header-brand" aria-label="Aakrati Home">
+      <img src="/images/logovisitingcardfront.png" alt="Aakrati Interior Design" width="120" height="auto">
+    </a>
+
+    <!-- Center: Navigation (Desktop Only) -->
+    <nav class="site-header-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="/index.html" class="nav-link">Home</a></li>
+        <li><a href="/about.html" class="nav-link">About</a></li>
+        <li><a href="/portfolio.html" class="nav-link">Portfolio</a></li>
+        <li class="services-nav">
+          <a href="/services/index.html" class="sd-trigger nav-link">
+            Services
+            <svg class="sd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 9l-7 7-7-7"/>
+            </svg>
+          </a>
+          <div class="sd-menu">
+            <div class="sd-header">
+              <h3>Our Services</h3>
+              <p>Comprehensive interior design solutions</p>
+            </div>
+            <div class="sd-grid">
+              <a href="/services/turnkey.html" class="sd-item">
+                <span class="sd-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <path d="M9 3v18M3 9h18M3 15h18"/>
+                  </svg>
+                </span>
+                <span>
+                  <div class="sd-title">Turnkey Interiors</div>
+                  <div class="sd-desc">Complete end-to-end solutions</div>
+                </span>
+              </a>
+              <a href="/services/design-consultation.html" class="sd-item">
+                <span class="sd-icon"><img src="/images/services/ServiceCard/designconsultation.png" alt=""></span>
+                <span>
+                  <div class="sd-title">Design Consultation</div>
+                  <div class="sd-desc">Expert guidance for your vision</div>
+                </span>
+              </a>
+              <a href="/services/colour-consultation.html" class="sd-item">
+                <span class="sd-icon"><img src="/images/services/ServiceCard/colourconsultation.png" alt=""></span>
+                <span>
+                  <div class="sd-title">Colour Consultation</div>
+                  <div class="sd-desc">Perfect palettes for spaces</div>
+                </span>
+              </a>
+              <a href="/services/space-planning.html" class="sd-item">
+                <span class="sd-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <path d="M9 22V12h6v10"/>
+                  </svg>
+                </span>
+                <span>
+                  <div class="sd-title">Space Planning</div>
+                  <div class="sd-desc">Optimize layout and flow</div>
+                </span>
+              </a>
+              <a href="/services/custom-furniture.html" class="sd-item">
+                <span class="sd-icon"><img src="/images/services/ServiceCard/customfurniture.png" alt=""></span>
+                <span>
+                  <div class="sd-title">Custom Furniture</div>
+                  <div class="sd-desc">Bespoke pieces for your home</div>
+                </span>
+              </a>
+              <a href="/services/art-murals.html" class="sd-item">
+                <span class="sd-icon"><img src="/images/services/ServiceCard/artmurals.png" alt=""></span>
+                <span>
+                  <div class="sd-title">Art &amp; Murals</div>
+                  <div class="sd-desc">Transform walls to masterpieces</div>
+                </span>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li><a href="/contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Right: CTA + Hamburger -->
+    <div class="site-header-actions">
+      <a href="mailto:hello@aakrati.com" class="enquire-pill" aria-label="Contact us for enquiries">Enquire Now</a>
+      <button class="hamburger-btn" id="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay" id="mobile-menu-overlay" aria-hidden="true"></div>
+
+<!-- Mobile Menu Sheet -->
+<aside class="mobile-menu-sheet" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation menu">
+  <div class="mobile-menu-header">
+    <span class="logo-text">Aakrati</span>
+    <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close navigation menu">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+  <nav class="mobile-menu-links" aria-label="Mobile navigation">
+    <a href="/index.html" class="mobile-menu-link">Home</a>
+    <a href="/about.html" class="mobile-menu-link">About</a>
+    <a href="/portfolio.html" class="mobile-menu-link">Portfolio</a>
+    <div>
+      <button class="mobile-services-toggle" id="services-toggle" aria-expanded="false">
+        <span>Services</span>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="mobile-services-list" id="services-list">
+        <a href="/services/turnkey.html">Turnkey Interiors</a>
+        <a href="/services/design-consultation.html">Design Consultation</a>
+        <a href="/services/colour-consultation.html">Colour Consultation</a>
+        <a href="/services/space-planning.html">Space Planning</a>
+        <a href="/services/custom-furniture.html">Custom Furniture</a>
+        <a href="/services/art-murals.html">Art &amp; Murals</a>
+      </div>
+    </div>
+    <a href="/contact.html" class="mobile-menu-link">Contact</a>
+  </nav>
+  <a href="mailto:hello@aakrati.com" class="mobile-menu-cta">Enquire Now</a>
+</aside>
+
+<!-- Header Styles (scoped) -->
+<style>
+  .site-header{position:sticky;top:0;z-index:1000;background:#F8F5F1;border-bottom:1px solid rgba(0,0,0,.06);backdrop-filter:saturate(120%) blur(6px)}
+  .site-header-inner{height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;max-width:1400px;margin:0 auto;gap:16px}
+  .site-header-brand{display:inline-flex;align-items:center;line-height:0;flex-shrink:0}
+  .site-header-brand img{display:block;height:auto;width:auto;max-height:120px;object-fit:contain;opacity:.96;filter:drop-shadow(0 1px 2px rgba(0,0,0,.06))}
+  .site-header-nav{display:flex;justify-content:center;flex:1}
+  .site-header-nav ul{display:flex;align-items:center;gap:40px;list-style:none;margin:0;padding:0}
+  .nav-link{position:relative;color:#1A1D29;text-decoration:none;font-weight:600;font-size:15px;padding:.5rem .75rem;transition:color .3s ease;display:inline-block;white-space:nowrap}
+  .nav-link::after{content:'';position:absolute;width:0;height:2px;bottom:0;left:50%;background-color:#98715d;transition:width .3s ease,left .3s ease;transform:translateX(-50%)}
+  .nav-link:hover::after,.nav-link:focus::after,.nav-link.active::after{width:100%;left:0;transform:none}
+  .site-header-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}
+  .enquire-pill{display:inline-block;padding:10px 18px;border-radius:9999px;background:#98715d;color:#fff!important;text-decoration:none!important;font-size:14px;font-weight:700;transition:transform .2s ease,background-color .2s ease;white-space:nowrap}
+  .enquire-pill:hover{transform:translateY(-1px);background:#7a5a4a}
+  .hamburger-btn{display:none;align-items:center;justify-content:center;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,.08);background:#fff;color:#1A1D29;cursor:pointer;transition:all .2s ease;min-width:48px;min-height:48px;box-shadow:0 2px 8px rgba(0,0,0,.06);position:relative;z-index:1001}
+  .hamburger-btn:hover{background:#f9fafb;transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.1)}
+  .hamburger-btn:active{transform:scale(.95)}
+  .hamburger-btn svg{width:22px;height:22px;stroke-width:2.5}
+  .services-nav{position:relative}
+  .services-nav .sd-trigger{display:flex;align-items:center;gap:.25rem}
+  .services-nav .sd-caret{width:1rem;height:1rem;transition:transform .2s ease}
+  .services-nav:hover .sd-caret{transform:rotate(180deg)}
+  .services-nav .sd-menu{position:absolute;top:calc(100% + 1rem);left:50%;transform:translateX(-50%);min-width:520px;background:#fff;border-radius:16px;overflow:hidden;z-index:1100;box-shadow:0 20px 60px rgba(0,0,0,.12),0 0 0 1px rgba(0,0,0,.04);opacity:0;visibility:hidden;transform:translateX(-50%) translateY(-10px);transition:all .4s cubic-bezier(.4,0,.2,1);backdrop-filter:blur(10px)}
+  .services-nav:hover .sd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+  .sd-header{padding:1.25rem;background:#fff;border-bottom:1px solid rgba(0,0,0,.06)}
+  .sd-header h3{font-size:1.1rem;font-weight:800;color:#111827;margin:0 0 .25rem 0}
+  .sd-header p{font-size:.9rem;color:#6b7280;margin:0}
+  .sd-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem;padding:1rem}
+  .sd-item{display:flex;align-items:flex-start;gap:1rem;padding:1rem;border-radius:12px;text-decoration:none;color:#222;transition:all .3s ease;position:relative;overflow:hidden}
+  .sd-item:hover{background:#F8FAFC;transform:translateX(4px)}
+  .sd-icon{flex-shrink:0;width:48px;height:48px;border-radius:12px;background:#F3F4F6;display:flex;align-items:center;justify-content:center;transition:all .3s ease}
+  .sd-icon svg{width:24px;height:24px;color:#334155}
+  .sd-icon img{width:22px;height:22px;object-fit:contain}
+  .sd-title{font-size:1.05rem;font-weight:800;color:#0f172a;margin-bottom:.25rem}
+  .sd-desc{font-size:.9rem;color:#6b7280;line-height:1.45}
+  .mobile-menu-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);z-index:1050;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease}
+  .mobile-menu-overlay.show{opacity:1;visibility:visible}
+  .mobile-menu-sheet{position:fixed;top:0;right:0;bottom:0;width:min(85vw,380px);background:#fff;box-shadow:-8px 0 40px rgba(0,0,0,.15);z-index:1060;overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
+  .mobile-menu-sheet.open{transform:translateX(0)}
+  .mobile-menu-header{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid #e5e7eb;position:sticky;top:0;background:#fff;z-index:10}
+  .mobile-menu-header .logo-text{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,sans-serif;font-size:22px;font-weight:700;color:#1A1D29;letter-spacing:.02em}
+  .mobile-menu-close{padding:10px;border-radius:10px;background:#f3f4f6;border:none;cursor:pointer;transition:all .2s ease;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}
+  .mobile-menu-close:hover{background:#e5e7eb;transform:scale(1.05)}
+  .mobile-menu-links{padding:16px 20px 24px}
+  .mobile-menu-link{display:flex;align-items:center;padding:16px 0;color:#1A1D29;font-size:16px;font-weight:600;text-decoration:none;border-bottom:1px solid #f3f4f6;min-height:52px}
+  .mobile-services-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;padding:16px 0;background:none;border:none;border-bottom:1px solid #f3f4f6;color:#1A1D29;font-size:16px;font-weight:700;text-align:left;cursor:pointer;min-height:52px}
+  .mobile-services-toggle svg{width:20px;height:20px;transition:transform .3s ease}
+  .mobile-services-toggle svg.rotate{transform:rotate(180deg)}
+  .mobile-services-list{padding-left:20px;margin-top:8px;max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .mobile-services-list.show{max-height:500px}
+  .mobile-services-list a{display:flex;align-items:center;padding:14px 0;color:#6b7280;font-size:15px;text-decoration:none;min-height:48px}
+  .mobile-menu-cta{margin:20px 20px 24px;padding:16px 20px;background:#98715d;color:#fff!important;text-align:center;border-radius:12px;font-weight:700;font-size:16px;text-decoration:none!important;display:flex;align-items:center;justify-content:center;min-height:52px;transition:all .2s ease}
+  .mobile-menu-cta:hover{background:#7a5a4a;transform:translateY(-2px);box-shadow:0 4px 12px rgba(152,113,93,.3)}
+  @media(min-width:768px){.hamburger-btn{display:none!important}.mobile-menu-overlay,.mobile-menu-sheet{display:none!important}}
+  @media(max-width:767px){.site-header-inner{height:64px;padding:0 16px}.site-header-brand img{max-height:70px}.site-header-nav{display:none!important}.site-header-actions .enquire-pill{display:none!important}.hamburger-btn{display:flex!important}}
+  @media(max-width:480px){.site-header-inner{padding:0 12px}.mobile-menu-sheet{width:100vw}.hamburger-btn{min-width:44px;min-height:44px;padding:8px}}
+  body.menu-open{overflow:hidden;position:fixed;width:100%}
+  html{scroll-padding-top:80px}
+</style>
+
+<!-- Header Script -->
+<script>
+  (function(){
+    const hamburgerBtn=document.getElementById('mobile-menu-btn');
+    const mobileMenu=document.getElementById('mobile-menu');
+    const mobileMenuOverlay=document.getElementById('mobile-menu-overlay');
+    const mobileMenuClose=document.getElementById('mobile-menu-close');
+    const servicesToggle=document.getElementById('services-toggle');
+    const servicesList=document.getElementById('services-list');
+    const body=document.body;
+    if(!hamburgerBtn||!mobileMenu||!mobileMenuOverlay) return;
+    function openMobileMenu(){mobileMenu.classList.add('open');mobileMenuOverlay.classList.add('show');body.classList.add('menu-open');hamburgerBtn.setAttribute('aria-expanded','true');mobileMenu.setAttribute('aria-hidden','false');if(mobileMenuClose) mobileMenuClose.focus();}
+    function closeMobileMenu(){mobileMenu.classList.remove('open');mobileMenuOverlay.classList.remove('show');body.classList.remove('menu-open');hamburgerBtn.setAttribute('aria-expanded','false');mobileMenu.setAttribute('aria-hidden','true');hamburgerBtn.focus();}
+    function toggleServices(){const isOpen=servicesList.classList.contains('show');const icon=servicesToggle.querySelector('svg');if(isOpen){servicesList.classList.remove('show');icon.classList.remove('rotate');servicesToggle.setAttribute('aria-expanded','false');}else{servicesList.classList.add('show');icon.classList.add('rotate');servicesToggle.setAttribute('aria-expanded','true');}}
+    hamburgerBtn.addEventListener('click',function(e){e.stopPropagation();openMobileMenu();});
+    if(mobileMenuClose) mobileMenuClose.addEventListener('click',closeMobileMenu);
+    mobileMenuOverlay.addEventListener('click',closeMobileMenu);
+    if(servicesToggle) servicesToggle.addEventListener('click',toggleServices);
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&mobileMenu.classList.contains('open')) closeMobileMenu(); });
+    mobileMenu.querySelectorAll('a').forEach(link=>{ link.addEventListener('click',function(){ setTimeout(closeMobileMenu,100); }); });
+    mobileMenu.addEventListener('click',function(e){ if(e.target.tagName!=='A'){ e.stopPropagation(); } });
+    let resizeTimer; window.addEventListener('resize',function(){ clearTimeout(resizeTimer); resizeTimer=setTimeout(function(){ if(window.innerWidth>767&&mobileMenu.classList.contains('open')) closeMobileMenu(); },250); });
+  })();
+</script>
+
+<main>
+  <noscript><style>#introOverlay{display:none!important}</style></noscript>
+  <div id="introOverlay" data-mode="flipCascade">
+    <h1 id="introLogo" class="intro-logo">Aakrati</h1>
+    <p id="introTagline" class="intro-tagline" data-splitting data-sparkle="Your Interior Design Specialist">Your Interior Design Specialist</p>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container container-site">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="award-badges">
+            <div class="award-pill"><span class="dot"></span><span>Most Promising & Innovative Interior Design Firm — 2025</span></div>
+            <div class="award-pill"><span class="dot"></span><span>Trusted & Creative Interior Designer of the Year — Karnataka</span></div>
+          </div>
+          <h1 class="hero-headline"><span class="line-1">Human warmth,</span><span class="line-2">machine clarity</span></h1>
+          <p class="hero-summary">Our studio couples empathy-led interviews with Tech-driven layouts to deliver spaces that are deeply personal—and brilliantly practical.</p>
+          <div class="hero-actions"><a href="/portfolio.html" class="hover-underline">Explore Our Work</a></div>
+          <div class="hero-stats">
+            <div class="stat-card"><div class="stat-number">12+</div><div class="stat-label">Years of Excellence</div></div>
+            <div class="stat-card"><div class="stat-number">180+</div><div class="stat-label">Completed Projects</div></div>
+            <div class="stat-card"><div class="stat-number">★ 4.9</div><div class="stat-label">Client Satisfaction</div></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="image-container"><img src="images/Artkratihero.png" alt="Luxury Interior Design by Aakrati" class="hero-image"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section services-section" id="services" style="padding-bottom:2rem!important">
+    <div class="container container-site">
+      <div class="section-header reveal">
+        <div class="section-badge"><span>What We Create</span></div>
+        <h2 class="section-title">Our Core Services</h2>
+        <p class="section-subtitle">Luxury Interior Design • Bengaluru's Best</p>
+      </div>
+      <div class="services-grid">
+        <article class="service-card reveal" aria-labelledby="svc-turnkey">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M3 3H21V21H3V3Z" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 9H21M3 15H21M9 3V21M15 3V21" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 id="svc-turnkey" class="service-title">Turnkey Interiors</h3>
+          <p class="service-description">End-to-end design + build. CAD-accurate plans, BOQ & live Gantt, factory modules and on-site finesse—one accountable team.</p>
+          <a href="/services#turnkey" class="service-link">Learn More
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+
+        <article class="service-card reveal" aria-labelledby="svc-space">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 22V12H15V22" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 id="svc-space" class="service-title">Space Planning</h3>
+          <p class="service-description">Accuracy before aesthetics—zoned layouts, clearances, storage logic and services routing finalized in 2D before any render.</p>
+          <a href="/services#space-planning" class="service-link">Learn More
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+
+        <article class="service-card reveal" aria-labelledby="svc-joinery">
+          <div class="service-icon" aria-hidden="true"><img src="images/services/ServiceCard/customfurniture.png" alt="Custom Furniture Icon" style="width:32px;height:32px"></div>
+          <h3 id="svc-joinery" class="service-title">Custom Furniture</h3>
+          <p class="service-description">Bespoke pieces with factory precision and hand-finished warmth—robust hardware, timeless proportion, perfect fits.</p>
+          <a href="/services#custom-furniture" class="service-link">Learn More
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+
+        <article class="service-card reveal" aria-labelledby="svc-consult">
+          <div class="service-icon" aria-hidden="true"><img src="images/services/ServiceCard/designconsultation.png" alt="Design Consultation Icon" style="width:32px;height:32px"></div>
+          <h3 id="svc-consult" class="service-title">Design Consultation</h3>
+          <p class="service-description">Expert guidance to set your vision, materials, lighting strategy and budget guardrails—ready for a clean execution.</p>
+          <a href="/services#consultation" class="service-link">Learn More
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+      </div>
+      <div class="services-note reveal">Also available: <strong>Colour Consultation</strong> & <strong>Art &amp; Murals</strong>. <a href="/services/index.html" class="service-link" style="margin-left:.25rem;">See all services</a></div>
+    </div>
+  </section>
+
+  
+</main>
+
+<footer class="site-footer"><div class="container footer-inner">© Aakrati Interior Studio</div><div class="ribbon">Fine Interiors</div></footer>
+
+<script>
+// Intro Animation & scroll reveals (static adaptation)
+document.addEventListener('DOMContentLoaded', () => {
+  const overlay = document.getElementById('introOverlay');
+  if (!overlay) return;
+
+  const urlMode = new URLSearchParams(location.search).get('intro');
+  const played = sessionStorage.getItem('introPlayed') || document.cookie.includes('introPlayed=1');
+  const force = !!urlMode;
+
+  if (played && !force) {
+    overlay.remove();
+  }
+
+  const logo = document.getElementById('introLogo');
+  const tag = document.getElementById('introTagline');
+  if (window.Splitting) Splitting();
+
+  const persistPlayed = () => {
+    sessionStorage.setItem('introPlayed', '1');
+    document.cookie = 'introPlayed=1; path=/; SameSite=Lax';
+  };
+
+  const endOverlay = () => {
+    overlay.style.opacity = '0';
+    setTimeout(() => { overlay.remove(); }, 500);
+    persistPlayed();
+  };
+
+  const safety = setTimeout(endOverlay, 3500);
+
+  if (typeof window.gsap === 'undefined') {
+    endOverlay();
+  } else {
+    try {
+      const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+      tl.fromTo(logo, { opacity: 0, y: 22, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 1.0 })
+        .to(tag, { opacity: 1, duration: 0.25 }, '-=0.15')
+        .from(tag.querySelectorAll('.char'), { opacity: 0, y: 20, duration: 0.5, stagger: 0.035 }, '<')
+        .add(() => tag.classList.add('run-gold-sweep'))
+        .add(() => { clearTimeout(safety); endOverlay(); }, '+=1.2');
+    } catch (e) {
+      clearTimeout(safety);
+      endOverlay();
+    }
+  }
+
+  // Scroll reveal for .reveal elements
+  const revealElements = document.querySelectorAll('.reveal');
+  const revealOnScroll = () => {
+    revealElements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const elementVisible = 150;
+      if (elementTop < window.innerHeight - elementVisible) {
+        element.classList.add('active');
+      }
+    });
+  };
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
+});
+</script>
+<script src="assets/js/site.js"></script>
+</body></html>

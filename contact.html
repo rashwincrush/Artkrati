@@ -1,0 +1,111 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Contact – Aakrati</title><link rel="stylesheet" href="assets/css/site.css"></head><body>
+<header class="site-header"><div class="container header-inner"><a class="brand" href="/index.html"><img src="images/logovisitingcardfront.png" alt="">Aakrati</a><nav class="nav"><a href="/index.html">Home</a><a href="/about.html">About</a><a href="/portfolio.html">Portfolio</a><a href="/services/index.html">Services</a><a href="/contact.html">Contact</a><a class="btn btn-primary enquire" href="mailto:hello@aakrati.com">Enquire Now</a></nav><button class="btn hamburger" data-menu-open>☰</button></div></header><div class="mobile-overlay"></div><aside class="mobile-sheet"><button class="btn" data-menu-close>Close</button><nav class="mobile-nav"><a href="/index.html">Home</a><a href="/about.html">About</a><a href="/portfolio.html">Portfolio</a><a href="/services/index.html">Services</a><a href="/contact.html">Contact</a></nav></aside>
+<main>
+  <style>
+    :root{--soft-ivory:#F8F5F0;--deep-navy:#0E1B25;--terracotta:#D9A082;--gold:#C9A96E;--muted:#4E4A45;--border-soft:rgba(201,169,110,.1)}
+    body{background:var(--soft-ivory)}
+    .container{max-width:1400px;margin:0 auto;padding:0 1.5rem}
+    .contact-hero{min-height:50vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 0}
+    .hero-title{font-family:'Playfair Display',serif;color:var(--deep-navy);font-weight:700;font-size:clamp(2.5rem,5vw,4rem);margin-bottom:1rem}
+    .hero-sub{color:var(--muted);font-size:clamp(1rem,2vw,1.25rem);max-width:700px;margin:0 auto}
+    .decorative-line{width:80px;height:3px;background:linear-gradient(to right,var(--terracotta),var(--gold));margin:1.25rem auto;border-radius:2px}
+    .section{padding:2rem 0 5rem}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+    @media(max-width:1024px){.grid{grid-template-columns:1fr;gap:2rem}}
+    .glass{background:rgba(255,255,255,.7);backdrop-filter:blur(20px);border:1px solid var(--border-soft);border-radius:24px;box-shadow:0 10px 40px rgba(0,0,0,.06);padding:2.5rem;position:relative;overflow:hidden}
+    .card{background:rgba(255,255,255,.6);border:1px solid rgba(201,169,110,.15);border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.04);padding:1.75rem 1.5rem;transition:.3s}
+    .card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.1);border-color:rgba(201,169,110,.3)}
+    .contact-item{display:flex;align-items:flex-start;gap:1.5rem}
+    .icon{flex-shrink:0;width:56px;height:56px;border-radius:14px;background:rgba(201,169,110,.08);display:flex;align-items:center;justify-content:center}
+    .label{font-family:Inter,sans-serif;font-size:.8125rem;font-weight:600;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem}
+    .label::after{content:'';flex:1;height:1px;background:rgba(0,0,0,.08)}
+    .value{font-family:Inter,sans-serif;font-size:1.25rem;color:var(--deep-navy);line-height:1.5;margin-bottom:.5rem}
+    .address{font-family:Inter,sans-serif;font-size:1.05rem;color:var(--muted);line-height:1.7}
+    .btn-elegant{background:#98715D;color:#fff;border-radius:12px;padding:.75rem 1.5rem;font-weight:500;font-size:.95rem;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;text-decoration:none;border:0;cursor:pointer;position:relative;overflow:hidden}
+    .btn-elegant:hover{background:#80604A;transform:translateY(-3px);box-shadow:0 12px 35px rgba(152,113,93,.35)}
+    .section-title{font-family:'Playfair Display',serif;font-weight:600;font-size:2.25rem;color:var(--deep-navy);margin-bottom:2rem;position:relative;display:inline-block}
+    .section-title::after{content:'';position:absolute;bottom:-12px;left:0;width:60px;height:3px;background:linear-gradient(90deg,var(--gold),var(--terracotta));border-radius:3px}
+    .form{display:flex;flex-direction:column;gap:1.25rem}
+    .form-label{display:block;font-weight:500;margin:.8rem 0 .5rem;color:var(--deep-navy);font-size:.9rem}
+    .input,.select,.textarea{width:100%;padding:.75rem 1rem;border:2px solid rgba(201,169,110,.15);border-radius:10px;font-size:.95rem;background:#fff;color:var(--deep-navy);transition:.3s}
+    .textarea{min-height:120px;resize:vertical}
+    .input:focus,.select:focus,.textarea:focus{outline:none;border-color:var(--terracotta);box-shadow:0 0 0 4px rgba(217,160,130,.1);transform:translateY(-2px)}
+    .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--deep-navy);color:#fff;padding:1rem 1.5rem;border-radius:12px;font-size:.95rem;font-weight:500;opacity:0;pointer-events:none;transition:.4s;z-index:9999;box-shadow:0 10px 40px rgba(0,0,0,.2)}
+    .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+    @media(max-width:768px){.contact-item{flex-direction:column;align-items:center;text-align:center;gap:1rem}.btn-elegant{width:100%;justify-content:center}}
+  </style>
+
+  <!-- Hero -->
+  <section class="contact-hero">
+    <div class="container">
+      <h1 class="hero-title">Lets make your space <span style="color:var(--terracotta)">beautiful</span></h1>
+      <div class="decorative-line"></div>
+      <p class="hero-sub">Reach out for a personalized consultation and we make your vision into reality.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="section">
+    <div class="container">
+      <div class="grid">
+        <!-- Left: Contact Methods -->
+        <div>
+          <h3 class="section-title">Get In Touch</h3>
+          <div class="card" style="margin-bottom:1rem">
+            <div class="contact-item">
+              <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#98715D"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div>
+              <div style="flex:1"><div class="label">Phone</div><div class="value">+91 99023 82308</div></div>
+              <div><a class="btn-elegant" href="https://wa.me/919902382308" target="_blank" rel="noopener">WhatsApp</a></div>
+            </div>
+          </div>
+          <div class="card" style="margin-bottom:1rem">
+            <div class="contact-item">
+              <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#98715D"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
+              <div class="value"><a href="mailto:hello@aakrati.com" class="email-link" style="color:var(--muted);text-decoration:none">hello@aakrati.com</a></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="contact-item">
+              <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#98715D"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+              <div style="flex:1"><div class="label">Studio</div><div class="address"><p>34, 5th cross, Jayanagar 7th block</p><p>Bengaluru, Karnataka 560070</p><p>Landmark - Holy Saint Public School</p></div></div>
+              <div><a class="btn-elegant" href="https://maps.app.goo.gl/sNq58wSvrvpcJXu16" target="_blank" rel="noopener">Directions</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Enquiry Form -->
+        <div>
+          <div class="text-center" style="margin-bottom:10px"><h2 class="section-title" style="margin-bottom:18px">Send Us a Message</h2></div>
+          <div class="glass">
+            <form id="enquiryForm" class="form" action="#" method="POST">
+              <div><label class="form-label" for="name">Full Name *</label><input class="input" id="name" name="name" required type="text" placeholder="John Doe"></div>
+              <div><label class="form-label" for="email">Email Address *</label><input class="input" id="email" name="email" required type="email" placeholder="john@example.com"></div>
+              <div><label class="form-label" for="phone">Phone Number *</label><input class="input" id="phone" name="phone" required type="tel" placeholder="+91 98765 43210"></div>
+              <div><label class="form-label" for="project_desc">Project Description *</label><textarea class="textarea" id="project_desc" name="project_desc" required placeholder="Tell us about your vision, style preferences, and what you'd like to achieve..."></textarea></div>
+              <div><label class="form-label" for="scope">Project Scope *</label><input class="input" id="scope" name="scope" required type="text" placeholder="e.g., Living Room, Kitchen, Full Home Renovation"></div>
+              <div><label class="form-label" for="budget">Budget Range *</label><select class="select" id="budget" name="budget" required><option value="">Select Your Budget</option><option>Under ₹5 Lakhs</option><option>₹5-10 Lakhs</option><option>₹10-20 Lakhs</option><option>₹20+ Lakhs</option></select></div>
+              <div><label class="form-label" for="reply_via">Preferred Reply Method *</label><select class="select" id="reply_via" name="reply_via" required><option value="whatsapp">WhatsApp</option><option value="email">Email</option></select></div>
+              <button type="submit" class="btn-elegant" style="width:100%">Send Enquiry</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="toast" class="toast">Copied to clipboard!</div>
+
+  <script>
+    function showToast(msg='Copied to clipboard!'){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000)}
+    document.getElementById('enquiryForm').addEventListener('submit',function(e){
+      e.preventDefault(); const fd=new FormData(this); const data=Object.fromEntries(fd.entries());
+      const message=`New Project Enquiry Received\n\nName: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\nProject Description: ${data.project_desc}\nScope: ${data.scope}\nBudget: ${data.budget}`;
+      if(data.reply_via==='whatsapp'){window.open(`https://wa.me/919902382308?text=${encodeURIComponent(message)}`,'_blank');}
+      else {const subject=encodeURIComponent('New Project Enquiry — Website'); const body=encodeURIComponent(message); window.location.href=`mailto:hello@aakrati.com?subject=${subject}&body=${body}`}
+      showToast('✓ Redirecting to '+(data.reply_via==='whatsapp'?'WhatsApp':'your email app')+'...');
+    });
+  </script>
+</main>
+<footer class="site-footer"><div class="container footer-inner">© Aakrati Interior Studio</div><div class="ribbon">Fine Interiors</div></footer>
+<script src="assets/js/site.js"></script>
+</body></html>
