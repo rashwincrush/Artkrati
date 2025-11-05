@@ -1,0 +1,11 @@
+[build]
+  publish = "."
+  command = ""
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[[redirects]]
+  from = "/index"
+  to = "/index.html"
+  status = 200
