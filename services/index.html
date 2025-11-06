@@ -11,31 +11,50 @@
     .eyebrow{font-family:Inter,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:var(--primary-gold);font-weight:600;font-size:.875rem}
     .service-title{font-family:"Playfair Display",serif;font-weight:600;color:var(--deep-navy);line-height:1.15;font-size:clamp(1.75rem,3vw,2.75rem)}
     .section{padding:4rem 0}
-    .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-    @media(max-width:640px){.svc-grid{grid-template-columns:1fr}}
-    .svc-item{display:flex;align-items:flex-start;gap:1.25rem;position:relative;padding:1.5rem;border-radius:16px;text-decoration:none;color:#222;transition:.5s;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.04),0 0 0 1px rgba(0,0,0,.02)}
+    .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+    @media(max-width:640px){.svc-grid{grid-template-columns:1fr;gap:16px}}
+    .svc-item{display:flex;align-items:flex-start;gap:1.25rem;position:relative;padding:1.5rem;border-radius:14px;text-decoration:none;color:#111827;transition:.35s ease;overflow:hidden;background:var(--card-gradient);background-color:var(--card-bg-fallback);box-shadow:0 2px 8px rgba(0,0,0,.04),0 0 0 1px rgba(0,0,0,.02)}
     .svc-item::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,169,110,.03) 0%, rgba(217,163,130,.05) 100%);opacity:0;transition:opacity .5s}
-    .svc-item::after{content:"";position:absolute;top:-2px;left:-2px;right:-2px;bottom:-2px;background:linear-gradient(135deg,var(--primary-gold),var(--aakrati-peach));border-radius:16px;opacity:0;z-index:-1;transition:opacity .5s}
-    .svc-item:hover::before{opacity:1}
-    .svc-item:hover::after{opacity:.15}
-    .svc-item:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(201,169,110,.15),0 0 0 1px rgba(201,169,110,.1)}
+    .svc-item::after{content:"";position:absolute;top:-2px;left:-2px;right:-2px;bottom:-2px;background:linear-gradient(135deg,var(--primary-gold),var(--aakrati-peach));border-radius:14px;opacity:0;z-index:-1;transition:opacity .5s}
+    @media(min-width:768px){
+      .svc-item{padding:1.75rem}
+    }
+    .svc-item:hover::before{opacity:.06}
+    .svc-item:hover::after{opacity:.08}
+    .svc-item:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.10),0 0 0 1px rgba(201,169,110,.08)}
     .svc-icon{flex-shrink:0;width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,#F8F5F0 0%,#F3F0EA 100%);display:flex;align-items:center;justify-content:center;transition:.5s;box-shadow:0 2px 8px rgba(0,0,0,.04)}
     .svc-icon img{width:24px;height:24px;object-fit:contain;transition:.5s}
-    .svc-item:hover .svc-icon{background:linear-gradient(135deg,var(--primary-gold),var(--aakrati-peach));transform:scale(1.1) rotate(-5deg);box-shadow:0 8px 20px rgba(201,169,110,.25)}
-    .svc-item:hover .svc-icon img{filter:brightness(0) invert(1);transform:scale(1.05)}
-    .svc-title{font-size:1.125rem;font-weight:700;color:#0f172a;margin-bottom:.5rem;font-family:"Playfair Display",serif}
+    .svc-item:hover .svc-icon{background:linear-gradient(135deg,var(--primary-gold),var(--aakrati-peach));transform:scale(1.05) rotate(-3deg);box-shadow:0 6px 16px rgba(201,169,110,.2)}
+    .svc-item:hover .svc-icon img{filter:brightness(0) invert(1);transform:scale(1.03)}
+    .svc-content{display:flex;flex-direction:column;gap:.25rem}
+    .svc-title{font-size:1.125rem;font-weight:700;color:#0f172a;margin-bottom:.25rem;font-family:"Playfair Display",serif}
     .svc-desc{font-size:.9375rem;color:#6b7280;line-height:1.6;font-family:Inter,sans-serif}
+    .svc-cta{margin-top:.25rem;color:var(--primary-gold);font-weight:700;font-size:.9rem;letter-spacing:.02em}
+    .svc-cta:hover{ text-decoration:underline }
     .section-head{margin-bottom:1.25rem}
     .section-sub{color:#6b7280}
     .process{background:linear-gradient(to bottom,#fff,var(--soft-ivory))}
     .process-line{height:4px;width:80px;background:linear-gradient(to right,var(--primary-gold),var(--aakrati-peach));margin:0 auto 12px}
-    .process-step{position:relative;margin-bottom:2rem;padding-left:1rem}
-    .process-number{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:8px;background:linear-gradient(135deg,var(--primary-gold),var(--aakrati-peach));color:#fff;font-weight:700;font-size:.875rem;margin-bottom:.75rem;box-shadow:0 4px 12px rgba(201,169,110,.2)}
+    /* Revamped How We Work */
+    .how-wrap{max-width:1000px;margin:0 auto;text-align:left}
+    .how-rail{position:relative;display:flex;align-items:center;justify-content:center;gap:14px;margin:6px auto 18px}
+    .how-rail::before{content:"";position:absolute;left:10%;right:10%;height:2px;background:linear-gradient(90deg,rgba(201,169,110,.35),rgba(217,163,130,.35));z-index:0}
+    .how-dot{position:relative;z-index:1;width:28px;height:28px;border-radius:999px;display:grid;place-items:center;font-weight:800;font-size:.85rem;color:#fff;background:linear-gradient(135deg,var(--primary-gold),var(--aakrati-peach));box-shadow:0 6px 16px rgba(201,169,110,.25);opacity:.6;transition:.25s}
+    .how-dot.active{opacity:1;transform:scale(1.05)}
+    .how-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+    @media(max-width:1024px){.how-steps{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:640px){.how-steps{grid-template-columns:1fr}}
+    .how-step{background:var(--card-gradient);background-color:var(--card-bg-fallback);border:1px solid rgba(0,0,0,.06);border-radius:14px;padding:1rem 1.25rem;box-shadow:0 4px 14px rgba(0,0,0,.05);transition:.3s ease;opacity:0;transform:translateY(14px)}
+    .how-step.visible{opacity:1;transform:none}
+    .how-step:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.12)}
+    .how-badge{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--primary-gold),var(--aakrati-peach));color:#fff;font-weight:800;box-shadow:0 6px 16px rgba(201,169,110,.25)}
+    .how-title{font-family:"Playfair Display",serif;margin:.5rem 0 .25rem;color:#0f172a}
+    .how-desc{color:#6b7280;line-height:1.6}
     .locations-hero h2{font-family:"Playfair Display",serif}
     .loc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
     @media(max-width:1024px){.loc-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:640px){.loc-grid{grid-template-columns:1fr}}
-    .location-card{background:#fff;border:1px solid rgba(0,0,0,.04);padding:1.5rem;border-radius:16px;transition:.5s;position:relative;overflow:hidden}
+    .location-card{background:var(--card-gradient);background-color:var(--card-bg-fallback);border:1px solid rgba(0,0,0,.04);padding:1.5rem;border-radius:16px;transition:.5s;position:relative;overflow:hidden}
     .location-card::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,169,110,.03),rgba(217,163,130,.05));opacity:0;transition:opacity .5s}
     .location-card:hover{transform:translateY(-8px);box-shadow:0 16px 40px rgba(201,169,110,.12);border-color:rgba(201,169,110,.2)}
     .location-card:hover::before{opacity:1}
@@ -48,29 +67,27 @@
     <div class="hero-img"><img src="../images/services/aakratialle.webp" alt="Interior design services"></div>
     <div class="hero-overlay"></div>
     <div class="container" style="position:relative;z-index:1;display:flex;align-items:end;min-height:55vh;padding-bottom:2rem">
-      <div class="hero-panel">
-        <div class="eyebrow">Services & Locations</div>
-        <h1 class="service-title">Interior Design Services</h1>
-        <p style="color:var(--charcoal)">From turnkey interiors to bespoke furniture and art—thoughtful, tech-smart execution across Bengaluru.</p>
-      </div>
     </div>
   </section>
 
   <!-- Services Grid -->
-  <section class="section" style="background:var(--soft-ivory)">
+  <section class="section">
+    <div class="container" style="text-align:center">
+      <h1 class="service-title" style="margin-bottom:.5rem">Interior Design Services</h1>
+      <p class="section-sub" style="max-width:780px;margin:0 auto">From turnkey interiors to bespoke furniture and art—thoughtful, tech-smart execution across Bengaluru.</p>
+      <div class="process-line" style="margin:10px auto 0;width:80px"></div>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="container">
-      <div class="section-head">
-        <h2 style="font-family:'Playfair Display',serif;font-weight:700;color:var(--deep-navy);font-size:1.75rem">Our Services</h2>
-        <p class="section-sub">Discover our comprehensive interior design solutions</p>
-        <div class="process-line" style="margin-left:0"></div>
-      </div>
       <div class="svc-grid">
-        <a href="/services/turnkey.html" class="svc-item"><span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M3 15h18"/></svg></span><span class="svc-content"><div class="svc-title">Turnkey Interiors</div><div class="svc-desc">Complete end-to-end interior solutions</div></span></a>
-        <a href="/services/design-consultation.html" class="svc-item"><span class="svc-icon"><img src="../images/services/ServiceCard/designconsultation.png" alt=""></span><span class="svc-content"><div class="svc-title">Design Consultation</div><div class="svc-desc">Expert guidance for your vision</div></span></a>
-        <a href="/services/colour-consultation.html" class="svc-item"><span class="svc-icon"><img src="../images/services/ServiceCard/colourconsultation.png" alt=""></span><span class="svc-content"><div class="svc-title">Colour Consultation</div><div class="svc-desc">Perfect palettes for your space</div></span></a>
-        <a href="/services/space-planning.html" class="svc-item"><span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span><span class="svc-content"><div class="svc-title">Space Planning</div><div class="svc-desc">Optimize your layout and flow</div></span></a>
-        <a href="/services/custom-furniture.html" class="svc-item"><span class="svc-icon"><img src="../images/services/ServiceCard/customfurniture.png" alt=""></span><span class="svc-content"><div class="svc-title">Custom Furniture</div><div class="svc-desc">Bespoke pieces for your home</div></span></a>
-        <a href="/services/art-murals.html" class="svc-item"><span class="svc-icon"><img src="../images/services/ServiceCard/artmurals.png" alt=""></span><span class="svc-content"><div class="svc-title">Art &amp; Murals</div><div class="svc-desc">Transform walls into masterpieces</div></span></a>
+        <a href="/services/turnkey.html" class="svc-item"><span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M3 15h18"/></svg></span><span class="svc-content"><div class="svc-title">Turnkey Interiors</div><div class="svc-desc">Complete end-to-end interior solutions</div><span class="svc-cta">Learn more →</span></span></a>
+        <a href="/services/design-consultation.html" class="svc-item"><span class="svc-icon"><img src="../images/services/ServiceCard/designconsultation.png" alt=""></span><span class="svc-content"><div class="svc-title">Design Consultation</div><div class="svc-desc">Expert guidance for your vision</div><span class="svc-cta">Learn more →</span></span></a>
+        <a href="/services/colour-consultation.html" class="svc-item"><span class="svc-icon"><img src="../images/services/ServiceCard/colourconsultation.png" alt=""></span><span class="svc-content"><div class="svc-title">Colour Consultation</div><div class="svc-desc">Perfect palettes for your space</div><span class="svc-cta">Learn more →</span></span></a>
+        <a href="/services/space-planning.html" class="svc-item"><span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span><span class="svc-content"><div class="svc-title">Space Planning</div><div class="svc-desc">Optimize your layout and flow</div><span class="svc-cta">Learn more →</span></span></a>
+        <a href="/services/custom-furniture.html" class="svc-item"><span class="svc-icon"><img src="../images/services/ServiceCard/customfurniture.png" alt=""></span><span class="svc-content"><div class="svc-title">Custom Furniture</div><div class="svc-desc">Bespoke pieces for your home</div><span class="svc-cta">Learn more →</span></span></a>
+        <a href="/services/art-murals.html" class="svc-item"><span class="svc-icon"><img src="../images/services/ServiceCard/artmurals.png" alt=""></span><span class="svc-content"><div class="svc-title">Art &amp; Murals</div><div class="svc-desc">Transform walls into masterpieces</div><span class="svc-cta">Learn more →</span></span></a>
       </div>
     </div>
   </section>
@@ -81,12 +98,36 @@
       <div class="process-line"></div>
       <h2 style="font-family:'Playfair Display',serif;font-weight:700;color:var(--deep-navy);font-size:2rem;margin-bottom:.5rem">How We Work</h2>
       <p style="color:var(--charcoal);max-width:780px;margin:0 auto 24px">Human warmth, machine clarity. We start with your routines, lock accuracy in 2D, then visualize in 3D—so what you see is what gets built.</p>
-      <div style="max-width:720px;margin:0 auto;text-align:left">
-        <div class="process-step"><div class="process-number">1</div><h4 style="margin:.25rem 0">Discover & Map</h4><p style="color:#6b7280">Client interviews, site inventory, services audit.</p></div>
-        <div class="process-step"><div class="process-number">2</div><h4 style="margin:.25rem 0">Plan (2D First)</h4><p style="color:#6b7280">Zoning, storage logic, clearances, services routing.</p></div>
-        <div class="process-step"><div class="process-number">3</div><h4 style="margin:.25rem 0">Visualize (3D)</h4><p style="color:#6b7280">Materials, modeling, lighting simulation.</p></div>
-        <div class="process-step"><div class="process-number">4</div><h4 style="margin:.25rem 0">Execute</h4><p style="color:#6b7280">Factory modules + on-site finesse. Clean handover.</p></div>
-        <div class="process-step"><div class="process-number">5</div><h4 style="margin:.25rem 0">Stay in Control</h4><p style="color:#6b7280">Room-wise BOQ, live Gantt, payment logs, daily updates.</p></div>
+      <div class="how-wrap">
+        <div class="how-rail" aria-hidden="true">
+          <div class="how-dot active">1</div>
+          <div class="how-dot">2</div>
+          <div class="how-dot">3</div>
+          <div class="how-dot">4</div>
+          <div class="how-dot">5</div>
+        </div>
+        <div class="how-steps">
+          <div class="how-step">
+            <h4 class="how-title">Discover & Map</h4>
+            <p class="how-desc">Client interviews, site inventory, services audit.</p>
+          </div>
+          <div class="how-step">
+            <h4 class="how-title">Plan (2D First)</h4>
+            <p class="how-desc">Zoning, storage logic, clearances, services routing.</p>
+          </div>
+          <div class="how-step">
+            <h4 class="how-title">Visualize (3D)</h4>
+            <p class="how-desc">Materials, modeling, lighting simulation.</p>
+          </div>
+          <div class="how-step">
+            <h4 class="how-title">Execute</h4>
+            <p class="how-desc">Factory modules + on-site finesse. Clean handover.</p>
+          </div>
+          <div class="how-step">
+            <h4 class="how-title">Stay in Control</h4>
+            <p class="how-desc">Room-wise BOQ, live Gantt, payment logs, daily updates.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -107,7 +148,7 @@
     </div>
   </section>
   
-  <section class="section" style="background:#F9F6F1">
+  <section class="section">
     <div class="container" style="text-align:center">
       <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:1rem">We Also Serve Across Bengaluru</h3>
       <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:18px">
@@ -121,9 +162,19 @@
   <script>
     // simple reveal
     (function(){
-      const els=[...document.querySelectorAll('.svc-item,.location-card')];
+      const els=[...document.querySelectorAll('.svc-item,.location-card,.how-step')];
       const io=new IntersectionObserver(ents=>{ents.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15});
       els.forEach(el=>io.observe(el));
+
+      // How We Work: sync active rail dot with hovered/focused step
+      const steps=[...document.querySelectorAll('.how-step')];
+      const dots=[...document.querySelectorAll('.how-dot')];
+      const setActive=i=>{dots.forEach((d,j)=>d.classList.toggle('active',j===i));};
+      steps.forEach((step,i)=>{
+        step.addEventListener('mouseenter',()=>setActive(i));
+        step.addEventListener('focusin',()=>setActive(i));
+        step.addEventListener('click',()=>setActive(i));
+      });
     })();
   </script>
  </main>

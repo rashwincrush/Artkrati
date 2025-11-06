@@ -170,17 +170,22 @@
   :root {
     --page-bg: #F8F5F1;
     --ink: #1A1D29;
+    /* Standardized logo heights */
+    --logo-h-desktop: 70px;
+    --logo-h-mobile: 70px;
   }
 
   .site-header { position: sticky; top: 0; z-index: 1000; background: #F8F5F1; border-bottom: 1px solid rgba(0,0,0,.06); backdrop-filter: saturate(120%) blur(6px); }
-  .site-header-inner { height: 80px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; max-width: 1400px; margin: 0 auto; gap: 16px; }
+  .site-header-inner { height: 80px; display: flex; align-items: center; justify-content: space-between; padding: 0 22px; max-width: 1200px; margin: 0 auto; gap: 16px; }
   .site-header-brand { display: inline-flex; align-items: center; line-height: 0; flex-shrink: 0; }
-  .site-header-brand img { display: block; height: auto; width: auto; max-height: 104px; object-fit: contain; opacity: .96; filter: drop-shadow(0 1px 2px rgba(0,0,0,.06)); }
+  /* Force height-based sizing to neutralize intrinsic/HTML width attributes and stray PNG padding */
+  .site-header-brand img { display: block; height: var(--logo-h-desktop); width: auto; max-height: none; object-fit: contain; object-position: center; opacity: .96; filter: drop-shadow(0 1px 2px rgba(0,0,0,.06)); }
+  .site-header-brand img { display: block; height: var(--logo-h-desktop) !important; width: auto !important; max-height: none; object-fit: contain; object-position: center; opacity: .96; filter: drop-shadow(0 1px 2px rgba(0,0,0,.06)); }
 
   .site-header-nav { display: flex; justify-content: center; flex: 1; }
   .site-header-nav ul { display: flex; align-items: center; gap: 40px; list-style: none; margin: 0; padding: 0; }
-  .nav-link { position: relative; color: var(--ink); text-decoration: none; font-weight: 600; font-size: 15px; padding: 0.5rem 0.75rem; transition: color 0.3s ease; display: inline-block; white-space: nowrap; }
-  .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%; background-color: #98715d; transition: width 0.3s ease, left 0.3s ease; transform: translateX(-50%); }
+  .nav-link { position: relative; color: var(--ink); text-decoration: none; font-weight: 500; font-size: 15px; padding: 0.5rem 0.75rem; transition: color 0.3s ease; display: inline-block; white-space: nowrap; }
+  .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%; background: linear-gradient(90deg, #D9A082 0%, #9C6B34 100%); transition: width 0.3s ease, left 0.3s ease; transform: translateX(-50%); }
   .nav-link:hover::after, .nav-link:focus::after, .nav-link.active::after { width: 100%; left: 0; transform: none; }
 
   .site-header-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
@@ -240,7 +245,7 @@
   }
   @media (max-width: 767px) {
     .site-header-inner { height: 64px; padding: 0 16px; }
-    .site-header-brand img { max-height: 64px; }
+    .site-header-brand img { height: var(--logo-h-mobile) !important; width: auto !important; }
     .site-header-nav { display: none !important; }
     .site-header-actions .enquire-pill { display: none !important; }
     .hamburger-btn { display: flex !important; }

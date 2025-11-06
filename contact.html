@@ -13,7 +13,7 @@
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
     @media(max-width:1024px){.grid{grid-template-columns:1fr;gap:2rem}}
     .glass{background:rgba(255,255,255,.7);backdrop-filter:blur(20px);border:1px solid var(--border-soft);border-radius:24px;box-shadow:0 10px 40px rgba(0,0,0,.06);padding:2.5rem;position:relative;overflow:hidden}
-    .card{background:rgba(255,255,255,.6);border:1px solid rgba(201,169,110,.15);border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.04);padding:1.75rem 1.5rem;transition:.3s}
+    .card{background:var(--card-gradient);background-color:var(--card-bg-fallback);border:1px solid rgba(201,169,110,.15);border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.04);padding:1.75rem 1.5rem;transition:.3s}
     .card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.1);border-color:rgba(201,169,110,.3)}
     .contact-item{display:flex;align-items:flex-start;gap:1.5rem}
     .icon{flex-shrink:0;width:56px;height:56px;border-radius:14px;background:rgba(201,169,110,.08);display:flex;align-items:center;justify-content:center}

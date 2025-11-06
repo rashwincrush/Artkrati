@@ -1,10 +1,14 @@
-<!doctype html><html lang="en"><head>
+<!doctype html>
+<html lang="en">
+<head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Aakrati Interior Studio – Home</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="/favicon.ico">
 <link rel="stylesheet" href="assets/css/site.css">
+
 <!-- Home inline styles (from Blade, trimmed to hero + services) -->
 <style>
   :root { --primary-gold:#C9A96E; --deep-navy:#1A1D29; --soft-ivory:#F8F5F0; --warm-taupe:#D8CFC4; --charcoal:#2C2C2C; --accent-burgundy:#8B4513; --light-gold:#E8D9B5; }
@@ -37,10 +41,12 @@
   .hero-headline .line-1{color:var(--deep-navy);display:block}
   .hero-headline .line-2{display:block;background:linear-gradient(90deg,#D9A082 0%, #9C6B34 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
   .hero-summary{font-size:1.05rem;color:#3c3c3c;max-width:48ch;margin:0 0 1.6rem}
-  .hover-underline{font-size:1.125rem;color:#fff;position:relative;display:inline-block;font-weight:600;text-decoration:none;background:#98715d;padding:1rem 2rem;border-radius:8px;box-shadow:0 10px 30px rgba(201,169,110,.3);transition:background-color .3s ease}
-  .hover-underline::after,.hover-underline::before{content:'';position:absolute;width:100%;height:2px;background:linear-gradient(to right,#D9A082,#9C6B34);bottom:-5px;left:0;transform:scaleX(0);transform-origin:right;transition:transform .4s ease-out}
+  .hover-underline{font-size:1.125rem;color:#fff;position:relative;display:inline-block;font-weight:600;text-decoration:none;background:#98715d;padding:1rem 2rem;border-radius:8px;transition:all .3s ease}
+  .hover-underline::after,
+  .hover-underline::before{content:'';position:absolute;width:100%;height:2px;background:linear-gradient(90deg, #D9A082 0%, #9C6B34 100%);bottom:-5px;left:0;transform:scaleX(0);transform-origin:right;transition:transform .4s ease-out}
   .hover-underline::before{top:-5px;transform-origin:left}
-  .hover-underline:hover::after,.hover-underline:hover::before{transform:scaleX(1)}
+  .hover-underline:hover::after,
+  .hover-underline:hover::before{transform:scaleX(1)}
   .hover-underline:hover{background:#7a5a4a;color:#fff}
   .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
   .stat-card{background:rgba(248,245,241,.7);backdrop-filter:blur(10px);border:1px solid rgba(201,169,110,.1);padding:1.5rem;border-radius:4px;text-align:center;transition:.3s}
@@ -63,25 +69,73 @@
   .section-title{font-size:2.5rem;margin-bottom:1rem;color:var(--deep-navy);font-weight:600}
   .section-subtitle{font-size:1.125rem;color:var(--charcoal);font-weight:300}
   .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
-  .service-card{background:#fff;padding:2.5rem;border-radius:16px;transition:.4s;position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid rgba(201,169,110,.1)}
+  .service-card{background:#fff;padding:2.5rem;border-radius:16px;transition:.4s;position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid rgba(201,169,110,.1);display:flex;flex-direction:column;min-height:360px}
   .service-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,.12)}
-  .service-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:0;background:linear-gradient(to bottom,var(--primary-gold),#E8D9B5);transition:height .4s}
+  .service-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:0;background:linear-gradient(180deg, #D9A082 0%, #9C6B34 100%);transition:height .4s}
   .service-card:hover::before{height:100%}
   .service-icon{width:70px;height:70px;background:linear-gradient(135deg,rgba(201,169,110,.1),rgba(201,169,110,.05));border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;transition:.3s}
   .service-card:hover .service-icon{background:linear-gradient(135deg,rgba(201,169,110,.15),rgba(201,169,110,.08));transform:scale(1.05)}
   .service-title{font-size:1.5rem;margin-bottom:1rem;color:var(--deep-navy);font-weight:600;line-height:1.2}
-  .service-description{color:var(--charcoal);margin-bottom:1.5rem;line-height:1.6;font-size:.9375rem}
-  .service-link{display:inline-flex;align-items:center;gap:.5rem;color:var(--primary-gold);font-weight:500;text-decoration:none;transition:.3s;font-size:.875rem}
-  .service-link:hover{gap:.75rem;color:#B8941F}
+  .service-description{color:var(--charcoal);margin-bottom:1.5rem;line-height:1.6;font-size:.9375rem;flex:1}
+  .service-link{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(90deg, #D9A082 0%, #9C6B34 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:500;text-decoration:none;transition:.3s;font-size:.875rem;margin-top:auto}
+  .service-link:hover{gap:.75rem;opacity:0.9}
   .services-note{ text-align:center; }
   @media(max-width:1024px){.hero-grid{grid-template-columns:1fr;gap:3rem}.hero-visual{order:-1}.hero-stats{grid-template-columns:1fr;gap:1rem}.services-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem}.section-title{font-size:2.25rem}.section-subtitle{font-size:1rem}.services-section{padding:4rem 0 2.5rem 0 !important}}
-  @media(max-width:768px){.container{padding:0 1.5rem}.hero-headline{font-size:2.5rem}.hero-stats{grid-template-columns:1fr;gap:1rem}.hero-actions{flex-direction:column;align-items:flex-start}.image-container{border-radius:15px}.floating-badge{bottom:20px;left:20px;padding:.75rem 1rem}.badge-value{font-size:1.25rem}.services-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem}.service-card{padding:2rem 1.5rem}.service-title{font-size:1.25rem}.service-description{font-size:.9rem}.section-title{font-size:2rem}.section-subtitle{font-size:1rem}.services-section{padding:3.5rem 0 2rem 0 !important}.section-header{margin-bottom:3rem !important}}
-  @media(max-width:640px){.services-grid{grid-template-columns:1fr;gap:1.25rem}.service-card{padding:1.75rem 1.25rem;text-align:center}.service-icon{margin:0 auto 1.25rem auto;width:60px;height:60px}.service-icon img,.service-icon svg{width:28px;height:28px}.service-title{font-size:1.125rem;margin-bottom:.875rem}.service-description{font-size:.875rem;margin-bottom:1.25rem}.service-link{justify-content:center}.services-note{font-size:.875rem;text-align:center;padding:0 1rem}}
+  @media(max-width:768px){.container{padding:0 1.5rem}.hero-headline{font-size:2.5rem}.hero-stats{grid-template-columns:1fr;gap:1rem}.hero-actions{flex-direction:column;align-items:flex-start}.image-container{border-radius:15px}.floating-badge{bottom:20px;left:20px;padding:.75rem 1rem}.badge-value{font-size:1.25rem}.services-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem}.service-card{padding:2rem 1.5rem;min-height:320px}.service-title{font-size:1.25rem}.service-description{font-size:.9rem}.section-title{font-size:2rem}.section-subtitle{font-size:1rem}.services-section{padding:3.5rem 0 2rem 0 !important}.section-header{margin-bottom:3rem !important}}
+  @media(max-width:640px){.services-grid{grid-template-columns:1fr;gap:1.25rem}.service-card{padding:1.75rem 1.25rem;text-align:center;min-height:0}.service-icon{margin:0 auto 1.25rem auto;width:60px;height:60px}.service-icon img,.service-icon svg{width:28px;height:28px}.service-title{font-size:1.125rem;margin-bottom:.875rem}.service-description{font-size:.875rem;margin-bottom:1.25rem;flex:1}.service-link{justify-content:center}.services-note{font-size:.875rem;text-align:center;padding:0 1rem}}
+
+  /* ===== Projects Showcase (below services) ===== */
+  .projects-showcase { --slide-h: clamp(420px, 72vh, 900px); padding-top: 2rem; }
+  .ps-header { text-align:center; margin: 0 0 1.25rem; }
+  .ps-kicker { width:84px; height:6px; border-radius:9999px; margin:0 auto 14px; background: linear-gradient(90deg, rgba(201,169,110,0) 0%, rgba(201,169,110,.55) 50%, rgba(201,169,110,0) 100%); filter: drop-shadow(0 2px 6px rgba(201,169,110,.25)); }
+  .ps-eyebrow { display:inline-block; padding:.45rem .85rem; border-radius:9999px; background: linear-gradient(135deg, rgba(201,169,110,.12), rgba(201,169,110,.06)); border:1px solid rgba(201,169,110,.25); color: var(--primary-gold); font-weight:700; font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; }
+  .ps-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.25rem); font-weight:700; color: var(--deep-navy); margin: .6rem 0 .25rem; }
+  .ps-subtitle { color: var(--charcoal); font-size:.98rem; max-width:60ch; margin: 0 auto; }
+
+  .proj-slider { position: relative; width:100vw; left:50%; transform:translateX(-50%); background:transparent; border-radius:0; overflow:hidden; box-shadow:none; border:none; }
+  .proj-viewport { position: relative; overflow: hidden; width:100vw; height: clamp(500px, 65vh, 750px); background: transparent; }
+  .proj-track { display: flex; gap: 0; height: 100%; will-change: transform; touch-action: pan-y; cursor: grab; }
+  .proj-track.dragging { cursor: grabbing; }
+
+  .proj-slide { flex: 0 0 100%; height: 100%; position: relative; overflow: hidden; }
+  .proj-slide img { display: block; width: 100%; height: 100%; object-fit: cover; user-select: none; pointer-events: none; transform-origin: center center; transition: transform .8s cubic-bezier(.4,0,.2,1); }
+  .proj-slide::after { content:''; position:absolute; inset:0; background: linear-gradient(to bottom, rgba(26,29,41,0) 0%, rgba(26,29,41,.3) 70%, rgba(26,29,41,.7) 100%); pointer-events:none; }
+
+  /* Overlay caption inside image */
+  .proj-caption { position:absolute; left:50%; transform:translateX(-50%); bottom:24px; color:#fff; text-align:center; display:flex; flex-direction:column; gap:.35rem; padding:0; background: transparent; backdrop-filter: none; text-shadow: 0 2px 8px rgba(0,0,0,.6); }
+  .pc-title { font-family:'Playfair Display', serif; font-size:1.5rem; font-weight:700; color:#fff; letter-spacing:-.01em; line-height:1.25; }
+  .pc-meta { font-size:.95rem; color:rgba(255,255,255,.92); display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; justify-content:center; }
+  .pc-bullet { opacity:.85; }
+
+  .proj-nav {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(255,255,255,.95); border: 1px solid rgba(0,0,0,.08);
+    width: 40px; height: 48px; border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.12);
+    display: grid; place-items: center; font-size: 22px; line-height: 1;
+    cursor: pointer; transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .proj-nav:hover { transform: translateY(-50%) translateY(-1px); box-shadow: 0 14px 34px rgba(0,0,0,.16); }
+  .proj-nav.prev { left: -12px; }
+  .proj-nav.next { right: -12px; }
+
+  @media (max-width: 900px) { .pc-title{font-size:1.5rem;} }
+  @media (max-width: 768px) {
+    .proj-slider{border-radius:16px}
+    .proj-viewport{height:clamp(400px,60vh,600px)}
+    .pc-title{font-size:1.25rem}
+    .pc-meta{font-size:.88rem; gap:.4rem}
+  }
+  @media (max-width: 540px) { .ps-title{font-size:2rem} .ps-subtitle{font-size:1rem} .proj-viewport{height:clamp(350px,55vh,500px)} }
 </style>
+
+<!-- Libraries -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
-</head><body>
+</head>
+<body>
+
 <!-- ===== HEADER (Parity with Blade, static routes) ===== -->
 <header class="site-header">
   <div class="site-header-inner">
@@ -218,14 +272,15 @@
 
 <!-- Header Styles (scoped) -->
 <style>
+  :root{--logo-h-desktop:56px;--logo-h-mobile:48px}
   .site-header{position:sticky;top:0;z-index:1000;background:#F8F5F1;border-bottom:1px solid rgba(0,0,0,.06);backdrop-filter:saturate(120%) blur(6px)}
-  .site-header-inner{height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;max-width:1400px;margin:0 auto;gap:16px}
+  .site-header-inner{height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;max-width:1200px;margin:0 auto;gap:16px}
   .site-header-brand{display:inline-flex;align-items:center;line-height:0;flex-shrink:0}
-  .site-header-brand img{display:block;height:auto;width:auto;max-height:120px;object-fit:contain;opacity:.96;filter:drop-shadow(0 1px 2px rgba(0,0,0,.06))}
+  .site-header-brand img{display:block;height:var(--logo-h-desktop)!important;width:auto!important;max-height:none;object-fit:contain;object-position:center;opacity:.96;filter:drop-shadow(0 1px 2px rgba(0,0,0,.06))}
   .site-header-nav{display:flex;justify-content:center;flex:1}
   .site-header-nav ul{display:flex;align-items:center;gap:40px;list-style:none;margin:0;padding:0}
-  .nav-link{position:relative;color:#1A1D29;text-decoration:none;font-weight:600;font-size:15px;padding:.5rem .75rem;transition:color .3s ease;display:inline-block;white-space:nowrap}
-  .nav-link::after{content:'';position:absolute;width:0;height:2px;bottom:0;left:50%;background-color:#98715d;transition:width .3s ease,left .3s ease;transform:translateX(-50%)}
+  .nav-link{position:relative;color:#1A1D29;text-decoration:none;font-weight:500;font-size:15px;padding:.5rem .75rem;transition:color .3s ease;display:inline-block;white-space:nowrap}
+  .nav-link::after{content:'';position:absolute;width:0;height:2px;bottom:0;left:50%;background:linear-gradient(90deg,#D9A082 0%, #9C6B34 100%);transition:width .3s ease,left .3s ease;transform:translateX(-50%)}
   .nav-link:hover::after,.nav-link:focus::after,.nav-link.active::after{width:100%;left:0;transform:none}
   .site-header-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}
   .enquire-pill{display:inline-block;padding:10px 18px;border-radius:9999px;background:#98715d;color:#fff!important;text-decoration:none!important;font-size:14px;font-weight:700;transition:transform .2s ease,background-color .2s ease;white-space:nowrap}
@@ -260,7 +315,9 @@
   .mobile-menu-close{padding:10px;border-radius:10px;background:#f3f4f6;border:none;cursor:pointer;transition:all .2s ease;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}
   .mobile-menu-close:hover{background:#e5e7eb;transform:scale(1.05)}
   .mobile-menu-links{padding:16px 20px 24px}
-  .mobile-menu-link{display:flex;align-items:center;padding:16px 0;color:#1A1D29;font-size:16px;font-weight:600;text-decoration:none;border-bottom:1px solid #f3f4f6;min-height:52px}
+  .mobile-menu-link{display:flex;align-items:center;padding:16px 0;color:#1A1D29;font-size:16px;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(0,0,0,.05);min-height:52px;position:relative;overflow:hidden}
+  .mobile-menu-link::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:2px;background:linear-gradient(90deg, #D9A082 0%, #9C6B34 100%);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+  .mobile-menu-link:hover::after{transform:scaleX(1)}
   .mobile-services-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;padding:16px 0;background:none;border:none;border-bottom:1px solid #f3f4f6;color:#1A1D29;font-size:16px;font-weight:700;text-align:left;cursor:pointer;min-height:52px}
   .mobile-services-toggle svg{width:20px;height:20px;transition:transform .3s ease}
   .mobile-services-toggle svg.rotate{transform:rotate(180deg)}
@@ -270,7 +327,7 @@
   .mobile-menu-cta{margin:20px 20px 24px;padding:16px 20px;background:#98715d;color:#fff!important;text-align:center;border-radius:12px;font-weight:700;font-size:16px;text-decoration:none!important;display:flex;align-items:center;justify-content:center;min-height:52px;transition:all .2s ease}
   .mobile-menu-cta:hover{background:#7a5a4a;transform:translateY(-2px);box-shadow:0 4px 12px rgba(152,113,93,.3)}
   @media(min-width:768px){.hamburger-btn{display:none!important}.mobile-menu-overlay,.mobile-menu-sheet{display:none!important}}
-  @media(max-width:767px){.site-header-inner{height:64px;padding:0 16px}.site-header-brand img{max-height:70px}.site-header-nav{display:none!important}.site-header-actions .enquire-pill{display:none!important}.hamburger-btn{display:flex!important}}
+  @media(max-width:767px){.site-header-inner{height:64px;padding:0 16px}.site-header-brand img{height:var(--logo-h-mobile)!important;width:auto!important}.site-header-nav{display:none!important}.site-header-actions .enquire-pill{display:none!important}.hamburger-btn{display:flex!important}}
   @media(max-width:480px){.site-header-inner{padding:0 12px}.mobile-menu-sheet{width:100vw}.hamburger-btn{min-width:44px;min-height:44px;padding:8px}}
   body.menu-open{overflow:hidden;position:fixed;width:100%}
   html{scroll-padding-top:80px}
@@ -382,17 +439,73 @@
           </a>
         </article>
       </div>
-      <div class="services-note reveal">Also available: <strong>Colour Consultation</strong> & <strong>Art &amp; Murals</strong>. <a href="/services/index.html" class="service-link" style="margin-left:.25rem;">See all services</a></div>
+
+      <div class="services-note reveal">
+        Also available: <strong>Colour Consultation</strong> & <strong>Art &amp; Murals</strong>.
+        <a href="/services/index.html" class="service-link" style="margin-left:.25rem;">See all services</a>
+      </div>
     </div>
   </section>
 
-  
+  <!-- ===== Featured Projects Carousel (inserted below the services note) ===== -->
+  <section class="section projects-showcase" id="projects-showcase">
+    <div class="container container-site">
+      <div class="ps-header">
+        <div class="ps-kicker"></div>
+        <span class="ps-eyebrow">Our Portfolio</span>
+        <h2 class="ps-title">Featured Projects</h2>
+        <p class="ps-subtitle">Discover our most celebrated interior designs, where luxury meets functionality and every detail tells a story</p>
+      </div>
+
+      <div class="proj-slider" aria-roledescription="carousel">
+        <div class="proj-viewport" tabindex="0" aria-label="Project images, horizontally scrollable">
+          <div class="proj-track">
+            <!-- Slide 1 - Living Space -->
+            <figure class="proj-slide" data-title="Modern Living Room" data-cat="Residential" data-type="Living Area" data-style="Contemporary Design">
+              <img src="images/Portfolio/Albums/Bed chambers/sf_bed side.jpg" alt="Spacious modern living room with elegant furnishings" loading="lazy">
+            </figure>
+
+            <!-- Slide 2 - Master Bedroom -->
+            <figure class="proj-slide" data-title="Luxury Master Suite" data-cat="Residential" data-type="Master Bedroom" data-style="Premium Interiors">
+              <img src="images/Portfolio/Albums/Bed chambers/Master Bedroom 1.jpg" alt="Elegant master bedroom with contemporary design" loading="lazy">
+            </figure>
+
+            <!-- Slide 3 - Guest Bedroom -->
+            <figure class="proj-slide" data-title="Tranquil Guest Suite" data-cat="Residential" data-type="Guest Bedroom" data-style="Warm Ambience">
+              <img src="images/Portfolio/Albums/Bed chambers/Guest Bedroom 1.jpg" alt="Inviting guest bedroom with plush bedding" loading="lazy">
+            </figure>
+
+            <!-- Slide 4 - Kids Room -->
+            <figure class="proj-slide" data-title="Playful Kids Den" data-cat="Children's Room" data-type="Creative Space" data-style="Vibrant Design">
+              <img src="images/Portfolio/Albums/Kids Den/AID-7.jpg" alt="Colorful and functional kids' bedroom" loading="lazy">
+            </figure>
+            
+            <!-- Slide 5 - Kitchen -->
+            <figure class="proj-slide" data-title="Modern Kitchen" data-cat="Residential" data-type="Kitchen Area" data-style="Sleek Design">
+              <img src="images/Portfolio/Albums/kitchen -HEART OF HOME/28.jpg" alt="Contemporary kitchen with premium finishes" loading="lazy">
+            </figure>
+          </div>
+          <!-- Overlay caption inside image -->
+          <div class="proj-caption" aria-live="polite">
+            <h3 class="pc-title">Modern Living Room</h3>
+            <div class="pc-meta">
+              <span class="pc-meta-item">Residential</span>
+              <span class="pc-bullet">•</span>
+              <span class="pc-meta-item">Living Area</span>
+              <span class="pc-bullet">•</span>
+              <span class="pc-meta-item">Contemporary Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="site-footer"><div class="container footer-inner">© Aakrati Interior Studio</div><div class="ribbon">Fine Interiors</div></footer>
 
+<!-- Intro Animation & scroll reveals (static adaptation) -->
 <script>
-// Intro Animation & scroll reveals (static adaptation)
 document.addEventListener('DOMContentLoaded', () => {
   const overlay = document.getElementById('introOverlay');
   if (!overlay) return;
@@ -401,9 +514,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const played = sessionStorage.getItem('introPlayed') || document.cookie.includes('introPlayed=1');
   const force = !!urlMode;
 
-  if (played && !force) {
-    overlay.remove();
-  }
+  if (played && !force) overlay.remove();
 
   const logo = document.getElementById('introLogo');
   const tag = document.getElementById('introTagline');
@@ -453,5 +564,178 @@ document.addEventListener('DOMContentLoaded', () => {
   revealOnScroll();
 });
 </script>
+
+<!-- Projects carousel logic -->
+<script>
+(function() {
+  if (!window.gsap) return;
+
+  const viewport = document.querySelector('.proj-viewport');
+  const track    = document.querySelector('.proj-track');
+  if (!viewport || !track) return;
+
+  const slides   = Array.from(track.querySelectorAll('.proj-slide'));
+  const caption  = document.querySelector('.proj-caption');
+  const capTitle = caption?.querySelector('.pc-title');
+  const capMeta  = caption?.querySelector('.pc-meta');
+
+  let positions = [];     // snap x-values (negative numbers)
+  let maxX = 0, minX = 0; // bounds
+  let current = 0;
+  let autoplayTimer = null;
+  const AUTOPLAY_MS = 5500;
+
+  function computePositions() {
+    positions = slides.map(s => -(s.offsetLeft));
+    const lastEdge = track.scrollWidth - viewport.clientWidth;
+    minX = -lastEdge;
+    maxX = 0;
+  }
+
+  function setCaption(idx) {
+    const s = slides[idx];
+    if (!caption || !s) return;
+    const title = s.dataset.title || '';
+    const cat   = s.dataset.cat   || '';
+    const type  = s.dataset.type  || '';
+    const style = s.dataset.style || '';
+    gsap.timeline()
+      .to(caption, { autoAlpha: 0, y: 8, duration: 0.2, ease: "power2.out" })
+      .add(() => {
+        if (capTitle) capTitle.textContent = title;
+        if (capMeta) {
+          capMeta.innerHTML = `
+            <span class="pc-meta-item">${cat}</span>
+            <span class="pc-bullet">•</span>
+            <span class="pc-meta-item">${type}</span>
+            <span class="pc-bullet">•</span>
+            <span class="pc-meta-item">${style}</span>
+          `;
+        }
+      })
+      .to(caption, { autoAlpha: 1, y: 0, duration: 0.3, ease: "power2.out" });
+  }
+
+  function goTo(index, opts = { animate: true }) {
+    current = gsap.utils.wrap(0, slides.length, index);
+    const x = positions[current] ?? 0;
+    // Move track
+    if (opts.animate) {
+      gsap.to(track, { x, duration: 0.6, ease: "power2.out" });
+    } else {
+      gsap.set(track, { x });
+    }
+    // Active image subtle scale animation (like reference)
+    slides.forEach((s, i) => {
+      const img = s.querySelector('img');
+      if (!img) return;
+      if (i === current) {
+        s.classList.add('is-active');
+        if (opts.animate) {
+          gsap.fromTo(img, { scale: 1.04 }, { scale: 1, duration: 1.0, ease: 'power2.out' });
+        } else {
+          gsap.set(img, { scale: 1 });
+        }
+      } else {
+        s.classList.remove('is-active');
+        gsap.set(img, { scale: 1 });
+      }
+    });
+    setCaption(current);
+  }
+
+  // ----- Drag logic (pointer events) -----
+  let dragging = false;
+  let startX = 0;
+  let startTx = 0;
+  let lastX = 0;
+  let lastV = 0;
+
+  function getTx() {
+    const m = gsap.getProperty(track, "x");
+    return typeof m === "number" ? m : 0;
+    }
+
+  function clampX(x) { return Math.max(minX, Math.min(maxX, x)); }
+
+  function onDown(e) {
+    e.preventDefault();
+    dragging = true;
+    track.classList.add('dragging');
+    viewport.setPointerCapture?.(e.pointerId);
+    clearInterval(autoplayTimer);
+    startX = lastX = (e.clientX ?? (e.touches && e.touches[0].clientX) ?? 0);
+    startTx = getTx();
+  }
+
+  function onMove(e) {
+    if (!dragging) return;
+    const x = (e.clientX ?? (e.touches && e.touches[0].clientX) ?? lastX);
+    const dx = x - startX;
+    const tx = clampX(startTx + dx);
+    lastV = x - lastX;
+    lastX = x;
+    gsap.set(track, { x: tx });
+  }
+
+  function nearestIndexFrom(tx) {
+    let nearest = 0, best = Infinity;
+    for (let i = 0; i < positions.length; i++) {
+      const d = Math.abs(tx - positions[i]);
+      if (d < best) { best = d; nearest = i; }
+    }
+    return nearest;
+  }
+
+  function onUp() {
+    if (!dragging) return;
+    dragging = false;
+    track.classList.remove('dragging');
+
+    const tx = getTx();
+    let idx = nearestIndexFrom(tx);
+    if (Math.abs(lastV) > 6) {
+      idx = lastV < 0 ? idx + 1 : idx - 1;
+    }
+    goTo(idx, { animate: true });
+
+    autoplayTimer = setInterval(() => goTo(current + 1), AUTOPLAY_MS);
+  }
+
+  viewport.addEventListener('pointerdown', onDown, { passive: false });
+  window.addEventListener('pointermove', onMove, { passive: true });
+  window.addEventListener('pointerup', onUp, { passive: true });
+  window.addEventListener('pointercancel', onUp, { passive: true });
+
+
+  viewport.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft')  goTo(current - 1);
+    if (e.key === 'ArrowRight') goTo(current + 1);
+  });
+
+  viewport.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
+  viewport.addEventListener('mouseleave', () => {
+    clearInterval(autoplayTimer);
+    autoplayTimer = setInterval(() => goTo(current + 1), AUTOPLAY_MS);
+  });
+
+  let rt;
+  function onResize() {
+    clearTimeout(rt);
+    rt = setTimeout(() => {
+      computePositions();
+      goTo(current, { animate: false });
+    }, 80);
+  }
+  window.addEventListener('resize', onResize);
+
+  // Init
+  computePositions();
+  goTo(0, { animate: true });
+  autoplayTimer = setInterval(() => goTo(current + 1), AUTOPLAY_MS);
+})();
+</script>
+
 <script src="assets/js/site.js"></script>
-</body></html>
+</body>
+</html>

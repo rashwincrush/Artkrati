@@ -2,7 +2,7 @@
 <footer class="footer-minimal">
   <div class="footer-container">
     <!-- Logo -->
-    <a href="/index.html" class="footer-logo" aria-label="Aakrati Interior Studio home">
+    <a href="/index.html" class="footer-logo align-left" aria-label="Aakrati Interior Studio home">
       <img src="/images/logovisitingcardfront.png" alt="Aakrati Interior Design" width="110" height="auto">
     </a>
 
@@ -95,6 +95,7 @@
 </div>
 
 <style>
+  :root{ --logo-h-desktop:70px; --logo-h-mobile:70px; }
   .footer-minimal {
     --accent: #98715D;
     --footer-grey: #f3efe9;
@@ -105,7 +106,7 @@
   .footer-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px 12px;
+    padding: 6px 22px 12px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -114,7 +115,9 @@
   }
 
   .footer-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-  .footer-logo img { display:block; height:auto; width:auto; max-height:70px; object-fit:contain; opacity:.96; filter:drop-shadow(0 1px 2px rgba(0,0,0,.06)); }
+  .footer-logo.align-left { margin-right: auto; }
+  /* Force height-based sizing to neutralize intrinsic/HTML width attributes */
+  .footer-logo img { display:block; height:var(--logo-h-desktop) !important; width:auto !important; max-height:none; object-fit:contain; object-position:center; opacity:.96; filter:drop-shadow(0 1px 2px rgba(0,0,0,.06)); }
 
   .footer-links { display: flex; align-items: center; gap: 24px; flex: 1; justify-content: center; }
   .footer-links a { display: inline-flex; align-items: center; gap: 6px; color: #0f172a; text-decoration: none; font-size: 0.9rem; transition: color 0.2s ease; white-space: nowrap; }
@@ -161,7 +164,7 @@
   @media (max-width: 768px) {
     .footer-container { flex-direction: column; text-align: center; gap: 20px; padding: 16px 16px 16px; }
     .footer-logo { flex-direction: column; gap: 8px; }
-    .footer-logo img { max-height: 64px; }
+    .footer-logo img { height: var(--logo-h-mobile) !important; width: auto !important; }
     .footer-links { flex-direction: column; gap: 16px; width: 100%; }
     .footer-links a { font-size: 0.95rem; min-height: 44px; padding: 8px 12px; justify-content: center; }
     .divider { display: none; }

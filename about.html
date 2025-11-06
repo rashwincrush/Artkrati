@@ -1,5 +1,164 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>About – Aakrati</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/site.css"></head><body>
-<header class="site-header"><div class="container header-inner"><a class="brand" href="/index.html"><img src="images/logovisitingcardfront.png" alt="">Aakrati</a><nav class="nav"><a href="/index.html">Home</a><a href="/about.html">About</a><a href="/portfolio.html">Portfolio</a><a href="/services/index.html">Services</a><a href="/contact.html">Contact</a><a class="btn btn-primary enquire" href="mailto:hello@aakrati.com">Enquire Now</a></nav><button class="btn hamburger" data-menu-open>☰</button></div></header><div class="mobile-overlay"></div><aside class="mobile-sheet"><button class="btn" data-menu-close>Close</button><nav class="mobile-nav"><a href="/index.html">Home</a><a href="/about.html">About</a><a href="/portfolio.html">Portfolio</a><a href="/services/index.html">Services</a><a href="/contact.html">Contact</a></nav></aside>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About – Aakrati</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<!-- ===== HEADER (Parity with Blade, static routes) ===== -->
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/index.html" class="site-header-brand" aria-label="Aakrati Home">
+      <img src="/images/logovisitingcardfront.png" alt="Aakrati Interior Design" width="120" height="auto">
+    </a>
+    <nav class="site-header-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="/index.html" class="nav-link">Home</a></li>
+        <li><a href="/about.html" class="nav-link">About</a></li>
+        <li><a href="/portfolio.html" class="nav-link">Portfolio</a></li>
+        <li class="services-nav">
+          <a href="/services/index.html" class="sd-trigger nav-link">Services
+            <svg class="sd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="sd-menu">
+            <div class="sd-header">
+              <h3>Our Services</h3>
+              <p>Comprehensive interior design solutions</p>
+            </div>
+            <div class="sd-grid">
+              <a href="/services/turnkey.html" class="sd-item"><span class="sd-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M3 15h18"/></svg></span><span><div class="sd-title">Turnkey Interiors</div><div class="sd-desc">Complete end-to-end solutions</div></span></a>
+              <a href="/services/design-consultation.html" class="sd-item"><span class="sd-icon"><img src="/images/services/ServiceCard/designconsultation.png" alt=""></span><span><div class="sd-title">Design Consultation</div><div class="sd-desc">Expert guidance for your vision</div></span></a>
+              <a href="/services/colour-consultation.html" class="sd-item"><span class="sd-icon"><img src="/images/services/ServiceCard/colourconsultation.png" alt=""></span><span><div class="sd-title">Colour Consultation</div><div class="sd-desc">Perfect palettes for spaces</div></span></a>
+              <a href="/services/space-planning.html" class="sd-item"><span class="sd-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span><span><div class="sd-title">Space Planning</div><div class="sd-desc">Optimize layout and flow</div></span></a>
+              <a href="/services/custom-furniture.html" class="sd-item"><span class="sd-icon"><img src="/images/services/ServiceCard/customfurniture.png" alt=""></span><span><div class="sd-title">Custom Furniture</div><div class="sd-desc">Bespoke pieces for your home</div></span></a>
+              <a href="/services/art-murals.html" class="sd-item"><span class="sd-icon"><img src="/images/services/ServiceCard/artmurals.png" alt=""></span><span><div class="sd-title">Art &amp; Murals</div><div class="sd-desc">Transform walls to masterpieces</div></span></a>
+            </div>
+          </div>
+        </li>
+        <li><a href="/contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="site-header-actions">
+      <a href="mailto:hello@aakrati.com" class="enquire-pill" aria-label="Contact us for enquiries">Enquire Now</a>
+      <button class="hamburger-btn" id="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu-overlay" id="mobile-menu-overlay" aria-hidden="true"></div>
+<aside class="mobile-menu-sheet" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation menu">
+  <div class="mobile-menu-header">
+    <span class="logo-text">Aakrati</span>
+    <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close navigation menu">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-menu-links" aria-label="Mobile navigation">
+    <a href="/index.html" class="mobile-menu-link">Home</a>
+    <a href="/about.html" class="mobile-menu-link">About</a>
+    <a href="/portfolio.html" class="mobile-menu-link">Portfolio</a>
+    <div>
+      <button class="mobile-services-toggle" id="services-toggle" aria-expanded="false"><span>Services</span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+      <div class="mobile-services-list" id="services-list">
+        <a href="/services/turnkey.html">Turnkey Interiors</a>
+        <a href="/services/design-consultation.html">Design Consultation</a>
+        <a href="/services/colour-consultation.html">Colour Consultation</a>
+        <a href="/services/space-planning.html">Space Planning</a>
+        <a href="/services/custom-furniture.html">Custom Furniture</a>
+        <a href="/services/art-murals.html">Art &amp; Murals</a>
+      </div>
+    </div>
+    <a href="/contact.html" class="mobile-menu-link">Contact</a>
+  </nav>
+  <a href="mailto:hello@aakrati.com" class="mobile-menu-cta">Enquire Now</a>
+</aside>
+<style>
+  .site-header{position:sticky;top:0;z-index:1000;background:#F8F5F1;border-bottom:1px solid rgba(0,0,0,.06);backdrop-filter:saturate(120%) blur(6px)}
+  .site-header-inner{height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 20px 0 32px;max-width:1400px;margin:0 auto;gap:16px}
+  .site-header-brand{display:inline-flex;align-items:center;line-height:0;flex-shrink:0}
+  .site-header-brand img{display:block;height:auto;width:auto;max-height:80px;object-fit:contain;opacity:.96;filter:drop-shadow(0 1px 2px rgba(0,0,0,.06))}
+  .site-header-nav{display:flex;justify-content:center;flex:1}
+  .site-header-nav ul{display:flex;align-items:center;gap:40px;list-style:none;margin:0;padding:0}
+  .nav-link{position:relative;color:#1A1D29;text-decoration:none;font-weight:500;font-size:15px;padding:.5rem .75rem;transition:color .3s ease;display:inline-block;white-space:nowrap}
+  .nav-link::after{content:'';position:absolute;width:0;height:2px;bottom:0;left:50%;background:linear-gradient(90deg,#D9A082 0%, #9C6B34 100%);transition:width .3s ease,left .3s ease;transform:translateX(-50%)}
+  .nav-link:hover::after,.nav-link:focus::after,.nav-link.active::after{width:100%;left:0;transform:none}
+  .site-header-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}
+  .enquire-pill{display:inline-block;padding:10px 18px;border-radius:9999px;background:#98715d;color:#fff!important;text-decoration:none!important;font-size:14px;font-weight:700;transition:transform .2s ease,background-color .2s ease;white-space:nowrap}
+  .enquire-pill:hover{transform:translateY(-1px);background:#7a5a4a}
+  .hamburger-btn{display:none;align-items:center;justify-content:center;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,.08);background:#fff;color:#1A1D29;cursor:pointer;transition:all .2s ease;min-width:48px;min-height:48px;box-shadow:0 2px 8px rgba(0,0,0,.06);position:relative;z-index:1001}
+  .hamburger-btn:hover{background:#f9fafb;transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.1)}
+  .hamburger-btn:active{transform:scale(.95)}
+  .hamburger-btn svg{width:22px;height:22px;stroke-width:2.5}
+  .services-nav{position:relative}
+  .services-nav .sd-trigger{display:flex;align-items:center;gap:.25rem}
+  .services-nav .sd-caret{width:1rem;height:1rem;transition:transform .2s ease}
+  .services-nav:hover .sd-caret{transform:rotate(180deg)}
+  .services-nav .sd-menu{position:absolute;top:calc(100% + 1rem);left:50%;transform:translateX(-50%);min-width:520px;background:#fff;border-radius:16px;overflow:hidden;z-index:1100;box-shadow:0 20px 60px rgba(0,0,0,.12),0 0 0 1px rgba(0,0,0,.04);opacity:0;visibility:hidden;transform:translateX(-50%) translateY(-10px);transition:all .4s cubic-bezier(.4,0,.2,1);backdrop-filter:blur(10px)}
+  .services-nav:hover .sd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+  .sd-header{padding:1.25rem;background:#fff;border-bottom:1px solid rgba(0,0,0,.06)}
+  .sd-header h3{font-size:1.1rem;font-weight:800;color:#111827;margin:0 0 .25rem 0}
+  .sd-header p{font-size:.9rem;color:#6b7280;margin:0}
+  .sd-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem;padding:1rem}
+  .sd-item{display:flex;align-items:flex-start;gap:1rem;padding:1rem;border-radius:12px;text-decoration:none;color:#222;transition:all .3s ease;position:relative;overflow:hidden}
+  .sd-item:hover{background:#F8FAFC;transform:translateX(4px)}
+  .sd-icon{flex-shrink:0;width:48px;height:48px;border-radius:12px;background:#F3F4F6;display:flex;align-items:center;justify-content:center;transition:all .3s ease}
+  .sd-icon svg{width:24px;height:24px;color:#334155}
+  .sd-icon img{width:22px;height:22px;object-fit:contain}
+  .sd-title{font-size:1.05rem;font-weight:800;color:#0f172a;margin-bottom:.25rem}
+  .sd-desc{font-size:.9rem;color:#6b7280;line-height:1.45}
+  .mobile-menu-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);z-index:1050;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease}
+  .mobile-menu-overlay.show{opacity:1;visibility:visible}
+  .mobile-menu-sheet{position:fixed;top:0;right:0;bottom:0;width:min(85vw,380px);background:#fff;box-shadow:-8px 0 40px rgba(0,0,0,.15);z-index:1060;overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
+  .mobile-menu-sheet.open{transform:translateX(0)}
+  .mobile-menu-header{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid #e5e7eb;position:sticky;top:0;background:#fff;z-index:10}
+  .mobile-menu-header .logo-text{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,sans-serif;font-size:22px;font-weight:700;color:#1A1D29;letter-spacing:.02em}
+  .mobile-menu-close{padding:10px;border-radius:10px;background:#f3f4f6;border:none;cursor:pointer;transition:all .2s ease;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}
+  .mobile-menu-close:hover{background:#e5e7eb;transform:scale(1.05)}
+  .mobile-menu-links{padding:16px 20px 24px}
+  .mobile-menu-link{display:flex;align-items:center;padding:16px 0;color:#1A1D29;font-size:16px;font-weight:600;text-decoration:none;border-bottom:1px solid #f3f4f6;min-height:52px}
+  .mobile-services-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;padding:16px 0;background:none;border:none;border-bottom:1px solid #f3f4f6;color:#1A1D29;font-size:16px;font-weight:700;text-align:left;cursor:pointer;min-height:52px}
+  .mobile-services-toggle svg{width:20px;height:20px;transition:transform .3s ease}
+  .mobile-services-toggle svg.rotate{transform:rotate(180deg)}
+  .mobile-services-list{padding-left:20px;margin-top:8px;max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .mobile-services-list.show{max-height:500px}
+  .mobile-services-list a{display:flex;align-items:center;padding:14px 0;color:#6b7280;font-size:15px;text-decoration:none;min-height:48px}
+  .mobile-menu-cta{margin:20px 20px 24px;padding:16px 20px;background:#98715d;color:#fff!important;text-align:center;border-radius:12px;font-weight:700;font-size:16px;text-decoration:none!important;display:flex;align-items:center;justify-content:center;min-height:52px;transition:all .2s ease}
+  .mobile-menu-cta:hover{background:#7a5a4a;transform:translateY(-2px);box-shadow:0 4px 12px rgba(152,113,93,.3)}
+  @media(min-width:768px){.hamburger-btn{display:none!important}.mobile-menu-overlay,.mobile-menu-sheet{display:none!important}}
+  @media(max-width:767px){.site-header-inner{height:64px;padding:0 20px 0 32px}.site-header-brand img{max-height:56px}.site-header-nav{display:none!important}.site-header-actions .enquire-pill{display:none!important}.hamburger-btn{display:flex!important}}
+  @media(max-width:480px){.site-header-inner{padding:0 12px}.mobile-menu-sheet{width:100vw}.hamburger-btn{min-width:44px;min-height:44px;padding:8px}}
+  body.menu-open{overflow:hidden;position:fixed;width:100%}
+  html{scroll-padding-top:80px}
+</style>
+<script>
+  (function(){
+    const hamburgerBtn=document.getElementById('mobile-menu-btn');
+    const mobileMenu=document.getElementById('mobile-menu');
+    const mobileMenuOverlay=document.getElementById('mobile-menu-overlay');
+    const mobileMenuClose=document.getElementById('mobile-menu-close');
+    const servicesToggle=document.getElementById('services-toggle');
+    const servicesList=document.getElementById('services-list');
+    const body=document.body;
+    if(!hamburgerBtn||!mobileMenu||!mobileMenuOverlay) return;
+    function openMobileMenu(){mobileMenu.classList.add('open');mobileMenuOverlay.classList.add('show');body.classList.add('menu-open');hamburgerBtn.setAttribute('aria-expanded','true');mobileMenu.setAttribute('aria-hidden','false');if(mobileMenuClose) mobileMenuClose.focus();}
+    function closeMobileMenu(){mobileMenu.classList.remove('open');mobileMenuOverlay.classList.remove('show');body.classList.remove('menu-open');hamburgerBtn.setAttribute('aria-expanded','false');mobileMenu.setAttribute('aria-hidden','true');hamburgerBtn.focus();}
+    function toggleServices(){const isOpen=servicesList.classList.contains('show');const icon=servicesToggle.querySelector('svg');if(isOpen){servicesList.classList.remove('show');icon.classList.remove('rotate');servicesToggle.setAttribute('aria-expanded','false');}else{servicesList.classList.add('show');icon.classList.add('rotate');servicesToggle.setAttribute('aria-expanded','true');}}
+    hamburgerBtn.addEventListener('click',function(e){e.stopPropagation();openMobileMenu();});
+    if(mobileMenuClose) mobileMenuClose.addEventListener('click',closeMobileMenu);
+    mobileMenuOverlay.addEventListener('click',closeMobileMenu);
+    if(servicesToggle) servicesToggle.addEventListener('click',toggleServices);
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&mobileMenu.classList.contains('open')) closeMobileMenu(); });
+    mobileMenu.querySelectorAll('a').forEach(link=>{ link.addEventListener('click',function(){ setTimeout(closeMobileMenu,100); }); });
+    mobileMenu.addEventListener('click',function(e){ if(e.target.tagName!=='A'){ e.stopPropagation(); } });
+    let resizeTimer; window.addEventListener('resize',function(){ clearTimeout(resizeTimer); resizeTimer=setTimeout(function(){ if(window.innerWidth>767&&mobileMenu.classList.contains('open')) closeMobileMenu(); },250); });
+  })();
+</script>
 <main>
   <style>
     :root{--primary-gold:#C9A96E;--deep-navy:#1A1D29;--brand-cream:#F8F5F0;--text-primary:#2C2C2C;--border-elegant:#E8ECEB;--text-muted:#4E4A45}
@@ -11,42 +170,76 @@
     @media(max-width:768px){.hero-about{min-height:auto;padding:1rem 0}}
     .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
     @media(max-width:768px){.hero-grid{grid-template-columns:1fr;gap:1.25rem}}
-    .sparkle-mark{position:relative}
-    .sparkle-mark .sparkle{position:absolute;top:-10px;right:-15px;font-size:.8em;opacity:.6}
+
+    /* ---------- HERO TITLE ---------- */
+    .about-hero-title{
+      font-family:'Playfair Display',serif;
+      font-weight:500;
+      line-height:1.25;
+      font-style:italic;
+      font-size:1.875rem;
+      margin:0;
+      position:relative;
+    }
+    @media(min-width:768px){.about-hero-title{font-size:2.25rem}}
+    @media(min-width:1024px){.about-hero-title{font-size:3rem}}
+
+    /* Keep the static gold underline just for “sparkling sea” */
+    .sparkle-mark{position:relative;display:inline-block}
+    .sparkle-mark::after{
+      content:'';
+      position:absolute;
+      bottom:-4px; left:0;
+      width:100%; height:2px;
+      background:linear-gradient(90deg,transparent,var(--primary-gold),transparent);
+      pointer-events:none;
+    }
+
+    /* The ONLY animated underline lives under this span */
+    .imagination-text{position:static;display:inline}
+
+    /* No underline or hover effects under imagination */
+
     .text-intro{font-size:1.1rem;font-style:italic;line-height:1.7;color:var(--text-primary)}
-    .elegant-btn{display:inline-block;padding:10px 18px;border-radius:50px;font-size:.875rem;font-weight:500;text-decoration:none;letter-spacing:.08em;transition:.3s;border:1.5px solid transparent}
-    .elegant-btn.primary{background:linear-gradient(135deg,#98715d 0%,#7a5a4a 100%);color:#fff}
-    .elegant-btn.outline{background:rgba(152,113,93,.05);color:#98715d;border-color:#98715d;backdrop-filter:blur(10px)}
-    .elegant-btn.primary:hover{transform:translateY(-2px)}
+    .elegant-btn{display:inline-block;padding:10px 18px;border-radius:50px;font-size:.875rem;font-weight:500;text-decoration:none!important;text-transform:uppercase;letter-spacing:.08em;transition:all .4s cubic-bezier(.4,0,.2,1);border:1.5px solid transparent;position:relative;overflow:hidden}
+    .elegant-btn.primary{background:linear-gradient(135deg,#98715d 0%,#7a5a4a 100%);color:#fff!important;box-shadow:0 4px 15px rgba(152,113,93,.3),0 2px 4px rgba(152,113,93,.2)}
+    .elegant-btn.primary::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transition:left .6s ease}
+    .elegant-btn.primary:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(152,113,93,.4),0 4px 8px rgba(152,113,93,.3)}
+    .elegant-btn.primary:hover::before{left:100%}
+    .elegant-btn.outline{background:rgba(152,113,93,.05);color:#98715d!important;border:1.5px solid #98715d;backdrop-filter:blur(10px);box-shadow:0 2px 8px rgba(152,113,93,.1);animation:buttonGlow 3s ease-in-out infinite}
+    .elegant-btn.outline::after{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:radial-gradient(circle,rgba(152,113,93,.1) 0%,transparent 70%);transform:translate(-50%,-50%);transition:all .6s ease;z-index:-1}
+    .elegant-btn.outline:hover{background:rgba(152,113,93,.08);box-shadow:0 4px 12px rgba(152,113,93,.15)}
+    .elegant-btn.outline:hover::after{width:120%;height:120%}
+    @keyframes buttonGlow{0%,100%{box-shadow:0 2px 8px rgba(152,113,93,.1)}50%{box-shadow:0 4px 16px rgba(152,113,93,.2)}}
     .image-frame{position:relative;overflow:hidden;border-radius:24px;box-shadow:0 30px 60px rgba(0,0,0,.15)}
     .image-frame img{display:block;width:100%;height:auto;transition:transform .7s}
     .image-frame:hover img{transform:scale(1.05)}
     .label-tag{display:flex;align-items:center;gap:.75rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.85rem}
     .label-tag::before,.label-tag::after{content:"";width:40px;height:1px;background:var(--primary-gold);opacity:.5}
-    .mission-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+    .mission-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;align-items:stretch}
     @media(max-width:768px){.mission-grid{grid-template-columns:1fr}}
-    .mission-card{background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(248,245,241,.98));border:1px solid rgba(201,169,110,.15);border-radius:20px;padding:2.5rem;box-shadow:0 8px 24px rgba(0,0,0,.06);position:relative;overflow:hidden;transition:.4s}
-    .mission-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#C9A96E 0%, #1A1D29 100%);transform:scaleX(0);transform-origin:left;transition:transform .5s}
-    .mission-card:hover::before{transform:scaleX(1)}
+    .mission-card{background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(248,245,241,.98));border:1px solid rgba(201,169,110,.15);border-radius:20px;padding:2.5rem;box-shadow:0 8px 24px rgba(0,0,0,.06);position:relative;overflow:hidden;transition:.4s;height:100%;display:flex;flex-direction:column}
+    .mission-card::before{content:"";position:absolute;top:0;left:0;width:4px;height:0;background:linear-gradient(180deg, #D9A082 0%, #9C6B34 100%);transition:height .4s}
+    .mission-card:hover::before{height:100%}
     .mission-card:hover{transform:translateY(-10px);box-shadow:0 24px 48px rgba(0,0,0,.12);border-color:rgba(201,169,110,.3)}
     .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
     @media(max-width:1024px){.process-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:640px){.process-grid{grid-template-columns:1fr}}
-    .process-card{background:#fff;border:1px solid rgba(201,169,110,.1);border-radius:16px;overflow:hidden;transition:.4s;box-shadow:0 4px 16px rgba(0,0,0,.04);position:relative}
+    .process-card{background:var(--card-gradient);background-color:var(--card-bg-fallback);border:1px solid rgba(201,169,110,.1);border-radius:16px;overflow:hidden;transition:.4s;box-shadow:0 4px 16px rgba(0,0,0,.04);position:relative}
     .process-number{position:absolute;top:1rem;right:1rem;font-weight:800;font-size:3rem;background:linear-gradient(135deg,#C9A96E,#1A1D29);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;opacity:.15;line-height:1}
     .timeline{position:relative;max-width:900px;margin:0 auto;padding:2rem 0}
-    .timeline::before{content:"";position:absolute;left:50%;top:0;height:100%;width:2px;background:linear-gradient(180deg,rgba(201,169,110,.3),#C9A96E,rgba(201,169,110,.3));transform:translateX(-50%)}
+    .timeline::before{content:"";position:absolute;left:50%;top:0;height:100%;width:2px;background:linear-gradient(180deg,rgba(152,113,93,.3),#98715d,rgba(152,113,93,.3));transform:translateX(-50%)}
     @media(max-width:768px){.timeline::before{left:24px}}
     .milestone{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;margin-bottom:3rem;opacity:0;transform:translateY(40px);transition:.8s}
     @media(max-width:768px){.milestone{grid-template-columns:1fr}}
     .milestone.visible{opacity:1;transform:none}
-    .milestone-badge{display:inline-grid;place-items:center;width:100px;height:100px;background:linear-gradient(135deg,#C9A96E,#B8985F);border-radius:50%;color:#fff;font-weight:700;font-size:1.5rem;box-shadow:0 12px 40px rgba(201,169,110,.4);border:5px solid rgba(255,255,255,.9)}
+    .milestone-badge{display:inline-grid;place-items:center;width:100px;height:100px;background:linear-gradient(135deg,#98715d,#7a5a4a);border-radius:50%;color:#fff;font-weight:700;font-size:1.5rem;box-shadow:0 12px 40px rgba(152,113,93,.4);border:5px solid rgba(255,255,255,.9)}
     @media(max-width:1024px){.milestone-badge{width:84px;height:84px;font-size:1.25rem}}
     @media(max-width:640px){.milestone-badge{width:68px;height:68px;font-size:1rem}}
     .ts-wrap{position:relative}
     .ts-rail{display:flex;gap:1.5rem;overflow-x:auto;padding:1rem 0 1.5rem;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:none}
     .ts-rail::-webkit-scrollbar{display:none}
-    .ts-card{flex:0 0 calc((100% - 4.5rem)/4);scroll-snap-align:center;background:#fff;border:1px solid rgba(201,169,110,.15);border-radius:20px;padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+    .ts-card{flex:0 0 calc((100% - 4.5rem)/4);scroll-snap-align:center;background:var(--card-gradient);background-color:var(--card-bg-fallback);border:1px solid rgba(201,169,110,.15);border-radius:20px;padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,.06)}
     @media(max-width:1024px){.ts-card{flex-basis:calc((100% - 1.5rem)/2)}}
     @media(max-width:640px){.ts-card{flex-basis:90%}}
     .ts-head{display:flex;gap:1rem;align-items:center;margin-bottom:1rem}
@@ -60,17 +253,74 @@
     .md-veil[aria-hidden="false"]{display:grid}
     .md-dialog{max-width:900px;width:100%;background:#fff;border-radius:24px;padding:3rem;position:relative;box-shadow:0 24px 80px rgba(0,0,0,.3);max-height:90vh;overflow-y:auto}
     .md-close{position:absolute;top:1.5rem;right:1.5rem;background:transparent;border:0;color:var(--text-muted);font-size:2rem;cursor:pointer}
+    /* Reveal animations (parity with Blade) */
+    .reveal{opacity:0;transform:translateY(24px);transition:all .6s ease}
+    .reveal.active{opacity:1;transform:none}
+    .reveal-scale{opacity:0;transform:scale(.96);transition:all .6s ease}
+    .reveal-scale.active{opacity:1;transform:scale(1)}
+    /* Timeline alternation like Blade */
+    @media(min-width:769px){
+      .milestone{display:grid;grid-template-columns:1fr 1fr}
+      .milestone:nth-child(odd) > :first-child{ text-align:right }
+      .milestone:nth-child(even) > :first-child{ grid-column:2; text-align:left }
+      .milestone:nth-child(even) > :last-child{ grid-column:1 }
+    }
+  </style>
+
+  <!-- Testimonials Modal CSS (scoped) -->
+  <style>
+    /* Modal visibility + stacking (namespaced) */
+    .md-veil{position:fixed;inset:0;background:rgba(26,29,41,.85);backdrop-filter:blur(4px);display:none;place-items:center;z-index:9999;padding:2rem}
+    .md-veil[aria-hidden="false"]{display:grid}
+    .md-dialog{max-width:900px;width:100%;max-height:90vh;overflow:auto;background:#fff;border-radius:24px;padding:3rem;position:relative;box-shadow:0 24px 80px rgba(0,0,0,.3)}
+    .md-close{position:absolute;top:1rem;right:1rem;background:transparent;border:0;font-size:2rem;color:#6b7280;cursor:pointer}
+    .md-body{white-space:pre-line;line-height:1.75;color:#2C2C2C}
+    /* Read full story button */
+    .ts-open{background:none;border:0;color:#98715d;font-weight:600;font-family:inherit;font-size:.95rem;cursor:pointer;padding:0;margin-top:.5rem;display:inline-flex;align-items:center}
+    .ts-open:focus-visible{outline:2px solid rgba(152,113,93,.35);outline-offset:2px;border-radius:6px}
+
+    /* Testimonials rail layout/alignment */
+    .ts-wrap{position:relative}
+    .ts-rail{display:flex;gap:1.25rem;overflow-x:auto;padding:0 .5rem 1.25rem;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:none;scroll-behavior:smooth}
+    .ts-rail::-webkit-scrollbar{display:none}
+    .ts-card{flex:0 0 320px;scroll-snap-align:start;background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,.06);padding:1.25rem;display:flex;flex-direction:column;min-height:260px;transition:transform .35s ease, box-shadow .35s ease}
+    .ts-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.10)}
+    .ts-head{display:flex;gap:.75rem;align-items:center;margin-bottom:.75rem}
+    .ts-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;border:3px solid rgba(152,113,93,.15)}
+    .ts-name{font-weight:700}
+    .ts-stars{color:#f0b90b;font-weight:700;letter-spacing:.1em}
+    .ts-excerpt{color:var(--text-primary);line-height:1.65;margin:0 0 .75rem;min-height:96px}
+    .ts-open{margin-top:auto}
+
+    /* Rail nav arrows */
+    .ts-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:999px;border:1px solid rgba(0,0,0,.08);background:#fff;box-shadow:0 6px 20px rgba(0,0,0,.12);display:grid;place-items:center;color:#98715d;cursor:pointer;transition:transform .2s ease, box-shadow .2s ease, opacity .2s}
+    .ts-nav:hover{transform:translateY(-50%) scale(1.06)}
+    .ts-prev{left:-6px}
+    .ts-next{right:-6px}
+    .ts-nav[disabled]{opacity:.35;pointer-events:none}
+    @media(max-width:640px){.ts-card{flex-basis:85vw}.ts-prev{left:2px}.ts-next{right:2px}}
   </style>
 
   <section class="hero-about">
     <div class="container-site">
       <div class="hero-grid">
         <div>
-          <h1 style="font-family:'Playfair Display',serif;font-weight:500;line-height:1.2">Creator of ideas, swimming in the <span class="sparkle-mark"><span style="color:var(--primary-gold)">sparkling sea</span><span class="sparkle">✨</span></span> of imagination</h1>
+          <h1 class="about-hero-title">
+            <span>Creator of ideas, swimming in the </span>
+            <span class="sparkle-mark"><span style="color:var(--primary-gold)">sparkling sea</span></span>
+            <span class="imagination-text"> of imagination!!</span>
+          </h1>
           <div style="margin-top:16px" class="text-intro">At <strong>AAKRATI Interior Design Artist</strong>, we believe that interiors are more than just spaces—they are stories waiting to be told, emotions waiting to be felt, and reflections of the souls who inhabit them.</div>
           <div class="text-intro">Four years ago, after over a decade of experience working with renowned design firms, I decided to start my own journey driven by a vision to create interiors that are not just beautiful, but deeply personal and meaningful.</div>
           <div class="text-intro">Nestled in the vibrant heart of Bengaluru, we craft residential, commercial, and hospitality interiors that seamlessly blend timeless elegance with contemporary flair. From bespoke furniture to curated décor, textures, lighting and materials, we weave together artistry and functionality.</div>
           <div class="text-intro">Guided by craftsmanship, sustainability, and an eye for detail, we create interiors that inspire, comfort, and endure—reflecting the uniqueness of those who live or work in them.</div>
+          
+          <p class="text-intro" style="font-weight: 600; font-style: italic; font-size: 1.1rem; line-height: 1.7; margin: 1.5rem 0 0 0;">
+            <span style="background: linear-gradient(90deg, #D9A082 0%, #9C6B34 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">
+              I warmly invite you to experience the world of AAKRATI—let's collaborate, explore, and craft a space that is uniquely yours.
+            </span>
+          </p>
+          
           <div style="display:flex;gap:12px;margin-top:18px"><a href="/contact.html" class="elegant-btn primary">Start Your Project</a><a href="/portfolio.html" class="elegant-btn outline">View Our Work</a></div>
         </div>
         <figure>
@@ -84,27 +334,27 @@
     <div class="container-site">
       <div style="text-align:center;max-width:900px;margin:0 auto 2.5rem">
         <div class="label-tag" style="justify-content:center;margin-bottom:1rem">Our Philosophy</div>
-        <h2 id="mission-heading" style="font-family:'Playfair Display',serif;font-size:2.5rem;margin-bottom:1rem">Quietly Brilliant, <span style="color:var(--primary-gold)">Everyday</span></h2>
-        <p class="text-intro" style="font-style:normal">Thoughtful design turns daily rituals into quiet elegance—through <span style="font-weight:600">intelligent planning</span>, <span style="font-weight:600;color:var(--primary-gold)">honest materials</span>, and <span style="font-weight:600">considered craft</span>.</p>
+        <h2 id="mission-heading" style="font-family:'Playfair Display',serif;font-size:2.5rem;margin-bottom:1rem">Quietly Brilliant, <span style="color:#D9A082">Everyday</span></h2>
+        <p class="text-intro" style="font-style:normal">Thoughtful design turns daily rituals into quiet elegance—through <span style="font-weight:600">intelligent planning</span>, <span style="font-weight:600;color:#D9A082">honest materials</span>, and <span style="font-weight:600">considered craft</span>.</p>
       </div>
       <div class="mission-grid">
         <div class="mission-card">
-          <h3 style="font-size:1.5rem;margin-bottom:.5rem">Function First, <span style="color:var(--primary-gold);font-weight:500">Beauty Always</span></h3>
-          <p class="text-intro" style="font-style:normal">Where practicality meets poetry in every detail.</p>
+          <h3 style="font-size:1.5rem;margin-bottom:.5rem">Function First, <span style="color:#D9A082;font-weight:500">Beauty Always</span></h3>
+          <p class="text-intro" style="font-style:normal;margin-top:auto">Where practicality meets poetry in every detail.</p>
         </div>
         <div class="mission-card">
-          <h3 style="font-size:1.5rem;margin-bottom:.5rem">Every Pocket <span style="color:var(--deep-navy);font-weight:500">Has a Plan</span></h3>
-          <p class="text-intro" style="font-style:normal">Intentional organization that feels effortlessly natural.</p>
+          <h3 style="font-size:1.5rem;margin-bottom:.5rem">Every Pocket <span style="color:#D9A082;font-weight:500">Has a Plan</span></h3>
+          <p class="text-intro" style="font-style:normal;color:#000;margin-top:auto">Intentional organization that feels effortlessly natural.</p>
         </div>
         <div class="mission-card">
-          <h3 style="font-size:1.5rem;margin-bottom:.5rem">Timeless Over <span style="color:var(--text-primary);font-weight:500">Trendy</span></h3>
-          <p class="text-intro" style="font-style:normal">Designs that age with grace, not chase the moment.</p>
+          <h3 style="font-size:1.5rem;margin-bottom:.5rem">Timeless Over <span style="color:#D9A082;font-weight:500">Trendy</span></h3>
+          <p class="text-intro" style="font-style:normal;color:#000;margin-top:auto">Designs that age with grace, not chase the moment.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="process" aria-labelledby="process-heading" style="background:linear-gradient(135deg,#FAFAF8 0%,#F5F3EF 100%)">
+  <section class="section" id="process" aria-labelledby="process-heading">
     <div class="container-site">
       <div style="text-align:center;max-width:900px;margin:0 auto 2.5rem">
         <div class="label-tag" style="justify-content:center;margin-bottom:1rem">How We Work</div>
@@ -112,53 +362,245 @@
         <p class="text-intro" style="font-style:normal">A symphony of thoughtful tools and intelligent workflows—from initial vision to final flourish.</p>
       </div>
       <div class="process-grid">
-        <article class="process-card"><span class="process-number">01</span><div style="height:128px;overflow:hidden"><img src="images/process/01.jpg" alt="Discovery & Site Inventory" style="width:100%;height:100%;object-fit:cover"></div><div style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:var(--deep-navy);opacity:.8;margin-bottom:.25rem">STEP 01</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Discovery & Site Inventory</h3><p class="text-intro" style="font-style:normal">Understand routines, measure the site, audit services.</p></div></article>
-        <article class="process-card"><span class="process-number">02</span><div style="height:128px;overflow:hidden"><img src="images/process/02.jpg" alt="Schematic Planning" style="width:100%;height:100%;object-fit:cover"></div><div style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:var(--deep-navy);opacity:.8;margin-bottom:.25rem">STEP 02</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Schematic Planning (2D First)</h3><p class="text-intro" style="font-style:normal">Room layouts, storage logic, services mapping in CAD.</p></div></article>
-        <article class="process-card"><span class="process-number">03</span><div style="height:128px;overflow:hidden"><img src="images/process/03.jpg" alt="Budgeting & Concept" style="width:100%;height:100%;object-fit:cover"></div><div style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:var(--deep-navy);opacity:.8;margin-bottom:.25rem">STEP 03</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Budgeting & Concept</h3><p class="text-intro" style="font-style:normal">Budget from scope—not guesswork. Lock direction & band.</p></div></article>
-        <article class="process-card"><span class="process-number">04</span><div style="height:128px;overflow:hidden"><img src="images/process/04.jpg" alt="Detailed Design → 3D" style="width:100%;height:100%;object-fit:cover"></div><div style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:var(--deep-navy);opacity:.8;margin-bottom:.25rem">STEP 04</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Detailed Design → 3D</h3><p class="text-intro" style="font-style:normal">Final elevations & service drawings, then high-fidelity 3D.</p></div></article>
-        <article class="process-card"><span class="process-number">05</span><div style="height:128px;overflow:hidden"><img src="images/process/05.jpg" alt="Material Mood Board" style="width:100%;height:100%;object-fit:cover"></div><div style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:var(--deep-navy);opacity:.8;margin-bottom:.25rem">STEP 05</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Material Mood Board</h3><p class="text-intro" style="font-style:normal">A cohesive kit of parts with alternates.</p></div></article>
-        <article class="process-card"><span class="process-number">06</span><div style="height:128px;overflow:hidden"><img src="images/process/06.jpg" alt="Parallel Execution" style="width:100%;height:100%;object-fit:cover"></div><div style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:var(--deep-navy);opacity:.8;margin-bottom:.25rem">STEP 06</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Parallel Execution</h3><p class="text-intro" style="font-style:normal">Factory precision + on-site finesse.</p></div></article>
+        <article class="process-card"><span class="process-number" style="color:#D9A082">01</span><div style="height:128px;overflow:hidden"><img src="images/Process/01.jpg" alt="Discovery & Site Inventory" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body" style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:#D9A082;margin-bottom:.25rem">STEP 01</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Discovery & Site Inventory</h3><p class="text-intro" style="font-style:normal">Understand routines, measure the site, audit services.</p></div></article>
+        <article class="process-card"><span class="process-number" style="color:#D9A082">02</span><div style="height:128px;overflow:hidden"><img src="images/Process/02.jpg" alt="Schematic Planning" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body" style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:#D9A082;margin-bottom:.25rem">STEP 02</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Schematic Planning (2D First)</h3><p class="text-intro" style="font-style:normal">Room layouts, storage logic, services mapping in CAD.</p></div></article>
+        <article class="process-card"><span class="process-number" style="color:#D9A082">03</span><div style="height:128px;overflow:hidden"><img src="images/Process/03.jpg" alt="Budgeting & Concept" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body" style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:#D9A082;margin-bottom:.25rem">STEP 03</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Budgeting & Concept</h3><p class="text-intro" style="font-style:normal">Budget from scope—not guesswork. Lock direction & band.</p></div></article>
+        <article class="process-card"><span class="process-number" style="color:#D9A082">04</span><div style="height:128px;overflow:hidden"><img src="images/Process/04.jpg" alt="Detailed Design → 3D" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body" style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:#D9A082;margin-bottom:.25rem">STEP 04</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Detailed Design → 3D</h3><p class="text-intro" style="font-style:normal">Final elevations & service drawings, then high-fidelity 3D.</p></div></article>
+        <article class="process-card"><span class="process-number" style="color:#D9A082">05</span><div style="height:128px;overflow:hidden"><img src="images/Process/05.jpg" alt="Material Mood Board" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body" style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:#D9A082;margin-bottom:.25rem">STEP 05</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Material Mood Board</h3><p class="text-intro" style="font-style:normal">A cohesive kit of parts with alternates.</p></div></article>
+        <article class="process-card"><span class="process-number" style="color:#D9A082">06</span><div style="height:128px;overflow:hidden"><img src="images/Process/06.jpg" alt="Parallel Execution" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body" style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:#D9A082;margin-bottom:.25rem">STEP 06</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Parallel Execution</h3><p class="text-intro" style="font-style:normal">Factory precision + on-site finesse.</p></div></article>
       </div>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="timeline-heading">
+  <!-- ========================= -->
+  <!-- Timeline — Elegant & Calm -->
+  <!-- ========================= -->
+  <section class="section" id="journey" aria-labelledby="timeline-heading">
     <div class="container-site">
-      <div style="text-align:center;margin-bottom:2.5rem">
-        <div class="label-tag" style="justify-content:center;margin-bottom:1rem">Our Story</div>
-        <h2 id="timeline-heading" style="font-family:'Playfair Display',serif;font-size:2.5rem;margin-bottom:1rem">Our Journey</h2>
-        <p class="text-intro" style="font-style:normal">From a small studio to award-winning design firm.</p>
+      <div class="timeline-head">
+        <h2 id="timeline-heading" class="tl-title label-tag" style="display: inline-block; margin-bottom: 1.5rem; font-size: 1.75rem; font-weight: 700; color: #1A1F2E;">Our Journey</h2>
+        <p class="text-intro tl-intro">From a small studio to award-winning design firm.</p>
       </div>
-      <div class="timeline">
-        <div class="milestone">
-          <div style="text-align:right"><div class="milestone-badge">2020</div></div>
-          <div><h3 style="font-size:1.5rem;margin:0 0 .5rem">The Beginning</h3><p class="text-intro" style="font-style:normal">Small studio, big vision—transforming ordinary spaces into timeless expressions.</p></div>
-        </div>
-        <div class="milestone">
-          <div style="text-align:right"><div class="milestone-badge">2021</div></div>
-          <div><h3 style="font-size:1.5rem;margin:0 0 .5rem">First Steps, First Spaces</h3><p class="text-intro" style="font-style:normal">First residential project in Bengaluru; warmth + individuality set our design tone.</p></div>
-        </div>
-        <div class="milestone">
-          <div style="text-align:right"><div class="milestone-badge">2023</div></div>
-          <div><h3 style="font-size:1.5rem;margin:0 0 .5rem">In the Press</h3><p class="text-intro" style="font-style:normal">Featured in Deccan Herald's "Bones Get a New Life"—founder Aakrati on texture, depth, and drama.</p><blockquote style="border-left:4px solid var(--primary-gold);padding-left:16px;margin-top:8px">"White, textured statement pieces create depth and drama—pair with Bohemian/English palettes and peach tones."</blockquote></div>
-        </div>
-        <div class="milestone">
-          <div style="text-align:right"><div class="milestone-badge">2023</div></div>
-          <div><h3 style="font-size:1.5rem;margin:0 0 .5rem">Growing Beyond Homes</h3><p class="text-intro" style="font-style:normal">Expanded into commercial & hospitality interiors—creativity meets functionality.</p></div>
-        </div>
-        <div class="milestone">
-          <div style="text-align:right"><div class="milestone-badge">2024</div></div>
-          <div><h3 style="font-size:1.5rem;margin:0 0 .5rem">Scaling New Heights</h3><p class="text-intro" style="font-style:normal">150+ projects delivered with thoughtful design and collaborative execution.</p></div>
-        </div>
-        <div class="milestone">
-          <div style="text-align:right"><div class="milestone-badge">2025</div></div>
-          <div><h3 style="font-size:1.5rem;margin:0 0 .5rem">Awards & Accolades</h3><p class="text-intro" style="font-style:normal">Most Promising & Innovative Interior Design Firm (Residential, National). Trusted & Creative Interior Designer of the Year 2025, Karnataka.</p></div>
-        </div>
-      </div>
+
+      <ol class="timeline-elegant" role="list">
+        <!-- 2020 -->
+        <li class="milestone">
+          <div class="milestone__year">
+            <span class="badge-year" aria-hidden="true"><time datetime="2020">2020</time></span>
+          </div>
+          <article class="milestone__card" aria-label="2020 — The Beginning">
+            <h3 class="milestone__title">The Beginning</h3>
+            <p class="milestone__copy">Small studio, big vision—transforming ordinary spaces into timeless expressions.</p>
+          </article>
+        </li>
+
+        <!-- 2021 -->
+        <li class="milestone">
+          <div class="milestone__year">
+            <span class="badge-year" aria-hidden="true"><time datetime="2021">2021</time></span>
+          </div>
+          <article class="milestone__card" aria-label="2021 — First Steps, First Spaces">
+            <h3 class="milestone__title">First Steps, First Spaces</h3>
+            <p class="milestone__copy">Setting the tone for our design philosophy, rooted in warmth and individuality.</p>
+          </article>
+        </li>
+
+        <!-- 2023 — Press -->
+        <li class="milestone">
+          <div class="milestone__year">
+            <span class="badge-year" aria-hidden="true"><time datetime="2023">2023</time></span>
+          </div>
+          <article class="milestone__card" aria-label="2023 — In the Press">
+            <h3 class="milestone__title">In the Press</h3>
+            <p class="milestone__copy">Featured in Deccan Herald's “Bones Get a New Life”—founder Aakrati on texture, depth, and drama.</p>
+            <blockquote class="milestone__quote">
+              “White, textured statement pieces create depth and drama—pair with Bohemian/English palettes and peach tones.”
+              <a class="quote-link" href="https://www.deccanherald.com/features/bones-get-a-new-life-1237132.html?utm_source=whatsapp&utm_medium=referral&utm_campaign=socialshare" target="_blank" rel="noopener noreferrer">Read more</a>
+            </blockquote>
+          </article>
+        </li>
+
+        <!-- 2023 — Expansion -->
+        <li class="milestone">
+          <div class="milestone__year">
+            <span class="badge-year" aria-hidden="true"><time datetime="2023">2023</time></span>
+          </div>
+          <article class="milestone__card" aria-label="2023 — Growing Beyond Homes">
+            <h3 class="milestone__title">Growing Beyond Homes</h3>
+            <p class="milestone__copy">Expanded into commercial &amp; hospitality interiors—creativity meets functionality.</p>
+          </article>
+        </li>
+
+        <!-- 2024 -->
+        <li class="milestone">
+          <div class="milestone__year">
+            <span class="badge-year" aria-hidden="true"><time datetime="2024">2024</time></span>
+          </div>
+          <article class="milestone__card" aria-label="2024 — Scaling New Heights">
+            <h3 class="milestone__title">Scaling New Heights</h3>
+            <p class="milestone__copy">150+ projects delivered with thoughtful design and collaborative execution.</p>
+          </article>
+        </li>
+
+        <!-- 2025 -->
+        <li class="milestone">
+          <div class="milestone__year">
+            <span class="badge-year" aria-hidden="true"><time datetime="2025">2025</time></span>
+          </div>
+          <article class="milestone__card" aria-label="2025 — Awards &amp; Accolades">
+            <h3 class="milestone__title">Awards &amp; Accolades</h3>
+            <p class="milestone__copy">
+              Most Promising &amp; Innovative Interior Design Firm Award under Residential Projects &amp; Outstanding Consultancy (2025).<br>
+              Special Award: Trusted &amp; Creative Interior Designer of the Year 2025, Karnataka.
+            </p>
+          </article>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="testimonials-heading" style="background:linear-gradient(135deg,#FAFAF8 0%,#F5F3EF 100%)">
+  <!-- ================= -->
+  <!-- Timeline Styles  -->
+  <!-- ================= -->
+  <style>
+  /* Uses your existing tokens if present */
+  :root{
+    --primary-gold:#C9A96E; --deep-navy:#1A1D29; --brand-cream:#F8F5F0;
+    --text-primary:#2C2C2C; --text-muted:#4E4A45; --border-elegant:#E8ECEB;
+  }
+
+  #journey .timeline-head{
+    text-align:center; margin-bottom:2.5rem;
+  }
+  #journey .tl-title{
+    font-family:'Playfair Display',serif; font-size:2.5rem; margin:.5rem 0 1rem;
+  }
+  #journey .tl-intro{ font-style:normal; }
+
+  /* Core layout */
+  .timeline-elegant{
+    position:relative; max-width:1000px; margin:0 auto;
+    padding: .5rem 0 0;
+  }
+  .timeline-elegant::before{
+    content:""; position:absolute; top:0; bottom:0; left:50%;
+    width:2px; transform:translateX(-50%);
+    background:linear-gradient(180deg, rgba(201,169,110,.28), var(--primary-gold), rgba(201,169,110,.28));
+    opacity:.9;
+  }
+
+  .milestone{
+    position:relative;
+    display:grid; grid-template-columns: 1fr 1fr; gap:2.25rem; align-items:center;
+    margin:0 0 3rem 0;
+    opacity:0; transform:translateY(24px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  .milestone.is-visible{ opacity:1; transform:none; }
+
+  /* Center dot per milestone */
+  .milestone::after{
+    content:""; position:absolute; left:50%; top:50%;
+    width:14px; height:14px; border-radius:50%;
+    background:#fff; border:3px solid #98715d;
+    transform:translate(-50%, -50%);
+    box-shadow:0 6px 18px rgba(152,113,93,.35);
+  }
+
+  /* Year badge */
+  .badge-year{
+    display:inline-grid; place-items:center;
+    width:100px; height:100px; border-radius:50%;
+    font:700 1.4rem/1 'Inter',system-ui,sans-serif; color:#fff;
+    background:linear-gradient(135deg, #98715d, #7a5a4a);
+    border:5px solid rgba(255,255,255,.9);
+    box-shadow:0 12px 40px rgba(152,113,93,.40);
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+  .milestone:hover .badge-year{ transform:scale(1.06) rotate(3deg); box-shadow:0 16px 48px rgba(152,113,93,.5); }
+
+  /* Alternate sides */
+  .milestone__year{ text-align:right; }
+  .milestone__card{ position:relative; }
+  .milestone:nth-child(even) .milestone__year{ order:2; text-align:left; }
+  .milestone:nth-child(even) .milestone__card{ order:1; }
+
+  /* Card styling (quiet luxury) */
+  .milestone__card{
+    background:linear-gradient(135deg, rgba(255,255,255,.95), rgba(248,245,241,.98));
+    border:1px solid rgba(152,113,93,.14);
+    border-radius:20px; padding:1.75rem 1.75rem;
+    box-shadow:0 8px 24px rgba(0,0,0,.06);
+    transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+  }
+  .milestone__card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 44px rgba(0,0,0,.10);
+    border-color:rgba(152,113,93,.28);
+  }
+
+  .milestone__title{
+    font-family:'Playfair Display',serif;
+    font-size:1.35rem; margin:0 0 .5rem; color:#000;
+  }
+  .milestone__copy{
+    font-family:'Inter',sans-serif; color:var(--text-muted);
+    line-height:1.75; margin:0;
+  }
+
+  /* Quote + link */
+  .milestone__quote{
+    margin:.75rem 0 0; padding-left:16px; border-left:4px solid #98715d;
+    font-style:italic; color:var(--text-primary);
+  }
+  .quote-link{
+    display:inline-block; margin-left:.5rem; font-weight:700; text-decoration:none;
+    color:#98715d;
+    border-bottom:1px solid transparent;
+  }
+  .quote-link:hover{ border-bottom-color:#98715d; }
+
+  /* Chips row */
+  .milestone__badges{ display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.75rem; }
+  .chip{
+    display:inline-flex; align-items:center; gap:.4rem;
+    padding:.4rem .75rem; border-radius:9999px;
+    font:600 .8rem/1 'Inter',sans-serif; color:#7a4f2b;
+    background:linear-gradient(135deg, #FFF6E3, #FDEFD9);
+    border:1px solid rgba(201,169,110,.35);
+    box-shadow:0 2px 8px rgba(0,0,0,.04);
+  }
+
+  /* Mobile & tablet tweaks */
+  @media (max-width: 900px){
+    .timeline-elegant::before{ left:32px; transform:none; }
+    .milestone{
+      grid-template-columns: 1fr;
+      gap:1rem; padding-left:64px;
+    }
+    .milestone::after{
+      left:32px; top:22px; transform:translate(-50%, 0);
+    }
+    .milestone__year{ text-align:left; }
+    .badge-year{ width:84px; height:84px; font-size:1.15rem; }
+  }
+  @media (max-width: 520px){
+    .badge-year{ width:70px; height:70px; font-size:1rem; }
+    #journey .tl-title{ font-size:2rem; }
+    .milestone__card{ padding:1.25rem 1.25rem; }
+  }
+
+  /* Motion respect */
+  @media (prefers-reduced-motion: reduce){
+    .milestone{ transition:none; transform:none; opacity:1; }
+    .milestone__card, .badge-year{ transition:none; }
+  }
+  </style>
+
+  <!-- ========================= -->
+  <!-- TESTIMONIALS (UPDATED)   -->
+  <!-- ========================= -->
+  <section class="section" aria-labelledby="testimonials-heading">
     <div class="container-site">
       <div style="text-align:center;margin-bottom:2.5rem">
         <div class="label-tag" style="justify-content:center;margin-bottom:1rem">Client Stories</div>
@@ -167,17 +609,219 @@
       </div>
       <div class="ts-wrap">
         <div class="ts-rail" id="tsRail">
-          <article class="ts-card"><header class="ts-head"><img class="ts-avatar" src="images/Testimonials/Vignesh.png" alt="Vignesh"><div><div class="ts-name">Vignesh</div><div class="ts-stars">★★★★★</div></div></header><p class="ts-excerpt">"Working with Aakrati and team was one of the best decisions we made... extraordinary."</p><button class="ts-open" type="button">Read full story →</button><template class="tm-full">"Working with Aakrati and team was one of the best decisions we made while building our new home... extraordinary."</template><template class="tm-full-head"><div class="md-head"><img class="md-avatar" src="images/Testimonials/Vignesh.png" alt="Vignesh"><div><div class="md-name">Vignesh</div><div class="ts-stars">★★★★★</div></div></div></template></article>
-          <article class="ts-card"><header class="ts-head"><img class="ts-avatar" src="images/Testimonials/MayankVishnoi.png" alt="Mayank"><div><div class="ts-name">Mayank Vishnoi</div><div class="ts-stars">★★★★★</div></div></header><p class="ts-excerpt">"Exceptional Interior Design Experience ... rival much larger design houses..."</p><button class="ts-open" type="button">Read full story →</button><template class="tm-full">"Exceptional Interior Design Experience - ... rival much larger design houses. ... attention to detail combined with practical thinking ..."</template><template class="tm-full-head"><div class="md-head"><img class="md-avatar" src="images/Testimonials/MayankVishnoi.png" alt="Mayank"><div><div class="md-name">Mayank Vishnoi</div><div class="ts-stars">★★★★★</div></div></div></template></article>
-          <article class="ts-card"><header class="ts-head"><img class="ts-avatar" src="images/Testimonials/BhushanSalimath.png" alt="Bhushan"><div><div class="ts-name">Bhushan Salimath</div><div class="ts-stars">★★★★★</div></div></header><p class="ts-excerpt">"We engaged Aakrati for the interior design of our home... exceeded our expectations."</p><button class="ts-open" type="button">Read full story →</button><template class="tm-full">"We engaged Aakrati for the interior design of our home... The final result exceeded our expectations..."</template><template class="tm-full-head"><div class="md-head"><img class="md-avatar" src="images/Testimonials/BhushanSalimath.png" alt="Bhushan"><div><div class="md-name">Bhushan Salimath</div><div class="ts-stars">★★★★★</div></div></div></template></article>
-          <article class="ts-card"><header class="ts-head"><img class="ts-avatar" src="images/Testimonials/NayanGupta.png" alt="Nayan"><div><div class="ts-name">Nayan Gupta</div><div class="ts-stars">★★★★★</div></div></header><p class="ts-excerpt">"We engaged with Aakrati for our home interiors... final outcome exceeded expectations."</p><button class="ts-open" type="button">Read full story →</button><template class="tm-full">"We engaged with Aakrati for our home interiors... The final outcome exceeded our expectations..."</template><template class="tm-full-head"><div class="md-head"><img class="md-avatar" src="images/Testimonials/NayanGupta.png" alt="Nayan"><div><div class="md-name">Nayan Gupta</div><div class="ts-stars">★★★★★</div></div></div></template></article>
+
+          <!-- Existing cards (unchanged) -->
+          <article class="ts-card">
+            <header class="ts-head">
+              <img class="ts-avatar" src="images/Testimonials/Vignesh.png" alt="Vignesh">
+              <div><div class="ts-name">Vignesh</div><div class="ts-stars">★★★★★</div></div>
+            </header>
+            <p class="ts-excerpt">"Working with Aakrati and team was one of the best decisions we made... extraordinary."</p>
+            <button class="ts-open" type="button">Read full story →</button>
+            <template class="tm-full">Vignesh
+Local Guide·30 reviews·8 photos
+a month ago
+Working with Aakrati and team was one of the best decisions we made while building our new home.
+She took the time to understand our lifestyle, preferences, and aspirations, and translated that into a cohesive design that flows beautifully throughout the home.
+Whether it's the subtle elegance of the ceilings, the warmth of the lighting, or the curated decor, everything works in harmony to create a welcoming and stylish environment.
+Her ability to combine our ideas with her expertise resulted in a home that truly feels like ours—only better than we imagined.
+
+We’re beyond thrilled with the final outcome and would wholeheartedly recommend them to anyone looking to transform their space into something extraordinary.</template>
+            <template class="tm-full-head">
+              <div class="md-head">
+                <img class="md-avatar" src="images/Testimonials/Vignesh.png" alt="Vignesh">
+                <div><div class="md-name">Vignesh</div><div class="ts-stars">★★★★★</div></div>
+              </div>
+            </template>
+          </article>
+
+          <article class="ts-card">
+            <header class="ts-head">
+              <img class="ts-avatar" src="images/Testimonials/MayankVishnoi.png" alt="Mayank Vishnoi">
+              <div><div class="ts-name">Mayank Vishnoi</div><div class="ts-stars">★★★★★</div></div>
+            </header>
+            <p class="ts-excerpt">"Exceptional Interior Design Experience ... rival much larger design houses..."</p>
+            <button class="ts-open" type="button">Read full story →</button>
+            <template class="tm-full">Mayank Vishnoi — Exceptional Interior Design Experience - I recently had the pleasure of working with Aakrati for our complete home interior design and execution, and I cannot recommend her services highly enough. Despite running a boutique firm with just 3-4 people, Aakrati delivered results that rival much larger design houses. What Made This Experience Outstanding: 1. Complete Project Management Excellence Aakrati didn't just provide design concepts – she managed the entire execution flawlessly. From coordinating with carpenters and stone workers to managing electrical and plumbing work, she handled multiple vendors seamlessly. This comprehensive approach saved us countless hours and eliminated the stress of managing different contractors ourselves. 2. Timely Delivery In an industry notorious for delays, Aakrati delivered our project exactly on schedule. Her project management skills and vendor coordination ensured everything stayed on track from start to finish. 3. Attention to Detail & Practicality What truly sets Aakrati apart is her meticulous attention to detail combined with practical thinking. She spent considerable time with us discussing every aspect of the design, understanding our lifestyle needs, and ensuring that beauty never compromised functionality. Every element was thoughtfully planned and executed. 4. Genuine Passion & Care It's rare to find someone who is truly passionate about their craft rather than just focused on profits. Aakrati's love for interior design shines through in every interaction. She's not money-minded but genuinely invested in creating spaces that enhance our daily lives. 5. Exceptional After-Service Support Even after project completion, Aakrati continued to help us resolve any minor issues that arose. This level of post-delivery support speaks volumes about her commitment to client satisfaction and professional integrity. Final Thoughts Working with Aakrati felt like collaborating with a trusted friend who happens to be incredibly talented at interior design. Her combination of creative vision, practical execution, vendor management expertise, and genuine care for her clients makes her an absolute gem in the interior design industry. If you're looking for someone who will treat your home with the same care and attention they would their own, look no further than Aakrati. Her work speaks for itself, and her character makes the entire experience truly enjoyable. Highly Recommended for anyone seeking quality interior design with flawless execution and exceptional service.</template>
+            <template class="tm-full-head">
+              <div class="md-head">
+                <img class="md-avatar" src="images/Testimonials/MayankVishnoi.png" alt="Mayank Vishnoi">
+                <div><div class="md-name">Mayank Vishnoi</div><div class="ts-stars">★★★★★</div></div>
+              </div>
+            </template>
+          </article>
+
+          <article class="ts-card">
+            <header class="ts-head">
+              <img class="ts-avatar" src="images/Testimonials/BhushanSalimath.png" alt="Bhushan Salimath">
+              <div><div class="ts-name">Bhushan Salimath</div><div class="ts-stars">★★★★★</div></div>
+            </header>
+            <p class="ts-excerpt">"We engaged Aakrati for the interior design of our home... exceeded our expectations."</p>
+            <button class="ts-open" type="button">Read full story →</button>
+            <template class="tm-full">Bhushan Salimath — We engaged Aakrati for the interior design of our home. Aakrati took the time to thoroughly understand our requirements and translated them into a thoughtful, cohesive design. Her services encompassed everything from design conceptualization and material selection to choosing contractors, supervising the work, and handling negotiations. Throughout the project, she maintained a high level of professionalism, with a keen eye for detail and a deep understanding of all aspects related to home design. Her expertise was evident at every step, and we appreciated the personalized approach she took. The final result exceeded our expectations, and both our family and visitors have shared nothing but positive feedback</template>
+            <template class="tm-full-head">
+              <div class="md-head">
+                <img class="md-avatar" src="images/Testimonials/BhushanSalimath.png" alt="Bhushan Salimath">
+                <div><div class="md-name">Bhushan Salimath</div><div class="ts-stars">★★★★★</div></div>
+              </div>
+            </template>
+          </article>
+
+          <article class="ts-card">
+            <header class="ts-head">
+              <img class="ts-avatar" src="images/Testimonials/NayanGupta.png" alt="Nayan Gupta">
+              <div><div class="ts-name">Nayan Gupta</div><div class="ts-stars">★★★★★</div></div>
+            </header>
+            <p class="ts-excerpt">"We engaged with Aakrati for our home interiors... final outcome exceeded expectations."</p>
+            <button class="ts-open" type="button">Read full story →</button>
+            <template class="tm-full">NAYAN GUPTA — We engaged with Aakrati for our home interiors, and she delivered exceptional results. She took the time to understand our needs, providing end-to-end services including design, material selection, contractor coordination, supervision, and negotiations. Her professionalism, colour/design choices, attention to detail, and deep expertise in home design were evident throughout. The final outcome exceeded our expectations, earning praise from both our family and visitors. She went out of her way during the design phase to accommodate our requirements which reflects her commitment to excellence We are happy that we engaged Aakrati and would look forward to do it again</template>
+            <template class="tm-full-head">
+              <div class="md-head">
+                <img class="md-avatar" src="images/Testimonials/NayanGupta.png" alt="Nayan Gupta">
+                <div><div class="md-name">Nayan Gupta</div><div class="ts-stars">★★★★★</div></div>
+              </div>
+            </template>
+          </article>
+
+          <!-- ========================= -->
+          <!-- Newly added testimonials  -->
+          <!-- ========================= -->
+
+          <article class="ts-card">
+            <header class="ts-head">
+              <img class="ts-avatar" src="images/Testimonials/HemantRastogi.jpg" alt="Hemant Rastogi (photo placeholder)">
+              <div><div class="ts-name">Hemant Rastogi</div><div class="ts-stars">★★★★★</div></div>
+            </header>
+            <p class="ts-excerpt">"Am extremely pleased with Aakriti as she has translated my ideas to reality... clever ideas to add functionality... signature creation beyond my imagination."</p>
+            <button class="ts-open" type="button">Read full story →</button>
+            <template class="tm-full">Hemant Rastogi — Am extremely pleased with Aakriti as she has translated my ideas to reality. In fact over all interiors come up much better than what I planned for. She was instrumental in coming up with multiple options suiting to my taste, clever ideas to add functionality with design. Best thing is her signature creation for each project is saw including mine which was beyond my imagination.</template>
+            <template class="tm-full-head">
+              <div class="md-head">
+                <img class="md-avatar" src="images/Testimonials/HemantRastogi.jpg" alt="Hemant Rastogi (photo placeholder)">
+                <div><div class="md-name">Hemant Rastogi</div><div class="ts-stars">★★★★★</div></div>
+              </div>
+            </template>
+          </article>
+
+          <article class="ts-card">
+            <header class="ts-head">
+              <img class="ts-avatar" src="images/Testimonials/PratimaRastogi.jpg" alt="Pratima Rastogi (photo placeholder)">
+              <div><div class="ts-name">Pratima Rastogi</div><div class="ts-stars">★★★★★</div></div>
+            </header>
+            <p class="ts-excerpt">"I had a wonderful experience working with Aakrati and her team... elegant, comfortable, and perfectly reflects my personality."</p>
+            <button class="ts-open" type="button">Read full story →</button>
+            <template class="tm-full">"I had a wonderful experience working with Aakrati and her team. Their sense of design, attention to detail, and ability to understand my taste made the entire process smooth and enjoyable. My home looks elegant, comfortable, and perfectly reflects my personality. Highly recommended!"</template>
+            <template class="tm-full-head">
+              <div class="md-head">
+                <img class="md-avatar" src="images/Testimonials/PratimaRastogi.jpg" alt="Pratima Rastogi (photo placeholder)">
+                <div><div class="md-name">Pratima Rastogi</div><div class="ts-stars">★★★★★</div></div>
+              </div>
+            </template>
+          </article>
+
+          <article class="ts-card">
+            <header class="ts-head">
+              <img class="ts-avatar" src="images/Testimonials/FineFoods.jpg" alt="Fine Foods (photo placeholder)">
+              <div><div class="ts-name">Fine Foods</div><div class="ts-stars">★★★★★</div></div>
+            </header>
+            <p class="ts-excerpt">"From House to Home — Uniquely Beautiful. Aakrati is creative, artistic, and attentive to every detail... our kids’ room is their favorite space now."</p>
+            <button class="ts-open" type="button">Read full story →</button>
+            <template class="tm-full">Fine Foods — From House to Home || Uniquely Beautiful Thanks to Aakrati! Working with Aakrati has been such an amazing experience! She’s not just creative—she’s incredibly artistic, innovative, and has an eye for detail that blew us away. She really got our style and preferences from the start, and kept every tiny thing in mind while designing. After all those long chats and site visits, the final result truly reflected everything we had discussed—and more. Every corner of our home has her thoughtful touch. From tiles to lights, curtains to cutlery, she helped us with it all. She even went shopping with us multiple times, helped us choose furniture and soft furnishings, and never once made us feel rushed or on our own. She also gave special attention to our kids' room—and honestly, they were her biggest fans by the end! She brought their love for nature and sea life together in the most artistic and playful way. The room turned out super cool and functional, with a smart study setup under a stunning bunk bed. It’s now their favorite space in the house, and we couldn’t be happier seeing how much they love it. She doesn’t just say “yes” to everything either—and that’s what we loved! She gives honest feedback and smart suggestions, making sure every choice makes sense for the space and our lifestyle. She’s bold, passionate, and doesn’t settle for anything average. Her team was great to work with too—super coordinated and reliable. Even after the work was done, she stayed in touch and made sure everything was running smoothly. The vendors she recommended were top-notch as well—carefully selected and definitely worth exploring. She made the whole journey fun, personal, and stress-free. Our home feels so “us” now—and we have her to thank for it!</template>
+            <template class="tm-full-head">
+              <div class="md-head">
+                <img class="md-avatar" src="images/Testimonials/FineFoods.jpg" alt="Fine Foods (photo placeholder)">
+                <div><div class="md-name">Fine Foods</div><div class="ts-stars">★★★★★</div></div>
+              </div>
+            </template>
+          </article>
+
+          <article class="ts-card">
+            <header class="ts-head">
+              <img class="ts-avatar" src="images/Testimonials/placeholder.png" alt="Naveen (photo placeholder)">
+              <div><div class="ts-name">Naveen</div><div class="ts-stars">★★★★★</div></div>
+            </header>
+            <p class="ts-excerpt">"Thoroughly satisfied from design to delivery—seamless process and a great final result."</p>
+            <button class="ts-open" type="button">Read full story →</button>
+            <template class="tm-full">naveen — I'm thoroughly satisfied with the entire process, from the initial design phase to execution and delivery. Aakrati is an exceptional designer who attentively considered our input and requirements. Each individual rooms were designed to suit the use-cases/ needs of the person while also following the theme. The final design and the result is not only looking great but also functioning effectively. Aakrati and her team made the entire process stress free and seamless.</template>
+            <template class="tm-full-head">
+              <div class="md-head">
+                <img class="md-avatar" src="images/Testimonials/placeholder.png" alt="Naveen (photo placeholder)">
+                <div><div class="md-name">Naveen</div><div class="ts-stars">★★★★★</div></div>
+              </div>
+            </template>
+          </article>
+
+          <article class="ts-card">
+            <header class="ts-head">
+              <img class="ts-avatar" src="images/Testimonials/placeholder.png" alt="Sakshi Sureka (photo placeholder)">
+              <div><div class="ts-name">Sakshi Sureka</div><div class="ts-stars">★★★★★</div></div>
+            </header>
+            <p class="ts-excerpt">"Creative, supportive, and practical—excellent work for our home."</p>
+            <button class="ts-open" type="button">Read full story →</button>
+            <template class="tm-full">Sakshi Sureka — Aakrati and her team is superb. She is creative and supportive. She did an excellent work done for our home.She listen to the client requirements patiently and gives her input which is practical yet beautiful. We are grateful to her for taking up our project and executing it so so well! Best of luck for to Aakrati and team for their future endeavours ❤️</template>
+            <template class="tm-full-head">
+              <div class="md-head">
+                <img class="md-avatar" src="images/Testimonials/placeholder.png" alt="Sakshi Sureka (photo placeholder)">
+                <div><div class="md-name">Sakshi Sureka</div><div class="ts-stars">★★★★★</div></div>
+              </div>
+            </template>
+          </article>
+
+          <article class="ts-card">
+            <header class="ts-head">
+              <img class="ts-avatar" src="images/Testimonials/placeholder.png" alt="Babita Butola (photo placeholder)">
+              <div><div class="ts-name">Babita Butola</div><div class="ts-stars">★★★★★</div></div>
+            </header>
+            <p class="ts-excerpt">"Impeccable taste and attention to detail—our home feels like a haven."</p>
+            <button class="ts-open" type="button">Read full story →</button>
+            <template class="tm-full">babita butola — I would like to thank aakriti , Her impeccable taste and attention to detail have transformed our space into a haven of comfort and style.Me and Raj are beyond grateful for your creative and unwavering dedication to bringing our vision to life. Your ability to understand our preferences and translate them into stunning designs is truly remarkable. From concept to Execution, your passion for design shines through every element of our home.We're endlessly thankful for your talent and expertise.</template>
+            <template class="tm-full-head">
+              <div class="md-head">
+                <img class="md-avatar" src="images/Testimonials/placeholder.png" alt="Babita Butola (photo placeholder)">
+                <div><div class="md-name">Babita Butola</div><div class="ts-stars">★★★★★</div></div>
+              </div>
+            </template>
+          </article>
+
+          <article class="ts-card">
+            <header class="ts-head">
+              <img class="ts-avatar" src="images/Testimonials/placeholder.png" alt="Suwacharaj (photo placeholder)">
+              <div><div class="ts-name">Suwacharaj</div><div class="ts-stars">★★★★★</div></div>
+            </header>
+            <p class="ts-excerpt">"Fantastic work and commitment—actual finish looked better than 3D."</p>
+            <button class="ts-open" type="button">Read full story →</button>
+            <template class="tm-full">suwacharaj — Fantastic Work and Commitment.... Right from the 1st meetinf to discussions to conceptualising to the final output its been one seamless ride for us... Infact actual finish liiks better than 3D outputs Thanks Aakrarti and Team for making our Dream Home!!</template>
+            <template class="tm-full-head">
+              <div class="md-head">
+                <img class="md-avatar" src="images/Testimonials/placeholder.png" alt="Suwacharaj (photo placeholder)">
+                <div><div class="md-name">Suwacharaj</div><div class="ts-stars">★★★★★</div></div>
+              </div>
+            </template>
+          </article>
+
         </div>
-        <div class="md-veil" id="mdVeil" aria-hidden="true"><div class="md-dialog"><button class="md-close" aria-label="Close">×</button><div id="mdHead"></div><div class="md-body" id="mdBody"></div></div></div>
+
+        <!-- Rail nav arrows -->
+        <button class="ts-nav ts-prev" type="button" aria-label="Scroll testimonials left">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="ts-nav ts-next" type="button" aria-label="Scroll testimonials right">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+
+        <!-- Modal container (accessible) -->
+        <div class="md-veil" id="mdVeil" aria-hidden="true">
+          <div class="md-dialog" role="dialog" aria-modal="true" aria-labelledby="mdHead">
+            <button class="md-close" type="button" aria-label="Close dialog">×</button>
+            <div id="mdHead"></div>
+            <div class="md-body" id="mdBody"></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section" style="background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(248,245,241,.7))">
+  <section class="section">
     <div class="container-site" style="text-align:center">
       <div style="display:inline-block;padding:2rem;border-radius:999px;background:linear-gradient(135deg,#FDEFD9 0%,#FFF7EC 100%)"><svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--primary-gold)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/></svg></div>
       <blockquote style="font-family:'Playfair Display',serif;font-size:2rem;line-height:1.5;margin:1.5rem 0;color:var(--text-primary)">"The best interiors disappear into your life—the way light falls, a handle feels, a drawer closes—because everything just <span style=\"color:var(--primary-gold)\">works</span>."</blockquote>
@@ -188,11 +832,13 @@
 
   <script>
     (function(){
-      const rail=document.getElementById('tsRail'); if(!rail) return;
-      const veil=document.getElementById('mdVeil'); const head=document.getElementById('mdHead'); const body=document.getElementById('mdBody');
-      rail.addEventListener('click',e=>{const btn=e.target.closest('.ts-open'); if(!btn) return; const card=btn.closest('.ts-card'); head.innerHTML=card.querySelector('.tm-full-head').innerHTML; body.textContent=card.querySelector('.tm-full').content.textContent; veil.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';});
-      veil?.addEventListener('click',e=>{if(e.target===veil||e.target.classList.contains('md-close')){veil.setAttribute('aria-hidden','true'); document.body.style.overflow='';}});
-      document.addEventListener('keydown',e=>{if(e.key==='Escape' && veil.getAttribute('aria-hidden')==='false'){veil.setAttribute('aria-hidden','true'); document.body.style.overflow='';}});
+      // Scroll reveal for generic .reveal / .reveal-scale
+      const els=[...document.querySelectorAll('.reveal, .reveal-scale')];
+      if(!els.length) return;
+      const io=new IntersectionObserver(entries=>{
+        entries.forEach(ent=>{ if(ent.isIntersecting){ ent.target.classList.add('active'); io.unobserve(ent.target);} });
+      },{threshold:.15});
+      els.forEach(el=>io.observe(el));
     })();
     (function(){
       const milestones=[...document.querySelectorAll('.milestone')];
@@ -204,5 +850,38 @@
     })();
   </script>
 </main>
-<footer class="site-footer"><div class="container footer-inner">© Aakrati Interior Studio</div><div class="ribbon">Fine Interiors</div></footer>
-<script src="assets/js/site.js"></script></body></html>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="/index.html" class="footer-brand" aria-label="Aakrati Home">
+      <img src="/images/logovisitingcardfront.png" alt="Aakrati Interior Design">
+    </a>
+    <div style="margin-left:auto;color:#6b7280;font-size:.95rem">© Aakrati Interior Studio</div>
+  </div>
+  <div class="ribbon">Fine Interiors</div>
+</footer>
+<script src="assets/js/site.js"></script>
+<!-- ======================== -->
+<!-- Timeline Reveal Script  -->
+<!-- ======================== -->
+<script>
+(function(){
+  const items = document.querySelectorAll('#journey .milestone');
+  if (!('IntersectionObserver' in window) || !items.length){
+    items.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+  const io = new IntersectionObserver((entries, obs)=>{
+    entries.forEach(ent=>{
+      if(ent.isIntersecting){
+        ent.target.classList.add('is-visible');
+        obs.unobserve(ent.target);
+      }
+    });
+  }, { threshold: .2 });
+  items.forEach(el => io.observe(el));
+})();
+</script>
+<script src="assets/js/testimonials-modal.js" defer></script>
+</body>
+</html>

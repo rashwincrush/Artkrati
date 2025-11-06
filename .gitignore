@@ -1,0 +1,28 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Node/JS ecosystems (safe even if unused)
+node_modules/
+.pnp.*
+yarn.lock
+pnpm-lock.yaml
+package-lock.json
+
+# Build outputs
+.dist/
+dist/
+build/
+.out/
+.next/
+.cache/
+
+# Env/editor
+.env*
+.idea/
+.vscode/
+*.log
+
+# Misc
+*.local
+*.swp
