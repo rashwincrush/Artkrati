@@ -9,6 +9,12 @@ html,body{margin:0;padding:0}
   --card-bg-fallback: #ffffff;
   --section-bg:#F8F5F1;
 }
+/* Local font: Brother Home */
+@font-face{
+  font-family:'Brother Home';
+  src:url('../fonts/Brother-Home.otf') format('opentype');
+  font-weight:400; font-style:normal; font-display:swap;
+}
 body{background:#F8F5F1;color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
 h1,h2,h3{font-family:"Playfair Display",Georgia,serif;color:var(--deep-navy)}
 a{color:var(--brand-primary);text-decoration:none}
@@ -143,3 +149,37 @@ main [class*="section"]:not([class*="hero"]){
 @media (max-width:640px){
   .columns-3,.columns-2{column-count:1}
 }
+
+/* Quote Card (About page) */
+.q-card{
+  max-width:920px;margin:0 auto;text-align:center;
+  padding:clamp(1.25rem,3.5vw,2.25rem);
+  background:var(--card-gradient);background-color:var(--card-bg-fallback);
+  border:1px solid rgba(0,0,0,.06);border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.07);
+  position:relative;overflow:hidden;
+}
+.q-card::before{
+  content:"\201C";position:absolute;left:16px;top:-10px;
+  font-family:"Playfair Display",serif;font-size:120px;line-height:1;
+  color:rgba(0,0,0,.05);pointer-events:none;
+}
+.q-badge{
+  width:56px;height:56px;margin:0 auto 12px;border-radius:14px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--primary-gold),var(--aakrati-peach));color:#fff;
+  box-shadow:0 6px 20px rgba(201,169,110,.22);
+}
+.q-text{
+  font-family:"Playfair Display",serif;color:var(--deep-navy);
+  font-size:clamp(1.35rem,2.2vw,2rem);line-height:1.5;margin:8px auto 32px;
+  letter-spacing:0.01em;
+}
+.q-emph{color:#98715d;position:relative;z-index:1}
+.q-meta{display:grid;gap:6px;margin:36px 0 0;letter-spacing:0.02em;position:relative;z-index:2}
+.q-name{
+  font-family: inherit;
+  font-weight: 400;
+  color:#000;
+  font-size:1.1rem;
+}
+.q-title{color:#000;font-family:Inter,sans-serif;font-size:.95rem}

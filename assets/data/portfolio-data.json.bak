@@ -1,0 +1,1117 @@
+{
+  "projects": [
+    {
+      "slug": "central-regency",
+      "title": "Central Regency",
+      "type": "residential",
+      "location": "",
+      "year": "",
+      "cover": "images/Portfolio/Projects/Central Regency/COVER PAGE.jpg",
+      "images": [
+        {"src": "images/Portfolio/Projects/Central Regency/AID-15.jpg", "alt": "AID-15", "room": null},
+        {"src": "images/Portfolio/Projects/Central Regency/AID-20.jpg", "alt": "AID-20", "room": null},
+        {"src": "images/Portfolio/Projects/Central Regency/AID-21.jpg", "alt": "AID-21", "room": null},
+        {"src": "images/Portfolio/Projects/Central Regency/AID-23.jpg", "alt": "AID-23", "room": null},
+        {"src": "images/Portfolio/Projects/Central Regency/AID-27.jpg", "alt": "AID-27", "room": null},
+        {"src": "images/Portfolio/Projects/Central Regency/AID-37.jpg", "alt": "AID-37", "room": null},
+        {"src": "images/Portfolio/Projects/Central Regency/AID-41.jpg", "alt": "AID-41", "room": null},
+        {"src": "images/Portfolio/Projects/Central Regency/AID-43.jpg", "alt": "AID-43", "room": null},
+        {"src": "images/Portfolio/Projects/Central Regency/COVER PAGE.jpg", "alt": "COVER PAGE", "room": null}
+      ]
+    },
+    {
+      "slug": "ram-sridhar-apt",
+      "title": "Ram Sridhar Apt",
+      "type": "residential",
+      "location": "",
+      "year": "",
+      "cover": "images/Portfolio/Projects/Ram Sridhar Apt/cover page.jpg",
+      "images": [
+        {"src": "images/Portfolio/Projects/Ram Sridhar Apt/58402535-3fb9-4710-b3d6-cc419fed29be.JPG", "alt": "58402535-...", "room": null},
+        {"src": "images/Portfolio/Projects/Ram Sridhar Apt/AID-102.jpg", "alt": "AID-102", "room": null},
+        {"src": "images/Portfolio/Projects/Ram Sridhar Apt/AID-71.jpg", "alt": "AID-71", "room": null},
+        {"src": "images/Portfolio/Projects/Ram Sridhar Apt/AID-76.jpg", "alt": "AID-76", "room": null},
+        {"src": "images/Portfolio/Projects/Ram Sridhar Apt/AID-77.jpg", "alt": "AID-77", "room": null},
+        {"src": "images/Portfolio/Projects/Ram Sridhar Apt/AID-81.jpg", "alt": "AID-81", "room": null},
+        {"src": "images/Portfolio/Projects/Ram Sridhar Apt/AID-93.jpg", "alt": "AID-93", "room": null},
+        {"src": "images/Portfolio/Projects/Ram Sridhar Apt/AID-94.jpg", "alt": "AID-94", "room": null},
+        {"src": "images/Portfolio/Projects/Ram Sridhar Apt/AID-95.jpg", "alt": "AID-95", "room": null},
+        {"src": "images/Portfolio/Projects/Ram Sridhar Apt/AID-97.jpg", "alt": "AID-97", "room": null},
+        {"src": "images/Portfolio/Projects/Ram Sridhar Apt/cover page.jpg", "alt": "cover page", "room": null}
+      ]
+    },
+    {
+      "slug": "duplex-peenya",
+      "title": "Duplex Peenya",
+      "type": "residential",
+      "location": "",
+      "year": "",
+      "cover": "images/Artkratihero.png",
+      "images": []
+    },
+    {
+      "slug": "ohio-overseas-project",
+      "title": "Ohio (Overseas Project)",
+      "type": "residential",
+      "location": "",
+      "year": "",
+      "cover": "images/Artkratihero.png",
+      "images": []
+    },
+    {
+      "slug": "purva-midtown",
+      "title": "Purva Midtown",
+      "type": "residential",
+      "location": "",
+      "year": "",
+      "cover": "images/Artkratihero.png",
+      "images": []
+    },
+    {
+      "slug": "purva-midtown-santorini-themed",
+      "title": "Purva Midtown — Santorini Themed",
+      "type": "residential",
+      "location": "",
+      "year": "",
+      "cover": "images/Artkratihero.png",
+      "images": []
+    },
+    {
+      "slug": "sattva-aqua-vista",
+      "title": "Sattva Aqua Vista",
+      "type": "residential",
+      "location": "",
+      "year": "",
+      "cover": "images/Artkratihero.png",
+      "images": []
+    }
+  ],
+  "albums": [
+    {
+      "slug": "art-murals",
+      "title": "Art & Murals",
+      "cover": "images/Portfolio/Albums/Art & Murals/AID-150.jpg",
+      "images": [
+        {"src": "images/Portfolio/Albums/Art & Murals/AID-150.jpg", "alt": "AID-150"},
+        {"src": "images/Portfolio/Albums/Art & Murals/AID-174.jpg", "alt": "AID-174"},
+        {"src": "images/Portfolio/Albums/Art & Murals/AID-251.jpg", "alt": "AID-251"},
+        {"src": "images/Portfolio/Albums/Art & Murals/WhatsApp Image 2021-08-08 at 9.51.05 PM.jpeg", "alt": "WhatsApp Image"}
+      ]
+    },
+    {
+      "slug": "baths",
+      "title": "Baths",
+      "cover": "images/Portfolio/Albums/Baths/AID-15.jpg",
+      "images": [
+        {"src": "images/Portfolio/Albums/Baths/AID-15.jpg", "alt": "AID-15"},
+        {"src": "images/Portfolio/Albums/Baths/GBR BATH `1.png", "alt": "GBR BATH 1"},
+        {"src": "images/Portfolio/Albums/Baths/MBR BATH 2.png", "alt": "MBR BATH 2"},
+        {"src": "images/Portfolio/Albums/Baths/cove pages.png", "alt": "cove pages"},
+        {"src": "images/Portfolio/Albums/Baths/mbr opt 1.png", "alt": "mbr opt 1"}
+      ]
+    },
+    {
+      "slug": "bed-chambers",
+      "title": "Bed chambers",
+      "cover": "images/Portfolio/Albums/Bed chambers/cover page.jpg",
+      "images": [
+        {"src": "images/Portfolio/Albums/Bed chambers/4.jpg", "alt": "4"},
+        {"src": "images/Portfolio/Albums/Bed chambers/5.jpg", "alt": "5"},
+        {"src": "images/Portfolio/Albums/Bed chambers/AID-10.jpg", "alt": "AID-10"},
+        {"src": "images/Portfolio/Albums/Bed chambers/AID-13.jpg", "alt": "AID-13"},
+        {"src": "images/Portfolio/Albums/Bed chambers/AID-14.jpg", "alt": "AID-14"},
+        {"src": "images/Portfolio/Albums/Bed chambers/BENEKA RESIDENCY DBR1 .jpg", "alt": "BENEKA RESIDENCY DBR1"},
+        {"src": "images/Portfolio/Albums/Bed chambers/Guest Bedroom 1.jpg", "alt": "Guest Bedroom 1"},
+        {"src": "images/Portfolio/Albums/Bed chambers/Guest bedroom 2.jpg", "alt": "Guest bedroom 2"},
+        {"src": "images/Portfolio/Albums/Bed chambers/L&T South city gbr 1.png", "alt": "L&T South city gbr 1"},
+        {"src": "images/Portfolio/Albums/Bed chambers/L&T South city gbr 2.png", "alt": "L&T South city gbr 2"},
+        {"src": "images/Portfolio/Albums/Bed chambers/L&T South city mbr 1.png", "alt": "L&T South city mbr 1"},
+        {"src": "images/Portfolio/Albums/Bed chambers/L&T South city mbr 2.png", "alt": "L&T South city mbr 2"},
+        {"src": "images/Portfolio/Albums/Bed chambers/Master Bedroom 1.jpg", "alt": "Master Bedroom 1"},
+        {"src": "images/Portfolio/Albums/Bed chambers/Master Bedroom 2.jpg", "alt": "Master Bedroom 2"},
+        {"src": "images/Portfolio/Albums/Bed chambers/PURVE BED WALL 2.png", "alt": "PURVE BED WALL 2"},
+        {"src": "images/Portfolio/Albums/Bed chambers/cover page.jpg", "alt": "cover page"},
+        {"src": "images/Portfolio/Albums/Bed chambers/ff_bed side.png", "alt": "ff_bed side"},
+        {"src": "images/Portfolio/Albums/Bed chambers/ff_tv reading zone side.png", "alt": "ff_tv reading zone side"},
+        {"src": "images/Portfolio/Albums/Bed chambers/purva midtown bedroom 2.jpg", "alt": "purva midtown bedroom 2"},
+        {"src": "images/Portfolio/Albums/Bed chambers/sf_bed side.jpg", "alt": "sf_bed side"},
+        {"src": "images/Portfolio/Albums/Bed chambers/unishire terraza mbr 1.jpg", "alt": "unishire terraza mbr 1"},
+        {"src": "images/Portfolio/Albums/Bed chambers/unishire terraza mbr 2.jpg", "alt": "unishire terraza mbr 2"}
+      ]
+    },
+    {
+      "slug": "kids-den",
+      "title": "Kids Den",
+      "cover": "images/Portfolio/Albums/Kids Den/AID-144.jpg",
+      "images": [
+        {"src": "images/Portfolio/Albums/Kids Den/AID-144.jpg", "alt": "AID-144"},
+        {"src": "images/Portfolio/Albums/Kids Den/AID-147.jpg", "alt": "AID-147"},
+        {"src": "images/Portfolio/Albums/Kids Den/AID-157.jpg", "alt": "AID-157"},
+        {"src": "images/Portfolio/Albums/Kids Den/AID-4.jpg", "alt": "AID-4"},
+        {"src": "images/Portfolio/Albums/Kids Den/AID-7.jpg", "alt": "AID-7"},
+        {"src": "images/Portfolio/Albums/Kids Den/Copy of AID-193.jpg", "alt": "Copy of AID-193"},
+        {"src": "images/Portfolio/Albums/Kids Den/Copy of AID-194.jpg", "alt": "Copy of AID-194"},
+        {"src": "images/Portfolio/Albums/Kids Den/I_wardrobe side.jpg", "alt": "I_wardrobe side"}
+      ]
+    },
+    {
+      "slug": "kitchen-heart-of-home",
+      "title": "Kitchen - Heart of Home",
+      "cover": "images/Portfolio/Albums/Kitchen - Heart of home/27.jpg",
+      "images": [
+        {"src": "images/Portfolio/Albums/Kitchen - Heart of home/27.jpg", "alt": "27"},
+        {"src": "images/Portfolio/Albums/Kitchen - Heart of home/28.jpg", "alt": "28"},
+        {"src": "images/Portfolio/Albums/Kitchen - Heart of home/4.jpg", "alt": "4"},
+        {"src": "images/Portfolio/Albums/Kitchen - Heart of home/8.jpg", "alt": "8"},
+        {"src": "images/Portfolio/Albums/Kitchen - Heart of home/AID-236.jpg", "alt": "AID-236"},
+        {"src": "images/Portfolio/Albums/Kitchen - Heart of home/AID-239.jpg", "alt": "AID-239"},
+        {"src": "images/Portfolio/Albums/Kitchen - Heart of home/AID-259.jpg", "alt": "AID-259"},
+        {"src": "images/Portfolio/Albums/Kitchen - Heart of home/AID-260.jpg", "alt": "AID-260"},
+        {"src": "images/Portfolio/Albums/Kitchen - Heart of home/DARK GREEEN.png", "alt": "DARK GREEEN"},
+        {"src": "images/Portfolio/Albums/Kitchen - Heart of home/DARK GREEN 2.png", "alt": "DARK GREEN 2"},
+        {"src": "images/Portfolio/Albums/Kitchen - Heart of home/IMG_0959.JPG", "alt": "IMG_0959"},
+        {"src": "images/Portfolio/Albums/Kitchen - Heart of home/PASH 2.JPG", "alt": "PASH 2"},
+        {"src": "images/Portfolio/Albums/Kitchen - Heart of home/PASH1.JPG", "alt": "PASH1"},
+        {"src": "images/Portfolio/Albums/Kitchen - Heart of home/cover page .png", "alt": "cover page"},
+        {"src": "images/Portfolio/Albums/Kitchen - Heart of home/cover page 2.png", "alt": "cover page 2"},
+        {"src": "images/Portfolio/Albums/Kitchen - Heart of home/kit 1.png", "alt": "kit 1"},
+        {"src": "images/Portfolio/Albums/Kitchen - Heart of home/kit 2.png", "alt": "kit 2"}
+      ]
+    },
+    {
+      "slug": "living-dining",
+      "title": "Living - Dining",
+      "cover": "images/Portfolio/Albums/Living - Dining/AID-1.jpg",
+      "images": [
+        {"src": "images/Portfolio/Albums/Living - Dining/1.1.png", "alt": "1.1"},
+        {"src": "images/Portfolio/Albums/Living - Dining/11.png", "alt": "11"},
+        {"src": "images/Portfolio/Albums/Living - Dining/14.png", "alt": "14"},
+        {"src": "images/Portfolio/Albums/Living - Dining/3. COVER PAGE.png", "alt": "3. COVER PAGE"},
+        {"src": "images/Portfolio/Albums/Living - Dining/6.png", "alt": "6"},
+        {"src": "images/Portfolio/Albums/Living - Dining/AID-1.jpg", "alt": "AID-1"},
+        {"src": "images/Portfolio/Albums/Living - Dining/AID-140.jpg", "alt": "AID-140"},
+        {"src": "images/Portfolio/Albums/Living - Dining/AID-175.jpg", "alt": "AID-175"},
+        {"src": "images/Portfolio/Albums/Living - Dining/AID-211.jpg", "alt": "AID-211"},
+        {"src": "images/Portfolio/Albums/Living - Dining/AID-215.jpg", "alt": "AID-215"},
+        {"src": "images/Portfolio/Albums/Living - Dining/AID-218.jpg", "alt": "AID-218"},
+        {"src": "images/Portfolio/Albums/Living - Dining/AID-245.jpg", "alt": "AID-245"},
+        {"src": "images/Portfolio/Albums/Living - Dining/AID-56.jpg", "alt": "AID-56"},
+        {"src": "images/Portfolio/Albums/Living - Dining/BRIGADE METEROPOLIS.JPG", "alt": "BRIGADE METEROPOLIS"},
+        {"src": "images/Portfolio/Albums/Living - Dining/KAMA 2.png", "alt": "KAMA 2"},
+        {"src": "images/Portfolio/Albums/Living - Dining/KAMA 3.png", "alt": "KAMA 3"},
+        {"src": "images/Portfolio/Albums/Living - Dining/KAMA1.png", "alt": "KAMA1"},
+        {"src": "images/Portfolio/Albums/Living - Dining/a13.png", "alt": "a13"},
+        {"src": "images/Portfolio/Albums/Living - Dining/a4.png", "alt": "a4"},
+        {"src": "images/Portfolio/Albums/Living - Dining/sat 1.jpg", "alt": "sat 1"},
+        {"src": "images/Portfolio/Albums/Living - Dining/sat 2.jpg", "alt": "sat 2"},
+        {"src": "images/Portfolio/Albums/Living - Dining/sat 3.jpg", "alt": "sat 3"},
+        {"src": "images/Portfolio/Albums/Living - Dining/sat 9.jpg", "alt": "sat 9"}
+      ]
+    }
+  ],
+  "commercial": [
+    {
+      "slug": "gramener",
+      "title": "Gramener",
+      "cover": "images/Portfolio/Commercial /Gramener/COVER PAGE.JPG",
+      "images": [
+        {"src": "images/Portfolio/Commercial /Gramener/BIMA6410.JPG", "alt": "BIMA6410"},
+        {"src": "images/Portfolio/Commercial /Gramener/COVER PAGE.JPG", "alt": "COVER PAGE"},
+        {"src": "images/Portfolio/Commercial /Gramener/DIHG5606.JPG", "alt": "DIHG5606"},
+        {"src": "images/Portfolio/Commercial /Gramener/DPVZ2557.JPG", "alt": "DPVZ2557"},
+        {"src": "images/Portfolio/Commercial /Gramener/IMG_5502.JPG", "alt": "IMG_5502"},
+        {"src": "images/Portfolio/Commercial /Gramener/XDNU1488.JPG", "alt": "XDNU1488"}
+      ]
+    },
+    {
+      "slug": "waaw-cafe",
+      "title": "Waaw Cafe",
+      "cover": "images/Artkratihero.png",
+      "images": []
+    }
+  ]
+}
+{
+  "projects": [
+    {
+      "slug": "central-regency",
+      "title": "Central Regency",
+      "type": "residential",
+      "location": "",
+      "year": "",
+      "cover": "images/Portfolio/Projects/Central Regency/AID-15.jpg",
+      "images": [
+        {
+          "src": "images/Portfolio/Projects/Central Regency/AID-15.jpg",
+          "alt": "AID-15",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Central Regency/AID-20.jpg",
+          "alt": "AID-20",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Central Regency/AID-21.jpg",
+          "alt": "AID-21",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Central Regency/AID-23.jpg",
+          "alt": "AID-23",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Central Regency/AID-27.jpg",
+          "alt": "AID-27",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Central Regency/AID-37.jpg",
+          "alt": "AID-37",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Central Regency/AID-41.jpg",
+          "alt": "AID-41",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Central Regency/AID-43.jpg",
+          "alt": "AID-43",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Central Regency/COVER PAGE.jpg",
+          "alt": "COVER PAGE",
+          "room": null
+        }
+      ]
+    },
+    {
+      "slug": "duplex-peenya",
+      "title": "DUPLEX PEENYA",
+      "type": "residential",
+      "location": "",
+      "year": "",
+      "cover": "images/Portfolio/Projects/DUPLEX PEENYA/1.png",
+      "images": [
+        {
+          "src": "images/Portfolio/Projects/DUPLEX PEENYA/1.png",
+          "alt": "1",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/DUPLEX PEENYA/2.png",
+          "alt": "2",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/DUPLEX PEENYA/4th floor 1.png",
+          "alt": "4th floor 1",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/DUPLEX PEENYA/4th floor 3.png",
+          "alt": "4th floor 3",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/DUPLEX PEENYA/COVER PAGE.png",
+          "alt": "COVER PAGE",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/DUPLEX PEENYA/DBR 2.png",
+          "alt": "DBR 2",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/DUPLEX PEENYA/DBR.png",
+          "alt": "DBR",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/DUPLEX PEENYA/PEENYA BED.png",
+          "alt": "PEENYA BED",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/DUPLEX PEENYA/PEENYA SITING.png",
+          "alt": "PEENYA SITING",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/DUPLEX PEENYA/PEENYA tv.png",
+          "alt": "PEENYA tv",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/DUPLEX PEENYA/WARD.2.png",
+          "alt": "WARD.2",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/DUPLEX PEENYA/dining5.png",
+          "alt": "dining5",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/DUPLEX PEENYA/dining7.png",
+          "alt": "dining7",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/DUPLEX PEENYA/planter wall 2.png",
+          "alt": "planter wall 2",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/DUPLEX PEENYA/tv side.png",
+          "alt": "tv side",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/DUPLEX PEENYA/ward.1.png",
+          "alt": "ward.1",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/DUPLEX PEENYA/window.png",
+          "alt": "window",
+          "room": null
+        }
+      ]
+    },
+    {
+      "slug": "purva-midtown",
+      "title": "Purva midtown ",
+      "type": "residential",
+      "location": "",
+      "year": "",
+      "cover": "images/Portfolio/Projects/Purva midtown /AID-132.jpg",
+      "images": [
+        {
+          "src": "images/Portfolio/Projects/Purva midtown /AID-132.jpg",
+          "alt": "AID-132",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Purva midtown /AID-137.jpg",
+          "alt": "AID-137",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Purva midtown /AID-139.jpg",
+          "alt": "AID-139",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Purva midtown /AID-165.jpg",
+          "alt": "AID-165",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Purva midtown /AID-166.jpg",
+          "alt": "AID-166",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Purva midtown /AID-167.jpg",
+          "alt": "AID-167",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Purva midtown /AID-168.jpg",
+          "alt": "AID-168",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Purva midtown /AID-173.jpg",
+          "alt": "AID-173",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Purva midtown /COVER PAGES.jpg",
+          "alt": "COVER PAGES",
+          "room": null
+        }
+      ]
+    },
+    {
+      "slug": "ram-sridhar-apartment-btm",
+      "title": "Ram Sridhar Apartment BTM",
+      "type": "residential",
+      "location": "",
+      "year": "",
+      "cover": "images/Portfolio/Projects/Ram Sridhar Apartment BTM/58402535-3fb9-4710-b3d6-cc419fed29be.JPG",
+      "images": [
+        {
+          "src": "images/Portfolio/Projects/Ram Sridhar Apartment BTM/58402535-3fb9-4710-b3d6-cc419fed29be.JPG",
+          "alt": "58402535-3fb9-4710-b3d6-cc419fed29be",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Ram Sridhar Apartment BTM/AID-102.jpg",
+          "alt": "AID-102",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Ram Sridhar Apartment BTM/AID-71.jpg",
+          "alt": "AID-71",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Ram Sridhar Apartment BTM/AID-76.jpg",
+          "alt": "AID-76",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Ram Sridhar Apartment BTM/AID-77.jpg",
+          "alt": "AID-77",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Ram Sridhar Apartment BTM/AID-81.jpg",
+          "alt": "AID-81",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Ram Sridhar Apartment BTM/AID-93.jpg",
+          "alt": "AID-93",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Ram Sridhar Apartment BTM/AID-94.jpg",
+          "alt": "AID-94",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Ram Sridhar Apartment BTM/AID-95.jpg",
+          "alt": "AID-95",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Ram Sridhar Apartment BTM/AID-97.jpg",
+          "alt": "AID-97",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Ram Sridhar Apartment BTM/cover page.jpg",
+          "alt": "cover page",
+          "room": null
+        }
+      ]
+    },
+    {
+      "slug": "santorini-themed-purva-midtown",
+      "title": "Santorini themed Purva Midtown ",
+      "type": "residential",
+      "location": "",
+      "year": "",
+      "cover": "images/Portfolio/Projects/Santorini themed Purva Midtown /AID-103.jpg",
+      "images": [
+        {
+          "src": "images/Portfolio/Projects/Santorini themed Purva Midtown /AID-103.jpg",
+          "alt": "AID-103",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Santorini themed Purva Midtown /AID-104.jpg",
+          "alt": "AID-104",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Santorini themed Purva Midtown /AID-105.jpg",
+          "alt": "AID-105",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Santorini themed Purva Midtown /AID-107.jpg",
+          "alt": "AID-107",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Santorini themed Purva Midtown /AID-109.jpg",
+          "alt": "AID-109",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Santorini themed Purva Midtown /AID-111.jpg",
+          "alt": "AID-111",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Santorini themed Purva Midtown /AID-112.jpg",
+          "alt": "AID-112",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Santorini themed Purva Midtown /AID-113.jpg",
+          "alt": "AID-113",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Santorini themed Purva Midtown /AID-119.jpg",
+          "alt": "AID-119",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Santorini themed Purva Midtown /AID-122.jpg",
+          "alt": "AID-122",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Santorini themed Purva Midtown /AID-124.jpg",
+          "alt": "AID-124",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Santorini themed Purva Midtown /AID-126.jpg",
+          "alt": "AID-126",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Santorini themed Purva Midtown /AID-128.jpg",
+          "alt": "AID-128",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Santorini themed Purva Midtown /AID-131.jpg",
+          "alt": "AID-131",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Santorini themed Purva Midtown /COVER PAGE.jpg",
+          "alt": "COVER PAGE",
+          "room": null
+        }
+      ]
+    },
+    {
+      "slug": "sattva-aqua-vista",
+      "title": "Sattva AQUA VISTA",
+      "type": "residential",
+      "location": "",
+      "year": "",
+      "cover": "images/Portfolio/Projects/Sattva AQUA VISTA/COVER PAGE.png",
+      "images": [
+        {
+          "src": "images/Portfolio/Projects/Sattva AQUA VISTA/COVER PAGE.png",
+          "alt": "COVER PAGE",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Sattva AQUA VISTA/DBR 2.1.png",
+          "alt": "DBR 2.1",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Sattva AQUA VISTA/DBR 3.png",
+          "alt": "DBR 3",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Sattva AQUA VISTA/DBR 5.png",
+          "alt": "DBR 5",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Sattva AQUA VISTA/DBR 7.png",
+          "alt": "DBR 7",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Sattva AQUA VISTA/MBR 4.png",
+          "alt": "MBR 4",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Sattva AQUA VISTA/MBR 7.png",
+          "alt": "MBR 7",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Sattva AQUA VISTA/SBR 1.1.png",
+          "alt": "SBR 1.1",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Sattva AQUA VISTA/SBR 4.png",
+          "alt": "SBR 4",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Sattva AQUA VISTA/dining.png",
+          "alt": "dining",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Sattva AQUA VISTA/entry 3.png",
+          "alt": "entry 3",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Sattva AQUA VISTA/liv 1.png",
+          "alt": "liv 1",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Sattva AQUA VISTA/liv 4.png",
+          "alt": "liv 4",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Sattva AQUA VISTA/liv 7.png",
+          "alt": "liv 7",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/Sattva AQUA VISTA/liv12.1.png",
+          "alt": "liv12.1",
+          "room": null
+        }
+      ]
+    },
+    {
+      "slug": "ohio-(overseas-project)",
+      "title": "ohio (overseas project)",
+      "type": "residential",
+      "location": "",
+      "year": "",
+      "cover": "images/Portfolio/Projects/ohio (overseas project)/l1.png",
+      "images": [
+        {
+          "src": "images/Portfolio/Projects/ohio (overseas project)/MBR2.1.png",
+          "alt": "MBR2.1",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/ohio (overseas project)/MBR4.png",
+          "alt": "MBR4",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/ohio (overseas project)/l1.png",
+          "alt": "l1",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/ohio (overseas project)/liv54.png",
+          "alt": "liv54",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/ohio (overseas project)/liv6.png",
+          "alt": "liv6",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Projects/ohio (overseas project)/liv8.png",
+          "alt": "liv8",
+          "room": null
+        }
+      ]
+    },
+    {
+      "slug": "gramener",
+      "title": "gramener",
+      "type": "commercial",
+      "location": "",
+      "year": "",
+      "cover": "images/Portfolio/Commercial /gramener/BIMA6410.JPG",
+      "images": [
+        {
+          "src": "images/Portfolio/Commercial /gramener/BIMA6410.JPG",
+          "alt": "BIMA6410",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Commercial /gramener/COVER PAGE.JPG",
+          "alt": "COVER PAGE",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Commercial /gramener/DIHG5606.JPG",
+          "alt": "DIHG5606",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Commercial /gramener/DPVZ2557.JPG",
+          "alt": "DPVZ2557",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Commercial /gramener/IMG_5502.JPG",
+          "alt": "IMG_5502",
+          "room": null
+        },
+        {
+          "src": "images/Portfolio/Commercial /gramener/XDNU1488.JPG",
+          "alt": "XDNU1488",
+          "room": null
+        }
+      ]
+    }
+  ],
+  "albums": [
+    {
+      "slug": "art-&-murals",
+      "title": "Art & Murals",
+      "cover": "images/Portfolio/Albums/Art & Murals/AID-150.jpg",
+      "images": [
+        {
+          "src": "images/Portfolio/Albums/Art & Murals/AID-150.jpg",
+          "alt": "AID-150"
+        },
+        {
+          "src": "images/Portfolio/Albums/Art & Murals/AID-174.jpg",
+          "alt": "AID-174"
+        },
+        {
+          "src": "images/Portfolio/Albums/Art & Murals/AID-251.jpg",
+          "alt": "AID-251"
+        },
+        {
+          "src": "images/Portfolio/Albums/Art & Murals/WhatsApp Image 2021-08-08 at 9.51.05 PM.jpeg",
+          "alt": "WhatsApp Image 2021-08-08 at 9.51.05 PM"
+        }
+      ]
+    },
+    {
+      "slug": "baths",
+      "title": "Baths",
+      "cover": "images/Portfolio/Albums/Baths/AID-15.jpg",
+      "images": [
+        {
+          "src": "images/Portfolio/Albums/Baths/AID-15.jpg",
+          "alt": "AID-15"
+        },
+        {
+          "src": "images/Portfolio/Albums/Baths/GBR BATH `1.png",
+          "alt": "GBR BATH `1"
+        },
+        {
+          "src": "images/Portfolio/Albums/Baths/MBR BATH 2.png",
+          "alt": "MBR BATH 2"
+        },
+        {
+          "src": "images/Portfolio/Albums/Baths/cove pages.png",
+          "alt": "cove pages"
+        },
+        {
+          "src": "images/Portfolio/Albums/Baths/mbr opt 1.png",
+          "alt": "mbr opt 1"
+        }
+      ]
+    },
+    {
+      "slug": "bed-chambers",
+      "title": "Bed chambers",
+      "cover": "images/Portfolio/Albums/Bed chambers/4.jpg",
+      "images": [
+        {
+          "src": "images/Portfolio/Albums/Bed chambers/4.jpg",
+          "alt": "4"
+        },
+        {
+          "src": "images/Portfolio/Albums/Bed chambers/5.jpg",
+          "alt": "5"
+        },
+        {
+          "src": "images/Portfolio/Albums/Bed chambers/AID-10.jpg",
+          "alt": "AID-10"
+        },
+        {
+          "src": "images/Portfolio/Albums/Bed chambers/AID-13.jpg",
+          "alt": "AID-13"
+        },
+        {
+          "src": "images/Portfolio/Albums/Bed chambers/AID-14.jpg",
+          "alt": "AID-14"
+        },
+        {
+          "src": "images/Portfolio/Albums/Bed chambers/BENEKA RESIDENCY DBR1 .jpg",
+          "alt": "BENEKA RESIDENCY DBR1 "
+        },
+        {
+          "src": "images/Portfolio/Albums/Bed chambers/Guest Bedroom 1.jpg",
+          "alt": "Guest Bedroom 1"
+        },
+        {
+          "src": "images/Portfolio/Albums/Bed chambers/Guest bedroom 2.jpg",
+          "alt": "Guest bedroom 2"
+        },
+        {
+          "src": "images/Portfolio/Albums/Bed chambers/L&T South city gbr 1.png",
+          "alt": "L&T South city gbr 1"
+        },
+        {
+          "src": "images/Portfolio/Albums/Bed chambers/L&T South city gbr 2.png",
+          "alt": "L&T South city gbr 2"
+        },
+        {
+          "src": "images/Portfolio/Albums/Bed chambers/L&T South city mbr 1.png",
+          "alt": "L&T South city mbr 1"
+        },
+        {
+          "src": "images/Portfolio/Albums/Bed chambers/L&T South city mbr 2.png",
+          "alt": "L&T South city mbr 2"
+        },
+        {
+          "src": "images/Portfolio/Albums/Bed chambers/Master Bedroom 1.jpg",
+          "alt": "Master Bedroom 1"
+        },
+        {
+          "src": "images/Portfolio/Albums/Bed chambers/Master Bedroom 2.jpg",
+          "alt": "Master Bedroom 2"
+        },
+        {
+          "src": "images/Portfolio/Albums/Bed chambers/PURVE BED WALL 2.png",
+          "alt": "PURVE BED WALL 2"
+        },
+        {
+          "src": "images/Portfolio/Albums/Bed chambers/cover page.jpg",
+          "alt": "cover page"
+        },
+        {
+          "src": "images/Portfolio/Albums/Bed chambers/ff_bed side.png",
+          "alt": "ff_bed side"
+        },
+        {
+          "src": "images/Portfolio/Albums/Bed chambers/ff_tv reading zone side.png",
+          "alt": "ff_tv reading zone side"
+        },
+        {
+          "src": "images/Portfolio/Albums/Bed chambers/purva midtown bedroom 2.jpg",
+          "alt": "purva midtown bedroom 2"
+        },
+        {
+          "src": "images/Portfolio/Albums/Bed chambers/sf_bed side.jpg",
+          "alt": "sf_bed side"
+        },
+        {
+          "src": "images/Portfolio/Albums/Bed chambers/unishire terraza mbr 1.jpg",
+          "alt": "unishire terraza mbr 1"
+        },
+        {
+          "src": "images/Portfolio/Albums/Bed chambers/unishire terraza mbr 2.jpg",
+          "alt": "unishire terraza mbr 2"
+        }
+      ]
+    },
+    {
+      "slug": "kids-den",
+      "title": "Kids Den",
+      "cover": "images/Portfolio/Albums/Kids Den/AID-144.jpg",
+      "images": [
+        {
+          "src": "images/Portfolio/Albums/Kids Den/AID-144.jpg",
+          "alt": "AID-144"
+        },
+        {
+          "src": "images/Portfolio/Albums/Kids Den/AID-147.jpg",
+          "alt": "AID-147"
+        },
+        {
+          "src": "images/Portfolio/Albums/Kids Den/AID-157.jpg",
+          "alt": "AID-157"
+        },
+        {
+          "src": "images/Portfolio/Albums/Kids Den/AID-4.jpg",
+          "alt": "AID-4"
+        },
+        {
+          "src": "images/Portfolio/Albums/Kids Den/AID-7.jpg",
+          "alt": "AID-7"
+        },
+        {
+          "src": "images/Portfolio/Albums/Kids Den/Copy of AID-193.jpg",
+          "alt": "Copy of AID-193"
+        },
+        {
+          "src": "images/Portfolio/Albums/Kids Den/Copy of AID-194.jpg",
+          "alt": "Copy of AID-194"
+        },
+        {
+          "src": "images/Portfolio/Albums/Kids Den/I_wardrobe side.jpg",
+          "alt": "I_wardrobe side"
+        }
+      ]
+    },
+    {
+      "slug": "kitchen--heart-of-home",
+      "title": "kitchen -HEART OF HOME",
+      "cover": "images/Portfolio/Albums/kitchen -HEART OF HOME/27.jpg",
+      "images": [
+        {
+          "src": "images/Portfolio/Albums/kitchen -HEART OF HOME/27.jpg",
+          "alt": "27"
+        },
+        {
+          "src": "images/Portfolio/Albums/kitchen -HEART OF HOME/28.jpg",
+          "alt": "28"
+        },
+        {
+          "src": "images/Portfolio/Albums/kitchen -HEART OF HOME/4.jpg",
+          "alt": "4"
+        },
+        {
+          "src": "images/Portfolio/Albums/kitchen -HEART OF HOME/8.jpg",
+          "alt": "8"
+        },
+        {
+          "src": "images/Portfolio/Albums/kitchen -HEART OF HOME/AID-236.jpg",
+          "alt": "AID-236"
+        },
+        {
+          "src": "images/Portfolio/Albums/kitchen -HEART OF HOME/AID-239.jpg",
+          "alt": "AID-239"
+        },
+        {
+          "src": "images/Portfolio/Albums/kitchen -HEART OF HOME/AID-259.jpg",
+          "alt": "AID-259"
+        },
+        {
+          "src": "images/Portfolio/Albums/kitchen -HEART OF HOME/AID-260.jpg",
+          "alt": "AID-260"
+        },
+        {
+          "src": "images/Portfolio/Albums/kitchen -HEART OF HOME/DARK GREEEN.png",
+          "alt": "DARK GREEEN"
+        },
+        {
+          "src": "images/Portfolio/Albums/kitchen -HEART OF HOME/DARK GREEN 2.png",
+          "alt": "DARK GREEN 2"
+        },
+        {
+          "src": "images/Portfolio/Albums/kitchen -HEART OF HOME/IMG_0959.JPG",
+          "alt": "IMG_0959"
+        },
+        {
+          "src": "images/Portfolio/Albums/kitchen -HEART OF HOME/PASH 2.JPG",
+          "alt": "PASH 2"
+        },
+        {
+          "src": "images/Portfolio/Albums/kitchen -HEART OF HOME/PASH1.JPG",
+          "alt": "PASH1"
+        },
+        {
+          "src": "images/Portfolio/Albums/kitchen -HEART OF HOME/cover page .png",
+          "alt": "cover page "
+        },
+        {
+          "src": "images/Portfolio/Albums/kitchen -HEART OF HOME/cover page 2.png",
+          "alt": "cover page 2"
+        },
+        {
+          "src": "images/Portfolio/Albums/kitchen -HEART OF HOME/kit 1.png",
+          "alt": "kit 1"
+        },
+        {
+          "src": "images/Portfolio/Albums/kitchen -HEART OF HOME/kit 2.png",
+          "alt": "kit 2"
+        }
+      ]
+    },
+    {
+      "slug": "living--dining",
+      "title": "living- DINING",
+      "cover": "images/Portfolio/Albums/living- DINING/AID-1.jpg",
+      "images": [
+        {
+          "src": "images/Portfolio/Albums/living- DINING/1.1.png",
+          "alt": "1.1"
+        },
+        {
+          "src": "images/Portfolio/Albums/living- DINING/11.png",
+          "alt": "11"
+        },
+        {
+          "src": "images/Portfolio/Albums/living- DINING/14.png",
+          "alt": "14"
+        },
+        {
+          "src": "images/Portfolio/Albums/living- DINING/3. COVER PAGE.png",
+          "alt": "3. COVER PAGE"
+        },
+        {
+          "src": "images/Portfolio/Albums/living- DINING/6.png",
+          "alt": "6"
+        },
+        {
+          "src": "images/Portfolio/Albums/living- DINING/AID-1.jpg",
+          "alt": "AID-1"
+        },
+        {
+          "src": "images/Portfolio/Albums/living- DINING/AID-140.jpg",
+          "alt": "AID-140"
+        },
+        {
+          "src": "images/Portfolio/Albums/living- DINING/AID-175.jpg",
+          "alt": "AID-175"
+        },
+        {
+          "src": "images/Portfolio/Albums/living- DINING/AID-211.jpg",
+          "alt": "AID-211"
+        },
+        {
+          "src": "images/Portfolio/Albums/living- DINING/AID-215.jpg",
+          "alt": "AID-215"
+        },
+        {
+          "src": "images/Portfolio/Albums/living- DINING/AID-218.jpg",
+          "alt": "AID-218"
+        },
+        {
+          "src": "images/Portfolio/Albums/living- DINING/AID-245.jpg",
+          "alt": "AID-245"
+        },
+        {
+          "src": "images/Portfolio/Albums/living- DINING/AID-56.jpg",
+          "alt": "AID-56"
+        },
+        {
+          "src": "images/Portfolio/Albums/living- DINING/BRIGADE METEROPOLIS.JPG",
+          "alt": "BRIGADE METEROPOLIS"
+        },
+        {
+          "src": "images/Portfolio/Albums/living- DINING/KAMA 2.png",
+          "alt": "KAMA 2"
+        },
+        {
+          "src": "images/Portfolio/Albums/living- DINING/KAMA 3.png",
+          "alt": "KAMA 3"
+        },
+        {
+          "src": "images/Portfolio/Albums/living- DINING/KAMA1.png",
+          "alt": "KAMA1"
+        },
+        {
+          "src": "images/Portfolio/Albums/living- DINING/a13.png",
+          "alt": "a13"
+        },
+        {
+          "src": "images/Portfolio/Albums/living- DINING/a4.png",
+          "alt": "a4"
+        },
+        {
+          "src": "images/Portfolio/Albums/living- DINING/sat 1.jpg",
+          "alt": "sat 1"
+        },
+        {
+          "src": "images/Portfolio/Albums/living- DINING/sat 2.jpg",
+          "alt": "sat 2"
+        },
+        {
+          "src": "images/Portfolio/Albums/living- DINING/sat 3.jpg",
+          "alt": "sat 3"
+        },
+        {
+          "src": "images/Portfolio/Albums/living- DINING/sat 9.jpg",
+          "alt": "sat 9"
+        }
+      ]
+    }
+  ]
+}

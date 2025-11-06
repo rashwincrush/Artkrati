@@ -131,6 +131,36 @@
 
 <!-- Libraries -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script>
+// Build Featured Projects slides from portfolio-data.json
+document.addEventListener('DOMContentLoaded', async () => {
+  const track = document.getElementById('projTrack');
+  if(!track) return;
+  try{
+    const res = await fetch('assets/data/portfolio-data.json', { cache:'no-store' });
+    const data = await res.json();
+    const placeholder = 'images/Artkratihero.png';
+    const items = [];
+    const asArray = a => Array.isArray(a) ? a : [];
+    const norm = (s)=> (s||'').toString().trim().toLowerCase().replace(/\b\w/g, c=>c.toUpperCase());
+    // Projects + Commercial covers
+    asArray(data.projects).forEach(p=> {
+      const t = norm(p.type || 'Residential');
+      items.push({title:p.title||'', cover:p.cover||'', type:'', cat:t, style:''});
+    });
+    asArray(data.commercial).forEach(c=> items.push({title:c.title||'', cover:c.cover||'', type:'', cat:'Commercial', style:''}));
+    // Filter out placeholders
+    const slides = items.filter(i=> i.cover && i.cover !== placeholder);
+    track.innerHTML = slides.map(i=> `
+      <figure class="proj-slide" data-title="${i.title.replace(/\"/g,'&quot;')}" data-cat="${i.cat}" data-type="${i.type}" data-style="${i.style}">
+        <img src="${i.cover}" alt="${i.title}" loading="lazy">
+      </figure>
+    `).join('');
+  }catch(e){ /* leave empty if fetch fails */ }
+  // notify carousel logic to (re)init
+  window.dispatchEvent(new CustomEvent('projectsSlidesReady'));
+});
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
 </head>
@@ -394,7 +424,7 @@
   <section class="section services-section" id="services" style="padding-bottom:2rem!important">
     <div class="container container-site">
       <div class="section-header reveal">
-        <div class="section-badge"><span>What We Create</span></div>
+        <div class="section-badge" aria-hidden="true" style="display:none"><span></span></div>
         <h2 class="section-title">Our Core Services</h2>
         <p class="section-subtitle">Luxury Interior Design • Bengaluru's Best</p>
       </div>
@@ -452,38 +482,14 @@
     <div class="container container-site">
       <div class="ps-header">
         <div class="ps-kicker"></div>
-        <span class="ps-eyebrow">Our Portfolio</span>
+        <span class="ps-eyebrow" aria-hidden="true" style="display:none"></span>
         <h2 class="ps-title">Featured Projects</h2>
         <p class="ps-subtitle">Discover our most celebrated interior designs, where luxury meets functionality and every detail tells a story</p>
       </div>
 
       <div class="proj-slider" aria-roledescription="carousel">
         <div class="proj-viewport" tabindex="0" aria-label="Project images, horizontally scrollable">
-          <div class="proj-track">
-            <!-- Slide 1 - Living Space -->
-            <figure class="proj-slide" data-title="Modern Living Room" data-cat="Residential" data-type="Living Area" data-style="Contemporary Design">
-              <img src="images/Portfolio/Albums/Bed chambers/sf_bed side.jpg" alt="Spacious modern living room with elegant furnishings" loading="lazy">
-            </figure>
-
-            <!-- Slide 2 - Master Bedroom -->
-            <figure class="proj-slide" data-title="Luxury Master Suite" data-cat="Residential" data-type="Master Bedroom" data-style="Premium Interiors">
-              <img src="images/Portfolio/Albums/Bed chambers/Master Bedroom 1.jpg" alt="Elegant master bedroom with contemporary design" loading="lazy">
-            </figure>
-
-            <!-- Slide 3 - Guest Bedroom -->
-            <figure class="proj-slide" data-title="Tranquil Guest Suite" data-cat="Residential" data-type="Guest Bedroom" data-style="Warm Ambience">
-              <img src="images/Portfolio/Albums/Bed chambers/Guest Bedroom 1.jpg" alt="Inviting guest bedroom with plush bedding" loading="lazy">
-            </figure>
-
-            <!-- Slide 4 - Kids Room -->
-            <figure class="proj-slide" data-title="Playful Kids Den" data-cat="Children's Room" data-type="Creative Space" data-style="Vibrant Design">
-              <img src="images/Portfolio/Albums/Kids Den/AID-7.jpg" alt="Colorful and functional kids' bedroom" loading="lazy">
-            </figure>
-            
-            <!-- Slide 5 - Kitchen -->
-            <figure class="proj-slide" data-title="Modern Kitchen" data-cat="Residential" data-type="Kitchen Area" data-style="Sleek Design">
-              <img src="images/Portfolio/Albums/kitchen -HEART OF HOME/28.jpg" alt="Contemporary kitchen with premium finishes" loading="lazy">
-            </figure>
+          <div class="proj-track" id="projTrack">
           </div>
           <!-- Overlay caption inside image -->
           <div class="proj-caption" aria-live="polite">
@@ -567,17 +573,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!-- Projects carousel logic -->
 <script>
-(function() {
+(function initCarouselWhenReady(){
   if (!window.gsap) return;
-
-  const viewport = document.querySelector('.proj-viewport');
-  const track    = document.querySelector('.proj-track');
-  if (!viewport || !track) return;
-
-  const slides   = Array.from(track.querySelectorAll('.proj-slide'));
-  const caption  = document.querySelector('.proj-caption');
-  const capTitle = caption?.querySelector('.pc-title');
-  const capMeta  = caption?.querySelector('.pc-meta');
+  const start = () => {
+    const viewport = document.querySelector('.proj-viewport');
+    const track    = document.querySelector('.proj-track');
+    if (!viewport || !track) return;
+    const slides   = Array.from(track.querySelectorAll('.proj-slide'));
+    if (!slides.length) return; // wait until slides are injected
+    const caption  = document.querySelector('.proj-caption');
+    const capTitle = caption?.querySelector('.pc-title');
+    const capMeta  = caption?.querySelector('.pc-meta');
 
   let positions = [];     // snap x-values (negative numbers)
   let maxX = 0, minX = 0; // bounds
@@ -604,13 +610,8 @@ document.addEventListener('DOMContentLoaded', () => {
       .add(() => {
         if (capTitle) capTitle.textContent = title;
         if (capMeta) {
-          capMeta.innerHTML = `
-            <span class="pc-meta-item">${cat}</span>
-            <span class="pc-bullet">•</span>
-            <span class="pc-meta-item">${type}</span>
-            <span class="pc-bullet">•</span>
-            <span class="pc-meta-item">${style}</span>
-          `;
+          const parts = [cat, type, style].filter(Boolean);
+          capMeta.innerHTML = parts.map(p=>`<span class="pc-meta-item">${p}</span>`).join('<span class="pc-bullet">•</span>');
         }
       })
       .to(caption, { autoAlpha: 1, y: 0, duration: 0.3, ease: "power2.out" });
@@ -729,10 +730,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   window.addEventListener('resize', onResize);
 
-  // Init
+  // Init once slides exist
   computePositions();
   goTo(0, { animate: true });
   autoplayTimer = setInterval(() => goTo(current + 1), AUTOPLAY_MS);
+  }; // end start
+
+  // Start when slides are injected
+  window.addEventListener('projectsSlidesReady', start, { once: true });
+  // Fallback: try after DOM ready in case slides already present
+  document.addEventListener('DOMContentLoaded', () => setTimeout(start, 0));
 })();
 </script>
 

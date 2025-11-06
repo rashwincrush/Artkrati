@@ -14,7 +14,7 @@
 <header class="site-header">
   <div class="site-header-inner">
     <a href="/index.html" class="site-header-brand" aria-label="Aakrati Home">
-      <img src="/images/logovisitingcardfront.png" alt="Aakrati Interior Design" width="120" height="auto">
+      <img src="/images/logovisitingcardfront.png" alt="Aakrati Interior Design" width="108" height="auto">
     </a>
     <nav class="site-header-nav" aria-label="Main navigation">
       <ul>
@@ -79,62 +79,64 @@
   <a href="mailto:hello@aakrati.com" class="mobile-menu-cta">Enquire Now</a>
 </aside>
 <style>
-  .site-header{position:sticky;top:0;z-index:1000;background:#F8F5F1;border-bottom:1px solid rgba(0,0,0,.06);backdrop-filter:saturate(120%) blur(6px)}
-  .site-header-inner{height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 20px 0 32px;max-width:1400px;margin:0 auto;gap:16px}
-  .site-header-brand{display:inline-flex;align-items:center;line-height:0;flex-shrink:0}
-  .site-header-brand img{display:block;height:auto;width:auto;max-height:80px;object-fit:contain;opacity:.96;filter:drop-shadow(0 1px 2px rgba(0,0,0,.06))}
-  .site-header-nav{display:flex;justify-content:center;flex:1}
-  .site-header-nav ul{display:flex;align-items:center;gap:40px;list-style:none;margin:0;padding:0}
-  .nav-link{position:relative;color:#1A1D29;text-decoration:none;font-weight:500;font-size:15px;padding:.5rem .75rem;transition:color .3s ease;display:inline-block;white-space:nowrap}
-  .nav-link::after{content:'';position:absolute;width:0;height:2px;bottom:0;left:50%;background:linear-gradient(90deg,#D9A082 0%, #9C6B34 100%);transition:width .3s ease,left .3s ease;transform:translateX(-50%)}
-  .nav-link:hover::after,.nav-link:focus::after,.nav-link.active::after{width:100%;left:0;transform:none}
-  .site-header-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}
-  .enquire-pill{display:inline-block;padding:10px 18px;border-radius:9999px;background:#98715d;color:#fff!important;text-decoration:none!important;font-size:14px;font-weight:700;transition:transform .2s ease,background-color .2s ease;white-space:nowrap}
-  .enquire-pill:hover{transform:translateY(-1px);background:#7a5a4a}
-  .hamburger-btn{display:none;align-items:center;justify-content:center;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,.08);background:#fff;color:#1A1D29;cursor:pointer;transition:all .2s ease;min-width:48px;min-height:48px;box-shadow:0 2px 8px rgba(0,0,0,.06);position:relative;z-index:1001}
-  .hamburger-btn:hover{background:#f9fafb;transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.1)}
-  .hamburger-btn:active{transform:scale(.95)}
-  .hamburger-btn svg{width:22px;height:22px;stroke-width:2.5}
-  .services-nav{position:relative}
-  .services-nav .sd-trigger{display:flex;align-items:center;gap:.25rem}
-  .services-nav .sd-caret{width:1rem;height:1rem;transition:transform .2s ease}
-  .services-nav:hover .sd-caret{transform:rotate(180deg)}
-  .services-nav .sd-menu{position:absolute;top:calc(100% + 1rem);left:50%;transform:translateX(-50%);min-width:520px;background:#fff;border-radius:16px;overflow:hidden;z-index:1100;box-shadow:0 20px 60px rgba(0,0,0,.12),0 0 0 1px rgba(0,0,0,.04);opacity:0;visibility:hidden;transform:translateX(-50%) translateY(-10px);transition:all .4s cubic-bezier(.4,0,.2,1);backdrop-filter:blur(10px)}
-  .services-nav:hover .sd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-  .sd-header{padding:1.25rem;background:#fff;border-bottom:1px solid rgba(0,0,0,.06)}
-  .sd-header h3{font-size:1.1rem;font-weight:800;color:#111827;margin:0 0 .25rem 0}
-  .sd-header p{font-size:.9rem;color:#6b7280;margin:0}
-  .sd-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem;padding:1rem}
-  .sd-item{display:flex;align-items:flex-start;gap:1rem;padding:1rem;border-radius:12px;text-decoration:none;color:#222;transition:all .3s ease;position:relative;overflow:hidden}
-  .sd-item:hover{background:#F8FAFC;transform:translateX(4px)}
-  .sd-icon{flex-shrink:0;width:48px;height:48px;border-radius:12px;background:#F3F4F6;display:flex;align-items:center;justify-content:center;transition:all .3s ease}
-  .sd-icon svg{width:24px;height:24px;color:#334155}
-  .sd-icon img{width:22px;height:22px;object-fit:contain}
-  .sd-title{font-size:1.05rem;font-weight:800;color:#0f172a;margin-bottom:.25rem}
-  .sd-desc{font-size:.9rem;color:#6b7280;line-height:1.45}
-  .mobile-menu-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);z-index:1050;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease}
-  .mobile-menu-overlay.show{opacity:1;visibility:visible}
-  .mobile-menu-sheet{position:fixed;top:0;right:0;bottom:0;width:min(85vw,380px);background:#fff;box-shadow:-8px 0 40px rgba(0,0,0,.15);z-index:1060;overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
-  .mobile-menu-sheet.open{transform:translateX(0)}
-  .mobile-menu-header{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid #e5e7eb;position:sticky;top:0;background:#fff;z-index:10}
-  .mobile-menu-header .logo-text{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,sans-serif;font-size:22px;font-weight:700;color:#1A1D29;letter-spacing:.02em}
-  .mobile-menu-close{padding:10px;border-radius:10px;background:#f3f4f6;border:none;cursor:pointer;transition:all .2s ease;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}
-  .mobile-menu-close:hover{background:#e5e7eb;transform:scale(1.05)}
-  .mobile-menu-links{padding:16px 20px 24px}
-  .mobile-menu-link{display:flex;align-items:center;padding:16px 0;color:#1A1D29;font-size:16px;font-weight:600;text-decoration:none;border-bottom:1px solid #f3f4f6;min-height:52px}
-  .mobile-services-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;padding:16px 0;background:none;border:none;border-bottom:1px solid #f3f4f6;color:#1A1D29;font-size:16px;font-weight:700;text-align:left;cursor:pointer;min-height:52px}
-  .mobile-services-toggle svg{width:20px;height:20px;transition:transform .3s ease}
-  .mobile-services-toggle svg.rotate{transform:rotate(180deg)}
-  .mobile-services-list{padding-left:20px;margin-top:8px;max-height:0;overflow:hidden;transition:max-height .3s ease}
-  .mobile-services-list.show{max-height:500px}
-  .mobile-services-list a{display:flex;align-items:center;padding:14px 0;color:#6b7280;font-size:15px;text-decoration:none;min-height:48px}
-  .mobile-menu-cta{margin:20px 20px 24px;padding:16px 20px;background:#98715d;color:#fff!important;text-align:center;border-radius:12px;font-weight:700;font-size:16px;text-decoration:none!important;display:flex;align-items:center;justify-content:center;min-height:52px;transition:all .2s ease}
-  .mobile-menu-cta:hover{background:#7a5a4a;transform:translateY(-2px);box-shadow:0 4px 12px rgba(152,113,93,.3)}
-  @media(min-width:768px){.hamburger-btn{display:none!important}.mobile-menu-overlay,.mobile-menu-sheet{display:none!important}}
-  @media(max-width:767px){.site-header-inner{height:64px;padding:0 20px 0 32px}.site-header-brand img{max-height:56px}.site-header-nav{display:none!important}.site-header-actions .enquire-pill{display:none!important}.hamburger-btn{display:flex!important}}
-  @media(max-width:480px){.site-header-inner{padding:0 12px}.mobile-menu-sheet{width:100vw}.hamburger-btn{min-width:44px;min-height:44px;padding:8px}}
-  body.menu-open{overflow:hidden;position:fixed;width:100%}
-  html{scroll-padding-top:80px}
+  :root { --page-bg: #F8F5F1; --ink: #1A1D29; --logo-h-desktop: 70px; --logo-h-mobile: 70px; }
+  .site-header { position: sticky; top: 0; z-index: 1000; background: #F8F5F1; border-bottom: 1px solid rgba(0,0,0,.06); backdrop-filter: saturate(120%) blur(6px); }
+  .site-header-inner { height: 80px; display: flex; align-items: center; justify-content: space-between; padding: 0 22px; max-width: 1200px; margin: 0 auto; gap: 16px; }
+  .site-header-brand { display: inline-flex; align-items: center; line-height: 0; flex-shrink: 0; }
+  .site-header-brand img { display: block; height: var(--logo-h-desktop) !important; width: auto !important; max-height: none; object-fit: contain; object-position: center; opacity: .96; filter: drop-shadow(0 1px 2px rgba(0,0,0,.06)); }
+  .site-header-nav { display: flex; justify-content: center; flex: 1; }
+  .site-header-nav ul { display: flex; align-items: center; gap: 40px; list-style: none; margin: 0; padding: 0; }
+  .nav-link { position: relative; color: var(--ink); text-decoration: none; font-weight: 500; font-size: 15px; padding: 0.5rem 0.75rem; transition: color 0.3s ease; display: inline-block; white-space: nowrap; }
+  .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%; background: linear-gradient(90deg, #D9A082 0%, #9C6B34 100%); transition: width 0.3s ease, left 0.3s ease; transform: translateX(-50%); }
+  .nav-link:hover::after, .nav-link:focus::after, .nav-link.active::after { width: 100%; left: 0; transform: none; }
+  .site-header-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+  .enquire-pill { display: inline-block; padding: 10px 18px; border-radius: 9999px; background: #98715d; color: #fff !important; text-decoration: none !important; font-size: 14px; font-weight: 700; transition: transform .2s ease, background-color .2s ease; white-space: nowrap; }
+  .enquire-pill:hover { transform: translateY(-1px); background: #7a5a4a; }
+  .hamburger-btn { display: none; align-items: center; justify-content: center; padding: 10px; border-radius: 10px; border: 1px solid rgba(0,0,0,.08); background: #fff; color: var(--ink); cursor: pointer; transition: all .2s ease; min-width: 48px; min-height: 48px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); position: relative; z-index: 1001; }
+  .hamburger-btn:hover { background: #f9fafb; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+  .hamburger-btn:active { transform: scale(0.95); }
+  .hamburger-btn svg { width: 22px; height: 22px; stroke-width: 2.5; }
+  .services-nav { position: relative; }
+  .services-nav .sd-trigger { display: flex; align-items: center; gap: 0.25rem; }
+  .services-nav .sd-caret { width: 1rem; height: 1rem; transition: transform 0.2s ease; }
+  .services-nav:hover .sd-caret { transform: rotate(180deg); }
+  .services-nav .sd-menu { position: absolute; top: calc(100% + 1rem); left: 50%; transform: translateX(-50%); min-width: 520px; background: #fff; border-radius: 16px; overflow: hidden; z-index: 1100; box-shadow: 0 20px 60px rgba(0,0,0,.12), 0 0 0 1px rgba(0,0,0,.04); opacity: 0; visibility: hidden; transform: translateX(-50%) translateY(-10px); transition: all .4s cubic-bezier(.4,0,.2,1); backdrop-filter: blur(10px); }
+  .services-nav:hover .sd-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+  .sd-header { padding: 1.25rem; background: #fff; border-bottom: 1px solid rgba(0,0,0,.06); }
+  .sd-header h3 { font-size: 1.1rem; font-weight: 800; color: #111827; margin: 0 0 0.25rem 0; }
+  .sd-header p { font-size: 0.9rem; color: #6b7280; margin: 0; }
+  .sd-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; padding: 1rem; }
+  .sd-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem; border-radius: 12px; text-decoration: none; color: #222; transition: all .3s ease; position: relative; overflow: hidden; }
+  .sd-item:hover { background: #F8FAFC; transform: translateX(4px); }
+  .sd-icon { flex-shrink: 0; width: 48px; height: 48px; border-radius: 12px; background: #F3F4F6; display: flex; align-items: center; justify-content: center; transition: all .3s ease; }
+  .sd-icon svg { width: 24px; height: 24px; color: #334155; }
+  .sd-icon img { width: 22px; height: 22px; object-fit: contain; }
+  .sd-title { font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.25rem; }
+  .sd-desc { font-size: 0.9rem; color: #6b7280; line-height: 1.45; }
+  .mobile-menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.5); backdrop-filter: blur(4px); z-index: 1050; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+  .mobile-menu-overlay.show { opacity: 1; visibility: visible; }
+  .mobile-menu-sheet { position: fixed; top: 0; right: 0; bottom: 0; width: min(85vw, 380px); background: #fff; box-shadow: -8px 0 40px rgba(0,0,0,.15); z-index: 1060; overflow-y: auto; transform: translateX(100%); transition: transform 0.35s cubic-bezier(.4,0,.2,1); }
+  .mobile-menu-sheet.open { transform: translateX(0); }
+  .mobile-menu-header { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; background: #fff; z-index: 10; }
+  .mobile-menu-header .logo-text { font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif; font-size: 22px; font-weight: 700; color: var(--ink); letter-spacing: 0.02em; }
+  .mobile-menu-close { padding: 10px; border-radius: 10px; background: #f3f4f6; border: none; cursor: pointer; transition: all .2s ease; min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+  .mobile-menu-close:hover { background: #e5e7eb; transform: scale(1.05); }
+  .mobile-menu-close svg { width: 24px; height: 24px; }
+  .mobile-menu-links { padding: 16px 20px 24px; }
+  .mobile-menu-link { display: flex; align-items: center; padding: 16px 0; color: var(--ink); font-size: 16px; font-weight: 600; text-decoration: none; border-bottom: 1px solid #f3f4f6; min-height: 52px; }
+  .mobile-services-toggle { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 16px 0; background: none; border: none; border-bottom: 1px solid #f3f4f6; color: var(--ink); font-size: 16px; font-weight: 700; text-align: left; cursor: pointer; min-height: 52px; }
+  .mobile-services-toggle svg { width: 20px; height: 20px; transition: transform 0.3s ease; }
+  .mobile-services-toggle svg.rotate { transform: rotate(180deg); }
+  .mobile-services-list { padding-left: 20px; margin-top: 8px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .mobile-services-list.show { max-height: 500px; }
+  .mobile-services-list a { display: flex; align-items: center; padding: 14px 0; color: #6b7280; font-size: 15px; text-decoration: none; min-height: 48px; }
+  .mobile-menu-cta { margin: 20px 20px 24px; padding: 16px 20px; background: #98715d; color: #fff !important; text-align: center; border-radius: 12px; font-weight: 700; font-size: 16px; text-decoration: none !important; display: flex; align-items: center; justify-content: center; min-height: 52px; transition: all .2s ease; }
+  .mobile-menu-cta:hover { background: #7a5a4a; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(152, 113, 93, 0.3); }
+  @media (min-width: 768px) { .hamburger-btn { display: none !important; } .mobile-menu-overlay, .mobile-menu-sheet { display: none !important; } }
+  @media (max-width: 767px) { .site-header-inner { height: 64px; padding: 0 16px; } .site-header-brand img { height: var(--logo-h-mobile) !important; width: auto !important; } .site-header-nav { display: none !important; } .site-header-actions .enquire-pill { display: none !important; } .hamburger-btn { display: flex !important; } }
+  @media (max-width: 480px) { .site-header-inner { padding: 0 12px; } .mobile-menu-sheet { width: 100vw; } .hamburger-btn { min-width: 44px; min-height: 44px; padding: 8px; } }
+  body.menu-open { overflow: hidden; position: fixed; width: 100%; }
+  html { scroll-padding-top: 80px; }
 </style>
 <script>
   (function(){
@@ -225,8 +227,11 @@
     .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
     @media(max-width:1024px){.process-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:640px){.process-grid{grid-template-columns:1fr}}
-    .process-card{background:var(--card-gradient);background-color:var(--card-bg-fallback);border:1px solid rgba(201,169,110,.1);border-radius:16px;overflow:hidden;transition:.4s;box-shadow:0 4px 16px rgba(0,0,0,.04);position:relative}
-    .process-number{position:absolute;top:1rem;right:1rem;font-weight:800;font-size:3rem;background:linear-gradient(135deg,#C9A96E,#1A1D29);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;opacity:.15;line-height:1}
+    .process-card{background:var(--card-gradient);background-color:var(--card-bg-fallback);border:0;border-radius:16px;overflow:hidden;transition:.4s;box-shadow:0 4px 16px rgba(0,0,0,.04);position:relative}
+    .process-card > div:first-of-type{margin:0;border:0;line-height:0}
+    .process-card img{display:block;width:100%;height:100%;object-fit:cover}
+    /* Hide numeric overlays on process cards */
+    .process-number{display:none}
     .timeline{position:relative;max-width:900px;margin:0 auto;padding:2rem 0}
     .timeline::before{content:"";position:absolute;left:50%;top:0;height:100%;width:2px;background:linear-gradient(180deg,rgba(152,113,93,.3),#98715d,rgba(152,113,93,.3));transform:translateX(-50%)}
     @media(max-width:768px){.timeline::before{left:24px}}
@@ -351,8 +356,77 @@
           <p class="text-intro" style="font-style:normal;color:#000;margin-top:auto">Designs that age with grace, not chase the moment.</p>
         </div>
       </div>
-    </div>
-  </section>
+  <script>
+    (function(){
+      function build(){
+        const rail=document.getElementById('tsRail');
+        if(!rail) return;
+        const files=[
+          'BabitaButola.png','BhushanSalimath.png','FineFoods.png','Hemanth.png','MayankVishnoi.png','Naveen.png','NayanGupta.png','PrakashRaman.png','pratima.png','SaiPhaniUtkarshkethana.png','SakshiSureka.png','SuruchiTripathi.png','Suwacharaj.png','Vignesh.png'
+        ];
+        function toName(s){
+          const base=s.replace(/\.png$/i,'').replace(/_/g,' ');
+          return base.replace(/([a-z])([A-Z])/g,'$1 $2').replace(/\b\w/g,c=>c.toUpperCase());
+        }
+        const reviews={
+          'Babita Butola': `I would like to thank Aakriti. Her impeccable taste and attention to detail have transformed our space into a haven of comfort and style. Me and Raj are beyond grateful for your creative and unwavering dedication to bringing our vision to life. Your ability to understand our preferences and translate them into stunning designs is truly remarkable. From concept to execution, your passion for design shines through every element of our home. We're endlessly thankful for your talent and expertise.`,
+          'Hemanth': `Am extremely pleased with Aakriti as she has translated my ideas to reality. In fact overall interiors came out much better than what I planned for. She was instrumental in coming up with multiple options suiting my taste, clever ideas to add functionality with design. Best thing is her signature creation for each project I saw including mine, which was beyond my imagination.`,
+          'Naveen': `I'm thoroughly satisfied with the entire process, from the initial design phase to execution and delivery. Aakrati is an exceptional designer who attentively considered our input and requirements. Each individual room was designed to suit the use‑cases/needs of the person while also following the theme. The final design and the result is not only looking great but also functioning effectively. Aakrati and her team made the entire process stress‑free and seamless.`,
+          'Prakash Raman': `Aakrati is quite creative and very committed to her work. She communicates effectively and completed our project to our satisfaction. She is receptive to alternate ideas and employs a keen ear to customer views. Overall, we had a very positive experience working with her on the interiors of our house and would not hesitate recommending her to others seeking similar services.`,
+          'Pratima': `I had a wonderful experience working with Aakrati and her team. Their sense of design, attention to detail, and ability to understand my taste made the entire process smooth and enjoyable. My home looks elegant, comfortable, and perfectly reflects my personality. Highly recommended!`,
+          'Sai Phani Utkarshkethana': `Aakrati helped transform the interior ambiance of our science gallery immensely with her expertise and affordable options. More impact with value for money. 🤩😊😇`,
+          'Sakshi Sureka': `Aakrati and her team are superb. She is creative and supportive. She did excellent work for our home. She listens to client requirements patiently and gives input that is practical yet beautiful. We are grateful to her for taking up our project and executing it so well! Best of luck to Aakrati and team for their future endeavours. ❤️`,
+          'Suruchi Tripathi': `Superb work—excellent and valuable inputs while designing. She listens to each and every small requirement and gives exactly what you want. She always says that in designing everything is possible—just let me know what you want and I will make it. Very kind, hardworking, and indeed a passionate interior designer.`,
+          'Suwacharaj': `Fantastic work and commitment. Right from the first meeting to discussions to conceptualising to the final output, it's been one seamless ride for us. In fact, the actual finish looks better than 3D outputs. Thanks Aakrati and team for making our dream home!!`,
+          'Vignesh': `Working with Aakrati and team was one of the best decisions we made while building our new home. She took the time to understand our lifestyle, preferences, and aspirations... We’re beyond thrilled with the final outcome and would wholeheartedly recommend them.`,
+          'Mayank Vishnoi': `Exceptional Interior Design Experience — complete project management, timely delivery, meticulous attention to detail, and genuine after-service support. Highly recommended.`,
+          'Bhushan Salimath': `We engaged Aakrati for the interior design of our home. Professional end‑to‑end service, keen eye for detail, and a cohesive design that exceeded expectations.`,
+          'Nayan Gupta': `End‑to‑end services, thoughtful colour/design choices, and seamless execution. Final outcome exceeded expectations.`,
+          'Fine Foods': `From house to home — uniquely beautiful. Thoughtful guidance across materials, shopping, kids’ room concept, and coordination with vendors.`
+        };
+        const cards=files.map(f=>{
+          const name=toName(f);
+          return `
+          <article class="ts-card">
+            <header class="ts-head">
+              <img class="ts-avatar" src="images/Testimonials/${f}" alt="${name}" decoding="async" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='images/Testimonials/placeholder.png'">
+              <div><div class="ts-name">${name}</div><div class="ts-stars">★★★★★</div></div>
+            </header>
+            <p class="ts-excerpt">"${(reviews[name]||'Client testimonial to be updated.').slice(0,160)}"</p>
+            <button class="ts-open" type="button" data-name="${name}" data-img="images/Testimonials/${f}">Read full story →</button>
+          </article>`;
+        }).join('');
+        rail.innerHTML = cards;
+        // Wire modal open/close
+        const veil=document.getElementById('mdVeil');
+        const mdHead=document.getElementById('mdHead');
+        const mdBody=document.getElementById('mdBody');
+        const mdClose=document.querySelector('.md-close');
+        function openModal(name,img){
+          const full=reviews[name]||'Client testimonial to be updated.';
+          mdHead.innerHTML=`<div class="md-head"><img class="md-avatar" src="${img}" alt="${name}" onerror="this.onerror=null;this.src='images/Testimonials/placeholder.png'"/><div><div class="md-name">${name}</div><div class="ts-stars">★★★★★</div></div></div>`;
+          mdBody.textContent=full;
+          veil.setAttribute('aria-hidden','false');
+        }
+        function closeModal(){ veil.setAttribute('aria-hidden','true'); }
+        rail.addEventListener('click',e=>{
+          const btn=e.target.closest('.ts-open');
+          if(btn){ openModal(btn.dataset.name, btn.dataset.img); }
+        });
+        mdClose?.addEventListener('click',closeModal);
+        veil?.addEventListener('click',e=>{ if(e.target===veil) closeModal(); });
+        document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&veil?.getAttribute('aria-hidden')==='false') closeModal(); });
+        // Rail arrows
+        const prev=document.querySelector('.ts-prev');
+        const next=document.querySelector('.ts-next');
+        prev?.addEventListener('click',()=> rail.scrollBy({left:-rail.clientWidth*0.9,behavior:'smooth'}));
+        next?.addEventListener('click',()=> rail.scrollBy({left: rail.clientWidth*0.9,behavior:'smooth'}));
+      }
+      if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded', build);
+      } else { build(); }
+    })();
+  </script>
 
   <section class="section" id="process" aria-labelledby="process-heading">
     <div class="container-site">
@@ -642,7 +716,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
             </header>
             <p class="ts-excerpt">"Exceptional Interior Design Experience ... rival much larger design houses..."</p>
             <button class="ts-open" type="button">Read full story →</button>
-            <template class="tm-full">Mayank Vishnoi — Exceptional Interior Design Experience - I recently had the pleasure of working with Aakrati for our complete home interior design and execution, and I cannot recommend her services highly enough. Despite running a boutique firm with just 3-4 people, Aakrati delivered results that rival much larger design houses. What Made This Experience Outstanding: 1. Complete Project Management Excellence Aakrati didn't just provide design concepts – she managed the entire execution flawlessly. From coordinating with carpenters and stone workers to managing electrical and plumbing work, she handled multiple vendors seamlessly. This comprehensive approach saved us countless hours and eliminated the stress of managing different contractors ourselves. 2. Timely Delivery In an industry notorious for delays, Aakrati delivered our project exactly on schedule. Her project management skills and vendor coordination ensured everything stayed on track from start to finish. 3. Attention to Detail & Practicality What truly sets Aakrati apart is her meticulous attention to detail combined with practical thinking. She spent considerable time with us discussing every aspect of the design, understanding our lifestyle needs, and ensuring that beauty never compromised functionality. Every element was thoughtfully planned and executed. 4. Genuine Passion & Care It's rare to find someone who is truly passionate about their craft rather than just focused on profits. Aakrati's love for interior design shines through in every interaction. She's not money-minded but genuinely invested in creating spaces that enhance our daily lives. 5. Exceptional After-Service Support Even after project completion, Aakrati continued to help us resolve any minor issues that arose. This level of post-delivery support speaks volumes about her commitment to client satisfaction and professional integrity. Final Thoughts Working with Aakrati felt like collaborating with a trusted friend who happens to be incredibly talented at interior design. Her combination of creative vision, practical execution, vendor management expertise, and genuine care for her clients makes her an absolute gem in the interior design industry. If you're looking for someone who will treat your home with the same care and attention they would their own, look no further than Aakrati. Her work speaks for itself, and her character makes the entire experience truly enjoyable. Highly Recommended for anyone seeking quality interior design with flawless execution and exceptional service.</template>
+            <template class="tm-full">Exceptional Interior Design Experience - I recently had the pleasure of working with Aakrati for our complete home interior design and execution, and I cannot recommend her services highly enough. Despite running a boutique firm with just 3-4 people, Aakrati delivered results that rival much larger design houses. What Made This Experience Outstanding: 1. Complete Project Management Excellence Aakrati didn't just provide design concepts – she managed the entire execution flawlessly. From coordinating with carpenters and stone workers to managing electrical and plumbing work, she handled multiple vendors seamlessly. This comprehensive approach saved us countless hours and eliminated the stress of managing different contractors ourselves. 2. Timely Delivery In an industry notorious for delays, Aakrati delivered our project exactly on schedule. Her project management skills and vendor coordination ensured everything stayed on track from start to finish. 3. Attention to Detail & Practicality What truly sets Aakrati apart is her meticulous attention to detail combined with practical thinking. She spent considerable time with us discussing every aspect of the design, understanding our lifestyle needs, and ensuring that beauty never compromised functionality. Every element was thoughtfully planned and executed. 4. Genuine Passion & Care It's rare to find someone who is truly passionate about their craft rather than just focused on profits. Aakrati's love for interior design shines through in every interaction. She's not money-minded but genuinely invested in creating spaces that enhance our daily lives. 5. Exceptional After-Service Support Even after project completion, Aakrati continued to help us resolve any minor issues that arose. This level of post-delivery support speaks volumes about her commitment to client satisfaction and professional integrity. Final Thoughts Working with Aakrati felt like collaborating with a trusted friend who happens to be incredibly talented at interior design. Her combination of creative vision, practical execution, vendor management expertise, and genuine care for her clients makes her an absolute gem in the interior design industry. If you're looking for someone who will treat your home with the same care and attention they would their own, look no further than Aakrati. Her work speaks for itself, and her character makes the entire experience truly enjoyable. Highly Recommended for anyone seeking quality interior design with flawless execution and exceptional service.</template>
             <template class="tm-full-head">
               <div class="md-head">
                 <img class="md-avatar" src="images/Testimonials/MayankVishnoi.png" alt="Mayank Vishnoi">
@@ -658,7 +732,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
             </header>
             <p class="ts-excerpt">"We engaged Aakrati for the interior design of our home... exceeded our expectations."</p>
             <button class="ts-open" type="button">Read full story →</button>
-            <template class="tm-full">Bhushan Salimath — We engaged Aakrati for the interior design of our home. Aakrati took the time to thoroughly understand our requirements and translated them into a thoughtful, cohesive design. Her services encompassed everything from design conceptualization and material selection to choosing contractors, supervising the work, and handling negotiations. Throughout the project, she maintained a high level of professionalism, with a keen eye for detail and a deep understanding of all aspects related to home design. Her expertise was evident at every step, and we appreciated the personalized approach she took. The final result exceeded our expectations, and both our family and visitors have shared nothing but positive feedback</template>
+            <template class="tm-full">We engaged Aakrati for the interior design of our home. Aakrati took the time to thoroughly understand our requirements and translated them into a thoughtful, cohesive design. Her services encompassed everything from design conceptualization and material selection to choosing contractors, supervising the work, and handling negotiations. Throughout the project, she maintained a high level of professionalism, with a keen eye for detail and a deep understanding of all aspects related to home design. Her expertise was evident at every step, and we appreciated the personalized approach she took. The final result exceeded our expectations, and both our family and visitors have shared nothing but positive feedback</template>
             <template class="tm-full-head">
               <div class="md-head">
                 <img class="md-avatar" src="images/Testimonials/BhushanSalimath.png" alt="Bhushan Salimath">
@@ -674,7 +748,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
             </header>
             <p class="ts-excerpt">"We engaged with Aakrati for our home interiors... final outcome exceeded expectations."</p>
             <button class="ts-open" type="button">Read full story →</button>
-            <template class="tm-full">NAYAN GUPTA — We engaged with Aakrati for our home interiors, and she delivered exceptional results. She took the time to understand our needs, providing end-to-end services including design, material selection, contractor coordination, supervision, and negotiations. Her professionalism, colour/design choices, attention to detail, and deep expertise in home design were evident throughout. The final outcome exceeded our expectations, earning praise from both our family and visitors. She went out of her way during the design phase to accommodate our requirements which reflects her commitment to excellence We are happy that we engaged Aakrati and would look forward to do it again</template>
+            <template class="tm-full">We engaged with Aakrati for our home interiors, and she delivered exceptional results. She took the time to understand our needs, providing end-to-end services including design, material selection, contractor coordination, supervision, and negotiations. Her professionalism, colour/design choices, attention to detail, and deep expertise in home design were evident throughout. The final outcome exceeded our expectations, earning praise from both our family and visitors. She went out of her way during the design phase to accommodate our requirements which reflects her commitment to excellence We are happy that we engaged Aakrati and would look forward to do it again</template>
             <template class="tm-full-head">
               <div class="md-head">
                 <img class="md-avatar" src="images/Testimonials/NayanGupta.png" alt="Nayan Gupta">
@@ -694,7 +768,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
             </header>
             <p class="ts-excerpt">"Am extremely pleased with Aakriti as she has translated my ideas to reality... clever ideas to add functionality... signature creation beyond my imagination."</p>
             <button class="ts-open" type="button">Read full story →</button>
-            <template class="tm-full">Hemant Rastogi — Am extremely pleased with Aakriti as she has translated my ideas to reality. In fact over all interiors come up much better than what I planned for. She was instrumental in coming up with multiple options suiting to my taste, clever ideas to add functionality with design. Best thing is her signature creation for each project is saw including mine which was beyond my imagination.</template>
+            <template class="tm-full">Am extremely pleased with Aakriti as she has translated my ideas to reality. In fact over all interiors come up much better than what I planned for. She was instrumental in coming up with multiple options suiting to my taste, clever ideas to add functionality with design. Best thing is her signature creation for each project is saw including mine which was beyond my imagination.</template>
             <template class="tm-full-head">
               <div class="md-head">
                 <img class="md-avatar" src="images/Testimonials/HemantRastogi.jpg" alt="Hemant Rastogi (photo placeholder)">
@@ -726,7 +800,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
             </header>
             <p class="ts-excerpt">"From House to Home — Uniquely Beautiful. Aakrati is creative, artistic, and attentive to every detail... our kids’ room is their favorite space now."</p>
             <button class="ts-open" type="button">Read full story →</button>
-            <template class="tm-full">Fine Foods — From House to Home || Uniquely Beautiful Thanks to Aakrati! Working with Aakrati has been such an amazing experience! She’s not just creative—she’s incredibly artistic, innovative, and has an eye for detail that blew us away. She really got our style and preferences from the start, and kept every tiny thing in mind while designing. After all those long chats and site visits, the final result truly reflected everything we had discussed—and more. Every corner of our home has her thoughtful touch. From tiles to lights, curtains to cutlery, she helped us with it all. She even went shopping with us multiple times, helped us choose furniture and soft furnishings, and never once made us feel rushed or on our own. She also gave special attention to our kids' room—and honestly, they were her biggest fans by the end! She brought their love for nature and sea life together in the most artistic and playful way. The room turned out super cool and functional, with a smart study setup under a stunning bunk bed. It’s now their favorite space in the house, and we couldn’t be happier seeing how much they love it. She doesn’t just say “yes” to everything either—and that’s what we loved! She gives honest feedback and smart suggestions, making sure every choice makes sense for the space and our lifestyle. She’s bold, passionate, and doesn’t settle for anything average. Her team was great to work with too—super coordinated and reliable. Even after the work was done, she stayed in touch and made sure everything was running smoothly. The vendors she recommended were top-notch as well—carefully selected and definitely worth exploring. She made the whole journey fun, personal, and stress-free. Our home feels so “us” now—and we have her to thank for it!</template>
+            <template class="tm-full">From House to Home || Uniquely Beautiful Thanks to Aakrati! Working with Aakrati has been such an amazing experience! She’s not just creative—she’s incredibly artistic, innovative, and has an eye for detail that blew us away. She really got our style and preferences from the start, and kept every tiny thing in mind while designing. After all those long chats and site visits, the final result truly reflected everything we had discussed—and more. Every corner of our home has her thoughtful touch. From tiles to lights, curtains to cutlery, she helped us with it all. She even went shopping with us multiple times, helped us choose furniture and soft furnishings, and never once made us feel rushed or on our own. She also gave special attention to our kids' room—and honestly, they were her biggest fans by the end! She brought their love for nature and sea life together in the most artistic and playful way. The room turned out super cool and functional, with a smart study setup under a stunning bunk bed. It’s now their favorite space in the house, and we couldn’t be happier seeing how much they love it. She doesn’t just say “yes” to everything either—and that’s what we loved! She gives honest feedback and smart suggestions, making sure every choice makes sense for the space and our lifestyle. She’s bold, passionate, and doesn’t settle for anything average. Her team was great to work with too—super coordinated and reliable. Even after the work was done, she stayed in touch and made sure everything was running smoothly. The vendors she recommended were top-notch as well—carefully selected and definitely worth exploring. She made the whole journey fun, personal, and stress-free. Our home feels so “us” now—and we have her to thank for it!</template>
             <template class="tm-full-head">
               <div class="md-head">
                 <img class="md-avatar" src="images/Testimonials/FineFoods.jpg" alt="Fine Foods (photo placeholder)">
@@ -742,7 +816,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
             </header>
             <p class="ts-excerpt">"Thoroughly satisfied from design to delivery—seamless process and a great final result."</p>
             <button class="ts-open" type="button">Read full story →</button>
-            <template class="tm-full">naveen — I'm thoroughly satisfied with the entire process, from the initial design phase to execution and delivery. Aakrati is an exceptional designer who attentively considered our input and requirements. Each individual rooms were designed to suit the use-cases/ needs of the person while also following the theme. The final design and the result is not only looking great but also functioning effectively. Aakrati and her team made the entire process stress free and seamless.</template>
+            <template class="tm-full">I'm thoroughly satisfied with the entire process, from the initial design phase to execution and delivery. Aakrati is an exceptional designer who attentively considered our input and requirements. Each individual rooms were designed to suit the use-cases/ needs of the person while also following the theme. The final design and the result is not only looking great but also functioning effectively. Aakrati and her team made the entire process stress free and seamless.</template>
             <template class="tm-full-head">
               <div class="md-head">
                 <img class="md-avatar" src="images/Testimonials/placeholder.png" alt="Naveen (photo placeholder)">
@@ -758,7 +832,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
             </header>
             <p class="ts-excerpt">"Creative, supportive, and practical—excellent work for our home."</p>
             <button class="ts-open" type="button">Read full story →</button>
-            <template class="tm-full">Sakshi Sureka — Aakrati and her team is superb. She is creative and supportive. She did an excellent work done for our home.She listen to the client requirements patiently and gives her input which is practical yet beautiful. We are grateful to her for taking up our project and executing it so so well! Best of luck for to Aakrati and team for their future endeavours ❤️</template>
+            <template class="tm-full">Aakrati and her team is superb. She is creative and supportive. She did an excellent work done for our home.She listen to the client requirements patiently and gives her input which is practical yet beautiful. We are grateful to her for taking up our project and executing it so so well! Best of luck for to Aakrati and team for their future endeavours ❤️</template>
             <template class="tm-full-head">
               <div class="md-head">
                 <img class="md-avatar" src="images/Testimonials/placeholder.png" alt="Sakshi Sureka (photo placeholder)">
@@ -774,7 +848,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
             </header>
             <p class="ts-excerpt">"Impeccable taste and attention to detail—our home feels like a haven."</p>
             <button class="ts-open" type="button">Read full story →</button>
-            <template class="tm-full">babita butola — I would like to thank aakriti , Her impeccable taste and attention to detail have transformed our space into a haven of comfort and style.Me and Raj are beyond grateful for your creative and unwavering dedication to bringing our vision to life. Your ability to understand our preferences and translate them into stunning designs is truly remarkable. From concept to Execution, your passion for design shines through every element of our home.We're endlessly thankful for your talent and expertise.</template>
+            <template class="tm-full">I would like to thank aakriti , Her impeccable taste and attention to detail have transformed our space into a haven of comfort and style.Me and Raj are beyond grateful for your creative and unwavering dedication to bringing our vision to life. Your ability to understand our preferences and translate them into stunning designs is truly remarkable. From concept to Execution, your passion for design shines through every element of our home.We're endlessly thankful for your talent and expertise.</template>
             <template class="tm-full-head">
               <div class="md-head">
                 <img class="md-avatar" src="images/Testimonials/placeholder.png" alt="Babita Butola (photo placeholder)">
@@ -790,7 +864,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
             </header>
             <p class="ts-excerpt">"Fantastic work and commitment—actual finish looked better than 3D."</p>
             <button class="ts-open" type="button">Read full story →</button>
-            <template class="tm-full">suwacharaj — Fantastic Work and Commitment.... Right from the 1st meetinf to discussions to conceptualising to the final output its been one seamless ride for us... Infact actual finish liiks better than 3D outputs Thanks Aakrarti and Team for making our Dream Home!!</template>
+            <template class="tm-full">Fantastic Work and Commitment.... Right from the 1st meetinf to discussions to conceptualising to the final output its been one seamless ride for us... Infact actual finish liiks better than 3D outputs Thanks Aakrarti and Team for making our Dream Home!!</template>
             <template class="tm-full-head">
               <div class="md-head">
                 <img class="md-avatar" src="images/Testimonials/placeholder.png" alt="Suwacharaj (photo placeholder)">
@@ -822,11 +896,14 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
   </section>
 
   <section class="section">
-    <div class="container-site" style="text-align:center">
-      <div style="display:inline-block;padding:2rem;border-radius:999px;background:linear-gradient(135deg,#FDEFD9 0%,#FFF7EC 100%)"><svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:var(--primary-gold)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/></svg></div>
-      <blockquote style="font-family:'Playfair Display',serif;font-size:2rem;line-height:1.5;margin:1.5rem 0;color:var(--text-primary)">"The best interiors disappear into your life—the way light falls, a handle feels, a drawer closes—because everything just <span style=\"color:var(--primary-gold)\">works</span>."</blockquote>
-      <div style="font-weight:600;color:var(--primary-gold)">Aakrati</div>
-      <div class="text-intro" style="font-style:normal">Founder & Principal Designer</div>
+    <div class="container-site">
+      <figure class="q-card">
+        <blockquote class="q-text">“The best interiors disappear into your life—the way light falls, a handle feels, a drawer closes—because everything just <span class="q-emph">works</span>.”</blockquote>
+        <figcaption class="q-meta">
+          <span class="q-name">Aakrati</span>
+          <span class="q-title">Founder & Principal Designer</span>
+        </figcaption>
+      </figure>
     </div>
   </section>
 

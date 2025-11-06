@@ -18,28 +18,34 @@
     .nav-tab{padding:16px 24px;background:none;border:none;font-size:1rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--g600);cursor:pointer;transition:.3s;border-bottom:3px solid transparent;margin-bottom:-2px}
     .nav-tab:hover{color:var(--gold)}
     .nav-tab.active{color:var(--dark);border-bottom-color:var(--gold)}
-    .filter-bar{display:flex;justify-content:center;gap:12px;margin-bottom:32px;flex-wrap:wrap}
-    .filter-btn{padding:10px 18px;border-radius:50px;font-size:.875rem;font-weight:500;letter-spacing:.05em;background:#F8F5F1;color:var(--g600);border:1px solid var(--g300);text-transform:uppercase;transition:.3s;cursor:pointer}
-    .filter-btn:hover{border-color:var(--gold);transform:translateY(-1px)}
-    .filter-btn.active{background:var(--gold);color:#fff;border-color:var(--gold);box-shadow:0 2px 8px rgba(201,163,92,.3)}
+    .filter-bar{display:flex;justify-content:center;gap:14px;margin-bottom:32px;flex-wrap:wrap}
+    /* Match 'VIEW OUR WORK' outlined pill aesthetic */
+    .filter-btn{padding:12px 22px;border-radius:9999px;font-size:.9rem;font-weight:700;letter-spacing:.12em;background:rgba(152,113,93,.06);color:#98715d;border:2px solid #98715d;text-transform:uppercase;transition:.25s ease;cursor:pointer;box-shadow:none}
+    .filter-btn:hover{background:rgba(152,113,93,.12);transform:translateY(-1px);box-shadow:none}
+    .filter-btn.active{background:rgba(152,113,93,.12);color:#98715d;border-color:#98715d;box-shadow:none}
     .grid{display:grid;gap:32px}
     @media(min-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
     @media(min-width:1024px){.grid{grid-template-columns:repeat(3,1fr)}}
-    .project-card,.album-card{position:relative;border-radius:12px;overflow:hidden;background:var(--card-gradient);background-color:var(--card-bg-fallback);text-decoration:none;color:inherit;display:block;transition:.4s;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+    .project-card,.album-card{position:relative;border-radius:0;overflow:hidden;background:var(--card-gradient);background-color:var(--card-bg-fallback);text-decoration:none;color:inherit;display:block;transition:.4s;box-shadow:0 2px 8px rgba(0,0,0,.08)}
     .project-card:hover,.album-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.12)}
-    .image-wrap{position:relative;overflow:hidden;aspect-ratio:4/3;background:#F8F5F1}
+    .image-wrap{position:relative;overflow:hidden;aspect-ratio:4/3;background:#F8F5F1;border-radius:0}
     .image-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
     .project-card:hover .image-wrap img,.album-card:hover .image-wrap img{transform:scale(1.05)}
-    .project-card .badge{position:absolute;top:12px;right:12px;padding:6px 12px;background:rgba(201,163,92,.95);color:#fff;border-radius:999px;font-size:.75rem;font-weight:700;letter-spacing:.05em;backdrop-filter:blur(10px);box-shadow:0 2px 8px rgba(0,0,0,.1)}
+    /* Replaced badge with kicker below image */
+    .project-card .badge{display:none}
     .card-body{padding:18px}
-    .card-title{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:600;color:var(--dark);margin:0 0 6px}
+    .card-kicker{display:flex;align-items:center;gap:8px;color:var(--g600);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;margin:0 0 6px}
+    .k-dot{width:6px;height:6px;border-radius:9999px;background:var(--gold);box-shadow:0 0 0 2px rgba(201,163,92,.18)}
+    .k-text{line-height:1}
+    /* Project titles: graceful, sleeker tracking */
+    .card-title{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-size:1.06rem;font-weight:500;color:#98715d;margin:0 0 6px;letter-spacing:.01em}
     .card-meta{display:flex;align-items:center;gap:8px;font-size:.875rem;color:var(--g600)}
     .detail{display:none}
     .masonry{column-gap:24px}
     @media(min-width:640px){.masonry{column-count:2}}
     @media(min-width:1024px){.masonry{column-count:3}}
     .masonry-item{break-inside:avoid;margin-bottom:24px}
-    .masonry-item img{width:100%;height:auto;display:block;border-radius:8px;cursor:zoom-in;transition:transform .3s,box-shadow .3s;background:#F8F5F1}
+    .masonry-item img{width:100%;height:auto;display:block;border-radius:0;cursor:zoom-in;transition:transform .3s,box-shadow .3s;background:#F8F5F1}
     .masonry-item img:hover{transform:scale(1.02);box-shadow:0 8px 24px rgba(0,0,0,.12)}
     .lightbox{position:fixed;inset:0;z-index:9999;background:rgba(26,31,46,.98);display:none;backdrop-filter:blur(20px)}
     .lightbox-controls{position:fixed;top:1.5rem;right:1.5rem;display:flex;gap:.75rem;z-index:10000}
@@ -53,6 +59,18 @@
     .lightbox-nav:hover{background:#F8F5F1;border-color:var(--gold)}
     .lightbox-nav-prev{left:1.5rem}.lightbox-nav-next{right:1.5rem}
     .hidden{display:none!important}
+    /* Hide the year badge if empty to avoid empty oval */
+    #project-detail-year:empty{display:none}
+
+    /* Breadcrumb + project info */
+    .breadcrumb{display:flex;gap:.5rem;align-items:center;color:#6b7280;font-size:.9rem;margin:0 0 8px}
+    .breadcrumb a{color:#6b7280;text-decoration:none}
+    .breadcrumb .sep{opacity:.6}
+    .proj-info{display:grid;grid-template-columns:repeat(2, minmax(200px, 320px));gap:8px 24px;margin:8px 0 18px}
+    .proj-info .row{display:flex;justify-content:space-between;gap:18px;border-bottom:1px dashed #e5e7eb;padding:6px 0}
+    .proj-info .label{color:#6b7280}
+    .proj-info .value{color:#1A1D29}
+    @media(max-width:640px){.proj-info{grid-template-columns:1fr}}
   </style>
 
   <!-- Hero -->
@@ -84,7 +102,7 @@
           <h2 class="section-title">Our Projects</h2>
           <p class="section-subtitle">Complete interior design transformations from concept to completion</p>
         </header>
-        <div class="filter-bar"><button class="filter-btn active" data-filter="all">All Projects</button><button class="filter-btn" data-filter="residential">Residential</button><button class="filter-btn" data-filter="commercial">Commercial</button></div>
+        <div class="filter-bar"><button class="filter-btn" data-filter="residential">Residential</button><button class="filter-btn" data-filter="commercial">Commercial</button><button class="filter-btn active" data-filter="all">All Projects</button></div>
         <div class="grid" id="projects-grid"></div>
       </div>
     </section>
@@ -107,10 +125,12 @@
   <div id="project-detail" class="detail">
     <section class="section">
       <div class="container">
+        <div id="project-breadcrumb" class="breadcrumb" aria-label="Breadcrumb" role="navigation"></div>
         <header class="section-header">
           <h2 class="section-title"><span id="project-detail-title"></span> <span id="project-detail-year" style="font-size:.9rem;border:1px solid var(--g300);padding:4px 10px;border-radius:999px;color:var(--g600);font-weight:500"></span></h2>
           <p id="project-detail-location" class="section-subtitle"></p>
         </header>
+        <div id="project-info" class="proj-info"></div>
         <div id="room-filters" class="filter-bar" style="display:none"></div>
         <div class="masonry" id="project-detail-gallery"></div>
         <div style="text-align:center;margin-top:24px"><button id="back-to-projects" class="filter-btn">← Back to Projects</button></div>
@@ -122,7 +142,9 @@
   <div id="album-detail" class="detail">
     <section class="section">
       <div class="container">
+        <div id="album-breadcrumb" class="breadcrumb" aria-label="Breadcrumb" role="navigation"></div>
         <header class="section-header"><h2 class="section-title"><span id="album-detail-title"></span></h2><p id="album-detail-subtitle" class="section-subtitle"></p></header>
+        <div id="album-info" class="proj-info"></div>
         <div class="masonry" id="album-detail-gallery"></div>
         <div style="text-align:center;margin-top:24px"><button id="back-to-albums" class="filter-btn">← Back to Albums</button></div>
       </div>
@@ -146,7 +168,7 @@
     {
       "slug": "ram-sridhar-apartment-btm",
       "title": "Ram Sridhar Apartment BTM",
-      "type": "residential",
+      "type": "Residential",
       "location": "",
       "year": "",
       "cover": "images/Portfolio/Projects/Ram Sridhar Apartment BTM/AID-71.jpg",
@@ -345,15 +367,43 @@
   tabProjects?.addEventListener('click',()=>switchTab('projects'));
   tabAlbums?.addEventListener('click',()=>switchTab('albums'));
 
+  function isHeic(src){ return /\.(heic|heif)$/i.test(src||''); }
+  function firstNonHeic(arr){ return (arr||[]).find(i=>!isHeic(i.src)); }
+  function safeCover(item){
+    let cover=item.cover||'';
+    if(isHeic(cover)){
+      const altImg=firstNonHeic(item.images||[]);
+      cover = altImg? altImg.src : 'images/Artkratihero.png';
+    }
+    return cover;
+  }
+  function attachImageGuards(container){
+    container.querySelectorAll('img').forEach(img=>{
+      img.addEventListener('error',()=>{
+        const fig = img.closest('figure');
+        if(fig){
+          console.warn('Removed broken image', img.src);
+          fig.remove();
+        } else {
+          // For cards (covers), swap to placeholder once
+          if(!img.dataset.fallback){ img.dataset.fallback='1'; img.src='images/Artkratihero.png'; }
+        }
+      }, {once:true});
+    });
+  }
+
   function renderProjects(){
     projectsGrid.innerHTML='';
     data.projects.forEach(p=>{
       const card=document.createElement('a'); card.href='#'; card.className='project-card'; card.dataset.type=p.type||'residential'; card.dataset.slug=p.slug;
-      card.innerHTML=`<div class="image-wrap"><img src="${E(p.cover)}" alt="${p.title}"><span class="badge">${(p.type||'Residential')[0].toUpperCase()+ (p.type||'Residential').slice(1)}</span></div><div class="card-body"><h3 class="card-title">${p.title}</h3><div class="card-meta">${p.location?`<span>${p.location}</span>`:''}${p.location&&p.year?'<span style=\"width:4px;height:4px;background:#d1d5db;border-radius:50%\"></span>':''}${p.year?`<span>${p.year}</span>`:''}</div></div>`;
+      const typeLabel=(p.type||'Residential');
+      const cover = safeCover(p);
+      card.innerHTML=`<div class=\"image-wrap\"><img src=\"${E(cover)}\" alt=\"${p.title}\"></div><div class=\"card-body\"><div class=\"card-kicker\"><span class=\"k-dot\"></span><span class=\"k-text\">${typeLabel.toUpperCase()}</span></div><h3 class=\"card-title\">${p.title}</h3><div class=\"card-meta\">${p.location?`<span>${p.location}</span>`:''}${p.location&&p.year?'<span style=\\\"width:4px;height:4px;background:#d1d5db;border-radius:50%\\\"></span>':''}${p.year?`<span>${p.year}</span>`:''}</div></div>`;
       card.addEventListener('click',e=>{e.preventDefault();openProject(p.slug)});
       projectsGrid.appendChild(card);
     });
     applyProjectFilter(currentFilter);
+    attachImageGuards(projectsGrid);
   }
   function applyProjectFilter(filter){
     document.querySelectorAll('.filter-btn[data-filter]')?.forEach(b=>b.classList.toggle('active',b.dataset.filter===filter));
@@ -367,38 +417,83 @@
     albumsGrid.innerHTML='';
     data.albums.forEach(a=>{
       const card=document.createElement('a'); card.href='#'; card.className='album-card'; card.dataset.slug=a.slug;
-      card.innerHTML=`<div class="image-wrap"><img src="${E(a.cover)}" alt="${a.title}"></div><div class="card-body"><h3 class="card-title">${a.title}</h3></div>`;
+      const cover = isHeic(a.cover)? (firstNonHeic(a.images||[])?.src || 'images/Artkratihero.png') : a.cover;
+      card.innerHTML=`<div class=\"image-wrap\"><img src=\"${E(cover)}\" alt=\"${a.title}\"></div><div class=\"card-body\"><div class=\"card-kicker\"><span class=\"k-dot\"></span><span class=\"k-text\">Album</span></div><h3 class=\"card-title\">${a.title}</h3></div>`;
       card.addEventListener('click',e=>{e.preventDefault();openAlbum(a.slug)});
       albumsGrid.appendChild(card);
     });
+    attachImageGuards(albumsGrid);
   }
 
   function openProject(slug){
     const p=data.projects.find(x=>x.slug===slug); if(!p) return; currentProject=p;
     projectsPanel.classList.add('hidden'); albumsPanel.classList.add('hidden'); albumDetail.style.display='none'; projectDetail.style.display='block';
     document.getElementById('project-detail-title').textContent=p.title;
-    document.getElementById('project-detail-year').textContent=p.year||'';
+    const yEl=document.getElementById('project-detail-year');
+    yEl.textContent=p.year||'';
+    yEl.style.display = yEl.textContent.trim().length ? '' : 'none';
     document.getElementById('project-detail-location').textContent=p.location||'';
+
+    // Breadcrumb
+    const bc=document.getElementById('project-breadcrumb');
+    const typeLabel=(p.type||'residential').replace(/^\w/,c=>c.toUpperCase());
+    bc.innerHTML=`<a href="#" data-bc-root>Projects</a> <span class="sep">/</span> <a href="#" data-bc-type>${typeLabel}</a> <span class="sep">/</span> <span aria-current="page">${p.title}</span>`;
+    bc.querySelector('[data-bc-root]')?.addEventListener('click',e=>{e.preventDefault(); projectDetail.style.display='none'; switchTab('projects');});
+    bc.querySelector('[data-bc-type]')?.addEventListener('click',e=>{e.preventDefault(); currentFilter=(p.type||'residential'); applyProjectFilter(currentFilter); projectDetail.style.display='none'; switchTab('projects');});
+
+    // Info panel (hide empty rows)
+    const info=document.getElementById('project-info');
+    const rows=[
+      {label:'Type', value:typeLabel},
+      {label:'Client', value:p.client},
+      {label:'Status', value:p.status},
+      {label:'Area', value:p.area},
+      {label:'Location', value:p.location},
+      {label:'Year', value:p.year}
+    ].filter(r=>r.value&&String(r.value).trim().length);
+    info.innerHTML=rows.map(r=>`<div class="row"><div class="label">${r.label}</div><div class="value">${r.value}</div></div>`).join('');
+
     const rooms=[...new Set((p.images||[]).map(i=>i.room).filter(Boolean))];
     if(rooms.length){ roomFilters.style.display='flex'; roomFilters.innerHTML=rooms.map(r=>`<button class="filter-btn" data-room="${r}">${r.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}</button>`).join('');
       roomFilters.querySelectorAll('[data-room]').forEach(chip=>chip.addEventListener('click',()=>filterProjectByRoom(chip.dataset.room)));
     } else { roomFilters.style.display='none'; }
     renderProjectGallery(p.images||[]);
-    window.scrollTo({top:0,behavior:'smooth'});
+    // Scroll directly to the project's images instead of the hero
+    setTimeout(()=>{
+      const first = galleryProject.querySelector('.masonry-item') || galleryProject;
+      first?.scrollIntoView({behavior:'smooth', block:'center'});
+    }, 0);
   }
   function filterProjectByRoom(room){ if(!currentProject) return; const imgs=currentProject.images.filter(i=>i.room===room); renderProjectGallery(imgs); }
   function renderProjectGallery(images){
-    galleryProject.innerHTML=images.map((img,idx)=>`<figure class="masonry-item"><img data-index="${idx}" src="${E(img.src)}" alt="${img.alt||''}"></figure>`).join('');
-    lightboxImages=images.map(i=>i.src); lightboxIndex=0;
+    const html = (images||[]).map((img,idx)=>{
+      const src = E(img.src);
+      return `<figure class="masonry-item"><img data-index="${idx}" src="${src}" alt="${img.alt||''}"></figure>`;
+    }).join('');
+    galleryProject.innerHTML = html;
+    attachImageGuards(galleryProject);
+    lightboxImages=(images||[]).map(i=>i.src).filter(s=>!isHeic(s));
+    lightboxIndex=0;
   }
 
   function openAlbum(slug){
     const a=data.albums.find(x=>x.slug===slug); if(!a) return; currentAlbum=a;
     projectsPanel.classList.add('hidden'); albumsPanel.classList.add('hidden'); projectDetail.style.display='none'; albumDetail.style.display='block';
     document.getElementById('album-detail-title').textContent=a.title; document.getElementById('album-detail-subtitle').textContent='';
+    // Breadcrumb for Album
+    const abc=document.getElementById('album-breadcrumb');
+    abc.innerHTML=`<a href="#" data-ab-root>Albums</a> <span class="sep">/</span> <span aria-current="page">${a.title}</span>`;
+    abc.querySelector('[data-ab-root]')?.addEventListener('click',e=>{e.preventDefault(); albumDetail.style.display='none'; switchTab('albums');});
+
+    // Optional album info (hidden if empty for now)
+    const ainfo=document.getElementById('album-info');
+    ainfo.innerHTML=''; ainfo.style.display='none';
+
     galleryAlbum.innerHTML=(a.images||[]).map((img,idx)=>`<figure class=\"masonry-item\"><img data-index=\"${idx}\" src=\"${E(img.src)}\" alt=\"${img.alt||''}\"></figure>`).join('');
-    lightboxImages=(a.images||[]).map(i=>i.src); lightboxIndex=0;
-    window.scrollTo({top:0,behavior:'smooth'});
+    attachImageGuards(galleryAlbum);
+    lightboxImages=(a.images||[]).map(i=>i.src).filter(s=>!isHeic(s)); lightboxIndex=0;
+    // Scroll to album gallery
+    setTimeout(()=>{ const first=galleryAlbum.querySelector('.masonry-item')||galleryAlbum; first?.scrollIntoView({behavior:'smooth',block:'center'}); },0);
   }
 
   backToProjects?.addEventListener('click',()=>{projectDetail.style.display='none'; switchTab('projects')});
@@ -412,12 +507,18 @@
   document.addEventListener('keydown',e=>{if(lb.getAttribute('aria-hidden')==='false'){ if(e.key==='Escape') closeLightbox(); if(e.key==='ArrowLeft') prev(); if(e.key==='ArrowRight') next(); }});
   lbPrev?.addEventListener('click',prev); lbNext?.addEventListener('click',next);
 
-  projectsGrid.addEventListener('click',e=>{const img=e.target.closest('.project-card .image-wrap img'); if(img){e.preventDefault(); openLightbox(Number(img.dataset.index)||0)}});
-  albumsGrid.addEventListener('click',e=>{const img=e.target.closest('.album-card .image-wrap img'); if(img){e.preventDefault(); openLightbox(Number(img.dataset.index)||0)}});
+  /* Removed: opening lightbox directly from project grid. Users should enter project detail first. */
+  /* Removed: opening lightbox from albums grid to force entering album detail first. */
   galleryProject.addEventListener('click',e=>{const img=e.target.closest('img'); if(img){openLightbox(Number(img.dataset.index)||0)}});
   galleryAlbum.addEventListener('click',e=>{const img=e.target.closest('img'); if(img){openLightbox(Number(img.dataset.index)||0)}});
 
-  loadData().then(()=>{ renderProjects(); renderAlbums(); });
+  loadData().then(()=>{
+    if(Array.isArray(data.commercial)){
+      const asProjects = data.commercial.map(c=>({type:'commercial', ...c}));
+      data.projects = [...(data.projects||[]), ...asProjects];
+    }
+    renderProjects(); renderAlbums();
+  });
 })();
 </script>
 <script src="assets/js/site.js"></script>
