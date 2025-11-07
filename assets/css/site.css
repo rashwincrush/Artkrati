@@ -160,9 +160,7 @@ main [class*="section"]:not([class*="hero"]){
   position:relative;overflow:hidden;
 }
 .q-card::before{
-  content:"\201C";position:absolute;left:16px;top:-10px;
-  font-family:"Playfair Display",serif;font-size:120px;line-height:1;
-  color:rgba(0,0,0,.05);pointer-events:none;
+  content:none;
 }
 .q-badge{
   width:56px;height:56px;margin:0 auto 12px;border-radius:14px;display:grid;place-items:center;

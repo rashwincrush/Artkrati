@@ -4,7 +4,10 @@
       "slug": "central-regency",
       "title": "Central Regency",
       "type": "residential",
-      "location": "",
+      "client": "Mr. vineet & sakshi surekha",
+      "status": "completed",
+      "area": "1820 sqft",
+      "location": "Bellandur, Bangalore",
       "year": "",
       "cover": "images/Portfolio/Projects/Central Regency/COVER PAGE.jpg",
       "images": [
@@ -59,7 +62,10 @@
       "slug": "duplex-peenya",
       "title": "Duplex Peenya",
       "type": "Residential",
-      "location": "",
+      "client": "Mr. Arun  & Siddharth gupta",
+      "status": "completed",
+      "area": "3200 sqft",
+      "location": "Peenya, Bangalore",
       "year": "",
       "cover": "images/Portfolio/Projects/Duplex Peenya/COVER PAGE.png",
       "images": [
@@ -154,9 +160,12 @@
       "slug": "ohio-overseas-project",
       "title": "Ohio - Overseas Project",
       "type": "Residential",
-      "location": "",
+      "client": "Mr. Sai Ramesh",
+      "status": "completed",
+      "area": "2080 sqft",
+      "location": "Aurora, OHIO",
       "year": "",
-      "cover": "images/Portfolio/Projects/Ohio - Overseas Project/MBR2.1.png",
+      "cover": "images/Portfolio/Projects/Ohio - Overseas Project/l1.png",
       "images": [
         {
           "src": "images/Portfolio/Projects/Ohio - Overseas Project/MBR2.1.png",
@@ -194,7 +203,10 @@
       "slug": "purva-midtown",
       "title": "Purva Midtown",
       "type": "Residential",
-      "location": "",
+      "client": "Mr. Karthik & Mrs. Gowri",
+      "status": "completed",
+      "area": "1700 sqft",
+      "location": "KR Puram, Bangalore",
       "year": "",
       "cover": "images/Portfolio/Projects/Purva Midtown/COVER PAGES.jpg",
       "images": [
@@ -249,7 +261,10 @@
       "slug": "purva-midtown-santorini-themed",
       "title": "Purva Midtown - Santorini Themed  ",
       "type": "Residential",
-      "location": "",
+      "client": "Mr. Anup & Mrs.Suruchi Tripathi",
+      "status": "completed",
+      "area": "1700 sqft",
+      "location": "KR Puram, Bangalore",
       "year": "",
       "cover": "images/Portfolio/Projects/Purva Midtown - Santorini Themed  /COVER PAGE.jpg",
       "images": [
@@ -334,7 +349,10 @@
       "slug": "ram-sridhar-apt",
       "title": "Ram Sridhar Apt",
       "type": "Residential",
-      "location": "",
+      "client": "Mr. Bhushan Salimath",
+      "status": "completed",
+      "area": "2100 sqft",
+      "location": "BTM, Bangalore",
       "year": "",
       "cover": "images/Portfolio/Projects/Ram Sridhar Apt/cover page.jpg",
       "images": [
@@ -399,7 +417,10 @@
       "slug": "sattva-aqua-vista",
       "title": "Sattva Aqua Vista",
       "type": "Residential",
-      "location": "",
+      "client": "Mr. Hemanth & Mrs. Pratima Rastogi",
+      "status": "completed",
+      "area": "2100 sqft",
+      "location": "Bannerghatta road, Bangalore",
       "year": "",
       "cover": "images/Portfolio/Projects/Sattva Aqua Vista/COVER PAGE.png",
       "images": [
@@ -1009,6 +1030,10 @@
     {
       "slug": "gramener",
       "title": "Gramener",
+      "client": "Mr. Mayank",
+      "status": "completed",
+      "area": "1600 sqft",
+      "location": "Central silk board, Bangalore",
       "cover": "images/Portfolio/Commercial /Gramener/COVER PAGE.JPG",
       "images": [
         {
@@ -1044,14 +1069,12 @@
       ]
     },
     {
-      "slug": "hall-of-tails",
-      "title": "Hall of tails",
-      "cover": "images/Artkratihero.png",
-      "images": []
-    },
-    {
       "slug": "waaw-cafe",
       "title": "Waaw cafe",
+      "client": "Mr. kiran",
+      "status": "completed",
+      "area": "425 sqft",
+      "location": "Jayanagar , Bangalore",
       "cover": "images/Portfolio/Commercial /Waaw cafe/COVER PAGE.jpg",
       "images": [
         {

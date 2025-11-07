@@ -11,6 +11,15 @@
     .hero-content p{font-size:clamp(1rem,2.2vw,1.125rem);color:#fff;max-width:600px;margin:0 auto;line-height:1.7;font-weight:300;text-shadow:1px 1px 2px rgba(0,0,0,.4)}
     .section{padding:48px 0}
     .section-header{text-align:center;max-width:700px;margin:0 auto 32px}
+    .detail-header{max-width:none;display:grid;grid-template-columns:240px 1fr;gap:4px 32px;align-items:start}
+    @media(max-width:768px){.detail-header{grid-template-columns:1fr;align-items:end}}
+    .kv-list{display:grid;gap:2px}
+    .kv-row{display:grid;grid-template-columns:88px 1fr;gap:2px 4px;align-items:baseline}
+    .kv-row .label{color:#6b7280;font-size:.92rem;text-align:left}
+    .kv-row .value{color:#d9a082;font-weight:600;font-size:.98rem;white-space:normal;text-align:left}
+    .kv-row .value.nowrap{white-space:nowrap}
+    .detail-header .section-title{grid-column:1/-1;justify-self:center;text-align:center;margin:0}
+    .kv-list{margin-top:6px}
     .section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,2.5rem);font-weight:500;color:var(--dark);margin:0 0 12px;letter-spacing:.5px;position:relative;display:inline-block}
     .section-title::after{content:'';position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);width:60px;height:2px;background:var(--gold)}
     .section-subtitle{font-size:1rem;color:var(--g600);line-height:1.6;margin:20px 0 0}
@@ -41,12 +50,12 @@
     .card-title{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-size:1.06rem;font-weight:500;color:#98715d;margin:0 0 6px;letter-spacing:.01em}
     .card-meta{display:flex;align-items:center;gap:8px;font-size:.875rem;color:var(--g600)}
     .detail{display:none}
-    .masonry{column-gap:24px}
-    @media(min-width:640px){.masonry{column-count:2}}
-    @media(min-width:1024px){.masonry{column-count:3}}
-    .masonry-item{break-inside:avoid;margin-bottom:24px}
-    .masonry-item img{width:100%;height:auto;display:block;border-radius:0;cursor:zoom-in;transition:transform .3s,box-shadow .3s;background:#F8F5F1}
-    .masonry-item img:hover{transform:scale(1.02);box-shadow:0 8px 24px rgba(0,0,0,.12)}
+    .masonry{display:grid;gap:24px;grid-template-columns:1fr}
+    @media(min-width:1024px){.masonry{grid-template-columns:repeat(2,1fr)}}
+    /* Uniform, elegant tiles */
+    .masonry-item{position:relative;overflow:hidden;border-radius:8px;aspect-ratio:3/2;box-shadow:0 2px 8px rgba(0,0,0,.06);background:#F8F5F1}
+    .masonry-item img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in;transition:transform .3s,box-shadow .3s;background:#F8F5F1}
+    .masonry-item img:hover{transform:scale(1.03);box-shadow:0 8px 24px rgba(0,0,0,.12)}
     .lightbox{position:fixed;inset:0;z-index:9999;background:rgba(26,31,46,.98);display:none;backdrop-filter:blur(20px)}
     .lightbox-controls{position:fixed;top:1.5rem;right:1.5rem;display:flex;gap:.75rem;z-index:10000}
     .lightbox-btn,.lightbox-nav{display:grid;place-items:center;border-radius:50%;border:2px solid rgba(255,255,255,.3);background:rgba(0,0,0,.5);color:#fff;backdrop-filter:blur(10px);transition:.3s;cursor:pointer}
@@ -126,9 +135,9 @@
     <section class="section">
       <div class="container">
         <div id="project-breadcrumb" class="breadcrumb" aria-label="Breadcrumb" role="navigation"></div>
-        <header class="section-header">
+        <header class="section-header detail-header">
           <h2 class="section-title"><span id="project-detail-title"></span> <span id="project-detail-year" style="font-size:.9rem;border:1px solid var(--g300);padding:4px 10px;border-radius:999px;color:var(--g600);font-weight:500"></span></h2>
-          <p id="project-detail-location" class="section-subtitle"></p>
+          <div id="project-meta" class="kv-list"></div>
         </header>
         <div id="project-info" class="proj-info"></div>
         <div id="room-filters" class="filter-bar" style="display:none"></div>
@@ -394,9 +403,18 @@
 
   function renderProjects(){
     projectsGrid.innerHTML='';
-    data.projects.forEach(p=>{
-      const card=document.createElement('a'); card.href='#'; card.className='project-card'; card.dataset.type=p.type||'residential'; card.dataset.slug=p.slug;
-      const typeLabel=(p.type||'Residential');
+    const priorityOrder=['purva-midtown','purva-midtown-santorini-themed','ram-sridhar-apt'];
+    const priorityIndex = new Map(priorityOrder.map((s,i)=>[s,i]));
+    const originalIndex = new Map(data.projects.map((p,i)=>[p.slug,i]));
+    const ordered=[...data.projects].sort((a,b)=>{
+      const ai = priorityIndex.has(a.slug)? priorityIndex.get(a.slug) : Number.POSITIVE_INFINITY;
+      const bi = priorityIndex.has(b.slug)? priorityIndex.get(b.slug) : Number.POSITIVE_INFINITY;
+      if(ai!==bi) return ai-bi;
+      return (originalIndex.get(a.slug)||0) - (originalIndex.get(b.slug)||0);
+    });
+    ordered.forEach(p=>{
+      const card=document.createElement('a'); card.href='#'; card.className='project-card'; card.dataset.type=(p.type||'residential').toLowerCase(); card.dataset.slug=p.slug;
+      const typeLabel=(p.type||'residential').replace(/^\w/,c=>c.toUpperCase());
       const cover = safeCover(p);
       card.innerHTML=`<div class=\"image-wrap\"><img src=\"${E(cover)}\" alt=\"${p.title}\"></div><div class=\"card-body\"><div class=\"card-kicker\"><span class=\"k-dot\"></span><span class=\"k-text\">${typeLabel.toUpperCase()}</span></div><h3 class=\"card-title\">${p.title}</h3><div class=\"card-meta\">${p.location?`<span>${p.location}</span>`:''}${p.location&&p.year?'<span style=\\\"width:4px;height:4px;background:#d1d5db;border-radius:50%\\\"></span>':''}${p.year?`<span>${p.year}</span>`:''}</div></div>`;
       card.addEventListener('click',e=>{e.preventDefault();openProject(p.slug)});
@@ -432,26 +450,32 @@
     const yEl=document.getElementById('project-detail-year');
     yEl.textContent=p.year||'';
     yEl.style.display = yEl.textContent.trim().length ? '' : 'none';
-    document.getElementById('project-detail-location').textContent=p.location||'';
+    const meta=document.getElementById('project-meta');
+    // normalize client spacing to avoid awkward wraps
+    const clientValue=(p.client||'')
+      .replace(/Mr\./g,'Mr.&nbsp;')
+      .replace(/Mrs\./g,'Mrs.&nbsp;');
+    const rows=[
+      {label:'Client', value:clientValue, nowrap:true},
+      {label:'Status', value:p.status},
+      {label:'Area', value:p.area},
+      {label:'Location', value:p.location}
+    ].filter(r=>r.value&&String(r.value).trim().length)
+     .map(r=>`<div class=\"kv-row\"><div class=\"label\">${r.label}:</div><div class=\"value ${r.nowrap?'nowrap':''}\">${r.value}</div></div>`)
+     .join('');
+    meta.innerHTML = rows;
 
     // Breadcrumb
     const bc=document.getElementById('project-breadcrumb');
     const typeLabel=(p.type||'residential').replace(/^\w/,c=>c.toUpperCase());
     bc.innerHTML=`<a href="#" data-bc-root>Projects</a> <span class="sep">/</span> <a href="#" data-bc-type>${typeLabel}</a> <span class="sep">/</span> <span aria-current="page">${p.title}</span>`;
     bc.querySelector('[data-bc-root]')?.addEventListener('click',e=>{e.preventDefault(); projectDetail.style.display='none'; switchTab('projects');});
-    bc.querySelector('[data-bc-type]')?.addEventListener('click',e=>{e.preventDefault(); currentFilter=(p.type||'residential'); applyProjectFilter(currentFilter); projectDetail.style.display='none'; switchTab('projects');});
+    bc.querySelector('[data-bc-type]')?.addEventListener('click',e=>{e.preventDefault(); currentFilter=(p.type||'residential').toLowerCase(); applyProjectFilter(currentFilter); projectDetail.style.display='none'; switchTab('projects');});
 
-    // Info panel (hide empty rows)
+    // Hide legacy info grid (replaced by quick info block)
     const info=document.getElementById('project-info');
-    const rows=[
-      {label:'Type', value:typeLabel},
-      {label:'Client', value:p.client},
-      {label:'Status', value:p.status},
-      {label:'Area', value:p.area},
-      {label:'Location', value:p.location},
-      {label:'Year', value:p.year}
-    ].filter(r=>r.value&&String(r.value).trim().length);
-    info.innerHTML=rows.map(r=>`<div class="row"><div class="label">${r.label}</div><div class="value">${r.value}</div></div>`).join('');
+    info.innerHTML='';
+    info.style.display='none';
 
     const rooms=[...new Set((p.images||[]).map(i=>i.room).filter(Boolean))];
     if(rooms.length){ roomFilters.style.display='flex'; roomFilters.innerHTML=rooms.map(r=>`<button class="filter-btn" data-room="${r}">${r.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}</button>`).join('');

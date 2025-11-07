@@ -179,12 +179,13 @@
       font-weight:500;
       line-height:1.25;
       font-style:italic;
-      font-size:1.875rem;
+      font-size:1.5rem;
       margin:0;
       position:relative;
     }
-    @media(min-width:768px){.about-hero-title{font-size:2.25rem}}
-    @media(min-width:1024px){.about-hero-title{font-size:3rem}}
+    @media(min-width:768px){.about-hero-title{font-size:2rem}}
+    @media(min-width:1024px){.about-hero-title{font-size:2.5rem}}
+    @media(max-width:480px){.about-hero-title{font-size:1.35rem}}
 
     /* Keep the static gold underline just for “sparkling sea” */
     .sparkle-mark{position:relative;display:inline-block}
@@ -201,8 +202,11 @@
     .imagination-text{position:static;display:inline}
 
     /* No underline or hover effects under imagination */
+    .line-keep{white-space:nowrap}
 
-    .text-intro{font-size:1.1rem;font-style:italic;line-height:1.7;color:var(--text-primary)}
+    .text-intro{font-size:1.1rem;font-style:italic;line-height:1.8;color:var(--text-primary);text-align:justify;text-justify:inter-word;-webkit-hyphens:auto;-ms-hyphens:auto;hyphens:auto;text-wrap:pretty;letter-spacing:.003em}
+    .text-intro:not(:last-child){margin-bottom:.75rem}
+    .text-intro:where(p){margin:0}
     .elegant-btn{display:inline-block;padding:10px 18px;border-radius:50px;font-size:.875rem;font-weight:500;text-decoration:none!important;text-transform:uppercase;letter-spacing:.08em;transition:all .4s cubic-bezier(.4,0,.2,1);border:1.5px solid transparent;position:relative;overflow:hidden}
     .elegant-btn.primary{background:linear-gradient(135deg,#98715d 0%,#7a5a4a 100%);color:#fff!important;box-shadow:0 4px 15px rgba(152,113,93,.3),0 2px 4px rgba(152,113,93,.2)}
     .elegant-btn.primary::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transition:left .6s ease}
@@ -311,9 +315,8 @@
       <div class="hero-grid">
         <div>
           <h1 class="about-hero-title">
-            <span>Creator of ideas, swimming in the </span>
-            <span class="sparkle-mark"><span style="color:var(--primary-gold)">sparkling sea</span></span>
-            <span class="imagination-text"> of imagination!!</span>
+            <span class="line-keep">Creator of ideas, swimming in&nbsp;the</span><br>
+            <span class="line-keep"><span class="sparkle-mark"><span style="color:#d9a082">sparkling sea</span></span><span class="imagination-text"> of imagination!!</span></span>
           </h1>
           <div style="margin-top:16px" class="text-intro">At <strong>AAKRATI Interior Design Artist</strong>, we believe that interiors are more than just spaces—they are stories waiting to be told, emotions waiting to be felt, and reflections of the souls who inhabit them.</div>
           <div class="text-intro">Four years ago, after over a decade of experience working with renowned design firms, I decided to start my own journey driven by a vision to create interiors that are not just beautiful, but deeply personal and meaningful.</div>
@@ -369,20 +372,28 @@
           return base.replace(/([a-z])([A-Z])/g,'$1 $2').replace(/\b\w/g,c=>c.toUpperCase());
         }
         const reviews={
-          'Babita Butola': `I would like to thank Aakriti. Her impeccable taste and attention to detail have transformed our space into a haven of comfort and style. Me and Raj are beyond grateful for your creative and unwavering dedication to bringing our vision to life. Your ability to understand our preferences and translate them into stunning designs is truly remarkable. From concept to execution, your passion for design shines through every element of our home. We're endlessly thankful for your talent and expertise.`,
-          'Hemanth': `Am extremely pleased with Aakriti as she has translated my ideas to reality. In fact overall interiors came out much better than what I planned for. She was instrumental in coming up with multiple options suiting my taste, clever ideas to add functionality with design. Best thing is her signature creation for each project I saw including mine, which was beyond my imagination.`,
-          'Naveen': `I'm thoroughly satisfied with the entire process, from the initial design phase to execution and delivery. Aakrati is an exceptional designer who attentively considered our input and requirements. Each individual room was designed to suit the use‑cases/needs of the person while also following the theme. The final design and the result is not only looking great but also functioning effectively. Aakrati and her team made the entire process stress‑free and seamless.`,
-          'Prakash Raman': `Aakrati is quite creative and very committed to her work. She communicates effectively and completed our project to our satisfaction. She is receptive to alternate ideas and employs a keen ear to customer views. Overall, we had a very positive experience working with her on the interiors of our house and would not hesitate recommending her to others seeking similar services.`,
+          'Babita Butola': `I would like to thank Aakrati. Her impeccable taste and attention to detail have transformed our space into a haven of comfort and style. Me and Raj are beyond grateful for your creative and unwavering dedication to bringing our vision to life. Your ability to understand our preferences and translate them into stunning designs is truly remarkable. From concept to execution, your passion for design shines through every element of our home. We're endlessly thankful for your talent and expertise.`,
+          'Bhushan Salimath': `We engaged Aakrati for the interior design of our home. Aakrati took the time to thoroughly understand our requirements and translated them into a thoughtful, cohesive design. Her services encompassed everything from design conceptualization and material selection to choosing contractors, supervising the work, and handling negotiations. Throughout the project, she maintained a high level of professionalism, with a keen eye for detail and a deep understanding of all aspects related to home design. Her expertise was evident at every step, and we appreciated the personalized approach she took. The final result exceeded our expectations, and both our family and visitors have shared nothing but positive feedback.`,
+          'Fine Foods': `From House to Home — Uniquely Beautiful, thanks to Aakrati! Working with Aakrati has been such an amazing experience! She’s not just creative — she’s incredibly artistic, innovative, and has an eye for detail that blew us away. She really got our style and preferences from the start, and kept every tiny thing in mind while designing. After all those long chats and site visits, the final result truly reflected everything we had discussed — and more. Every corner of our home has her thoughtful touch. From tiles to lights, curtains to cutlery, she helped us with it all. She even went shopping with us multiple times, helped us choose furniture and soft furnishings, and never once made us feel rushed or on our own. She also gave special attention to our kids’ room — and honestly, they were her biggest fans by the end! She brought their love for nature and sea life together in the most artistic and playful way. The room turned out super cool and functional, with a smart study setup under a stunning bunk bed. It’s now their favorite space in the house, and we couldn’t be happier seeing how much they love it. She doesn’t just say “yes” to everything either — and that’s what we loved! She gives honest feedback and smart suggestions, making sure every choice makes sense for the space and our lifestyle. She’s bold, passionate, and doesn’t settle for anything average. Her team was great to work with too — super coordinated and reliable. Even after the work was done, she stayed in touch and made sure everything was running smoothly. The vendors she recommended were top‑notch as well — carefully selected and definitely worth exploring. She made the whole journey fun, personal, and stress‑free. Our home feels so “us” now — and we have her to thank for it!`,
+          'Hemanth': `Am extremely pleased with Aakrati as she has translated my ideas to reality. In fact overall interiors came out much better than what I planned for. She was instrumental in coming up with multiple options suiting my taste, clever ideas to add functionality with design. Best thing is her signature creation for each project I saw including mine, which was beyond my imagination.`,
+          'Mayank Vishnoi': `Exceptional Interior Design Experience — I recently had the pleasure of working with Aakrati for our complete home interior design and execution, and I cannot recommend her services highly enough. Despite running a boutique firm with just 3–4 people, Aakrati delivered results that rival much larger design houses.
+
+1. Complete Project Management Excellence: She didn’t just provide design concepts — she managed the entire execution flawlessly. From coordinating with carpenters and stone workers to managing electrical and plumbing work, she handled multiple vendors seamlessly, saving us countless hours and stress.
+2. Timely Delivery: In an industry notorious for delays, Aakrati delivered our project exactly on schedule thanks to strong vendor coordination and project management.
+3. Attention to Detail & Practicality: Meticulous detail with practical thinking. She spent considerable time understanding our lifestyle needs to ensure beauty never compromised functionality.
+4. Genuine Passion & Care: Her love for interior design shines through. She’s not money‑minded; she’s invested in creating spaces that enhance daily life.
+5. Exceptional After‑Service Support: Even after completion, she helped resolve minor issues promptly — a testament to her client commitment.
+
+Working with Aakrati felt like collaborating with a trusted friend who is incredibly talented at interior design. Highly recommended for flawless execution and exceptional service.`,
+          'Naveen': `I'm thoroughly satisfied with the entire process, from the initial design phase to execution and delivery. Aakrati is an exceptional designer who attentively considered our input and requirements. Each individual room was designed to suit the use‑cases and needs of the person while also following the theme. The final design and the result is not only looking great but also functioning effectively. Aakrati and her team made the entire process stress‑free and seamless.`,
+          'Nayan Gupta': `We engaged with Aakrati for our home interiors, and she delivered exceptional results. She took the time to understand our needs, providing end‑to‑end services including design, material selection, contractor coordination, supervision, and negotiations. Her professionalism, colour/design choices, attention to detail, and deep expertise in home design were evident throughout. The final outcome exceeded our expectations, earning praise from both our family and visitors. She went out of her way during the design phase to accommodate our requirements — a true commitment to excellence.`,
+          'Prakash Raman': `Aakrati is quite creative and very committed to her work. She communicates effectively and completed our project to our satisfaction. She is quite receptive to alternate ideas and employs a keen ear to customer views. Overall, we have had a very positive experience working with her on the interiors of our house and would not hesitate recommending her to others seeking similar services.`,
           'Pratima': `I had a wonderful experience working with Aakrati and her team. Their sense of design, attention to detail, and ability to understand my taste made the entire process smooth and enjoyable. My home looks elegant, comfortable, and perfectly reflects my personality. Highly recommended!`,
           'Sai Phani Utkarshkethana': `Aakrati helped transform the interior ambiance of our science gallery immensely with her expertise and affordable options. More impact with value for money. 🤩😊😇`,
-          'Sakshi Sureka': `Aakrati and her team are superb. She is creative and supportive. She did excellent work for our home. She listens to client requirements patiently and gives input that is practical yet beautiful. We are grateful to her for taking up our project and executing it so well! Best of luck to Aakrati and team for their future endeavours. ❤️`,
-          'Suruchi Tripathi': `Superb work—excellent and valuable inputs while designing. She listens to each and every small requirement and gives exactly what you want. She always says that in designing everything is possible—just let me know what you want and I will make it. Very kind, hardworking, and indeed a passionate interior designer.`,
-          'Suwacharaj': `Fantastic work and commitment. Right from the first meeting to discussions to conceptualising to the final output, it's been one seamless ride for us. In fact, the actual finish looks better than 3D outputs. Thanks Aakrati and team for making our dream home!!`,
-          'Vignesh': `Working with Aakrati and team was one of the best decisions we made while building our new home. She took the time to understand our lifestyle, preferences, and aspirations... We’re beyond thrilled with the final outcome and would wholeheartedly recommend them.`,
-          'Mayank Vishnoi': `Exceptional Interior Design Experience — complete project management, timely delivery, meticulous attention to detail, and genuine after-service support. Highly recommended.`,
-          'Bhushan Salimath': `We engaged Aakrati for the interior design of our home. Professional end‑to‑end service, keen eye for detail, and a cohesive design that exceeded expectations.`,
-          'Nayan Gupta': `End‑to‑end services, thoughtful colour/design choices, and seamless execution. Final outcome exceeded expectations.`,
-          'Fine Foods': `From house to home — uniquely beautiful. Thoughtful guidance across materials, shopping, kids’ room concept, and coordination with vendors.`
+          'Sakshi Sureka': `Aakrati and her team is superb. She is creative and supportive. She did an excellent work for our home. She listens to client requirements patiently and gives input that is practical yet beautiful. We are grateful to her for taking up our project and executing it so well! Best of luck to Aakrati and team for their future endeavours. ❤️`,
+          'Suruchi Tripathi': `Superb work — excellent and valuable inputs while designing. She listens to each and every small thing you require and gives exactly what you want. She always says that in designing everything is possible — just let me know what you want, I will make it. Very kind, hard working, and indeed a passionate interior designer.`,
+          'Suwacharaj': `Fantastic work and commitment. Right from the first meeting to discussions to conceptualising to the final output, it's been one seamless ride for us. In fact, actual finish looks better than 3D outputs. Thanks Aakrati and Team for making our dream home!!`,
+          'Vignesh': `Working with Aakrati and team was one of the best decisions we made while building our new home. She took the time to understand our lifestyle, preferences, and aspirations, and translated that into a cohesive design that flows beautifully throughout the home. Whether it's the subtle elegance of the ceilings, the warmth of the lighting, or the curated décor, everything works in harmony to create a welcoming and stylish environment. Her ability to combine our ideas with her expertise resulted in a home that truly feels like ours — only better than we imagined. We’re beyond thrilled with the final outcome and would wholeheartedly recommend them to anyone looking to transform their space into something extraordinary.`
         };
         const cards=files.map(f=>{
           const name=toName(f);
