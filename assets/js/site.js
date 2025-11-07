@@ -88,6 +88,20 @@
         const wrapper=document.createElement('div');
         wrapper.innerHTML=html;
         document.body.appendChild(wrapper);
+        // Initialize footer behaviour (More toggle) after injection
+        (function initFooterBehavior(root){
+          const scope = root || document;
+          const toggle = scope.querySelector('#moreToggle');
+          const content = scope.querySelector('#moreContent');
+          if(toggle && content){
+            toggle.addEventListener('click', function(){
+              const isExpanded = this.getAttribute('aria-expanded') === 'true';
+              this.setAttribute('aria-expanded', (!isExpanded).toString());
+              this.classList.toggle('active');
+              content.classList.toggle('expanded');
+            }, { once:false });
+          }
+        })(wrapper);
       })
       .catch(()=>{});
   }catch(_){/* noop */}
