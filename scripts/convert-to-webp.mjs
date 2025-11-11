@@ -18,12 +18,14 @@ async function ensureSharp() {
 
 const ROOT = process.cwd();
 const IMAGES_DIRS = [
+  'images',            // root images (logos, hero, misc)
+  'images/services',   // services hero + icons
   'images/about',
   'images/Process',
   'images/Portfolio',
 ];
 
-const exts = new Set(['.jpg', '.jpeg', '.png']);
+const exts = new Set(['.jpg', '.jpeg', '.png', '.webp']);
 
 function* walk(dir) {
   const entries = fs.existsSync(dir) ? fs.readdirSync(dir, { withFileTypes: true }) : [];
@@ -34,14 +36,31 @@ function* walk(dir) {
   }
 }
 
+const VARIANT_WIDTHS = (process.env.WEBP_WIDTHS || '48,96,108,140,250,480,705,836,1200,1600,2118')
+  .split(',')
+  .map(w => Number(w.trim()))
+  .filter(Boolean);
+
 async function convertFile(srcPath, quality = 82) {
   const ext = path.extname(srcPath).toLowerCase();
   if (!exts.has(ext)) return { skipped: true };
-  const outPath = srcPath.replace(/\.(jpe?g|png)$/i, '.webp');
-  if (fs.existsSync(outPath)) return { skipped: true, exists: true };
+  const isWebpSrc = /\.webp$/i.test(srcPath);
+  const outPath = isWebpSrc ? srcPath : srcPath.replace(/\.(jpe?g|png)$/i, '.webp');
   await ensureSharp();
   try {
-    await sharp(srcPath).webp({ quality }).toFile(outPath);
+    // Base webp (original dimensions) if missing
+    if (!isWebpSrc) {
+      if (!fs.existsSync(outPath)) {
+        await sharp(srcPath).webp({ quality }).toFile(outPath);
+      }
+    }
+    // Responsive variants by width
+    const baseNoExt = outPath.replace(/\.webp$/i, '');
+    for (const w of VARIANT_WIDTHS) {
+      const variant = `${baseNoExt}.w${w}.webp`;
+      if (fs.existsSync(variant)) continue;
+      await sharp(srcPath).resize({ width: w, withoutEnlargement: true }).webp({ quality }).toFile(variant);
+    }
     return { ok: true, outPath };
   } catch (e) {
     return { ok: false, error: e && e.message ? e.message : String(e) };
