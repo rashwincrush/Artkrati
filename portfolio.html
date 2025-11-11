@@ -1,5 +1,5 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Portfolio – Aakrati</title><meta name="description" content="Explore Aakrati Interior Studio's portfolio of residential and commercial interiors across Bengaluru—curated projects, albums, and galleries."><link rel="canonical" href="https://artkrati.in/portfolio.html"><link rel="preload" as="image" href="images/AI-2.jpg" imagesrcset="images/AI-2.webp 1x" imagesizes="100vw"><link rel="stylesheet" href="assets/css/site.css"></head><body>
-<header class="site-header"><div class="container header-inner"><a class="brand" href="/index.html"><img src="images/logovisitingcardfront.png" alt="Aakrati Interior Design" width="108" height="48" loading="eager" fetchpriority="high" decoding="async">Aakrati</a><nav class="nav"><a href="/index.html">Home</a><a href="/about.html">About</a><a href="/portfolio.html">Portfolio</a><a href="/services/index.html">Services</a><a href="/contact.html">Contact</a><a class="btn btn-primary enquire" href="mailto:hello@aakrati.com">Enquire Now</a></nav><button class="btn hamburger" data-menu-open>☰</button></div></header>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Portfolio – Aakrati</title><meta name="description" content="Explore Aakrati Interior Studio's portfolio of residential and commercial interiors across Bengaluru—curated projects, albums, and galleries."><link rel="canonical" href="https://artkrati.in/portfolio.html"><link rel="stylesheet" href="assets/css/site.css"></head><body>
+<header class="site-header"><div class="container header-inner"><a class="brand" href="/index.html"><picture><source type="image/webp" srcset="images/logovisitingcardfront.w96.webp 96w, images/logovisitingcardfront.w108.webp 108w, images/logovisitingcardfront.w140.webp 140w" sizes="(max-width:640px) 96px, 108px"><img src="images/logovisitingcardfront.png" alt="Aakrati Interior Design" width="108" height="48" loading="eager" fetchpriority="high" decoding="async"></picture>Aakrati</a><nav class="nav"><a href="/index.html">Home</a><a href="/about.html">About</a><a href="/portfolio.html">Portfolio</a><a href="/services/index.html">Services</a><a href="/contact.html">Contact</a><a class="btn btn-primary enquire" href="mailto:hello@aakrati.com">Enquire Now</a></nav><button class="btn hamburger" data-menu-open>☰</button></div></header>
 <div class="mobile-overlay"></div><aside class="mobile-sheet"><button class="btn" data-menu-close>Close</button><nav class="mobile-nav"><a href="/index.html">Home</a><a href="/about.html">About</a><a href="/portfolio.html">Portfolio</a><a href="/services/index.html">Services</a><a href="/contact.html">Contact</a></nav></aside>
 <main>
   <style>
@@ -90,11 +90,10 @@
   <!-- Hero (video facade) -->
   <section class="portfolio-hero">
     <div class="hero-facade" id="heroFacade">
-      <picture>
-        <source type="image/webp" srcset="images/AI-2.w480.webp 480w, images/AI-2.w705.webp 705w, images/AI-2.w836.webp 836w, images/AI-2.w1200.webp 1200w, images/AI-2.w1600.webp 1600w, images/AI-2.w2118.webp 2118w" sizes="100vw">
-        <img class="hero-poster" src="images/AI-2.jpg" alt="Aakrati Interiors Portfolio" loading="eager" fetchpriority="high" decoding="async" width="2118" height="1412" sizes="100vw">
-      </picture>
-      <button class="hero-play" id="heroPlay" aria-label="Play video">▶</button>
+      <video class="hero-video" muted autoplay playsinline loop preload="auto" poster="images/AI-2.jpg">
+        <source src="images/Portfolio/portfoliomovie.mp4" type="video/mp4">
+        <source src="images/Portfolio/portfoliomovie.mov" type="video/quicktime">
+      </video>
     </div>
     <div class="video-overlay"></div>
     <div class="hero-content">
@@ -389,12 +388,17 @@
     vid.setAttribute('loop','');
     vid.setAttribute('preload','none');
     vid.poster='images/AI-2.jpg';
-    const src=document.createElement('source');
-    src.src='images/Portfolio/portfoliomovie.mov';
-    src.type='video/mp4';
-    vid.appendChild(src);
+    // Prefer MP4 for browser support, keep your original MOV as fallback
+    const sMp4=document.createElement('source');
+    sMp4.src='images/Portfolio/portfoliomovie.mp4';
+    sMp4.type='video/mp4';
+    const sMov=document.createElement('source');
+    sMov.src='images/Portfolio/portfoliomovie.mov';
+    sMov.type='video/quicktime';
+    vid.appendChild(sMp4);
+    vid.appendChild(sMov);
     heroFacade.replaceWith(vid);
-    // attempt playback
+    // Start playback only on user click
     vid.play().catch(()=>{});
   }
   heroPlay?.addEventListener('click',mountHeroVideo);
