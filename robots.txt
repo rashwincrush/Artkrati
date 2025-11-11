@@ -1,4 +1,4 @@
 # robots.txt for Aakrati Interior Studio
 User-agent: *
 Allow: /
-Sitemap: /sitemap.xml
+Sitemap: https://artkrati.in/sitemap.xml
