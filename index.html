@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Aakrati Interior Studio creates warm, tech-smart interiors across Bengaluru. Explore our services, process, and portfolio of residential and commercial spaces."><link rel="canonical" href="/index.html">
 <title>Aakrati Interior Studio – Home</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9,6 +9,30 @@
 <link rel="icon" href="/favicon.ico">
 <link rel="preload" href="/assets/fonts/Brother-Home.otf" as="font" type="font/otf" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css?v=20251108">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Aakrati Interior Studio",
+  "url": "/",
+  "logo": "/images/logovisitingcardfront.png",
+  "email": "mailto:hello@aakrati.com"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Aakrati Interior Studio",
+  "url": "/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "/search?q={query}",
+    "query-input": "required name=query"
+  }
+}
+</script>
 
 <!-- Home inline styles (from Blade, trimmed to hero + services) -->
 <style>
@@ -32,14 +56,15 @@
   .intro-tagline.run-gold-sweep::after{opacity:1;animation:goldSweep 1.8s cubic-bezier(.19,1,.22,1) 0s forwards}
   /* Hero */
   .hero{position:relative;background:linear-gradient(135deg,var(--soft-ivory) 0%, #fff 100%);overflow:hidden}
-  .hero .container{padding-top:clamp(2rem,3.5vw,3.25rem);padding-bottom:clamp(3rem,5vw,4.5rem)}
+  .hero .container{padding-top:clamp(2.25rem,3.8vw,3.75rem);padding-bottom:clamp(3.25rem,5.2vw,5rem)}
   .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem);align-items:start}
   .award-badges{display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem}
   .award-pill{display:inline-flex;align-items:center;gap:.6rem;padding:.7rem 1.2rem;background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:9999px;box-shadow:0 8px 22px rgba(0,0,0,.07);color:var(--deep-navy);font-size:.95rem;font-weight:500}
   .award-pill .dot{width:.55rem;height:.55rem;border-radius:9999px;background:var(--primary-gold);box-shadow:0 0 0 4px rgba(201,169,110,.18)}
-  .hero-headline{font-weight:600;font-size:clamp(2.6rem,5.2vw,5.25rem);line-height:1.1;letter-spacing:-.01em;margin:0 0 1.1rem}
-  .hero-headline .line-1{color:var(--deep-navy);display:block}
-  .hero-headline .line-2{display:block;background:linear-gradient(90deg,#D9A082 0%, #9C6B34 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-headline{font-weight:600;font-size:clamp(2.6rem,5.2vw,5.25rem);line-height:1.18;letter-spacing:-.01em;margin:0 0 1.35rem;overflow:visible}
+  .hero-headline .line-1{color:var(--deep-navy);display:block;line-height:1.18}
+  .hero-headline .line-2{display:block;line-height:1.18;padding-bottom:.08em;background:linear-gradient(90deg,#D9A082 0%, #9C6B34 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-content{padding-bottom:.15rem}
   .hero-summary{font-size:1.05rem;color:#3c3c3c;max-width:48ch;margin:0 0 1.6rem}
   .hover-underline{font-size:1.125rem;color:#fff;position:relative;display:inline-block;font-weight:600;text-decoration:none;background:#98715d;padding:1rem 2rem;border-radius:8px;transition:all .3s ease}
   .hover-underline::after,
@@ -130,7 +155,7 @@
 </style>
 
 <!-- Libraries -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
 <script>
 // Build Featured Projects slides from portfolio-data.json
 document.addEventListener('DOMContentLoaded', async () => {
@@ -161,8 +186,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   window.dispatchEvent(new CustomEvent('projectsSlidesReady'));
 });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+<script src="https://unpkg.com/splitting/dist/splitting.min.js" defer></script>
 </head>
 <body>
 
@@ -171,7 +196,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   <div class="site-header-inner">
     <!-- Left: Logo -->
     <a href="/index.html" class="site-header-brand" aria-label="Aakrati Home">
-      <img src="/images/logovisitingcardfront.png" alt="Aakrati Interior Design" width="120" height="auto">
+      <img src="/images/logovisitingcardfront.png" alt="Aakrati Interior Design" width="120" height="56" loading="eager" fetchpriority="high" decoding="async">
     </a>
 
     <!-- Center: Navigation (Desktop Only) -->
@@ -404,7 +429,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           </div>
         </div>
         <div class="hero-visual">
-          <div class="image-container"><img src="images/Artkratihero.png" alt="Luxury Interior Design by Aakrati" class="hero-image"></div>
+          <div class="image-container"><img src="images/Artkratihero.png" alt="Luxury Interior Design by Aakrati" class="hero-image" loading="eager" fetchpriority="high" decoding="async"></div>
         </div>
       </div>
     </div>
@@ -421,40 +446,40 @@ document.addEventListener('DOMContentLoaded', async () => {
       <div class="services-grid">
         <article class="service-card reveal" aria-labelledby="svc-turnkey">
           <div class="service-icon" aria-hidden="true">
-            <img src="images/services/ServiceCard/Turnkey.png" alt="Turnkey" style="width:32px;height:32px">
+            <img src="images/services/ServiceCard/Turnkey.png" alt="Turnkey" style="width:32px;height:32px" loading="lazy" decoding="async">
           </div>
           <h3 id="svc-turnkey" class="service-title">Turnkey Interiors</h3>
           <p class="service-description">End-to-end design + build. CAD-accurate plans, BOQ & live Gantt, factory modules and on-site finesse—one accountable team.</p>
-          <a href="/services#turnkey" class="service-link">Learn More
+          <a href="/services#turnkey" class="service-link">Learn more about Turnkey Interiors
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </article>
 
         <article class="service-card reveal" aria-labelledby="svc-space">
           <div class="service-icon" aria-hidden="true">
-            <img src="images/services/ServiceCard/Spaceplanning.png" alt="Space Planning" style="width:32px;height:32px">
+            <img src="images/services/ServiceCard/Spaceplanning.png" alt="Space Planning" style="width:32px;height:32px" loading="lazy" decoding="async">
           </div>
           <h3 id="svc-space" class="service-title">Space Planning</h3>
           <p class="service-description">Accuracy before aesthetics—zoned layouts, clearances, storage logic and services routing finalized in 2D before any render.</p>
-          <a href="/services#space-planning" class="service-link">Learn More
+          <a href="/services#space-planning" class="service-link">Learn more about Space Planning
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </article>
 
         <article class="service-card reveal" aria-labelledby="svc-joinery">
-          <div class="service-icon" aria-hidden="true"><img src="images/services/ServiceCard/customfurniture.png" alt="Custom Furniture Icon" style="width:32px;height:32px"></div>
+          <div class="service-icon" aria-hidden="true"><img src="images/services/ServiceCard/customfurniture.png" alt="Custom Furniture Icon" style="width:32px;height:32px" loading="lazy" decoding="async"></div>
           <h3 id="svc-joinery" class="service-title">Custom Furniture</h3>
           <p class="service-description">Bespoke pieces with factory precision and hand-finished warmth—robust hardware, timeless proportion, perfect fits.</p>
-          <a href="/services#custom-furniture" class="service-link">Learn More
+          <a href="/services#custom-furniture" class="service-link">Learn more about Custom Furniture
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </article>
 
         <article class="service-card reveal" aria-labelledby="svc-consult">
-          <div class="service-icon" aria-hidden="true"><img src="images/services/ServiceCard/designconsultation.png" alt="Design Consultation Icon" style="width:32px;height:32px"></div>
+          <div class="service-icon" aria-hidden="true"><img src="images/services/ServiceCard/designconsultation.png" alt="Design Consultation Icon" style="width:32px;height:32px" loading="lazy" decoding="async"></div>
           <h3 id="svc-consult" class="service-title">Design Consultation</h3>
           <p class="service-description">Expert guidance to set your vision, materials, lighting strategy and budget guardrails—ready for a clean execution.</p>
-          <a href="/services#consultation" class="service-link">Learn More
+          <a href="/services#consultation" class="service-link">Learn more about Design Consultation
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </article>

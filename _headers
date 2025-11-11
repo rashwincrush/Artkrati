@@ -1,0 +1,16 @@
+# Caching rules for Netlify
+
+# Cache HTML briefly so updates propagate fast
+/*
+  Cache-Control: public, max-age=60, must-revalidate
+
+# Cache static assets aggressively
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Also cache common fonts if self-hosted later
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable

@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>About – Aakrati</title>
+  <meta name="description" content="Learn about Aakrati Interior Studio—our philosophy, process, client stories, and journey crafting thoughtful interiors across Bengaluru.">
+  <link rel="canonical" href="/about.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -14,7 +16,7 @@
 <header class="site-header">
   <div class="site-header-inner">
     <a href="/index.html" class="site-header-brand" aria-label="Aakrati Home">
-      <img src="/images/logovisitingcardfront.png" alt="Aakrati Interior Design" width="108" height="auto">
+      <img src="/images/logovisitingcardfront.png" alt="Aakrati Interior Design" width="108" height="48" loading="eager" fetchpriority="high" decoding="async">
     </a>
     <nav class="site-header-nav" aria-label="Main navigation">
       <ul>
@@ -207,6 +209,8 @@
     .text-intro{font-size:1.1rem;font-style:italic;line-height:1.8;color:var(--text-primary);text-align:justify;text-justify:inter-word;-webkit-hyphens:auto;-ms-hyphens:auto;hyphens:auto;text-wrap:pretty;letter-spacing:.003em}
     .text-intro:not(:last-child){margin-bottom:.75rem}
     .text-intro:where(p){margin:0}
+    /* Fix uneven word spacing inside Process cards by undoing justification */
+    #process .text-intro, .process-card .text-intro{ text-align:left; text-justify:auto; -webkit-hyphens:manual; -ms-hyphens:manual; hyphens:manual; word-spacing:normal; }
     .elegant-btn{display:inline-block;padding:10px 18px;border-radius:50px;font-size:.875rem;font-weight:500;text-decoration:none!important;text-transform:uppercase;letter-spacing:.08em;transition:all .4s cubic-bezier(.4,0,.2,1);border:1.5px solid transparent;position:relative;overflow:hidden}
     .elegant-btn.primary{background:linear-gradient(135deg,#98715d 0%,#7a5a4a 100%);color:#fff!important;box-shadow:0 4px 15px rgba(152,113,93,.3),0 2px 4px rgba(152,113,93,.2)}
     .elegant-btn.primary::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transition:left .6s ease}
@@ -332,7 +336,7 @@
           <div style="display:flex;gap:12px;margin-top:18px"><a href="/contact.html" class="elegant-btn primary">Start Your Project</a><a href="/portfolio.html" class="elegant-btn outline">View Our Work</a></div>
         </div>
         <figure>
-          <div class="image-frame"><img src="images/about/aid51.jpg" alt="Aakrati at work"></div>
+          <div class="image-frame"><picture><source type="image/webp" srcset="images/about/aid51.webp"><img src="images/about/aid51.jpg" alt="Aakrati at work" loading="eager" fetchpriority="high" decoding="async"></picture></div>
         </figure>
       </div>
     </div>
@@ -447,12 +451,12 @@ Working with Aakrati felt like collaborating with a trusted friend who is incred
         <p class="text-intro" style="font-style:normal">A symphony of thoughtful tools and intelligent workflows—from initial vision to final flourish.</p>
       </div>
       <div class="process-grid">
-        <article class="process-card"><span class="process-number" style="color:#D9A082">01</span><div style="height:128px;overflow:hidden"><img src="images/Process/01.jpg" alt="Discovery & Site Inventory" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body" style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:#D9A082;margin-bottom:.25rem">STEP 01</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Discovery & Site Inventory</h3><p class="text-intro" style="font-style:normal">Understand routines, measure the site, audit services.</p></div></article>
-        <article class="process-card"><span class="process-number" style="color:#D9A082">02</span><div style="height:128px;overflow:hidden"><img src="images/Process/02.jpg" alt="Schematic Planning" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body" style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:#D9A082;margin-bottom:.25rem">STEP 02</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Schematic Planning (2D First)</h3><p class="text-intro" style="font-style:normal">Room layouts, storage logic, services mapping in CAD.</p></div></article>
-        <article class="process-card"><span class="process-number" style="color:#D9A082">03</span><div style="height:128px;overflow:hidden"><img src="images/Process/03.jpg" alt="Budgeting & Concept" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body" style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:#D9A082;margin-bottom:.25rem">STEP 03</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Budgeting & Concept</h3><p class="text-intro" style="font-style:normal">Budget from scope—not guesswork. Lock direction & band.</p></div></article>
-        <article class="process-card"><span class="process-number" style="color:#D9A082">04</span><div style="height:128px;overflow:hidden"><img src="images/Process/04.jpg" alt="Detailed Design → 3D" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body" style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:#D9A082;margin-bottom:.25rem">STEP 04</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Detailed Design → 3D</h3><p class="text-intro" style="font-style:normal">Final elevations & service drawings, then high-fidelity 3D.</p></div></article>
-        <article class="process-card"><span class="process-number" style="color:#D9A082">05</span><div style="height:128px;overflow:hidden"><img src="images/Process/05.jpg" alt="Material Mood Board" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body" style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:#D9A082;margin-bottom:.25rem">STEP 05</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Material Mood Board</h3><p class="text-intro" style="font-style:normal">A cohesive kit of parts with alternates.</p></div></article>
-        <article class="process-card"><span class="process-number" style="color:#D9A082">06</span><div style="height:128px;overflow:hidden"><img src="images/Process/06.jpg" alt="Parallel Execution" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body" style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:#D9A082;margin-bottom:.25rem">STEP 06</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Parallel Execution</h3><p class="text-intro" style="font-style:normal">Factory precision + on-site finesse.</p></div></article>
+        <article class="process-card"><span class="process-number" style="color:#D9A082">01</span><div style="height:128px;overflow:hidden"><picture><source type="image/webp" srcset="images/Process/01.webp"><img src="images/Process/01.jpg" alt="Discovery & Site Inventory" style="width:100%;height:100%;object-fit:cover"></picture></div><div class="card-body" style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:#D9A082;margin-bottom:.25rem">STEP 01</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Discovery & Site Inventory</h3><p class="text-intro" style="font-style:normal">Understand routines, measure the site, audit services.</p></div></article>
+        <article class="process-card"><span class="process-number" style="color:#D9A082">02</span><div style="height:128px;overflow:hidden"><picture><source type="image/webp" srcset="images/Process/02.webp"><img src="images/Process/02.jpg" alt="Schematic Planning" style="width:100%;height:100%;object-fit:cover"></picture></div><div class="card-body" style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:#D9A082;margin-bottom:.25rem">STEP 02</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Schematic Planning (2D First)</h3><p class="text-intro" style="font-style:normal">Room layouts, storage logic, services mapping in CAD.</p></div></article>
+        <article class="process-card"><span class="process-number" style="color:#D9A082">03</span><div style="height:128px;overflow:hidden"><picture><source type="image/webp" srcset="images/Process/03.webp"><img src="images/Process/03.jpg" alt="Budgeting & Concept" style="width:100%;height:100%;object-fit:cover"></picture></div><div class="card-body" style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:#D9A082;margin-bottom:.25rem">STEP 03</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Budgeting & Concept</h3><p class="text-intro" style="font-style:normal">Budget from scope—not guesswork. Lock direction & band.</p></div></article>
+        <article class="process-card"><span class="process-number" style="color:#D9A082">04</span><div style="height:128px;overflow:hidden"><picture><source type="image/webp" srcset="images/Process/04.webp"><img src="images/Process/04.jpg" alt="Detailed Design → 3D" style="width:100%;height:100%;object-fit:cover"></picture></div><div class="card-body" style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:#D9A082;margin-bottom:.25rem">STEP 04</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Detailed Design → 3D</h3><p class="text-intro" style="font-style:normal">Final elevations & service drawings, then high-fidelity 3D.</p></div></article>
+        <article class="process-card"><span class="process-number" style="color:#D9A082">05</span><div style="height:128px;overflow:hidden"><picture><source type="image/webp" srcset="images/Process/05.webp"><img src="images/Process/05.jpg" alt="Material Mood Board" style="width:100%;height:100%;object-fit:cover"></picture></div><div class="card-body" style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:#D9A082;margin-bottom:.25rem">STEP 05</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Material Mood Board</h3><p class="text-intro" style="font-style:normal">A cohesive kit of parts with alternates.</p></div></article>
+        <article class="process-card"><span class="process-number" style="color:#D9A082">06</span><div style="height:128px;overflow:hidden"><picture><source type="image/webp" srcset="images/Process/06.webp"><img src="images/Process/06.jpg" alt="Parallel Execution" style="width:100%;height:100%;object-fit:cover"></picture></div><div class="card-body" style="padding:1.25rem"><div style="font-size:.75rem;font-weight:700;color:#D9A082;margin-bottom:.25rem">STEP 06</div><h3 style="font-size:1.1rem;margin:0 0 .5rem">Parallel Execution</h3><p class="text-intro" style="font-style:normal">Factory precision + on-site finesse.</p></div></article>
       </div>
     </div>
   </section>
@@ -462,9 +466,9 @@ Working with Aakrati felt like collaborating with a trusted friend who is incred
   <!-- ========================= -->
   <section class="section" id="journey" aria-labelledby="timeline-heading">
     <div class="container-site">
-      <div class="timeline-head">
-        <h2 id="timeline-heading" class="tl-title label-tag" style="display: inline-block; margin-bottom: 1.5rem; font-size: 1.75rem; font-weight: 700; color: #1A1F2E;">Our Journey</h2>
-        <p class="text-intro tl-intro">From a small studio to award-winning design firm.</p>
+      <div class="timeline-head" style="text-align: center; margin-bottom: 3rem;">
+        <h2 id="timeline-heading" class="tl-title label-tag" style="display: block; margin: 0 auto 1rem; font-size: 1.75rem; font-weight: 700; color: #1A1F2E; text-align: center;">Our Journey</h2>
+        <p class="text-intro tl-intro" style="text-align: center; max-width: 800px; margin: 0 auto; color: #4E4A45; font-size: 1.2rem; line-height: 1.6;">From a small studio to award-winning design firm.</p>
       </div>
 
       <ol class="timeline-elegant" role="list">
@@ -500,7 +504,7 @@ Working with Aakrati felt like collaborating with a trusted friend who is incred
             <p class="milestone__copy">Featured in Deccan Herald's “Bones Get a New Life”—founder Aakrati on texture, depth, and drama.</p>
             <blockquote class="milestone__quote">
               “White, textured statement pieces create depth and drama—pair with Bohemian/English palettes and peach tones.”
-              <a class="quote-link" href="https://www.deccanherald.com/features/bones-get-a-new-life-1237132.html?utm_source=whatsapp&utm_medium=referral&utm_campaign=socialshare" target="_blank" rel="noopener noreferrer">Read more</a>
+              <a class="quote-link" href="https://www.deccanherald.com/features/bones-get-a-new-life-1237132.html?utm_source=whatsapp&utm_medium=referral&utm_campaign=socialshare" target="_blank" rel="noopener noreferrer" aria-label="Read the Deccan Herald article: Bones Get a New Life">Read the Deccan Herald article: Bones Get a New Life</a>
             </blockquote>
           </article>
         </li>
@@ -690,7 +694,7 @@ Working with Aakrati felt like collaborating with a trusted friend who is incred
       <div style="text-align:center;margin-bottom:2.5rem">
         <div class="label-tag" style="justify-content:center;margin-bottom:1rem">Client Stories</div>
         <h2 id="testimonials-heading" style="font-family:'Playfair Display',serif;font-size:2.5rem;margin-bottom:1rem">What Clients Say</h2>
-        <p class="text-intro" style="font-style:normal">Real stories from clients who transformed their spaces with us.</p>
+        <p class="text-intro" style="font-style:normal; text-align: center; max-width: 800px; margin: 0 auto;">Real stories from clients who transformed their spaces with us.</p>
       </div>
       <div class="ts-wrap">
         <div class="ts-rail" id="tsRail">
@@ -698,7 +702,7 @@ Working with Aakrati felt like collaborating with a trusted friend who is incred
           <!-- Existing cards (unchanged) -->
           <article class="ts-card">
             <header class="ts-head">
-              <img class="ts-avatar" src="images/Testimonials/Vignesh.png" alt="Vignesh">
+              <img class="ts-avatar" src="images/Aakratifinal.png" alt="Vignesh">
               <div><div class="ts-name">Vignesh</div><div class="ts-stars">★★★★★</div></div>
             </header>
             <p class="ts-excerpt">"Working with Aakrati and team was one of the best decisions we made... extraordinary."</p>
@@ -714,7 +718,7 @@ Her ability to combine our ideas with her expertise resulted in a home that trul
 We’re beyond thrilled with the final outcome and would wholeheartedly recommend them to anyone looking to transform their space into something extraordinary.</template>
             <template class="tm-full-head">
               <div class="md-head">
-                <img class="md-avatar" src="images/Testimonials/Vignesh.png" alt="Vignesh">
+                <img class="md-avatar" src="images/Aakratifinal.png" alt="Vignesh">
                 <div><div class="md-name">Vignesh</div><div class="ts-stars">★★★★★</div></div>
               </div>
             </template>
@@ -722,7 +726,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
 
           <article class="ts-card">
             <header class="ts-head">
-              <img class="ts-avatar" src="images/Testimonials/MayankVishnoi.png" alt="Mayank Vishnoi">
+              <img class="ts-avatar" src="images/Aakratifinal.png" alt="Mayank Vishnoi">
               <div><div class="ts-name">Mayank Vishnoi</div><div class="ts-stars">★★★★★</div></div>
             </header>
             <p class="ts-excerpt">"Exceptional Interior Design Experience ... rival much larger design houses..."</p>
@@ -730,7 +734,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
             <template class="tm-full">Exceptional Interior Design Experience - I recently had the pleasure of working with Aakrati for our complete home interior design and execution, and I cannot recommend her services highly enough. Despite running a boutique firm with just 3-4 people, Aakrati delivered results that rival much larger design houses. What Made This Experience Outstanding: 1. Complete Project Management Excellence Aakrati didn't just provide design concepts – she managed the entire execution flawlessly. From coordinating with carpenters and stone workers to managing electrical and plumbing work, she handled multiple vendors seamlessly. This comprehensive approach saved us countless hours and eliminated the stress of managing different contractors ourselves. 2. Timely Delivery In an industry notorious for delays, Aakrati delivered our project exactly on schedule. Her project management skills and vendor coordination ensured everything stayed on track from start to finish. 3. Attention to Detail & Practicality What truly sets Aakrati apart is her meticulous attention to detail combined with practical thinking. She spent considerable time with us discussing every aspect of the design, understanding our lifestyle needs, and ensuring that beauty never compromised functionality. Every element was thoughtfully planned and executed. 4. Genuine Passion & Care It's rare to find someone who is truly passionate about their craft rather than just focused on profits. Aakrati's love for interior design shines through in every interaction. She's not money-minded but genuinely invested in creating spaces that enhance our daily lives. 5. Exceptional After-Service Support Even after project completion, Aakrati continued to help us resolve any minor issues that arose. This level of post-delivery support speaks volumes about her commitment to client satisfaction and professional integrity. Final Thoughts Working with Aakrati felt like collaborating with a trusted friend who happens to be incredibly talented at interior design. Her combination of creative vision, practical execution, vendor management expertise, and genuine care for her clients makes her an absolute gem in the interior design industry. If you're looking for someone who will treat your home with the same care and attention they would their own, look no further than Aakrati. Her work speaks for itself, and her character makes the entire experience truly enjoyable. Highly Recommended for anyone seeking quality interior design with flawless execution and exceptional service.</template>
             <template class="tm-full-head">
               <div class="md-head">
-                <img class="md-avatar" src="images/Testimonials/MayankVishnoi.png" alt="Mayank Vishnoi">
+                <img class="md-avatar" src="images/Aakratifinal.png" alt="Mayank Vishnoi">
                 <div><div class="md-name">Mayank Vishnoi</div><div class="ts-stars">★★★★★</div></div>
               </div>
             </template>
@@ -738,7 +742,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
 
           <article class="ts-card">
             <header class="ts-head">
-              <img class="ts-avatar" src="images/Testimonials/BhushanSalimath.png" alt="Bhushan Salimath">
+              <img class="ts-avatar" src="images/Aakratifinal.png" alt="Bhushan Salimath">
               <div><div class="ts-name">Bhushan Salimath</div><div class="ts-stars">★★★★★</div></div>
             </header>
             <p class="ts-excerpt">"We engaged Aakrati for the interior design of our home... exceeded our expectations."</p>
@@ -746,7 +750,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
             <template class="tm-full">We engaged Aakrati for the interior design of our home. Aakrati took the time to thoroughly understand our requirements and translated them into a thoughtful, cohesive design. Her services encompassed everything from design conceptualization and material selection to choosing contractors, supervising the work, and handling negotiations. Throughout the project, she maintained a high level of professionalism, with a keen eye for detail and a deep understanding of all aspects related to home design. Her expertise was evident at every step, and we appreciated the personalized approach she took. The final result exceeded our expectations, and both our family and visitors have shared nothing but positive feedback</template>
             <template class="tm-full-head">
               <div class="md-head">
-                <img class="md-avatar" src="images/Testimonials/BhushanSalimath.png" alt="Bhushan Salimath">
+                <img class="md-avatar" src="images/Aakratifinal.png" alt="Bhushan Salimath">
                 <div><div class="md-name">Bhushan Salimath</div><div class="ts-stars">★★★★★</div></div>
               </div>
             </template>
@@ -754,7 +758,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
 
           <article class="ts-card">
             <header class="ts-head">
-              <img class="ts-avatar" src="images/Testimonials/NayanGupta.png" alt="Nayan Gupta">
+              <img class="ts-avatar" src="images/Aakratifinal.png" alt="Nayan Gupta">
               <div><div class="ts-name">Nayan Gupta</div><div class="ts-stars">★★★★★</div></div>
             </header>
             <p class="ts-excerpt">"We engaged with Aakrati for our home interiors... final outcome exceeded expectations."</p>
@@ -762,7 +766,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
             <template class="tm-full">We engaged with Aakrati for our home interiors, and she delivered exceptional results. She took the time to understand our needs, providing end-to-end services including design, material selection, contractor coordination, supervision, and negotiations. Her professionalism, colour/design choices, attention to detail, and deep expertise in home design were evident throughout. The final outcome exceeded our expectations, earning praise from both our family and visitors. She went out of her way during the design phase to accommodate our requirements which reflects her commitment to excellence We are happy that we engaged Aakrati and would look forward to do it again</template>
             <template class="tm-full-head">
               <div class="md-head">
-                <img class="md-avatar" src="images/Testimonials/NayanGupta.png" alt="Nayan Gupta">
+                <img class="md-avatar" src="images/Aakratifinal.png" alt="Nayan Gupta">
                 <div><div class="md-name">Nayan Gupta</div><div class="ts-stars">★★★★★</div></div>
               </div>
             </template>
@@ -774,7 +778,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
 
           <article class="ts-card">
             <header class="ts-head">
-              <img class="ts-avatar" src="images/Testimonials/HemantRastogi.jpg" alt="Hemant Rastogi (photo placeholder)">
+              <img class="ts-avatar" src="images/Aakratifinal.png" alt="Hemant Rastogi (photo placeholder)">
               <div><div class="ts-name">Hemant Rastogi</div><div class="ts-stars">★★★★★</div></div>
             </header>
             <p class="ts-excerpt">"Am extremely pleased with Aakriti as she has translated my ideas to reality... clever ideas to add functionality... signature creation beyond my imagination."</p>
@@ -782,7 +786,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
             <template class="tm-full">Am extremely pleased with Aakriti as she has translated my ideas to reality. In fact over all interiors come up much better than what I planned for. She was instrumental in coming up with multiple options suiting to my taste, clever ideas to add functionality with design. Best thing is her signature creation for each project is saw including mine which was beyond my imagination.</template>
             <template class="tm-full-head">
               <div class="md-head">
-                <img class="md-avatar" src="images/Testimonials/HemantRastogi.jpg" alt="Hemant Rastogi (photo placeholder)">
+                <img class="md-avatar" src="images/Aakratifinal.png" alt="Hemant Rastogi (photo placeholder)">
                 <div><div class="md-name">Hemant Rastogi</div><div class="ts-stars">★★★★★</div></div>
               </div>
             </template>
@@ -790,7 +794,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
 
           <article class="ts-card">
             <header class="ts-head">
-              <img class="ts-avatar" src="images/Testimonials/PratimaRastogi.jpg" alt="Pratima Rastogi (photo placeholder)">
+              <img class="ts-avatar" src="images/Aakratifinal.png" alt="Pratima Rastogi (photo placeholder)">
               <div><div class="ts-name">Pratima Rastogi</div><div class="ts-stars">★★★★★</div></div>
             </header>
             <p class="ts-excerpt">"I had a wonderful experience working with Aakrati and her team... elegant, comfortable, and perfectly reflects my personality."</p>
@@ -798,7 +802,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
             <template class="tm-full">"I had a wonderful experience working with Aakrati and her team. Their sense of design, attention to detail, and ability to understand my taste made the entire process smooth and enjoyable. My home looks elegant, comfortable, and perfectly reflects my personality. Highly recommended!"</template>
             <template class="tm-full-head">
               <div class="md-head">
-                <img class="md-avatar" src="images/Testimonials/PratimaRastogi.jpg" alt="Pratima Rastogi (photo placeholder)">
+                <img class="md-avatar" src="images/Aakratifinal.png" alt="Pratima Rastogi (photo placeholder)">
                 <div><div class="md-name">Pratima Rastogi</div><div class="ts-stars">★★★★★</div></div>
               </div>
             </template>
@@ -806,7 +810,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
 
           <article class="ts-card">
             <header class="ts-head">
-              <img class="ts-avatar" src="images/Testimonials/FineFoods.jpg" alt="Fine Foods (photo placeholder)">
+              <img class="ts-avatar" src="images/Aakratifinal.png" alt="Fine Foods (photo placeholder)">
               <div><div class="ts-name">Fine Foods</div><div class="ts-stars">★★★★★</div></div>
             </header>
             <p class="ts-excerpt">"From House to Home — Uniquely Beautiful. Aakrati is creative, artistic, and attentive to every detail... our kids’ room is their favorite space now."</p>
@@ -814,7 +818,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
             <template class="tm-full">From House to Home || Uniquely Beautiful Thanks to Aakrati! Working with Aakrati has been such an amazing experience! She’s not just creative—she’s incredibly artistic, innovative, and has an eye for detail that blew us away. She really got our style and preferences from the start, and kept every tiny thing in mind while designing. After all those long chats and site visits, the final result truly reflected everything we had discussed—and more. Every corner of our home has her thoughtful touch. From tiles to lights, curtains to cutlery, she helped us with it all. She even went shopping with us multiple times, helped us choose furniture and soft furnishings, and never once made us feel rushed or on our own. She also gave special attention to our kids' room—and honestly, they were her biggest fans by the end! She brought their love for nature and sea life together in the most artistic and playful way. The room turned out super cool and functional, with a smart study setup under a stunning bunk bed. It’s now their favorite space in the house, and we couldn’t be happier seeing how much they love it. She doesn’t just say “yes” to everything either—and that’s what we loved! She gives honest feedback and smart suggestions, making sure every choice makes sense for the space and our lifestyle. She’s bold, passionate, and doesn’t settle for anything average. Her team was great to work with too—super coordinated and reliable. Even after the work was done, she stayed in touch and made sure everything was running smoothly. The vendors she recommended were top-notch as well—carefully selected and definitely worth exploring. She made the whole journey fun, personal, and stress-free. Our home feels so “us” now—and we have her to thank for it!</template>
             <template class="tm-full-head">
               <div class="md-head">
-                <img class="md-avatar" src="images/Testimonials/FineFoods.jpg" alt="Fine Foods (photo placeholder)">
+                <img class="md-avatar" src="images/Aakratifinal.png" alt="Fine Foods (photo placeholder)">
                 <div><div class="md-name">Fine Foods</div><div class="ts-stars">★★★★★</div></div>
               </div>
             </template>
@@ -822,7 +826,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
 
           <article class="ts-card">
             <header class="ts-head">
-              <img class="ts-avatar" src="images/Testimonials/placeholder.png" alt="Naveen (photo placeholder)">
+              <img class="ts-avatar" src="images/Aakratifinal.png" alt="Naveen (photo placeholder)">
               <div><div class="ts-name">Naveen</div><div class="ts-stars">★★★★★</div></div>
             </header>
             <p class="ts-excerpt">"Thoroughly satisfied from design to delivery—seamless process and a great final result."</p>
@@ -830,7 +834,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
             <template class="tm-full">I'm thoroughly satisfied with the entire process, from the initial design phase to execution and delivery. Aakrati is an exceptional designer who attentively considered our input and requirements. Each individual rooms were designed to suit the use-cases/ needs of the person while also following the theme. The final design and the result is not only looking great but also functioning effectively. Aakrati and her team made the entire process stress free and seamless.</template>
             <template class="tm-full-head">
               <div class="md-head">
-                <img class="md-avatar" src="images/Testimonials/placeholder.png" alt="Naveen (photo placeholder)">
+                <img class="md-avatar" src="images/Aakratifinal.png" alt="Naveen (photo placeholder)">
                 <div><div class="md-name">Naveen</div><div class="ts-stars">★★★★★</div></div>
               </div>
             </template>
@@ -838,7 +842,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
 
           <article class="ts-card">
             <header class="ts-head">
-              <img class="ts-avatar" src="images/Testimonials/placeholder.png" alt="Sakshi Sureka (photo placeholder)">
+              <img class="ts-avatar" src="images/Aakratifinal.png" alt="Sakshi Sureka (photo placeholder)">
               <div><div class="ts-name">Sakshi Sureka</div><div class="ts-stars">★★★★★</div></div>
             </header>
             <p class="ts-excerpt">"Creative, supportive, and practical—excellent work for our home."</p>
@@ -846,7 +850,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
             <template class="tm-full">Aakrati and her team is superb. She is creative and supportive. She did an excellent work done for our home.She listen to the client requirements patiently and gives her input which is practical yet beautiful. We are grateful to her for taking up our project and executing it so so well! Best of luck for to Aakrati and team for their future endeavours ❤️</template>
             <template class="tm-full-head">
               <div class="md-head">
-                <img class="md-avatar" src="images/Testimonials/placeholder.png" alt="Sakshi Sureka (photo placeholder)">
+                <img class="md-avatar" src="images/Aakratifinal.png" alt="Sakshi Sureka (photo placeholder)">
                 <div><div class="md-name">Sakshi Sureka</div><div class="ts-stars">★★★★★</div></div>
               </div>
             </template>
@@ -854,7 +858,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
 
           <article class="ts-card">
             <header class="ts-head">
-              <img class="ts-avatar" src="images/Testimonials/placeholder.png" alt="Babita Butola (photo placeholder)">
+              <img class="ts-avatar" src="images/Aakratifinal.png" alt="Babita Butola (photo placeholder)">
               <div><div class="ts-name">Babita Butola</div><div class="ts-stars">★★★★★</div></div>
             </header>
             <p class="ts-excerpt">"Impeccable taste and attention to detail—our home feels like a haven."</p>
@@ -862,7 +866,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
             <template class="tm-full">I would like to thank aakriti , Her impeccable taste and attention to detail have transformed our space into a haven of comfort and style.Me and Raj are beyond grateful for your creative and unwavering dedication to bringing our vision to life. Your ability to understand our preferences and translate them into stunning designs is truly remarkable. From concept to Execution, your passion for design shines through every element of our home.We're endlessly thankful for your talent and expertise.</template>
             <template class="tm-full-head">
               <div class="md-head">
-                <img class="md-avatar" src="images/Testimonials/placeholder.png" alt="Babita Butola (photo placeholder)">
+                <img class="md-avatar" src="images/Aakratifinal.png" alt="Babita Butola (photo placeholder)">
                 <div><div class="md-name">Babita Butola</div><div class="ts-stars">★★★★★</div></div>
               </div>
             </template>
@@ -870,7 +874,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
 
           <article class="ts-card">
             <header class="ts-head">
-              <img class="ts-avatar" src="images/Testimonials/placeholder.png" alt="Suwacharaj (photo placeholder)">
+              <img class="ts-avatar" src="images/Aakratifinal.png" alt="Suwacharaj (photo placeholder)">
               <div><div class="ts-name">Suwacharaj</div><div class="ts-stars">★★★★★</div></div>
             </header>
             <p class="ts-excerpt">"Fantastic work and commitment—actual finish looked better than 3D."</p>
@@ -878,7 +882,7 @@ We’re beyond thrilled with the final outcome and would wholeheartedly recommen
             <template class="tm-full">Fantastic Work and Commitment.... Right from the 1st meetinf to discussions to conceptualising to the final output its been one seamless ride for us... Infact actual finish liiks better than 3D outputs Thanks Aakrarti and Team for making our Dream Home!!</template>
             <template class="tm-full-head">
               <div class="md-head">
-                <img class="md-avatar" src="images/Testimonials/placeholder.png" alt="Suwacharaj (photo placeholder)">
+                <img class="md-avatar" src="images/Aakratifinal.png" alt="Suwacharaj (photo placeholder)">
                 <div><div class="md-name">Suwacharaj</div><div class="ts-stars">★★★★★</div></div>
               </div>
             </template>

@@ -1,10 +1,15 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Portfolio – Aakrati</title><link rel="stylesheet" href="assets/css/site.css"></head><body>
-<header class="site-header"><div class="container header-inner"><a class="brand" href="/index.html"><img src="images/logovisitingcardfront.png" alt="">Aakrati</a><nav class="nav"><a href="/index.html">Home</a><a href="/about.html">About</a><a href="/portfolio.html">Portfolio</a><a href="/services/index.html">Services</a><a href="/contact.html">Contact</a><a class="btn btn-primary enquire" href="mailto:hello@aakrati.com">Enquire Now</a></nav><button class="btn hamburger" data-menu-open>☰</button></div></header><div class="mobile-overlay"></div><aside class="mobile-sheet"><button class="btn" data-menu-close>Close</button><nav class="mobile-nav"><a href="/index.html">Home</a><a href="/about.html">About</a><a href="/portfolio.html">Portfolio</a><a href="/services/index.html">Services</a><a href="/contact.html">Contact</a></nav></aside>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Portfolio – Aakrati</title><meta name="description" content="Explore Aakrati Interior Studio's portfolio of residential and commercial interiors across Bengaluru—curated projects, albums, and galleries."><link rel="canonical" href="/portfolio.html"><link rel="preload" as="image" href="images/AI-2.jpg"><link rel="stylesheet" href="assets/css/site.css"></head><body>
+<header class="site-header"><div class="container header-inner"><a class="brand" href="/index.html"><img src="images/logovisitingcardfront.png" alt="Aakrati Interior Design" width="108" height="48" loading="eager" fetchpriority="high" decoding="async">Aakrati</a><nav class="nav"><a href="/index.html">Home</a><a href="/about.html">About</a><a href="/portfolio.html">Portfolio</a><a href="/services/index.html">Services</a><a href="/contact.html">Contact</a><a class="btn btn-primary enquire" href="mailto:hello@aakrati.com">Enquire Now</a></nav><button class="btn hamburger" data-menu-open>☰</button></div></header>
+<div class="mobile-overlay"></div><aside class="mobile-sheet"><button class="btn" data-menu-close>Close</button><nav class="mobile-nav"><a href="/index.html">Home</a><a href="/about.html">About</a><a href="/portfolio.html">Portfolio</a><a href="/services/index.html">Services</a><a href="/contact.html">Contact</a></nav></aside>
 <main>
   <style>
     :root{--gold:#C9A35C;--dark:#1A1D29;--cream:#F8F5F1;--ink:#2C2C2C;--g600:#6b7280;--g300:#d1d5db}
     .portfolio-hero{position:relative;height:60vh;min-height:400px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--dark);margin-bottom:48px}
     .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+    .hero-facade{position:absolute;inset:0;z-index:1;display:grid;place-items:center}
+    .hero-facade img.hero-poster{width:100%;height:100%;object-fit:cover;display:block}
+    .hero-play{position:absolute;z-index:2;display:inline-grid;place-items:center;width:68px;height:68px;border-radius:9999px;border:2px solid rgba(255,255,255,.7);background:rgba(0,0,0,.35);color:#fff;cursor:pointer;backdrop-filter:blur(6px)}
+    .hero-play:hover{transform:scale(1.05)}
     .video-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.5),rgba(0,0,0,.3));z-index:2}
     .hero-content{position:relative;z-index:3;max-width:800px;padding:0 24px;text-align:center;color:#fff}
     .hero-content h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,3.5rem);font-weight:400;margin:0 0 12px;line-height:1.2;letter-spacing:.5px;color:#fff;text-shadow:2px 2px 4px rgba(0,0,0,.5)}
@@ -82,12 +87,12 @@
     @media(max-width:640px){.proj-info{grid-template-columns:1fr}}
   </style>
 
-  <!-- Hero -->
+  <!-- Hero (video facade) -->
   <section class="portfolio-hero">
-    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="images/Portfolio/AI-2.jpg">
-      <source src="images/Portfolio/portfoliomovie.mov" type="video/mp4">
-      <img src="images/Portfolio/AI-2.jpg" alt="Aakrati Interiors Portfolio">
-    </video>
+    <div class="hero-facade" id="heroFacade">
+      <img class="hero-poster" src="images/AI-2.jpg" alt="Aakrati Interiors Portfolio" loading="eager" fetchpriority="high" decoding="async">
+      <button class="hero-play" id="heroPlay" aria-label="Play video">▶</button>
+    </div>
     <div class="video-overlay"></div>
     <div class="hero-content">
       <h1>Our Portfolio</h1>
@@ -335,6 +340,11 @@
   const E = (s)=> typeof s === 'string' ? encodeURI(s) : s;
   const dataEl=document.getElementById('portfolio-data');
   let data={projects:[],albums:[]};
+  const toWebp=(u)=>{ try{ return String(u||'').replace(/\.(jpe?g|png)$/i,'.webp'); }catch(_){ return u; } };
+  const pictureHTML=(src, alt, attrs='')=>{
+    const w=toWebp(src);
+    return `<picture><source type="image/webp" srcset="${E(w)}"><img ${attrs} src="${E(src)}" alt="${alt||''}" loading="lazy" decoding="async"></picture>`;
+  };
   function loadData(){
     return fetch('assets/data/portfolio-data.json',{cache:'no-store'})
       .then(r=>r.ok?r.json():Promise.reject())
@@ -359,9 +369,27 @@
   const lbClose=document.getElementById('lightbox-close');
   const lbPrev=document.getElementById('lightbox-prev');
   const lbNext=document.getElementById('lightbox-next');
-  const heroVideo=document.querySelector('.hero-video');
-  heroVideo?.play().catch(()=>{});
-  document.addEventListener('click',()=>heroVideo?.play().catch(()=>{}),{once:true});
+  // Video facade: instantiate video only on user intent
+  const heroFacade=document.getElementById('heroFacade');
+  const heroPlay=document.getElementById('heroPlay');
+  function mountHeroVideo(){
+    if(!heroFacade) return;
+    const vid=document.createElement('video');
+    vid.className='hero-video';
+    vid.setAttribute('muted','');
+    vid.setAttribute('playsinline','');
+    vid.setAttribute('loop','');
+    vid.setAttribute('preload','none');
+    vid.poster='images/AI-2.jpg';
+    const src=document.createElement('source');
+    src.src='images/Portfolio/portfoliomovie.mov';
+    src.type='video/mp4';
+    vid.appendChild(src);
+    heroFacade.replaceWith(vid);
+    // attempt playback
+    vid.play().catch(()=>{});
+  }
+  heroPlay?.addEventListener('click',mountHeroVideo);
 
   let currentFilter='all';
   let currentProject=null; let currentAlbum=null;
@@ -416,7 +444,8 @@
       const card=document.createElement('a'); card.href='#'; card.className='project-card'; card.dataset.type=(p.type||'residential').toLowerCase(); card.dataset.slug=p.slug;
       const typeLabel=(p.type||'residential').replace(/^\w/,c=>c.toUpperCase());
       const cover = safeCover(p);
-      card.innerHTML=`<div class=\"image-wrap\"><img src=\"${E(cover)}\" alt=\"${p.title}\"></div><div class=\"card-body\"><div class=\"card-kicker\"><span class=\"k-dot\"></span><span class=\"k-text\">${typeLabel.toUpperCase()}</span></div><h3 class=\"card-title\">${p.title}</h3><div class=\"card-meta\">${p.location?`<span>${p.location}</span>`:''}${p.location&&p.year?'<span style=\\\"width:4px;height:4px;background:#d1d5db;border-radius:50%\\\"></span>':''}${p.year?`<span>${p.year}</span>`:''}</div></div>`;
+      const imgHTML = pictureHTML(cover, p.title);
+      card.innerHTML=`<div class=\"image-wrap\">${imgHTML}</div><div class=\"card-body\"><div class=\"card-kicker\"><span class=\"k-dot\"></span><span class=\"k-text\">${typeLabel.toUpperCase()}</span></div><h3 class=\"card-title\">${p.title}</h3><div class=\"card-meta\">${p.location?`<span>${p.location}</span>`:''}${p.location&&p.year?'<span style=\\\"width:4px;height:4px;background:#d1d5db;border-radius:50%\\\"></span>':''}${p.year?`<span>${p.year}</span>`:''}</div></div>`;
       card.addEventListener('click',e=>{e.preventDefault();openProject(p.slug)});
       projectsGrid.appendChild(card);
     });
@@ -436,7 +465,8 @@
     data.albums.forEach(a=>{
       const card=document.createElement('a'); card.href='#'; card.className='album-card'; card.dataset.slug=a.slug;
       const cover = isHeic(a.cover)? (firstNonHeic(a.images||[])?.src || 'images/Artkratihero.png') : a.cover;
-      card.innerHTML=`<div class=\"image-wrap\"><img src=\"${E(cover)}\" alt=\"${a.title}\"></div><div class=\"card-body\"><div class=\"card-kicker\"><span class=\"k-dot\"></span><span class=\"k-text\">Album</span></div><h3 class=\"card-title\">${a.title}</h3></div>`;
+      const imgHTML = pictureHTML(cover, a.title);
+      card.innerHTML=`<div class=\"image-wrap\">${imgHTML}</div><div class=\"card-body\"><div class=\"card-kicker\"><span class=\"k-dot\"></span><span class=\"k-text\">Album</span></div><h3 class=\"card-title\">${a.title}</h3></div>`;
       card.addEventListener('click',e=>{e.preventDefault();openAlbum(a.slug)});
       albumsGrid.appendChild(card);
     });
@@ -491,8 +521,9 @@
   function filterProjectByRoom(room){ if(!currentProject) return; const imgs=currentProject.images.filter(i=>i.room===room); renderProjectGallery(imgs); }
   function renderProjectGallery(images){
     const html = (images||[]).map((img,idx)=>{
-      const src = E(img.src);
-      return `<figure class="masonry-item"><img data-index="${idx}" src="${src}" alt="${img.alt||''}"></figure>`;
+      const src = img.src;
+      const pic = pictureHTML(src, img.alt||'', `data-index=\"${idx}\"`);
+      return `<figure class=\"masonry-item\">${pic}</figure>`;
     }).join('');
     galleryProject.innerHTML = html;
     attachImageGuards(galleryProject);
@@ -513,7 +544,10 @@
     const ainfo=document.getElementById('album-info');
     ainfo.innerHTML=''; ainfo.style.display='none';
 
-    galleryAlbum.innerHTML=(a.images||[]).map((img,idx)=>`<figure class=\"masonry-item\"><img data-index=\"${idx}\" src=\"${E(img.src)}\" alt=\"${img.alt||''}\"></figure>`).join('');
+    galleryAlbum.innerHTML=(a.images||[]).map((img,idx)=>{
+      const pic = pictureHTML(img.src, img.alt||'', `data-index=\"${idx}\"`);
+      return `<figure class=\"masonry-item\">${pic}</figure>`;
+    }).join('');
     attachImageGuards(galleryAlbum);
     lightboxImages=(a.images||[]).map(i=>i.src).filter(s=>!isHeic(s)); lightboxIndex=0;
     // Scroll to album gallery
